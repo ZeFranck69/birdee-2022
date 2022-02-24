@@ -1,0 +1,61 @@
+# X-XSS-Protection
+<IfModule mod_headers.c>
+	Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# X-Frame-Options
+<IfModule mod_headers.c>
+	Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+
+# X-Content-Type nosniff
+<IfModule mod_headers.c>
+	Header set X-Content-Type-Options nosniff
+</IfModule>
+
+# Disable Directory listing
+Options -Indexes
+
+# block files which needs to be hidden, specify .example extension of the file
+<Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block wp-includes folder and files
+ <IfModule mod_rewrite.c>
+ RewriteEngine On
+ RewriteBase /
+ RewriteRule ^wp-admin/includes/ - [F,L]
+ RewriteRule !^wp-includes/ - [S=3]
+ RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+ RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+ RewriteRule ^wp-includes/theme-compat/ - [F,L]
+ </IfModule>
+
+<Files xmlrpc.php>
+Order deny,allow
+Deny from all
+Allow from 127.0.0.1
+Allow from *.wordpress.com
+Allow from 192.0.64.0/18
+Allow from 185.64.140.0/22
+Allow from 2a04:fa80::/29
+Allow from 76.74.255.0/22
+Allow from 192.0.65.0/22
+Allow from 192.0.80.0/22
+Allow from 192.0.96.0/22
+Allow from 192.0.123.0/22
+Satisfy All 
+ErrorDocument 404 /
+</Files>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /birdee-2022/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /birdee-2022/index.php [L]
+</IfModule>
