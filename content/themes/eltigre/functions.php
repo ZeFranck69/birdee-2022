@@ -67,6 +67,11 @@
 					'left' 	=> new Timber\Menu( 'Header Left' ),
 					'right' => new Timber\Menu( 'Header Right' )
 				),
+				'footer' => array(
+					'birdee' 	=> new Timber\Menu( 'Footer Birdee' ),
+					'help' 		=> new Timber\Menu( 'Footer Help' ),
+					'about' 	=> new Timber\Menu( 'Footer About' )
+				),
 			);
 	
 			// Global site

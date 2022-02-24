@@ -1,23 +1,19 @@
 
-<div class='header-content container'>
+<div class='header__content container'>
 	<div class="menu--left">
 		<div class='main-logo'>
 			<a class='logo--link' href='{{ site.url }}'>
 					{{ logo }}
 			</a>
 		</div>
-		<div class='header--menu-container'>
-				<nav class='nav--left__links'>
-						{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
-				</nav>
-		</div>
+			<nav class='nav__links'>
+					{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
+			</nav>
 	</div>
 	<div class="menu--right">
-		<div class='header--menu-container'>
-			<nav class='nav--right__links'>
-					{% include 'partial/menu.twig' with {'items': menu.header.left.get_items} %}
-			</nav>
-		</div>	
+		<nav class='nav__links'>
+				{% include 'partial/menu.twig' with {'items': menu.header.left.get_items} %}
+		</nav>
 		<div class="site__burger-menu">
 			<div class="burger-menu__wrapper">
 					<span class="burger-menu__line"></span>

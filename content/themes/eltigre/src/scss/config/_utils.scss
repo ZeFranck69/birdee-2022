@@ -72,13 +72,13 @@ $ease: (
   }
 }
 
-@mixin laptop {
+@mixin landscape {
   @media only screen and (max-width: 1024px) {
     @content;
   }
 }
 
-@mixin desktop {
+@mixin laptop {
   @media only screen and (max-width: 1200px) {
     @content;
   }
