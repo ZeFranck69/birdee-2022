@@ -52,6 +52,7 @@ class Eltigre {
 
     private function load_public() {
         self::require_folder( 'public' );
+		
     }
 
 

@@ -60,6 +60,14 @@
 
 			// Global options
 			$context['options'] 	= get_fields( 'options' );
+
+			// Menus
+			$context['menu'] = array(
+				'header' => array(
+					'left' 	=> new Timber\Menu( 'Header Left' ),
+					'right' => new Timber\Menu( 'Header Right' )
+				),
+			);
 	
 			// Global site
 			$context['site']  = $this;

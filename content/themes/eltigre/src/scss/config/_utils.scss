@@ -55,43 +55,37 @@ $ease: (
 }
 
 @mixin mobile {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mobile-xl {
+	@media only screen and (max-width: 540px) {
+	  @content;
+	}
+  }
+
+@mixin tablet {
   @media only screen and (max-width: 768px) {
     @content;
   }
 }
 
-@mixin not-mobile {
-  @media only screen and (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin mobile-landscape {
-  @media only screen and (max-width: 768px) and (orientation: landscape) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media only screen and (min-width: 768px) and (max-width: 1020px) {
-    @content;
-  }
-}
-
 @mixin laptop {
-  @media only screen and (min-width: 1020px) and (max-width: 1300px) {
+  @media only screen and (max-width: 1024px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (max-width: 1200px) {
     @content;
   }
 }
 
 @mixin desktop-large {
-  @media only screen and (min-width: 1600px) {
+  @media only screen and (max-width: 1920px) {
     @content;
   }
 }
