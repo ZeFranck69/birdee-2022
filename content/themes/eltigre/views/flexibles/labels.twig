@@ -1,8 +1,8 @@
-<section id="{{ section.title|sanitize }}" class="collaborators {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }}" style="background-color: {{ section.background_color }};">
+<section id="{{ section.title|sanitize }}" class="labels {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }}" style="background-color: {{ section.background_color }};">
 
-	<div class="collaborators-container" style="text-align: {{ section.text_align }};">
+	<div class="labels-container" style="text-align: {{ section.text_align }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
-			<div class="collaborators-wrapper">
+			<div class="labels-wrapper">
                 {% if section.section_title %}
                 <div class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
                     {{ section.section_title }}
@@ -13,15 +13,15 @@
                     {{ section.section_description }}
                 </div>
                 {% endif %}
-                <div class="collaborators__list">
-                    {% for collabID in section.collaborators %}
-                    <div class="collaborator-wrapper">
-                        <img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).src }}" class="collaborator-img">
-                        <div class="collaborator-name">
+                <div class="labels__list">
+                    {% for collabID in section.labels %}
+                    <div class="label-wrapper">
+                        <img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).src }}" class="label-img">
+                        <div class="label-name">
                             {{ collabID.post_title }}
                         </div>
-                        <div class="collaborator-link--wrapper">
-                            <a href="{{ collabID.link }}" class="collaborator-link">
+                        <div class="label-link--wrapper">
+                            <a href="{{ collabID.link }}" class="label-link">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
@@ -31,7 +31,7 @@
                 <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
                 {% if section.cta %}
                 <div
-                    class="collaborators__cta-wrapper {{ section.classic.cta_align }}">
+                    class="labels__cta-wrapper {{ section.classic.cta_align }}">
                     <a href="{{ section.classic.cta.url }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
                         <span class="cta__label">
                             {{ section.cta.title }}

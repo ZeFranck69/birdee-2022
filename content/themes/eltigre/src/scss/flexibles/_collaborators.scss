@@ -1,0 +1,46 @@
+.collaborators{
+
+    &.ajust{
+        padding: 60px 80px;
+    }
+}
+.collaborators-wrapper{
+
+    .section-part__title{
+        margin-bottom: 24px;
+    }
+}
+.collaborators__list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1400px;
+    margin: auto;
+    flex-wrap: wrap;
+
+    .collaborator-wrapper{
+        max-width: 403px;
+        width: 100%;
+        text-align: center;
+
+        .collaborator-img{
+            max-width: 240px;
+            width: 100%;
+            height: auto;
+            
+        }
+        .collaborator-link--wrapper{
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            background-color: $blue;
+            .collaborator-link{
+                
+                .fab{
+                    color: $green;
+                    
+                }
+            }
+        }
+    }
+}

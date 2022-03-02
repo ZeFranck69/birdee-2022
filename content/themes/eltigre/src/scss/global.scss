@@ -76,6 +76,11 @@ a {
 	}
 }
 
+.title--secondary{
+	font-size: 25px;
+	line-height:40px;
+	font-family: 'Favorit Bold Lining', sans-serif;
+}
 //POSTES
 .job{
 	font-size: 26px;
@@ -128,3 +133,5 @@ a {
 
 @import 'flexibles/_banner';
 @import 'flexibles/_text-image';
+@import 'flexibles/_collaborators';
+@import 'flexibles/_simple';
