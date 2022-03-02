@@ -167,7 +167,7 @@ $transition_speed: .2s;
 			ul{
 				display:flex;
 				li{
-					margin: 0 10px;
+					padding: 0 10px;
 				}
 			}
 
@@ -379,6 +379,7 @@ $transition_speed: .2s;
 	position: relative;
 	top: 0px;
 	right: 0;
+	cursor: pointer;
 
 	.burger-menu__wrapper{
 		@include landscape{
@@ -414,7 +415,7 @@ $transition_speed: .2s;
 	&.active {
 
 		.header__content {
-			padding: 0;
+			
 			@include landscape {
 				background-color: $blue;
 				display: flex;
@@ -587,8 +588,16 @@ $transition_speed: .2s;
 		}
 	}
 }
-.header__sidenav {
-	margin-right: 20px;
-	position: static;
-	transform: none;
+.cta--connect{
+	position:relative;
+	&:after{
+		content:"";
+		position: absolute;
+		height: 14px;
+		width:2px;
+		right: 0;
+		top:0;
+		bottom:0;
+		background-color: $black;
+	}
 }

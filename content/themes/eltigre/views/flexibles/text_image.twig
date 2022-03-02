@@ -1,0 +1,74 @@
+<section id="{{ section.title|sanitize }}" class="text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color: {{ section.background_color }};">
+
+	<div class="text-image-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }}">
+			{% if section.type == "classic"%}
+				{# IMAGE #}
+				<div class="text-image__image">
+					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
+				</div>		
+				{# TEXTE #}
+				<div class="text-part {{ section.classic.text_align }}" style=" max-width: {{ section.classic.text_width }}px;">
+					{% if section.classic.title %}
+					<div class="text-part__title title bold uppercase">
+						{{ section.classic.title }}
+					</div>
+					{% endif %}
+					{% if section.classic.description %}
+					<div class="text-part__description description--secondary" style="color:{{ section.classic.description_color }};">
+						{{ section.classic.description }}
+					</div>
+					{% endif %}
+					{% if section.classic.cta %}
+					<div
+						class="text-image__cta-wrapper {{ section.classic.cta_align }}">
+						<a href="{{ section.cta.url }}" class="cta cta--green" target="{{ section.cta.target }}">
+							<span class="cta__label">
+								{{ section.cta.title }}
+							</span>
+						</a>
+					</div>
+					{% endif %}
+				</div>
+			{% elseif section.type == "quote" %}
+				<div class="text-image__image">
+					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
+				</div>
+
+				<div class="text-part" style="max-width: {{ section.choice == 'image' ? '700px' : '' }};">
+					{% if section.surtitle %}
+					<div class="text-part__surtitle surtitle" style="color:{{ section.surtitle_color }};">
+						{{ section.surtitle }}
+					</div>
+					{% endif %}
+					{% if section.title %}
+					<div class="text-part__title title--secondary bold uppercase">
+						{{ section.title }}
+					</div>
+					{% endif %}
+					{% if section.description %}
+					<div class="text-part__description description--secondary" style="color:{{ section.description_color }};max-width:{{ section.description_width }}px;">
+						{{ section.description }}
+					</div>
+					{% endif %}
+					{% if section.cta %}
+					<div
+						class="text-image__cta-wrapper {{ section.classic.cta_align }}">
+						<a href="{{ section.cta.url }}" class="cta cta--green" target="{{ section.cta.target }}">
+							<span class="cta__label">
+								{{ section.cta.title }}
+							</span>
+						</a>
+					</div>
+					{% endif %}
+				</div>
+			{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>

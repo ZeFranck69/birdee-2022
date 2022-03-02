@@ -15,24 +15,39 @@
 							
 							
 					<div class="footer__column">
+						<div class="help__menu">
 							<h4 class="column__title">{{ __('Besoin d\'aide','eltigre')}}</h4>
 							<nav class="footer-column__nav">
 									{% include "partial/menu.twig" with {'items': menu.footer.help.get_items} %}
 							</nav>
-							<h4 class="column__title">{{ __('A propos','eltigre')}}</h4>
+						</div>
+						<div class="about--menu">
+							<h4 class="column__title">{{ __('À propos','eltigre')}}</h4>
 							<nav class="footer-column__nav">
 									{% include "partial/menu.twig" with {'items': menu.footer.about.get_items} %}
 							</nav>
+						</div>
 					</div>
-			
+
 					<div class="footer__column">
+						<h4 class="column__title">{{ __('Réseaux sociaux','eltigre')}}</h4>
+						<div class="footer__socials">
+							{% for social in options.socials_media %}
+								<div class="footer-socials__social">
+										<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
+												{{ social.logo }}
+										</a>
+								</div>
+							{% endfor %}
+						</div>
+						<h4 class="column__title">{{ __('À propos','eltigre')}}</h4>
+						
+					</div>  
 
-
-					</div>
 			</div>
 			
-	</div>
-	<div class="preventive-text">
-		{{ options.preventive_text }}
+		<div class="preventive-text center">
+			{{ options.preventive_text }}
+		</div>
 	</div>
 </div>

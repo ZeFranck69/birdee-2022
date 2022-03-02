@@ -32,9 +32,9 @@ html {
   max-width: $gridSize;
   margin: 0 auto;
 
-  @include desktop-large {
-    max-width: $gridSizeLarge;
-  }
+  //@include desktop-large {
+  //  max-width: $gridSizeLarge;
+  //}
 
   @include laptop {
     margin: 0 30px;
@@ -126,4 +126,5 @@ a {
 
 // FLEXIBLES
 
-@import 'flexibles/_banner'
+@import 'flexibles/_banner';
+@import 'flexibles/_text-image';

@@ -1,0 +1,133 @@
+.text-image{
+    padding: 60px 0 100px;
+    @include tablet{
+        padding: 60px 0;
+    }
+}
+.text-image__section-title{
+    text-align: center;
+}
+.text-image__section-title {
+	font-family: "Metropolis", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 40px;
+	line-height: 45px;
+	margin-bottom: 30px;
+}
+.text-image-wrapper{
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    .text-part{
+        // max-width: 700px;
+        width: 100%;
+		margin-bottom: 0;
+		@include laptop{
+			max-width:430px;
+		}
+        @include tablet{
+            max-width: 100%;
+        }
+        @include landscape{
+            max-width: 100%;
+        }
+		@include mobile{
+			max-width: 100%;
+		}
+		.text-part__surtitle{
+			font-size: 18px;
+			line-height: 1.25;
+			font-family: "Metropolis", sans-serif;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+        }
+        .text-part__title{
+			// font-size: 30px;
+			// line-height: 1.25;
+			// font-family: "Metropolis", sans-serif;
+			// font-weight: bold;
+			// text-transform: uppercase;
+			margin-bottom: 50px;
+        }
+        .text-part__description{
+            // font-family: "Metropolis", sans-serif;
+			// font-size: 28px;
+			// line-height: 1.25;
+			margin-bottom: 30px;
+            
+            p{
+                margin-bottom: 14px;
+            }
+            ul {
+
+                li{
+                    position: relative;
+                    padding-left: 40px;
+                    margin-bottom: 15px;
+					margin-left: 1em;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        background-image: url('../images/LOGO-V-Blanc.png');
+                        background-position: center;
+                        background-size: cover;
+                        width: 30px;
+                        height: 30px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .image-part{
+
+        .text-image__image{
+            img{
+                
+                @include tablet{
+                    max-width: 100% !important;
+                }
+				@include landscape{
+                    max-width: 420px !important;
+                }
+				@include mobile{
+                    max-width: 100% !important;
+                }
+            }
+        }
+    }
+    .video-part{
+        @include laptop{
+            max-width: 480px;
+            width: 100%;
+        }
+        video{
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+.text-image-wrapper--row{
+    flex-flow: row wrap;
+    @include landscape{
+        flex-flow: column-reverse wrap;
+    }
+}
+.text-image-wrapper--row-reverse{
+    flex-flow: row-reverse wrap;
+	@include landscape{
+		flex-flow: column-reverse wrap;
+	}
+}
+.text-image__cta-wrapper{
+    @include tablet{
+        margin-bottom: 28px;
+    }
+    &.text-image__cta-margin-top{
+        margin-top: 30px;
+    }
+}
