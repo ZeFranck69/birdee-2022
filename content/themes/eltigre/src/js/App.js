@@ -1,5 +1,6 @@
 import Animations from './Animations';
 import Sections from './Sections';
+import Menu from './class/Menu';
 // import Swup from 'swup';
 
 import gsap from 'gsap';
@@ -12,6 +13,7 @@ export default class App {
 	constructor() {
 		new Sections();
 		new Animations();
+		this.menu = new Menu();
 	}
 }
 
