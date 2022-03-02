@@ -82,6 +82,27 @@
 	
 		public function register_post_types() {
 			/** This is where you can register custom post types. */
+			register_post_type( 'collaborator',
+				array(
+					'labels' => array(
+						'name'          => __( 'Collaborateurs', 'eltigre' ),
+						'add_new'		=> __( 'Ajouter un collaborateurs', 'eltigre' ),
+						'singular_name' => __( 'Collaborateur', 'eltigre' ),
+						'all_items'     => __( 'Tous les collaborateurs', 'eltigre' ),
+						'edit_item'     => __( 'Modifier un collaborateur', 'eltigre' ),
+						'view_item'     => __( 'Voir un collaborateur', 'eltigre' ),
+						'update_item'   => __( 'Mettre à jour un collaborateur', 'eltigre' ),
+						'add_new_item'  => __( 'Ajouter un nouveau collaborateur', 'eltigre' ),
+						'search_items'  => __( 'Chercher un collaborateur', 'eltigre' ),
+						'popular_items' => __( 'collaborateurs les plus utilisés', 'eltigre' )
+					),
+					'rewrite'     => array( 'slug' => 'collaborator' ),
+					'menu_icon'   => 'dashicons-businessperson',
+					'supports'    => array( 'title', 'editor', 'thumbnail' ),
+					'public'      => true,
+					'has_archive' => false
+				)
+			);
 		}
 	
 	

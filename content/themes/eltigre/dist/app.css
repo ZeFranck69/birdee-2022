@@ -144,7 +144,7 @@ a {
 @font-face {
   font-family: "Favorit";
   src: url(fonts/4366d6fa911b09a54704.eot);
-  src: url(fonts/4366d6fa911b09a54704.eot?#iefix) format("embedded-opentype"), url(fonts/bcda76638a8984402c85.woff2) format("woff2"), url(fonts/6b3f2712a32663b50e6d.woff) format("woff"), url(fonts/476822ec78657dc8b238.ttf) format("truetype"), url(icons/481feb3b5604f4201703.svg#Favorit-LightMono) format("svg");
+  src: url(fonts/4366d6fa911b09a54704.eot?#iefix) format("embedded-opentype"), url(fonts/bcda76638a8984402c85.woff2) format("woff2"), url(fonts/6b3f2712a32663b50e6d.woff) format("woff"), url(fonts/476822ec78657dc8b238.ttf) format("truetype"), url(icons/fe083c6e31fe7a49d3c2.svg#Favorit-LightMono) format("svg");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -152,7 +152,7 @@ a {
 @font-face {
   font-family: "Favorit";
   src: url(fonts/1983a6d81bcd50ffb221.eot);
-  src: url(fonts/1983a6d81bcd50ffb221.eot?#iefix) format("embedded-opentype"), url(fonts/1ce9d8dc716aad52899b.woff2) format("woff2"), url(fonts/80f26179711eb5e22563.woff) format("woff"), url(fonts/2b93e74fc33111dad678.ttf) format("truetype"), url(icons/9c672ae698eb8a2656be.svg#Favorit-Regular) format("svg");
+  src: url(fonts/1983a6d81bcd50ffb221.eot?#iefix) format("embedded-opentype"), url(fonts/1ce9d8dc716aad52899b.woff2) format("woff2"), url(fonts/80f26179711eb5e22563.woff) format("woff"), url(fonts/2b93e74fc33111dad678.ttf) format("truetype"), url(icons/c0c9c040b5f1e83ae0fd.svg#Favorit-Regular) format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -160,7 +160,7 @@ a {
 @font-face {
   font-family: "Favorit";
   src: url(fonts/11797d317f4fce665ed2.eot);
-  src: url(fonts/11797d317f4fce665ed2.eot?#iefix) format("embedded-opentype"), url(fonts/4da087de462df9159de6.woff2) format("woff2"), url(fonts/2a67078baf00d0e97aed.woff) format("woff"), url(fonts/674c33d6c5d2fb5baa48.ttf) format("truetype"), url(icons/015b4af872f4a2ccc3bc.svg#Favorit-Bold) format("svg");
+  src: url(fonts/11797d317f4fce665ed2.eot?#iefix) format("embedded-opentype"), url(fonts/4da087de462df9159de6.woff2) format("woff2"), url(fonts/2a67078baf00d0e97aed.woff) format("woff"), url(fonts/674c33d6c5d2fb5baa48.ttf) format("truetype"), url(icons/181f373f10c042f73080.svg#Favorit-Bold) format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -168,7 +168,7 @@ a {
 @font-face {
   font-family: "Favorit Bold Lining";
   src: url(fonts/701af8921cb33d76579b.eot);
-  src: url(fonts/701af8921cb33d76579b.eot?#iefix) format("embedded-opentype"), url(fonts/b561648a4151ba8abe5a.woff2) format("woff2"), url(fonts/f884291ccc4368066eef.woff) format("woff"), url(fonts/1a8278ce79525a09f993.ttf) format("truetype"), url(icons/aa6829d6ac332e996711.svg#Favorit-BoldLining) format("svg");
+  src: url(fonts/701af8921cb33d76579b.eot?#iefix) format("embedded-opentype"), url(fonts/b561648a4151ba8abe5a.woff2) format("woff2"), url(fonts/f884291ccc4368066eef.woff) format("woff"), url(fonts/1a8278ce79525a09f993.ttf) format("truetype"), url(icons/c9f40f67eaacf2fce9bc.svg#Favorit-BoldLining) format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -1033,8 +1033,96 @@ a {
 }
 
 .cta {
-  display: inline-block;
   cursor: pointer;
+  display: inline-block;
+  font-family: "Favorit", sans-serif;
+  border-radius: 25px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  font-size: 15px;
+  padding: 13px 21px;
+  letter-spacing: 0.5px;
+  max-width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: color 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+  transition: color 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+  border: 2px solid transparent;
+}
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 110%;
+  -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+          transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-transition: opacity 0.35s, background-color 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, background-color 0.35s, -webkit-transform 0.35s;
+  transition: transform 0.35s, opacity 0.35s, background-color 0.35s;
+  transition: transform 0.35s, opacity 0.35s, background-color 0.35s, -webkit-transform 0.35s;
+}
+.cta:hover:before {
+  opacity: 1;
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+          transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.cta .cta__label {
+  position: relative;
+  z-index: 5;
+}
+@media only screen and (max-width: 320px) {
+  .cta {
+    padding: 19px 20px;
+  }
+}
+
+.cta--black-green {
+  background-color: #1D1D1B;
+  -webkit-transition: all 0.35s ease-in 0s;
+  transition: all 0.35s ease-in 0s;
+  color: #fff;
+}
+.cta--black-green:hover {
+  color: #1D1D1B;
+  background-color: transparent;
+  border: 2px solid #69EFCA;
+}
+.cta--black-green:hover:before {
+  opacity: 1;
+  background-color: #69EFCA;
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+          transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.cta--black-blue {
+  background-color: #1D1D1B;
+  -webkit-transition: all 0.5s ease-in 0s;
+  transition: all 0.5s ease-in 0s;
+  color: #fff;
+}
+.cta--black-blue:hover {
+  color: #1D1D1B;
+  border-color: #69EFCA;
+  background-color: transparent;
+  border: 2px solid;
+}
+.cta--black-blue:hover:before {
+  opacity: 1;
+  background-color: #69EFCA;
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+          transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .banner {
@@ -1207,13 +1295,13 @@ a {
   font-family: "object-fit: cover;";
 }
 
-.text-image {
-  padding: 60px 0 100px;
-}
 @media only screen and (max-width: 768px) {
   .text-image {
     padding: 60px 0;
   }
+}
+.text-image.classic {
+  padding: 80px;
 }
 
 .text-image__section-title {

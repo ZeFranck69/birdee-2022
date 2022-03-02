@@ -31,5 +31,16 @@ if ( post_password_required( $timber_post->ID ) ) {
 } else {
     $context['template'] = 'page-' . $timber_post->slug;
     $context['sections'] = get_field( 'sections' );
+
+    foreach(  $context['sections'] as $key => $section ) {
+        switch ( $section['acf_fc_layout'] ) {
+            case 'collaborators' :
+                $context = array_merge( $context, Eltigre\Controllers\Collaborators::get_context() );
+                break;
+            default: 
+                break;
+        }
+    }
+
     Timber::render( array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );
 }

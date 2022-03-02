@@ -1,7 +1,10 @@
 .text-image{
-    padding: 60px 0 100px;
+    
     @include tablet{
         padding: 60px 0;
+    }
+    &.classic{
+        padding: 80px;
     }
 }
 .text-image__section-title{
