@@ -1,0 +1,37 @@
+.labels{
+
+    &.fullwidth{
+
+    }
+    &.ajust{
+        padding: 80px;
+    }
+
+}
+.labels-wrapper{
+
+    .section-part__title{
+        margin-bottom: 24px;
+    }   
+}
+.labels__list{
+    
+    .label-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1440px;
+        width: 100%;
+        margin: 52px auto;
+        flex-wrap: nowrap;
+        .label-img{
+            max-width: 186px;
+            width: 100%;
+            height: auto;
+        }
+        .label-description{
+            max-width: 1198px;
+            width: 100%;
+        }
+    }
+}

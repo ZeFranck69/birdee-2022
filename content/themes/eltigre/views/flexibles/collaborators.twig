@@ -16,7 +16,7 @@
                 <div class="collaborators__list">
                     {% for collabID in section.collaborators %}
                     <div class="collaborator-wrapper">
-                        <img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).src }}" class="collaborator-img">
+                        <img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).alt }}" class="collaborator-img">
                         <div class="collaborator-name">
                             {{ collabID.post_title }}
                         </div>

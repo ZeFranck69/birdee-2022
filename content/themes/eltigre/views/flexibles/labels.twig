@@ -9,26 +9,26 @@
                 </div>
                 {% endif %}
                 {% if section.section_description %}
-                <div class="section-part__description description--secondary" style="color:{{ section.description_color }};">
+                <div class="section-part__description description" style="color:{{ section.description_color }};">
                     {{ section.section_description }}
                 </div>
                 {% endif %}
-                <div class="labels__list">
-                    {% for collabID in section.labels %}
-                    <div class="label-wrapper">
-                        <img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).src }}" class="label-img">
-                        <div class="label-name">
-                            {{ collabID.post_title }}
+                {% if section.labels|length > 1 %}
+                    <div class="labels__list">
+                        {% for label in section.labels %}
+                        <div class="label-wrapper">
+                            {% if label.image %}
+                                <img src="{{ Image(label.image).src }}" alt="{{ Image(label.image).alt }}" class="label-img">
+                            {% endif %}
+                            {% if label.description %}
+                                <div class="label-description description">
+                                    {{ label.description }}
+                                </div>
+                            {% endif %}
                         </div>
-                        <div class="label-link--wrapper">
-                            <a href="{{ collabID.link }}" class="label-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
-                <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
+                {% endif %}
                 {% if section.cta %}
                 <div
                     class="labels__cta-wrapper {{ section.classic.cta_align }}">

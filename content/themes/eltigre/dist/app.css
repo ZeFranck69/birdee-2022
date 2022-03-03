@@ -1512,4 +1512,38 @@ a {
   margin-bottom: 46px;
 }
 
+.labels.ajust {
+  padding: 80px;
+}
+
+.labels-wrapper .section-part__title {
+  margin-bottom: 24px;
+}
+
+.labels__list .label-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  margin: 52px auto;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+.labels__list .label-wrapper .label-img {
+  max-width: 186px;
+  width: 100%;
+  height: auto;
+}
+.labels__list .label-wrapper .label-description {
+  max-width: 1198px;
+  width: 100%;
+}
+
 /*# sourceMappingURL=app.css.map*/
