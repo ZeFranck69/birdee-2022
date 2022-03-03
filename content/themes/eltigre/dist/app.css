@@ -1338,6 +1338,9 @@ a {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media only screen and (max-width: 1200px) {
   .banner__container {
@@ -1498,6 +1501,7 @@ a {
   display: flex;
   max-width: 100%;
   width: 100%;
+  height: 100%;
   margin: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1509,6 +1513,7 @@ a {
 .text-image-wrapper .text-part {
   width: 100%;
   margin-bottom: 0;
+  padding: 0 120px;
 }
 @media only screen and (max-width: 1200px) {
   .text-image-wrapper .text-part {
@@ -1562,18 +1567,35 @@ a {
   height: 30px;
   left: 0;
 }
+.text-image-wrapper .text-image__image {
+  height: 760px;
+  /* height: 100%; */
+  /* overflow: hidden; */
+  position: relative;
+  width: 760px;
+}
+.text-image-wrapper .text-image__image img {
+  max-width: 760px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  position: relative;
+}
 @media only screen and (max-width: 768px) {
-  .text-image-wrapper .image-part .text-image__image img {
+  .text-image-wrapper .text-image__image img {
     max-width: 100% !important;
   }
 }
 @media only screen and (max-width: 1024px) {
-  .text-image-wrapper .image-part .text-image__image img {
+  .text-image-wrapper .text-image__image img {
     max-width: 420px !important;
   }
 }
 @media only screen and (max-width: 320px) {
-  .text-image-wrapper .image-part .text-image__image img {
+  .text-image-wrapper .text-image__image img {
     max-width: 100% !important;
   }
 }
@@ -1660,6 +1682,7 @@ a {
   max-width: 240px;
   width: 100%;
   height: auto;
+  border-radius: 50%;
 }
 .collaborators__list .collaborator-wrapper .collaborator-link--wrapper {
   width: 40px;

@@ -30,14 +30,17 @@ if( !class_exists( 'Eltigre\Controllers\Collaborators' ) ) {
                     'thumbnail'             => get_the_post_thumbnail(),
                     'content'               => the_content(),
                     'permalink'             => get_the_permalink(),
+                    'photo'                 => $acf_fields['photo'],
                     'position'              => $acf_fields['position'],
                     'link'                  => $acf_fields['link'],
                     'quote'                 => $acf_fields['quote'],
                 );
 
+                
                 $collaborators[ $post_ID ] = $collaborator;
             }
             return $collaborators;
+
         }
     }
 }

@@ -2,7 +2,7 @@
 	style="background-color: {{ section.background_color }};">
 	<div class="banner__container banner__container--{{ section.ornaments_type }} banner__position--{{ section.layout }}">
 
-		<div class="banner__content layout--{{ section.text_layout }}">
+		<div class="banner__content layout--{{ section.text_layout }}" style="max-width: {{ section.text_width }}px;">
 			{% if section.logo %}
 				<img src="{{ section.logo.url }}" alt="{{ section.logo.url }}" class="banner-logo"> 
 			{% endif %}

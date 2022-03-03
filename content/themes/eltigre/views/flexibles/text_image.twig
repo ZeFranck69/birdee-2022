@@ -4,11 +4,9 @@
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
 			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }}">
 			{% if section.type == "classic"%}
-				{# IMAGE #}
 				<div class="text-image__image">
-					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
+					<img src="{{ section.classic_image.image.url }}" alt="{{ section.classic_image.image.alt }}" style=" max-width: {{ section.classic_image.width }}px;">
 				</div>		
-				{# TEXTE #}
 				<div class="text-part {{ section.classic.text_align }}" style=" max-width: {{ section.classic.text_width }}px;">
 					{% if section.classic.title %}
 					<div class="text-part__title title bold uppercase">
