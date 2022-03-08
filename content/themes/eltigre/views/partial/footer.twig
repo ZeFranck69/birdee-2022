@@ -30,18 +30,27 @@
 					</div>
 
 					<div class="footer__column">
-						<h4 class="column__title">{{ __('Réseaux sociaux','eltigre')}}</h4>
-						<div class="footer__socials">
-							{% for social in options.socials_media %}
-								<div class="footer-socials__social">
-										<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
-												{{ social.logo }}
-										</a>
-								</div>
+						<div class="about--menu">
+							<h4 class="column__title">{{ __('Réseaux sociaux','eltigre')}}</h4>
+							<div class="footer__socials">
+								{% for social in options.socials_media %}
+									<div class="footer-socials__social">
+											<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
+													{{ social.logo }}
+											</a>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="applications--menu">
+							<h4 class="column__title">{{ __('À propos','eltigre')}}</h4>
+							{% for app in options.applications %}
+							<a href="{{ app.link.url }}">
+								<img src="{{ Image(app.image).src }}" alt="{{ Image(app.image).alt }}">
+							</a>
 							{% endfor %}
 						</div>
-						<h4 class="column__title">{{ __('À propos','eltigre')}}</h4>
-						
+
 					</div>  
 
 			</div>
