@@ -273,6 +273,14 @@ a {
   }
 }
 
+.surtitle {
+  font-size: 30px;
+  line-height: 37.5px;
+  font-weight: 400;
+  font-family: "Favorit", sans-serif;
+  letter-spacing: -0.1px;
+}
+
 .job {
   font-size: 26px;
   line-height: 35px;
@@ -1583,9 +1591,6 @@ a {
   width: 100%;
   height: auto;
   margin: auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1625,13 +1630,6 @@ a {
     width: 100%;
     padding: 0 36px;
   }
-}
-.text-image-wrapper .text-part .text-part__surtitle {
-  font-size: 18px;
-  line-height: 1.25;
-  font-family: "Metropolis", sans-serif;
-  text-transform: uppercase;
-  margin-bottom: 10px;
 }
 .text-image-wrapper .text-part .text-part__title {
   margin-bottom: 50px;
@@ -1711,30 +1709,30 @@ a {
 .text-image-wrapper--row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 @media only screen and (max-width: 1024px) {
   .text-image-wrapper--row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-        -ms-flex-flow: column-reverse wrap;
-            flex-flow: column-reverse wrap;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 
 .text-image-wrapper--row-reverse {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
-      -ms-flex-flow: row-reverse wrap;
-          flex-flow: row-reverse wrap;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 @media only screen and (max-width: 1024px) {
   .text-image-wrapper--row-reverse {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-        -ms-flex-flow: column-reverse wrap;
-            flex-flow: column-reverse wrap;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 
