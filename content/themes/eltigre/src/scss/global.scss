@@ -105,6 +105,10 @@ a {
 	font-weight: 400;
 	font-family: 'Favorit', sans-serif;
 	letter-spacing: -0.1px;
+	@include laptop{
+		font-size: 18px;
+		line-height:24px;
+	}
 }
 
 //POSTES
@@ -156,6 +160,17 @@ a {
 .justified{
 	text-align: justify;
 }
+// BORDER-RADIUS DES SECTIONS
+.radius-top{
+	border-top-left-radius:40px;
+	border-top-right-radius:40px;
+}
+.radius-bottom{
+	border-bottom-left-radius:40px;
+	border-bottom-right-radius:40px;
+}
+
+
 
 // Modules
 
@@ -170,4 +185,5 @@ a {
 @import 'flexibles/_collaborators';
 @import 'flexibles/_simple';
 @import 'flexibles/_labels';
+@import 'flexibles/_quote';
 @import 'flexibles/_prefooter';

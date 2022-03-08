@@ -2,7 +2,7 @@
 
 	<div class="collaborators-container" style="text-align: {{ section.text_align }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
-			<div class="collaborators-wrapper">
+            <div class="collaborators-wrapper">
                 {% if section.section_title %}
                 <div class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
                     {{ section.section_title }}
@@ -13,21 +13,23 @@
                     {{ section.section_description }}
                 </div>
                 {% endif %}
-                <div class="collaborators__list">
-                    {% for collabID in section.collaborators %}
-                    <div class="collaborator-wrapper">
-
-                        <img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}" class="collaborator-img">
-                        <div class="collaborator-name">
-                            {{ collabID.post_title }}
+                <div class="collaborators__wrapper-list">
+                    <div class="collaborators__list">
+                        {% for collabID in section.collaborators %}
+                        <div class="collaborator-wrapper">
+    
+                            <img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}" class="collaborator-img">
+                            <div class="collaborator-name surtitle">
+                                {{ collabID.post_title }}
+                            </div>
+                            <div class="collaborator-link--wrapper">
+                                <a href="{{ collabID.link }}" class="collaborator-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="collaborator-link--wrapper">
-                            <a href="{{ collabID.link }}" class="collaborator-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
                 <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
                 {% if section.cta %}
@@ -40,8 +42,8 @@
                     </a>
                 </div>
                 {% endif %}
-			</div>
-		</div>
+            </div>
+        </div>
 	</div>
 </section>
 <style>

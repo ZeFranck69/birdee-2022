@@ -1,0 +1,146 @@
+.quote {
+	padding: 60px 80px 0;
+	overflow: hidden;
+	min-height: 100%;
+	height: auto; // Peut etre à supprimer quand j'aurais les images
+	@include landscape{
+		padding: 60px 40px 0;
+	}
+}
+.quote-logo{
+	max-width: 360px;
+	width: 100%;
+}
+
+.quote__container {
+	max-width: 1720px;
+	width: 100%;
+	margin: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	position: relative;
+	justify-content: center;
+	@include desktop-large{
+		margin: 0 30px;
+	}
+	@include laptop {
+		padding: 0 30px;
+		margin: 0;
+	}
+
+	@include tablet {
+		padding: 0 17px;
+		margin: 0;
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
+
+}
+.quote-content__title{
+	margin-bottom: 30px;
+}
+.quote-content__description{
+
+	p{
+		margin-bottom: 14px;
+	}
+}
+
+.quote__position--left {
+	flex-direction: row-reverse;
+	@include tablet{
+		flex-direction: column;
+	}
+	.quote__image-part{
+		margin-right: 30px;
+		@include tablet{
+			margin-right:0;
+		}
+	}
+}
+
+.quote__position--right {
+	flex-direction: row;
+	@include tablet{
+		flex-direction: column;
+	}
+	.quote__image-part{
+		margin-left: 30px;
+		text-align: center;
+		@include tablet{
+			margin-left:0;
+		}
+	}
+	
+}
+
+.quote__content {
+	position: relative;
+	z-index: 100;
+    width: 100%;
+	margin-left: 14px;
+	@include tablet{
+		text-align: left;
+		margin-top: 10px;
+		margin-left: 0;
+	}
+	.collaborator-link--wrapper{    
+		margin-top: 19px;
+
+		.collaborator-link{
+			width: 40px;
+			height: 40px;
+			margin: auto;
+			background-color: $blue;
+			border-radius: 50%;
+			padding: 9px 13px;
+			border: 1px solid transparent;
+			transition: all .4s ease-in-out;
+			&:hover{
+				background-color: transparent;
+				border: 1px solid $blue;
+				transition: all .4s ease-in-out;
+				.fab{
+					color: $blue;
+				}
+			}
+			
+			.fab{
+				color: $lightblue;
+				
+			}
+		}
+	}
+	
+}
+.quote-content__subtitle{
+	margin: 30px 0;
+}
+
+// TYPE SLASH
+.quote__image-part {
+	position: relative;
+	width: 100%;
+	@include tablet{
+		position: relative;
+		bottom: initial;
+   		width: 100%;
+		margin-top: 60px;
+	}
+	@include mobile{
+		height: auto;
+	}
+
+	.quote__image {
+		max-width: 100%;
+		width: 100%;
+		position: relative;
+		z-index: 10;
+		bottom: -3px;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		font-family: "object-fit: cover;";
+	}
+}
+

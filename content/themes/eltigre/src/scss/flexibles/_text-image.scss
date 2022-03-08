@@ -122,11 +122,9 @@
             }
         }
         @include landscape{
-            height: 412px;
             width: 412px;
         }
         @include mobile-xl{
-            height: 320px;
             width: 288px;
         }
     }

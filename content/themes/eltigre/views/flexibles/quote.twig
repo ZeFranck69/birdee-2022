@@ -1,0 +1,29 @@
+<section id="quote" class="quote {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }} {{ section.radius }}" 
+	style="background-color: {{ section.background_color }};">
+	<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+		<div class="quote__container quote__position--{{ section.layout }}">
+			{% for collabID in section.collaborator %}
+			<div class="quote__content" style="max-width: {{ section.text_width }}px;">
+	
+				<div class="quote-content__title title bold uppercase">
+					{{ collabID.quote }}
+				</div>
+				
+				<div class="quote-content__description job">
+					{{ collabID.post_title }}, {{ collabID.position }}
+				</div>
+				<div class="collaborator-link--wrapper">
+					<a href="{{ collabID.link }}" class="collaborator-link">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+				</div>
+			
+			</div>
+			<div class="quote__image-part" style="max-width:{{ section.image_block_width }}px;">
+				<img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}" class="quote__image" style="max-width:{{ section.width }}px;">			
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
