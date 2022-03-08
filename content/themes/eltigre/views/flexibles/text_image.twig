@@ -1,10 +1,10 @@
-<section id="{{ section.title|sanitize }}" class="text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "classic" : "quote" }}" style="background-color: {{ section.background_color }};">
+<section id="{{ section.title|sanitize }}" class="text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "classic" : "quote" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
 
 	<div class="text-image-container" style="text-align: {{ section.text_align }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
 			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }}">
 			{% if section.type == "classic"%}
-				<div class="text-image__image">
+				<div class="text-image__image" style="max-width: {{ section.classic_image.container_image_width }}px;">
 					<img src="{{ section.classic_image.image.url }}" alt="{{ section.classic_image.image.alt }}" style=" max-width: {{ section.classic_image.width }}px;">
 				</div>		
 				<div class="text-part {{ section.classic.text_align }}" style=" max-width: {{ section.classic.text_width }}px;">
@@ -29,7 +29,7 @@
 					</div>
 					{% endif %}
 				</div>
-			{% elseif section.type == "quote" %}
+			<!-- {% elseif section.type == "quote" %}
 				<div class="text-image__image">
 					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
 				</div>
@@ -60,7 +60,7 @@
 						</a>
 					</div>
 					{% endif %}
-				</div>
+				</div> -->
 			{% endif %}
 			</div>
 		</div>

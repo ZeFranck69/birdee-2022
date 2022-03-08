@@ -11,6 +11,7 @@
                 {% if section.picto %}
                     <img src="{{ Image(section.picto).src }}" alt="{{ Image(section.picto).alt }}" class="picto-simple">
                 {% endif %}
+                
                 {% if section.section_description %}
                     <div class="section-part__description description--secondary" style="color:{{ section.description_color }};">
                         {{ section.section_description }}

@@ -35,7 +35,9 @@ html {
   //@include desktop-large {
   //  max-width: $gridSizeLarge;
   //}
-
+  @include desktop-large{
+	  margin: 0 30px;
+  }	
   @include laptop {
     margin: 0 30px;
   }
@@ -81,6 +83,21 @@ a {
 	line-height:40px;
 	font-family: 'Favorit Bold Lining', sans-serif;
 }
+
+.title--secondary-unline{
+	font-size: 20px;
+	line-height:24px;
+	font-family: 'Favorit', sans-serif;
+	@include laptop{
+		font-size: 18px;
+		line-height: 22.48px;
+	}
+	@include tablet{
+		font-size:15px;
+		line-height: 24px;
+	}
+}
+
 //POSTES
 .job{
 	font-size: 26px;
@@ -95,6 +112,14 @@ a {
 	line-height:24px;
 	letter-spacing: -0.1px;
 	font-family: 'Favorit',sans-serif;
+	@include desktop{
+		font-size: 15px;
+		line-height: 22px;
+	}
+	@include tablet{
+		font-size:18px;
+		line-height: 24px;
+	}
 } 
 
 //BOLD
@@ -130,10 +155,10 @@ a {
 @import 'modules/_cta';
 
 // FLEXIBLES
-
-@import 'flexibles/_big-banner';
 @import 'flexibles/_banner';
+@import 'flexibles/_reasons';
 @import 'flexibles/_text-image';
 @import 'flexibles/_collaborators';
 @import 'flexibles/_simple';
 @import 'flexibles/_labels';
+@import 'flexibles/_prefooter';

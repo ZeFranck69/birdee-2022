@@ -1,0 +1,60 @@
+<section id="{{ section.title|sanitize }}" class="reasons" style="background-color: {{ section.background_color }}; ">
+    <div class="reasons-container" style="text-align: {{ section.text_align }};">
+        <div class="reasons-first-background" style="background-color: {{ section.first_background_color }};"></div>
+        <div class="reasons-second-background" style="background-color: {{ section.second_background_color }};"></div>
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="reasons-wrapper {{ section.text_align }} {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color:{{ section.background_color }}">	
+                {% if section.title %}
+					<div class="text-part__title title bold uppercase">
+						{{ section.title }}
+					</div>
+                {% endif %}
+                {% if section.description %}
+					<div class="text-part__description description--secondary" style="color:{{ section.description_color }};">
+						{{ section.description }}
+					</div>
+                {% endif %}
+                <div class="reasons__content">
+                    <div class="reasons-list">
+                        {% for reason in section.reasons %}
+                         <div class="reason">
+                            <div class="reason__title--wrapper">
+                                <img src="{{ reason.picto.url }}" alt="{{ reason.picto.alt }}" class="reason__logo">
+                                <div class="reason__title title--secondary-unline uppercase bold" style="{{ reason.title_color }}">
+                                    {{ reason.title }}
+                                </div>
+                            </div>
+                            <div class="reason__content description" style="color:{{ reason.color }}">
+                                {{ reason.content }}
+                            </div>
+                         </div>       
+                        {% endfor %}
+                    </div>
+                    <div class="reasons__text-image">
+                        <div class="reasons__text-image--left-part" style="max-width: {{ section.container_image_width }}px;">
+                            <img src="{{ Image(section.logo).src }}" alt="{{ Image(section.logo).alt }}" class="reason-picto" style="max-width: {{ section.image_width }}px;">
+                        </div>
+                        <div class="reasons__text-image--right-part" style="max-width: {{ section.container_text_width }}px;">
+                            <div class="reasons__text-image--right-part__title title--secondary-unline uppercase bold">
+                                {{ section.title }}
+                            </div>
+                            <div class="reasons__text-image--right-part__definition description">
+                                {{ section.definition }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if section.cta %}
+					<div
+						class="reasons__cta-wrapper {{ section.cta_align }}">
+						<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase bold" target="{{ section.cta.target }}">
+							<span class="cta__label">
+								{{ section.cta.title }}
+							</span>
+						</a>
+					</div>
+                {% endif %}
+			</div>
+		</div>
+	</div>
+</section>

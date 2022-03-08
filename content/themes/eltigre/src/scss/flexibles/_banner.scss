@@ -28,12 +28,17 @@
 	align-items: center;
 	position: relative;
 	justify-content: center;
+	@include desktop-large{
+		margin: 0 30px;
+	}
 	@include laptop {
 		padding: 0 30px;
+		margin: 0;
 	}
 
 	@include tablet {
-		padding: 0 30px;
+		padding: 0 17px;
+		margin: 0;
 		flex-direction: column-reverse;
 		justify-content: center;
 	}
@@ -69,6 +74,7 @@
 	}
 	.banner__image-part{
 		margin-left: 30px;
+		text-align: center;
 		@include tablet{
 			margin-left:0;
 		}

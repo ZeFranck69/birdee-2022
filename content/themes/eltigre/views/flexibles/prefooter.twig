@@ -1,0 +1,40 @@
+<section id="prefooter" class="prefooter"
+	style="background-color: {{ section.background_color }};">
+	<div class="prefooter__container prefooter__container--{{ section.ornaments_type }} prefooter__position--{{ section.layout }}">
+
+		<div class="prefooter__content layout--{{ section.text_layout }}" style="max-width: {{ section.text_width }}px;">
+			{% if section.logo %}
+				<img src="{{ section.logo.url }}" alt="{{ section.logo.url }}" class="prefooter-logo"> 
+			{% endif %}
+			{% if section.title %}
+			<div class="prefooter-content__title title bold uppercase">
+				{{ section.title }} 
+			</div>
+			{% endif %}
+			{% if section.description %}
+			<div class="prefooter-content__description description">
+				{{ section.description }} 
+			</div>
+			{% endif %}
+			{% if section.cta_application|length > 1 %}
+			<div class="prefooter-content__cta-wrapper">
+				{% for app in section.cta_application %}
+				<div class="prefooter-app">
+					<a href="{{ app.link.url }}" class="app-link" target="_blank">
+						<img src="{{ Image(app.image).src }}" alt="{{ Image(app.image).alt }}">
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+		<div class="prefooter__image-part" style="max-width:{{ section.image_block_width }}px;">
+			{% if section.image %}
+				<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="prefooter__image" style="max-width:{{ section.width }}px;">
+			{% endif %}
+			
+		</div>
+
+	</div>
+</section>
+
