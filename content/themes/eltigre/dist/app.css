@@ -356,7 +356,6 @@ a {
 }
 
 #site-header {
-  position: fixed;
   max-width: 100%;
   width: 100%;
   top: 0;
@@ -375,6 +374,7 @@ a {
   display: none;
 }
 #site-header.sticky {
+  position: fixed;
   background-color: #9294FB;
   -webkit-transition: background-color 0.2s ease 0.1s;
   transition: background-color 0.2s ease 0.1s;

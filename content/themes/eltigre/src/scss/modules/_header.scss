@@ -5,7 +5,7 @@ $transition_speed: .2s;
 }
 
 #site-header {
-	position: fixed;
+	
 	max-width: 100%;
 	width: 100%;
 	top: 0;
@@ -29,6 +29,7 @@ $transition_speed: .2s;
 
 	}
 	&.sticky {
+		position: fixed;
 		background-color: $blue;
 		transition: background-color $transition_speed ease .1s;
 		border-bottom:0px solid $black;

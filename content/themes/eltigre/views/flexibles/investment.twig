@@ -1,0 +1,62 @@
+<section id="{{ section.title|sanitize }}" class="investment {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }}" style="background-color: {{ section.background_color }};">
+
+	<div class="investment-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+            <div class="investment-wrapper">
+                {% if section.surtitle %}
+                    <div class="section-part__title surtitle" style="color:{{ section.surtitle_color }};">
+                        {{ section.surtitle }}
+                    </div>
+                {% endif %}
+                {% if section.section_title %}
+                    <div class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
+                        {{ section.section_title }}
+                    </div>
+                {% endif %}
+                {% if section.section_description %}
+                    <div class="section-part__description description" style="color:{{ section.description_color }};">
+                        {{ section.section_description }}
+                    </div>
+                {% endif %}
+                <div class="investment__wrapper-list">
+                    <div class="investment__list">
+                        {% for collabID in section.collaborators %}
+                        <div class="collaborator-wrapper">
+    
+                            <img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}" class="collaborator-img">
+                            <div class="collaborator-name surtitle">
+                                {{ collabID.post_title|split(' ')[0] }}
+                            </div>
+                            <div class="collaborator-link--wrapper">
+                                <a href="{{ collabID.link }}" class="collaborator-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if section.position %}
+                    <div class="section-part__description surtitle" style="color:{{ section.position_color }};">
+                        {{ section.position }}
+                    </div>
+                {% endif %}
+                <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
+                {% if section.cta %}
+                <div
+                    class="investment__cta-wrapper {{ section.classic.cta_align }}">
+                    <a href="{{ section.classic.cta.url }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
+                        <span class="cta__label">
+                            {{ section.cta.title }}
+                        </span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+	</div>
+</section>
+<style>
+
+
+</style>
