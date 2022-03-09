@@ -5,9 +5,9 @@
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
 			<div class="reasons-wrapper {{ section.text_align }} {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color:{{ section.background_color }}">	
                 {% if section.title %}
-					<div class="text-part__title title bold uppercase">
+					<h2 class="text-part__title title bold uppercase">
 						{{ section.title }}
-					</div>
+					</h2>
                 {% endif %}
                 {% if section.description %}
 					<div class="text-part__description description" style="color:{{ section.description_color }};">
@@ -20,9 +20,9 @@
                          <div class="reason">
                             <div class="reason__title--wrapper">
                                 <img src="{{ reason.picto.url }}" alt="{{ reason.picto.alt }}" class="reason__logo">
-                                <div class="reason__title title--secondary-unline uppercase bold" style="{{ reason.title_color }}">
+                                <h3 class="reason__title title--secondary-unline uppercase bold" style="{{ reason.title_color }}">
                                     {{ reason.title }}
-                                </div>
+                                </h3>
                             </div>
                             <div class="reason__content description" style="color:{{ reason.color }}">
                                 {{ reason.content }}

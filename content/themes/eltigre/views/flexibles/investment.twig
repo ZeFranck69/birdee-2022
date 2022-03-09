@@ -4,14 +4,14 @@
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
             <div class="investment-wrapper">
                 {% if section.surtitle %}
-                    <div class="section-part__title surtitle" style="color:{{ section.surtitle_color }};">
+                    <h4 class="section-part__title surtitle" style="color:{{ section.surtitle_color }};">
                         {{ section.surtitle }}
-                    </div>
+                    </h4>
                 {% endif %}
                 {% if section.section_title %}
-                    <div class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
+                    <h4 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
                         {{ section.section_title }}
-                    </div>
+                    </h4>
                 {% endif %}
                 {% if section.section_description %}
                     <div class="section-part__description surtitle" style="color:{{ section.description_color }};">
@@ -37,9 +37,9 @@
                     </div>
                 </div>
                 {% if section.position %}
-                    <div class="section-part__description surtitle" style="color:{{ section.position_color }};">
+                    <h4 class="section-part__description surtitle" style="color:{{ section.position_color }};">
                         {{ section.position }}
-                    </div>
+                    </h4>
                 {% endif %}
                 <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
                 {% if section.cta %}

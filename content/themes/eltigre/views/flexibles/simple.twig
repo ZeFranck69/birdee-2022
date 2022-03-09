@@ -4,9 +4,9 @@
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
 			<div class="simple-wrapper">
                 {% if section.section_title %}
-                    <div class="section-part__title title--secondary bold uppercase" style="color:{{ section.title_color }};">
+                    <h2 class="section-part__title title--secondary bold uppercase" style="color:{{ section.title_color }};">
                         {{ section.section_title }}
-                    </div>
+                    </h2>
                 {% endif %}
                 {% if section.picto %}
                     <img src="{{ Image(section.picto).src }}" alt="{{ Image(section.picto).alt }}" class="picto-simple">

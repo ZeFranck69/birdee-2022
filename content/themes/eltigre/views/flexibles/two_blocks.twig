@@ -4,28 +4,30 @@
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
 			<div class="two-blocks-wrapper two-blocks-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
 				<div class="two-blocks__buttons-part" style="max-width: {{ section.container_width }}px;">
-					<img src="{{ section.picto.url }}" alt="{{ section.picto.alt }}">
+					{% if section.picto.url %}
+						<img src="{{ section.picto.url }}" alt="{{ section.picto.alt }}" class="questions-picto">
+					{% endif %}
 					{% if section.buttons|length > 1  %}
-					<div class="buttons-wrapper__list">
-						{% for cta in section.buttons %}
-							<div class="cta-wrapper {{ section.cta_align }}">
-								<a href="{{ cta.link.url }}" class="cta {{ cta.cta_color }}" target="{{ section.link.target }}">
-									<span class="cta__label">
-										{{ cta.link.title }}
-									</span>
-								</a>
-							</div>
-						{% endfor %}
-					</div>
+						<div class="buttons-wrapper__list">
+							{% for cta in section.buttons %}
+								<div class="cta-wrapper {{ section.cta_align }}">
+									<a href="{{ cta.link.url }}" class="cta {{ cta.cta_color }}" target="{{ section.link.target }}">
+										<span class="cta__label">
+											{{ cta.link.title }}
+										</span>
+									</a>
+								</div>
+							{% endfor %}
+						</div>
 					{% endif %}
 				</div>
 				<div class="text-part__container" style="max-width: {{ section.text_container_width }}px;">
 
-					<div class="text- {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
+					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
 						{% if section.title %}
-							<div class="text-part__title title bold uppercase">
+							<h2 class="text-part__title title bold uppercase">
 								{{ section.title }}
-							</div>
+							</h2>
 						{% endif %}
 						{% if section.description %}
 							<div class="text-part__description description" style="color:{{ section.description_color }};">
@@ -36,7 +38,7 @@
 						<div class="operators__list">
 							{% for collabID in section.operators %}
 							<div class="operator-wrapper">
-								<img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).alt }}">
+								<img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}">
 								<p class="operator-name"> {{ collabID.post_title|split(' ')[0] }} </p>
 							</div>
 							{% endfor %}
