@@ -125,10 +125,10 @@ a {
 	line-height:24px;
 	letter-spacing: -0.1px;
 	font-family: 'Favorit',sans-serif;
-	@include desktop{
-		font-size: 15px;
-		line-height: 22px;
-	}
+	// @include desktop{
+	// 	font-size: 15px;
+	// 	line-height: 22px;
+	// }
 	@include tablet{
 		font-size:18px;
 		line-height: 24px;
@@ -164,10 +164,18 @@ a {
 .radius-top{
 	border-top-left-radius:40px;
 	border-top-right-radius:40px;
+	@include mobile-xl{
+		border-top-left-radius:0px;
+		border-top-right-radius:0px;
+	}
 }
 .radius-bottom{
 	border-bottom-left-radius:40px;
 	border-bottom-right-radius:40px;
+	@include mobile-xl{
+		border-bottom-left-radius:0px;
+		border-bottom-right-radius:0px;
+	}
 }
 
 
@@ -182,7 +190,9 @@ a {
 @import 'flexibles/_banner';
 @import 'flexibles/_reasons';
 @import 'flexibles/_text-image';
+@import 'flexibles/_two-blocks';
 @import 'flexibles/_collaborators';
+@import 'flexibles/investment';
 @import 'flexibles/_simple';
 @import 'flexibles/_labels';
 @import 'flexibles/_quote';

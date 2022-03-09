@@ -1,4 +1,4 @@
-.text-image{
+.two-blocks{
     
     @include tablet{
         padding: 60px 0;
@@ -14,10 +14,10 @@
         }
     }
 }
-.text-image__section-title{
+.two-blocks__section-title{
     text-align: center;
 }
-.text-image__section-title {
+.two-blocks__section-title {
 	font-family: "Metropolis", sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -25,7 +25,7 @@
 	line-height: 45px;
 	margin-bottom: 30px;
 }
-.text-image-wrapper{
+.two-blocks-wrapper{
     display: flex;
     max-width: 100%;
     width: 100%;
@@ -101,7 +101,7 @@
 
     }
 
-    .text-image__image{
+    .two-blocks__image{
 
         height: auto;
         /* height: 100%; */
@@ -137,23 +137,23 @@
         }
     }
 }
-.text-image-wrapper--row{
+.two-blocks-wrapper--row{
     flex-direction: row;
     @include landscape{
         flex-direction: column-reverse;
     }
 }
-.text-image-wrapper--row-reverse{
+.two-blocks-wrapper--row-reverse{
     flex-direction: row-reverse;
 	@include landscape{
 		flex-direction: column-reverse;
 	}
 }
-.text-image__cta-wrapper{
+.two-blocks__cta-wrapper{
     @include tablet{
         margin-bottom: 28px;
     }
-    &.text-image__cta-margin-top{
+    &.two-blocks__cta-margin-top{
         margin-top: 30px;
     }
 }

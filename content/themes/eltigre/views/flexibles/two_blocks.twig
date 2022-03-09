@@ -1,0 +1,54 @@
+<section id="{{ section.title|sanitize }}" class="two-blocks {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "classic" : "quote" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+
+	<div class="two-blocks-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="two-blocks-wrapper two-blocks-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+				<div class="two-blocks__buttons-part" style="max-width: {{ section.container_width }}px;">
+					<img src="{{ section.picto.url }}" alt="{{ section.picto.alt }}">
+					{% if section.buttons|length > 1  %}
+					<div class="buttons-wrapper__list">
+						{% for cta in section.buttons %}
+							<div class="cta-wrapper {{ section.cta_align }}">
+								<a href="{{ cta.link.url }}" class="cta {{ cta.cta_color }}" target="{{ section.link.target }}">
+									<span class="cta__label">
+										{{ cta.link.title }}
+									</span>
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				<div class="text-part__container" style="max-width: {{ section.text_container_width }}px;">
+
+					<div class="text- {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
+						{% if section.title %}
+							<div class="text-part__title title bold uppercase">
+								{{ section.title }}
+							</div>
+						{% endif %}
+						{% if section.description %}
+							<div class="text-part__description description" style="color:{{ section.description_color }};">
+								{{ section.description }}
+							</div>
+						{% endif %}
+						{% if section.operators|length > 0 %}
+						<div class="operators__list">
+							{% for collabID in section.operators %}
+							<div class="operator-wrapper">
+								<img src="{{ Image(collabID.image).src }}" alt="{{ Image(collabID.image).alt }}">
+								<p class="operator-name"> {{ collabID.post_title|split(' ')[0] }} </p>
+							</div>
+							{% endfor %}
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>

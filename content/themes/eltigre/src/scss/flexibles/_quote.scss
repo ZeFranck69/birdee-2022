@@ -4,7 +4,15 @@
 	min-height: 100%;
 	height: auto; // Peut etre à supprimer quand j'aurais les images
 	@include landscape{
-		padding: 60px 40px 0;
+		padding: 40px 40px 0;
+	}
+	@include tablet{
+		padding: 40px 17px;
+
+	}
+	@include mobile-xl{
+		margin: 0;
+		padding: 40px 0;
 	}
 }
 .quote-logo{
@@ -18,19 +26,17 @@
 	margin: auto;
 	height: 100%;
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	position: relative;
 	justify-content: center;
-	@include desktop-large{
-		margin: 0 30px;
-	}
+
 	@include laptop {
 		padding: 0 30px;
 		margin: 0;
 	}
 
 	@include tablet {
-		padding: 0 17px;
+		padding: 0 35px;
 		margin: 0;
 		flex-direction: column-reverse;
 		justify-content: center;
@@ -51,11 +57,13 @@
 	flex-direction: row-reverse;
 	@include tablet{
 		flex-direction: column;
+		align-items: center;
 	}
 	.quote__image-part{
 		margin-right: 30px;
 		@include tablet{
 			margin-right:0;
+			
 		}
 	}
 }
@@ -86,27 +94,29 @@
 		margin-left: 0;
 	}
 	.collaborator-link--wrapper{    
-		margin-top: 19px;
+		margin: 19px 0; 
 
 		.collaborator-link{
-			width: 40px;
-			height: 40px;
-			margin: auto;
-			background-color: $blue;
-			border-radius: 50%;
-			padding: 9px 13px;
-			border: 1px solid transparent;
-			transition: all .4s ease-in-out;
+			
 			&:hover{
-				background-color: transparent;
-				border: 1px solid $blue;
-				transition: all .4s ease-in-out;
+
 				.fab{
+					background-color: transparent;
+					border: 1px solid $blue;
+					transition: all .4s ease-in-out;
 					color: $blue;
 				}
 			}
 			
 			.fab{
+				width: 40px;
+				height: 40px;
+				margin: auto;
+				background-color: $blue;
+				border-radius: 50%;
+				padding: 11px 12px;
+				border: 1px solid transparent;
+				transition: all .4s ease-in-out;
 				color: $lightblue;
 				
 			}
@@ -122,11 +132,16 @@
 .quote__image-part {
 	position: relative;
 	width: 100%;
+	@include landscape
+	{
+		max-width: 241px !important;
+	}
 	@include tablet{
 		position: relative;
 		bottom: initial;
    		width: 100%;
-		margin-top: 60px;
+		margin-top: 48px;
+		max-width: 309px !important;
 	}
 	@include mobile{
 		height: auto;
@@ -141,6 +156,13 @@
 		-o-object-fit: cover;
 		   object-fit: cover;
 		font-family: "object-fit: cover;";
+		border-top-left-radius: 40px;
+		border-top-right-radius: 40px;
+		@include tablet{
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			bottom: 0;
+		}
 	}
 }
 

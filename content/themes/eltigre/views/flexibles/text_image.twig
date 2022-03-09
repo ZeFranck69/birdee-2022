@@ -5,33 +5,36 @@
 			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
 				<div class="text-image__image" style="max-width: {{ section.container_image_width }}px;">
 					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
-				</div>		
-				<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
-					{% if section.surtitle %}
-					<div class="text-part__surtitle surtitle">
-						{{ section.surtitle }}
+				</div>
+				<div class="text-part__container" style="max-width: {{ section.text_container_width }}px;">
+
+					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
+						{% if section.surtitle %}
+						<div class="text-part__surtitle surtitle">
+							{{ section.surtitle }}
+						</div>
+						{% endif %}
+						{% if section.title %}
+						<div class="text-part__title title bold uppercase">
+							{{ section.title }}
+						</div>
+						{% endif %}
+						{% if section.description %}
+						<div class="text-part__description description" style="color:{{ section.description_color }};">
+							{{ section.description }}
+						</div>
+						{% endif %}
+						{% if section.cta %}
+						<div
+							class="text-image__cta-wrapper {{ section.cta_align }}">
+							<a href="{{ section.cta.url }}" class="cta cta--black-green" target="{{ section.cta.target }}">
+								<span class="cta__label">
+									{{ section.cta.title }}
+								</span>
+							</a>
+						</div>
+						{% endif %}
 					</div>
-					{% endif %}
-					{% if section.title %}
-					<div class="text-part__title title bold uppercase">
-						{{ section.title }}
-					</div>
-					{% endif %}
-					{% if section.description %}
-					<div class="text-part__description description" style="color:{{ section.description_color }};">
-						{{ section.description }}
-					</div>
-					{% endif %}
-					{% if section.cta %}
-					<div
-						class="text-image__cta-wrapper {{ section.cta_align }}">
-						<a href="{{ section.cta.url }}" class="cta cta--black-green" target="{{ section.cta.target }}">
-							<span class="cta__label">
-								{{ section.cta.title }}
-							</span>
-						</a>
-					</div>
-					{% endif %}
 				</div>
 			</div>
 		</div>

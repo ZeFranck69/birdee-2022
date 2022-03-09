@@ -5,13 +5,25 @@
     }
     &.ajust{
         padding: 80px;
+		@include tablet{
+			padding: 40px;
+		}
+		@include mobile-xl{
+			margin: 0;
+			padding: 40px 17px;
+		}
     }
 
 }
 .labels-wrapper{
 
+	
+
     .section-part__title{
         margin-bottom: 24px;
+		@include mobile-xl{
+			margin-bottom: 40px;
+		}
     }   
 }
 .labels__list{
@@ -24,14 +36,34 @@
         width: 100%;
         margin: 52px auto;
         flex-wrap: nowrap;
+		@include tablet{
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		@include mobile-xl{
+			margin: 11px auto;
+		}
         .label-img{
             max-width: 186px;
             width: 100%;
             height: auto;
+			@include landscape{
+				max-width: 140px;
+			}
+			@include tablet{
+				max-width: 78px;
+				margin-bottom: 6px;
+			}
         }
         .label-description{
             max-width: 1198px;
             width: 100%;
+			@include desktop{
+				max-width: 780px;
+			}
+			@include laptop{
+				max-width:622px;
+			}
         }
     }
 }
