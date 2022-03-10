@@ -40,8 +40,12 @@
 		}
 	}
 }
+
 .cta-picto__container{
 	display: flex;
+	@include tablet{
+		flex-direction: column-reverse;
+	}
 	&.justify-center{
 		justify-content: center;
 	}
@@ -49,6 +53,25 @@
 		justify-content: space-between;
 	}
 }
+
 .simple__cta-wrapper{
 	max-width: 310px;
+}
+.simple__labels-wrapper{
+	@include tablet{
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 33px;
+	}
+}
+.simple-label{
+	max-width: 92px;
+	width: 100%;
+	height: auto;
+	&:first-child{
+		margin-right: 10px;
+	}
+	@include tablet{
+		max-width: 56px;
+	}
 }

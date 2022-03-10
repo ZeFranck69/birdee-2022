@@ -32,7 +32,7 @@
 						<div class="simple__labels-wrapper">
 							{% for label in section.labels %}
 							<a href="{{ label.link.url }}" class="label-picto" target="{{ label.link.target }}">
-								<img src="{{ Image(label.label).src }}" alt="{{ Image(label.label).alt }}">
+								<img src="{{ Image(label.label).src }}" alt="{{ Image(label.label).alt }}" class="simple-label">
 							</a>
 							{% endfor %}
 						</div>

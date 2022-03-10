@@ -2410,6 +2410,14 @@ a {
   display: -ms-flexbox;
   display: flex;
 }
+@media only screen and (max-width: 768px) {
+  .cta-picto__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
 .cta-picto__container.justify-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -2423,6 +2431,32 @@ a {
 
 .simple__cta-wrapper {
   max-width: 310px;
+}
+
+@media only screen and (max-width: 768px) {
+  .simple__labels-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-bottom: 33px;
+  }
+}
+
+.simple-label {
+  max-width: 92px;
+  width: 100%;
+  height: auto;
+}
+.simple-label:first-child {
+  margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .simple-label {
+    max-width: 56px;
+  }
 }
 
 .trustpilot {
