@@ -81,7 +81,9 @@
 		}
 		&.picto-only{
 			width: 100%;
-    		max-width: 220px !important;
+			@include laptop{
+				max-width: 220px !important;
+			}
 			@include tablet{
 				display: none;
 			}

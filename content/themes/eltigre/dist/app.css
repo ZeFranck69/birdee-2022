@@ -369,6 +369,28 @@ a {
   }
 }
 
+.radius-top-bottom {
+  border-radius: 40px;
+}
+@media only screen and (max-width: 590px) {
+  .radius-top-bottom {
+    border-radius: 40px;
+  }
+}
+
+.radius-three-corner {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+@media only screen and (max-width: 590px) {
+  .radius-three-corner {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -1225,6 +1247,29 @@ a {
           transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
+.cta-green {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #69EFCA;
+  -webkit-transition: all 0.5s ease-in 0s;
+  transition: all 0.5s ease-in 0s;
+  color: #1D1D1B;
+  padding: 10px 5px;
+}
+.cta-green:hover {
+  color: #fff;
+  background-color: #9294FB;
+  border: 2px solid #9294FB;
+}
+.cta-green:hover:before {
+  opacity: 1;
+  background-color: #9294FB;
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+          transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
 .cta-black {
   margin-bottom: 10px;
   width: 100%;
@@ -1971,7 +2016,11 @@ a {
 }
 .two-blocks-wrapper .text-part__container.picto-only {
   width: 100%;
-  max-width: 220px !important;
+}
+@media only screen and (max-width: 1200px) {
+  .two-blocks-wrapper .text-part__container.picto-only {
+    max-width: 220px !important;
+  }
 }
 @media only screen and (max-width: 768px) {
   .two-blocks-wrapper .text-part__container.picto-only {
@@ -2342,6 +2391,38 @@ a {
   margin-bottom: 90px;
   font-size: 36px;
   line-height: 56px;
+  font-family: "Favorit Bold Lining", sans-serif;
+}
+.simple-wrapper.text-only .section-part__description {
+  margin-bottom: 46px;
+  font-size: 30px;
+  line-height: 37.8px;
+}
+@media only screen and (max-width: 768px) {
+  .simple-wrapper.text-only .section-part__description {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.cta-picto__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cta-picto__container.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.cta-picto__container.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.simple__cta-wrapper {
+  max-width: 310px;
 }
 
 .trustpilot {

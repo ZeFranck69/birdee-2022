@@ -187,6 +187,22 @@ a {
 		border-bottom-right-radius:0px;
 	}
 }
+.radius-top-bottom{
+	border-radius: 40px;
+	@include mobile-xl{
+		border-radius: 40px;
+	}
+}
+.radius-three-corner{
+	border-top-left-radius:40px;
+	border-top-right-radius:40px;
+	border-bottom-right-radius:40px;
+	@include mobile-xl{
+		border-top-left-radius:0px;
+		border-top-right-radius:0px;
+		border-bottom-right-radius:0px;
+	}
+}
 
 
 

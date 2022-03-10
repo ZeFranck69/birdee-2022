@@ -27,7 +27,28 @@
 			margin-bottom: 90px;
 			font-size: 36px;
 			line-height: 56px;
-			
+			font-family: 'Favorit Bold Lining', sans-serif;
+		}
+		.section-part__description{
+			margin-bottom: 46px;
+			font-size: 30px;
+			line-height: 37.8px;
+			@include tablet{
+				font-size: 18px;
+				line-height: 24px;
+			}
 		}
 	}
+}
+.cta-picto__container{
+	display: flex;
+	&.justify-center{
+		justify-content: center;
+	}
+	&.space-between{
+		justify-content: space-between;
+	}
+}
+.simple__cta-wrapper{
+	max-width: 310px;
 }
