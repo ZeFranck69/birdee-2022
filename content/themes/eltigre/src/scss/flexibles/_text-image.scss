@@ -37,6 +37,8 @@
     }
 	.text-part__container{
 		width: 100%;
+		display: flex;
+    	justify-content: center;
 	}
     .text-part{
         // max-width: 700px;

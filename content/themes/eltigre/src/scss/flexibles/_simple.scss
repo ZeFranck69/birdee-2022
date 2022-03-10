@@ -2,7 +2,12 @@
 
     &.fullwidth{
         padding: 120px 80px;
-
+		@include tablet{
+			padding: 40px;
+		}
+		@include mobile-xl{
+			padding: 40px 0px;
+		}
     }
 
 }
@@ -14,5 +19,15 @@
     .section-part__description{
         margin-bottom: 46px;
     }
-    
+    .picto-simple{
+		margin-bottom: 39px;
+	}
+	&.text-only{
+		.section-part__title{
+			margin-bottom: 90px;
+			font-size: 36px;
+			line-height: 56px;
+			
+		}
+	}
 }

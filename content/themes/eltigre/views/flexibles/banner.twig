@@ -7,7 +7,7 @@
 				<img src="{{ section.logo.url }}" alt="{{ section.logo.url }}" class="banner-logo"> 
 			{% endif %}
 			{% if section.title %}
-			<h1 class="banner-content__title title bold uppercase">
+			<h1 class="banner-content__title title-banner bold uppercase">
 				{{ section.title }} 
 			</h1>
 			{% endif %}
@@ -25,6 +25,11 @@
 						</span>	
 					</a>
 				</div>
+			</div>
+			{% endif %}
+			{% if section.trustpilot %}	
+			<div class="trustpilot__wrapper">
+				{{ section.trustpilot }}
 			</div>
 			{% endif %}
 		</div>

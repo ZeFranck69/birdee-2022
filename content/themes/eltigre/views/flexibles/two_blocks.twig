@@ -2,13 +2,28 @@
 
 	<div class="two-blocks-container" style="text-align: {{ section.text_align }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			{% if section.button_title %}
+				<div class="button_title-wrapper--landscape">
+					<h2 class="text-part__title title bold uppercase" style="color: {{ section.button_title_color }};"> 
+						{{ section.button_title }}
+					</h2>
+				</div>
+			{% endif %}
 			<div class="two-blocks-wrapper two-blocks-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
-				<div class="two-blocks__buttons-part" style="max-width: {{ section.container_width }}px;">
+				
+				<div class="two-blocks__buttons-part {{ section.choice }}" style="max-width: {{ section.container_width }}px;">
+					{% if section.button_title %}
+						<div class="button_title-wrapper">
+							<h2 class="text-part__title title bold uppercase" style="color: {{ section.button_title_color }};"> 
+								{{ section.button_title }}
+							</h2>
+						</div>
+					{% endif %}
 					{% if section.picto.url %}
 						<img src="{{ section.picto.url }}" alt="{{ section.picto.alt }}" class="questions-picto">
 					{% endif %}
 					{% if section.buttons|length > 1  %}
-						<div class="buttons-wrapper__list">
+						<div class="buttons-wrapper__list" style="max-width: {{ section.width }}px;">
 							{% for cta in section.buttons %}
 								<div class="cta-wrapper {{ section.cta_align }}">
 									<a href="{{ cta.link.url }}" class="cta {{ cta.cta_color }}" target="{{ section.link.target }}">
@@ -21,8 +36,8 @@
 						</div>
 					{% endif %}
 				</div>
-				<div class="text-part__container" style="max-width: {{ section.text_container_width }}px;">
-
+				<div class="text-part__container {{ section.choice }}" style="max-width: {{ section.text_container_width }}px;">
+					{% if section.choice == "text-collab" %}
 					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
 						{% if section.title %}
 							<h2 class="text-part__title title bold uppercase">
@@ -38,13 +53,18 @@
 						<div class="operators__list">
 							{% for collabID in section.operators %}
 							<div class="operator-wrapper">
-								<img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}">
-								<p class="operator-name"> {{ collabID.post_title|split(' ')[0] }} </p>
+								<img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}" class="operator-image">
+								<h4 class="operator-name"> {{ collabID.post_title|split(' ')[0] }} </h4>
 							</div>
 							{% endfor %}
 						</div>
 						{% endif %}
 					</div>
+					{% elseif section.choice == "picto-only" %}
+					<div class="text-picto__wrapper">
+						<img src="{{ section.text_picto.url }}" alt="{{ section.text_picto.alt }}" class="questions-text-picto">
+					</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>

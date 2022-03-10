@@ -1,0 +1,38 @@
+<section id="trustpilot" class="trustpilot {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}"
+	style="background-color: {{ section.background_color }}; margin-top: {{ section.margin_top }}px; margin-bottom: {{ section.margin_bottom }}px;" >
+	<div class="trustpilot__container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="trustpilot__content layout--{{ section.text_layout }}" style="max-width: {{ section.text_width }}px;">
+				{% if section.logo %}
+					<img src="{{ section.logo.url }}" alt="{{ section.logo.url }}" class="trustpilot-logo"> 
+				{% endif %}
+				{% if section.section_title %}
+				<h2 class="trustpilot-content__title title bold uppercase" style="color: {{ section.title_color }};">
+					{{ section.section_title }} 
+				</h2>
+				{% endif %}
+				{% if section.section_description %}
+				<div class="trustpilot-content__description description" style="color: {{ section.description_color }};">
+					{{ section.section_description }} 
+				</div>
+				{% endif %}
+			</div>
+			<!-- Iframe  -->
+			<div class="trustpilot__iframe-part">
+				{% if section.iframe %}
+					{{ section.iframe }}
+				{% endif %}
+			</div>
+			<!-- CTA -->
+			{% if section.cta %}
+				<div class="trustpilot-content__cta-wrapper">
+					<a href="{{ section.cta.url }}" class="trustpilot-link cta cta--black-blue" target="{{ section.cta.target }}">
+						<span class="cta__label">
+							{{ section.cta.title }}
+						</span>
+					</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

@@ -1,32 +1,43 @@
 <section id="{{ section.title|sanitize }}" class="simple {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }}" style="background-color: {{ section.background_color }};">
-
+{# METTRE LA POSSIBILITE DE RAJOUTER UNE IMAGE EN BACKGROUND #}
 	<div class="simple-container" style="text-align: {{ section.text_align }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
-			<div class="simple-wrapper">
-                {% if section.section_title %}
-                    <h2 class="section-part__title title--secondary bold uppercase" style="color:{{ section.title_color }};">
-                        {{ section.section_title }}
-                    </h2>
-                {% endif %}
-                {% if section.picto %}
-                    <img src="{{ Image(section.picto).src }}" alt="{{ Image(section.picto).alt }}" class="picto-simple">
-                {% endif %}
-                
-                {% if section.section_description %}
-                    <div class="section-part__description description" style="color:{{ section.description_color }};">
-                        {{ section.section_description }}
-                    </div>
-                {% endif %}
-                {% if section.cta %}
-                    <div
-                        class="simple__cta-wrapper">
-                        <a href="{{ section.cta.url }}" class="cta {{ section.background_color == "#69efca" ? "cta--black-blue" : "cta--black-green"  }} uppercase" target="{{ section.cta.target }}">
-                            <span class="cta__label">
-                                {{ section.cta.title }}
-                            </span>
-                        </a>
-                    </div>
-                {% endif %}
+			<div class="simple-wrapper {{ section.display_type }}">
+				{% if section.section_title %}
+						<h2 class="section-part__title bold uppercase" style="color:{{ section.title_color }};">
+								{{ section.section_title }}
+						</h2>
+				{% endif %}
+				{% if section.picto %}
+						<img src="{{ Image(section.picto).src }}" alt="{{ Image(section.picto).alt }}" class="picto-simple">
+				{% endif %}
+				
+				{% if section.section_description %}
+						<div class="section-part__description description" style="color:{{ section.description_color }};">
+								{{ section.section_description }}
+						</div>
+				{% endif %}
+				<div class="cta-picto__container">
+					{% if section.cta %}
+							<div
+									class="simple__cta-wrapper">
+									<a href="{{ section.cta.url }}" class="cta {{ section.cta_color }} uppercase" target="{{ section.cta.target }}">
+											<span class="cta__label">
+													{{ section.cta.title }}
+											</span>
+									</a>
+							</div>
+					{% endif %}
+					{% if section.labels|length > 0 %}
+						<div class="simple__labels-wrapper">
+							{% for label in section.labels %}
+							<a href="{{ label.link.url }}" class="label-picto" target="{{ label.link.target }}">
+								<img src="{{ Image(label.label).src }}" alt="{{ Image(label.label).alt }}">
+							</a>
+							{% endfor %}
+						</div>
+					{% endif  %}
+				</div>
 			</div>
 		</div>
 	</div>

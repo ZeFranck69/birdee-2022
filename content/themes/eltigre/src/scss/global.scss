@@ -68,8 +68,18 @@ a {
 }
 
 //TITRES
-.title{
+.title-banner{
 	font-size: 40px;
+	line-height:56px;
+	font-family: 'Favorit Bold Lining', sans-serif;
+	@include laptop{
+		font-size: 25px;
+		line-height:40px;
+	}
+}
+
+.title{
+	font-size: 36px;
 	line-height:56px;
 	font-family: 'Favorit Bold Lining', sans-serif;
 	@include laptop{
@@ -194,6 +204,7 @@ a {
 @import 'flexibles/_collaborators';
 @import 'flexibles/investment';
 @import 'flexibles/_simple';
+@import 'flexibles/_trustpilot';
 @import 'flexibles/_labels';
 @import 'flexibles/_quote';
 @import 'flexibles/_prefooter';

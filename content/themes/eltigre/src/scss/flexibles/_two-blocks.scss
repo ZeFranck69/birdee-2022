@@ -4,7 +4,7 @@
         padding: 60px 0;
     }
 	@include landscape{
-		padding: 40px !important;
+		padding: 40px 0 !important;
 	}
 	@include mobile-xl{
 		padding: 40px 0 !important;
@@ -37,8 +37,19 @@
     }
 	.text-part__container{
 		width: 100%;
+		// max-width: 640px !important;
 		.operators__list{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			margin-top: 30px;
+			@include landscape{
+				align-items: flex-start;
+			}
+			@include tablet{
+				align-items: center;
+			}
 			.operator-wrapper{
 				display: flex;
 				background-color: $lightblue;
@@ -47,12 +58,34 @@
 				width: 100%;
 				margin-bottom: 20px;
 				border-radius: 240px;
+				@include landscape{
+					max-width: 332px;
+				}
+
+			}
+			.operator-image{
+				@include landscape{
+					max-width: 88px;
+				}
 			}
 			.operator-name{
 				font-size: 30px;
 				line-height: 38px;
 				margin-left: 60px;
+				@include landscape{
+					font-size: 18px;
+					line-height: 24px;
+					margin-left: 28px;
+				}
 			}
+		}
+		&.picto-only{
+			width: 100%;
+    		max-width: 220px !important;
+			@include tablet{
+				display: none;
+			}
+
 		}
 	}
     .text-part{
@@ -61,7 +94,6 @@
 		margin-bottom: 0;
         // padding: 0 120px;
         @include landscape{
-            max-width: 412px !important;
             padding: 0px 65px 0 6px;
         }
         @include laptop{
@@ -82,7 +114,7 @@
 			// font-family: "Metropolis", sans-serif;
 			// font-weight: bold;
 			// text-transform: uppercase;
-			margin-bottom: 50px;
+			margin-bottom: 24px;
         }
         .text-part__description{
             // font-family: "Metropolis", sans-serif;
@@ -97,30 +129,51 @@
     .two-blocks__buttons-part{
         width: 100%;
         text-align: left;
+		@include landscape{
+			max-width: 264px !important;
+		}
 		.questions-picto{
 			max-width: 257px;
 			width: 100%;
 			height: auto;
+			margin-bottom: 10px;
+			@include tablet{
+				display: none;
+			}
 		}
-
-        @include landscape{
-            width: 412px;
-        }
-        @include mobile-xl{
-            width: 288px;
-        }
+		.buttons-wrapper__list{
+			width: 100%;
+			@include mobile{
+				max-width: 100% !important;
+			}
+		}
     }
 }
 .two-blocks-wrapper--row{
     flex-direction: row;
-    @include landscape{
+    @include tablet{
         flex-direction: column-reverse;
     }
 }
 .two-blocks-wrapper--row-reverse{
     flex-direction: row-reverse;
-	@include landscape{
+	@include tablet{
 		flex-direction: column-reverse;
 	}
 }
-
+.button_title-wrapper{
+	margin-bottom: 40px;
+	@include landscape{
+		display: none;
+	}
+}
+.button_title-wrapper--landscape{
+	display: none;
+	@include landscape{
+		margin-bottom: 80px;
+		display: block;
+	}
+	@include tablet{
+		margin-bottom: 37px;
+	}
+}
