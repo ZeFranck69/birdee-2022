@@ -1,0 +1,59 @@
+<section id="{{ section.title|sanitize }}" class="steps {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "classic" : "quote" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+
+	<div class="steps-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="steps__section {{ section.text-align }}">
+				{% if section.section_title %}
+					<h2 class="steps__section-title title bold uppercase" style="color:{{ section.color_section_title }};">
+						{{ section.section_title }}
+					</h2>
+				{% endif %}
+				{% if section.section_description %}
+					<div class="steps__section-description derscription" style="color:{{ section.color_section_description }};">	
+						{{ section.section_description }}
+					</div>
+				{% endif %}
+			</div>
+			<div class="steps-wrapper steps-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+				{% for step in section.steps %}
+				<div class="step__container">
+					<div class="steps__image">
+						<img src="{{ Image(step.image).src }}" alt="{{ Image(step.image).alt }}" >
+					</div>
+					<div class="text-part__container">
+						<div class="text-part">
+							<div class="number">
+								{{ loop.index }}
+							</div>
+							{% if step.title %}
+							<h3 class="text-part__title title bold uppercase" style="color:{{ section.title_color }};">
+								{{ step.title }}
+							</h3>
+							{% endif %}
+							{% if step.description %}
+							<div class="text-part__description surtitle" style="color:{{ section.description_color }};">
+								{{ step.description }}
+							</div>
+							{% endif %}
+							{% if step.cta %}
+							<div
+								class="steps__cta-wrapper {{ section.cta_align }}">
+								<a href="{{ step.cta.url }}" class="cta cta--black-green" target="{{ step.cta.target }}">
+									<span class="cta__label">
+										{{ step.cta.title }}
+									</span>
+								</a>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>
