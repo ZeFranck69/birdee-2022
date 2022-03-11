@@ -72,7 +72,7 @@
 
 .trustpilot__content {
 	position: relative;
-	z-index: 100;
+	z-index: 0;
 	max-width: 590px;
     width: 100%;
 	@include tablet{
@@ -115,7 +115,7 @@
 		max-width: 100%;
 		width: 100%;
 		position: relative;
-		z-index: 10;
+		z-index: 0;
 		bottom: -3px;
 		-o-object-fit: cover;
 		   object-fit: cover;

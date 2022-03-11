@@ -134,6 +134,10 @@
 		@include landscape{
 			max-width: 264px !important;
 		}
+		@include mobile-xl{
+			max-width: 100% !important;
+			margin: auto;
+		}
 		.questions-picto{
 			max-width: 257px;
 			width: 100%;

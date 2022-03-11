@@ -7,7 +7,7 @@
 			</a>
 		</div>
 			<nav class='nav__links'>
-					{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
+				{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
 			</nav>
 	</div>
 	<div class="menu--right">
@@ -23,5 +23,8 @@
 		</div>  
 	</div>  
 </div>
+<nav id="slide-nav">
+	{% include "partial/menu.twig" with {'items': menuHeader.get_items} %}
+</nav>
   
 

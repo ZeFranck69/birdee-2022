@@ -6,6 +6,8 @@ export default class Menu {
 	constructor() {
 		this.body = document.querySelector('body');
 		this.header = document.getElementById('site-header');
+		this.navSlide = document.getElementById('slide-nav');
+		console.log(this.navSlide);
 		this.toggleBtn = document.querySelector('.site__burger-menu');
 
 		this.toggleBtn.addEventListener('click', () => this.toggleMenu());
@@ -15,6 +17,7 @@ export default class Menu {
 		// REMOVE NO SCROLL ON PAGE CHANGE
 		document.querySelector('body').classList.remove('no-scroll');
 		this.header.classList.remove('active');
+		this.navSlide.classList.remove('active-slide');
 
 		const menuItems = document.querySelectorAll('.menu-item, .site-logo, .footer_phone-number, .footer-contact');
 		menuItems.forEach((item) => {
@@ -50,6 +53,8 @@ export default class Menu {
 
 		this.body.classList[action]('no-scroll');
 		this.header.classList[action]('active');
+		this.navSlide.classList[action]('active-slide');
 		this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
+		this.navSlide.setAttribute('aria-hidden', !this.navSlide.classList.contains('active'));
 	};
 }

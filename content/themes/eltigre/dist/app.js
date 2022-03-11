@@ -150,11 +150,17 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
 
     _this.header.classList[action]('active');
 
+    _this.navSlide.classList[action]('active-slide');
+
     _this.header.setAttribute('aria-hidden', !_this.header.classList.contains('active'));
+
+    _this.navSlide.setAttribute('aria-hidden', !_this.navSlide.classList.contains('active'));
   });
 
   this.body = document.querySelector('body');
   this.header = document.getElementById('site-header');
+  this.navSlide = document.getElementById('slide-nav');
+  console.log(this.navSlide);
   this.toggleBtn = document.querySelector('.site__burger-menu');
   this.toggleBtn.addEventListener('click', function () {
     return _this.toggleMenu();
@@ -163,6 +169,7 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
 
   document.querySelector('body').classList.remove('no-scroll');
   this.header.classList.remove('active');
+  this.navSlide.classList.remove('active-slide');
   var menuItems = document.querySelectorAll('.menu-item, .site-logo, .footer_phone-number, .footer-contact');
   menuItems.forEach(function (item) {
     item.addEventListener('click', function (ev) {

@@ -73,6 +73,7 @@
 					'about' 	=> new Timber\Menu( 'Footer About' )
 				),
 			);
+			$context['menuHeader']  = new Timber\Menu('Menu Header');
 	
 			// Global site
 			$context['site']  = $this;
