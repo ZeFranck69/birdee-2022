@@ -32,7 +32,12 @@
 							{% endif %}
 							{% if step.description %}
 							<div class="text-part__description surtitle" style="color:{{ section.description_color }};">
-								{{ step.description }}
+								<div class="step-description">
+									{{ step.description }}
+								</div>
+								<div class="steps__image--mobile">
+									<img src="{{ Image(step.image).src }}" alt="{{ Image(step.image).alt }}" >
+								</div>
 							</div>
 							{% endif %}
 							{% if step.cta %}

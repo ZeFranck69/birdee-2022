@@ -19,13 +19,15 @@
 .collaborators__wrapper-list{
     max-width: 1280px;
     margin: 72px auto 0;
+    @include desktop{
+        max-width: calc(600px + 40px);
+    }
 }
 
 .collaborators__list{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 1280px;
     margin: auto;
     flex-wrap: wrap;
     display: flex;
@@ -33,14 +35,27 @@
     max-width: calc(1400px + 40px);
     margin: auto;
     margin-left: -20px;
+
+    @include desktop{
+        margin-left: 0;
+        justify-content: center;
+    }
     
     .collaborator-wrapper{
         max-width: 260px;
         width: 100%;
         text-align: center;
         margin: 20px 40px 90px 40px;
-        @include tablet{
-            margin: 20px 20px 60px 20px;
+        @include desktop{
+            max-width: 128px;
+        }
+        @include mobile-xl{
+            max-width: 125px;
+            margin: 19px 3px 60px 3px;
+        }
+        @include mobile{
+            max-width: 115px;
+            margin: 19px 3px 60px 3px;
         }
 
         .collaborator-img{
@@ -54,7 +69,7 @@
         }
         .collaborator-name{
             margin-top: 20px;
-            @include laptop{
+            @include desktop{
                 max-width: 100px;
                 margin: 20px auto 0;
             }
