@@ -16,12 +16,12 @@
 				{{ section.description }} 
 			</div>
 			{% endif %}
-			{% if section.button.title %}
+			{% if section.cta.title %}
 			<div class="banner-content__cta-wrapper">
 				<div class="banner-content__bullet">
-					<a href="{{ section.button.url }}" class="cta cta--green" target="{{ section.button.target }}">
+					<a href="{{ section.cta.url }}" class="cta cta--black-blue" target="{{ section.cta.target }}">
 						<span class="cta__label">
-							{{ section.button.title }}
+							{{ section.cta.title }}
 						</span>	
 					</a>
 				</div>

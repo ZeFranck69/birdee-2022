@@ -2,7 +2,7 @@
 	padding: 80px 0;
 	overflow: hidden;
 	min-height: 100%;
-	height: 838px; // Peut etre à supprimer quand j'aurais les images
+	height: 1008px; // Peut etre à supprimer quand j'aurais les images
 	@include tablet{
 		height: auto !important;
 	}
@@ -20,7 +20,7 @@
 }
 
 .banner__container {
-	max-width: 1720px;
+	max-width: calc(1600px - 60px);
 	width: 100%;
 	margin: auto;
 	height: 100%;
@@ -99,7 +99,7 @@
 	}
 
 	.banner-content__cta-wrapper {
-		margin-top: 50px;
+		margin-top: 26px;
 		@include tablet{
 			margin-top: 22px;
 		}
@@ -140,4 +140,5 @@
 	max-width: 400px;
 	width: 100%;
 	text-align: left;
+	margin-top: 26px;
 }

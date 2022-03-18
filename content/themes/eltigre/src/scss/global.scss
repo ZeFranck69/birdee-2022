@@ -29,15 +29,16 @@ html {
 }
 
 .main-wrapper {
-  max-width: $gridSize;
+  max-width: $gridSizeLarge;
   margin: 0 auto;
 
   //@include desktop-large {
   //  max-width: $gridSizeLarge;
   //}
-  @include desktop-large{
-	  margin: 0 30px;
-  }	
+  @include desktop{
+	max-width: $gridSize;
+	margin: 0 auto;
+  }
   @include laptop {
     margin: 0 30px;
   }
@@ -145,7 +146,7 @@ a {
 	}
 } 
 
-//BOLD
+//BOLDeltigre
 .bold{
 	font-weight: bold;
 }

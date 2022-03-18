@@ -137,7 +137,9 @@ $transition_speed: .2s;
 	padding: 0 30px;
 	margin: 0 auto;
 	height: 58px;
-	
+	&.container{
+		max-width: 1600px;
+	}
 	// transition: padding $transition_speed ease .1s;
 	@include laptop{
 		padding: 0 15px;
@@ -180,6 +182,10 @@ $transition_speed: .2s;
 		}
 		.nav__links{
 			margin-left:25px;
+			@include landscape{
+				visibility: hidden;
+				display: none;			
+			}
 		}
 	}
 	.menu--right{
@@ -253,15 +259,17 @@ $transition_speed: .2s;
 			.header__logo-wrapper--mobile {
 				display: block;
 			}
-			.menu--left{
+			.menu--left,
+			.menu--right{
 
 				.nav__links{
 					visibility: hidden;
 					opacity: 0;
 					transition: opacity 0.25s ease;
-
+				
 				}
 			}
+
 			
 		}
 		.header__nav {
@@ -423,29 +431,30 @@ $transition_speed: .2s;
 	&.active-slide{
 		transform: translateY(0);
 		z-index: 9;
-		ul{
-			height: 100%;
-			max-width: 620px;
-			width: 620px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			.menu-item{
+		
 
-				a{
-				color: #1B1F1E;
-				text-transform: uppercase;
-				font-size: 20px;
-				font-family: "Favorit";
-				font-weight: bold;
-				line-height: 1.25;
-				display: block;
-				padding: 10px 0;
-				}
+	}
+	ul{
+		height: 100%;
+		max-width: 620px;
+		width: 620px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.menu-item{
+
+			a{
+			color: #1B1F1E;
+			text-transform: uppercase;
+			font-size: 20px;
+			font-family: "Favorit";
+			font-weight: bold;
+			line-height: 1.25;
+			display: block;
+			padding: 10px 0;
 			}
 		}
-
 	}
 }
 // ACTIVE STICKY
