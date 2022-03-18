@@ -3,8 +3,8 @@
 	overflow: hidden;
 	min-height: 100%;
 	height: auto; // Peut etre à supprimer quand j'aurais les images
-	@include landscape{
-		padding: 40px 40px 0;
+	@include desktop{
+		padding: 40px 0 0;
 	}
 	@include tablet{
 		padding: 40px 17px;
@@ -132,7 +132,7 @@
 .quote__image-part {
 	position: relative;
 	width: 100%;
-	@include landscape
+	@include desktop
 	{
 		max-width: 241px !important;
 	}
@@ -158,6 +158,9 @@
 		font-family: "object-fit: cover;";
 		border-top-left-radius: 40px;
 		border-top-right-radius: 40px;
+		@include desktop{
+			max-width: 241px !important;
+		}
 		@include tablet{
 			border-top-left-radius: 0px;
 			border-top-right-radius: 0px;

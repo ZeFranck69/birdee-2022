@@ -4,9 +4,9 @@
         <div class="reasons-second-background" style="background-color: {{ section.second_background_color }};"></div>
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
 			<div class="reasons-wrapper {{ section.text_align }} {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color:{{ section.background_color }}">	
-                {% if section.title %}
+                {% if section.part_title %}
 					<h2 class="text-part__title title bold uppercase">
-						{{ section.title }}
+						{{ section.part_title }}
 					</h2>
                 {% endif %}
                 {% if section.description %}
