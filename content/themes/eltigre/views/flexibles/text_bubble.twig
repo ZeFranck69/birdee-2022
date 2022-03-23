@@ -1,0 +1,53 @@
+<section id="{{ section.title|sanitize }}" class="text-bubble {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "classic" : "quote" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+
+	<div class="text-bubble-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="text-bubble-wrapper text-bubble-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+				<div class="text-bubble__bubble" style="max-width: {{ section.container_bubble_width }}px;">
+					<div class="bubble-part" style="background-color:{{ section.bubble_background_color }}">
+						<h3 class="bubble__content" style="color{{ section.bubble_title_color }}; max-width: {{ section.buble_width }}px;">
+							{{ section.bubble_title }}
+						</h3>
+					</div>
+				</div>
+				<div class="text-part__container" style="max-width: {{ section.text_container_width }}px;">
+
+					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
+						<h3 class="bubble__content--text-part title--secondary uppercase" style="color{{ section.bubble_title_color }};">
+							{{ section.bubble_title }}
+						</h3>
+						{% if section.surtitle %}
+						<div class="text-part__surtitle surtitle">
+							{{ section.surtitle }}
+						</div>
+						{% endif %}
+						{% if section.title %}
+						<h2 class="text-part__title title bold uppercase">
+							{{ section.title }}
+						</h2>
+						{% endif %}
+						{% if section.description %}
+						<div class="text-part__description description" style="color:{{ section.description_color }};">
+							{{ section.description }}
+						</div>
+						{% endif %}
+						{% if section.cta %}
+						<div
+							class="text-bubble__cta-wrapper {{ section.cta_align }}">
+							<a href="{{ section.cta.url }}" class="cta cta--black-green" target="{{ section.cta.target }}">
+								<span class="cta__label">
+									{{ section.cta.title }}
+								</span>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>

@@ -4,7 +4,7 @@
 	min-height: 100%;
 	height: auto; // Peut etre à supprimer quand j'aurais les images
 	@include desktop{
-		padding: 40px 0 0;
+		padding: 40px 40px 0;
 	}
 	@include tablet{
 		padding: 40px 17px;

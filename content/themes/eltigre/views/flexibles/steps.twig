@@ -55,6 +55,16 @@
 				</div>
 				{% endfor %}
 			</div>
+			{% if section.button.title is not empty %}
+				<div
+					class="section-steps__cta-wrapper {{ section.cta_align }}">
+					<a href="{{ section.button.url }}" class="cta cta--black-green uppercase" target="{{ section.button.target }}">
+						<span class="cta__label">
+							{{ section.button.title }}
+						</span>
+					</a>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 </section>

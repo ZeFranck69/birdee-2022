@@ -1,4 +1,4 @@
-.text-image{
+.text-bubble{
     
     @include tablet{
         padding: 60px 0;
@@ -14,10 +14,10 @@
         }
     }
 }
-.text-image__section-title{
+.text-bubble__section-title{
     text-align: center;
 }
-.text-image__section-title {
+.text-bubble__section-title {
 	font-family: "Metropolis", sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -25,13 +25,13 @@
 	line-height: 45px;
 	margin-bottom: 30px;
 }
-.text-image-wrapper{
+.text-bubble-wrapper{
     display: flex;
     max-width: 100%;
     width: 100%;
     height: auto;
     margin: auto;
-    align-items: center;
+    align-items: flex-start;
     @include mobile-xl{
         flex-direction: column;
     }
@@ -64,6 +64,12 @@
             width: 100%;
             padding: 0 36px;
         }
+		.bubble__content--text-part{
+			display: none;
+			@include desktop{
+				display: block;
+			}
+		}
 		.text-part__surtitle{
         }
         .text-part__title{
@@ -87,84 +93,70 @@
 
                 li{
                     position: relative;
-                    padding-left: 40px;
+                    padding-left: 20px;
                     margin-bottom: 15px;
 					margin-left: 1em;
                     &::before{
                         content: '';
-                        position: absolute;
-                        background-image: url('../images/LOGO-V-Blanc.png');
-                        background-position: center;
-                        background-size: cover;
-                        width: 30px;
-                        height: 30px;
-                        left: 0;
+						position: absolute;
+						background-color: #1D1D1B;
+						border-radius: 50%;
+						width: 9px;
+						height: 9px;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
                     }
                 }
             }
         }
-		// Pour les multiples paragraphes
-		.text-image__descriptions-container{
-			
-			.descriptions__description-block{
-				margin-top: 12px;
+    }
+
+    .text-bubble__bubble{
+		@include desktop{
+			display: none;
+		}
+		.bubble-part{
+			position: relative;
+			padding: 77px 34px 75px 33px;
+			border-radius: 21px;
+			&:after{
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 20px 25px 0 0;
+				border-color: #fff transparent transparent transparent;
+				top: 60px;
+				right: -24px;
 			}
 		}
-    }
-
-    .text-image__image{
-
-        height: auto;
-        /* height: 100%; */
-        /* overflow: hidden; */
-        position: relative;
-        width: 100%;
-        text-align: center;
-        img{
-            width: 100%;
-            height: auto;
-            -o-object-fit: cover;
-                object-fit: cover;
-            -o-object-position: center;
-                object-position: center;
-            position: relative;
-
-        }
-        @include landscape{
-            width: 412px;
-        }
-        @include mobile-xl{
-            width: 288px;
-        }
-    }
-    .video-part{
-        @include laptop{
-            max-width: 480px;
-            width: 100%;
-        }
-        video{
-            max-width: 100%;
-            width: 100%;
-        }
-    }
+		.bubble__content{
+			font-size: 18px;
+			line-height:24px;
+			font-family: 'Favorit Bold Lining', sans-serif;
+			text-transform: uppercase;
+		}
+	}
 }
-.text-image-wrapper--row{
+.text-bubble-wrapper--row{
     flex-direction: row;
     @include landscape{
         flex-direction: column-reverse;
     }
 }
-.text-image-wrapper--row-reverse{
+.text-bubble-wrapper--row-reverse{
     flex-direction: row-reverse;
 	@include landscape{
 		flex-direction: column-reverse;
 	}
 }
-.text-image__cta-wrapper{
+.text-bubble__cta-wrapper{
     @include tablet{
         margin-bottom: 28px;
     }
-    &.text-image__cta-margin-top{
+    &.text-bubble__cta-margin-top{
         margin-top: 30px;
     }
 }

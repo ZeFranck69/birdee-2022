@@ -34,9 +34,15 @@
         position: relative;
         padding: 24px 0;
         margin-left: 83px;
+		@include landscape{
+			margin-left: 50px;
+		}
         @include tablet{
             margin-left: 0;
         }
+		@include mobile-xl{
+			padding: 10px 0;
+		}
         &::before{
             content: '';
             position: absolute;
@@ -46,6 +52,9 @@
             top: 0;
             left: 23px;
             transform: translateX(-50%);
+			@include tablet{
+				top: -79px;
+			}
         }
         &::after{
             content: '';
@@ -56,6 +65,10 @@
             bottom: 0;
             transform: translateX(-50%);
             left: 23px;
+			@include tablet{
+				height: 70%;
+				bottom: 78px;
+			}
         }
 	}
     .step__container{
@@ -75,6 +88,19 @@
             }
 
         }
+
+		&:last-child{
+
+			.text-part__container{
+
+				&:after{
+					@include tablet{
+						height: 100%;
+						bottom: 0;
+					}
+				}
+			}
+		}
     }
     .text-part{
         display: flex;
@@ -84,12 +110,14 @@
     
         @include tablet{
             max-width: 100%;
-            padding: 0px 16px;
+            // padding: 0px 16px;
+			height: auto;
+			align-items: flex-start;
         }
         @include mobile-xl{
             max-width: 100% !important;
             width: 100%;
-            padding: 0 36px;
+            // padding: 0 36px;
         }
         .number{
             max-width: 46px;
@@ -117,6 +145,18 @@
             max-width: 990px;
             width: 100%;
             margin-left: 55px;
+			@include landscape{
+				max-width: 425px;
+			}
+			@include mobile-xl{
+				margin-left: 15px;
+			}
+			.step-description{
+
+				@include tablet{
+					margin-bottom: 30px;
+				}
+			}
         }
 
     }
@@ -125,6 +165,21 @@
         @include tablet{
             display: block;
         }
+		img{
+			@include tablet{
+				border-top-left-radius: 40px;
+				border-top-right-radius: 40px;
+				border-bottom-right-radius: 40px;
+			}
+            @include mobile-xl{
+                height: 250px;
+                max-width: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+				font-family: "object-fit:contain; object-position:center";
+            }
+		}
     }
     .steps__image{
         height: auto;
@@ -148,9 +203,7 @@
             border-top-right-radius: 40px;
             border-bottom-right-radius: 40px;
         }
-        @include landscape{
-            width: 412px;
-        }
+        
         @include mobile-xl{
             width: 288px;
         }
@@ -182,4 +235,13 @@
     &.steps__cta-margin-top{
         margin-top: 30px;
     }
+}
+.section-steps__cta-wrapper{
+	margin-top: 95px;
+	@include desktop{
+        margin-top: 60px;
+    }
+	@include tablet{
+		margin-top: 10px;
+	}
 }

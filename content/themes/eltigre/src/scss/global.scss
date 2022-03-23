@@ -31,7 +31,7 @@ html {
 .main-wrapper {
   max-width: $gridSizeLarge;
   margin: 0 auto;
-
+  width: calc(100% - 80px);
   //@include desktop-large {
   //  max-width: $gridSizeLarge;
   //}
@@ -217,6 +217,7 @@ a {
 @import 'flexibles/_banner';
 @import 'flexibles/_reasons';
 @import 'flexibles/_text-image';
+@import 'flexibles/_text-bubble';
 @import 'flexibles/_steps';
 @import 'flexibles/_two-blocks';
 @import 'flexibles/_collaborators';
