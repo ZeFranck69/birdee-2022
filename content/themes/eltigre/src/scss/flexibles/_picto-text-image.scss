@@ -1,0 +1,146 @@
+.picto-text-image{
+    @include desktop{
+		padding: 40px;
+	}
+    @include tablet{
+        padding: 60px 0;
+    }
+	@include mobile-xl{
+		max-width: 100%;
+		width: 100%;
+		padding: 0 0 40px 0;
+	}
+}
+.picto-text-image__section-title{
+    text-align: center;
+}
+.picto-text-image__section-title {
+	font-family: "Metropolis", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 40px;
+	line-height: 45px;
+	margin-bottom: 30px;
+}
+.picto-text-image-wrapper{
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    align-items: center;
+    @include mobile-xl{
+        flex-direction: column;
+    }
+	.picto-text-image__image{
+		display: flex;
+		@include desktop{
+			max-width: 780px;
+    		width: 100%;
+		}
+		img{
+			border-bottom-left-radius: 30px;
+			border-top-left-radius: 30px;
+			@include desktop{
+				max-width: 100% !important;
+				width: 100%;
+				object-fit: cover;
+				object-position: center;
+				height: 235px;
+				border-bottom-left-radius:0;
+				border-top-left-radius:0;
+			}
+		}
+	}
+	.text-part__container{
+		width: 100%;
+		display: flex;
+    	justify-content: space-between;
+		align-items: center;	
+		margin-left: 40px;
+		@include desktop{
+			margin-left: 0;
+			flex-direction: column;
+			max-width: 100% !important;
+			align-items: flex-start;
+			margin-top: 52px;
+		}
+		@include landscape{
+			max-width: 100% !important;
+		}
+		@include mobile-xl{
+			padding: 0 40px;
+		}
+	}
+	.text-part__picto{
+		max-width: 82px;
+		width: 100%;
+		height: auto;
+		@include desktop {
+			max-width: 92px;
+			margin-bottom: 10px;
+		}
+	}
+    .text-part{
+        // max-width: 700px;
+        width: 100%;
+		margin-bottom: 0;
+        // padding: 0 120px;
+
+        @include desktop{
+            max-width: 100% !important;
+            // padding: 0px 65px 0 6px;
+        }
+        @include laptop{
+            max-width:430px;
+        }
+        @include tablet{
+            max-width: 100%;
+            padding: 0px;
+        }
+        @include mobile-xl{
+            max-width: 100% !important;
+            width: 100%;
+        }
+		.text-part__surtitle{
+        }
+        .text-part__title{
+			margin-bottom: 50px;
+        }
+        .text-part__description{
+        
+    
+            p{
+                margin-bottom: 14px;
+            }
+        }
+		// Pour les multiples paragraphes
+		.picto-text-image__descriptions-container{
+			
+			.descriptions__description-block{
+				margin-top: 12px;
+			}
+		}
+    }
+
+}
+.picto-text-image-wrapper--row{
+    flex-direction: row;
+    @include desktop{
+        flex-direction: column;
+    }
+}
+.picto-text-image-wrapper--row-reverse{
+    flex-direction: row-reverse;
+	@include desktop{
+		flex-direction: column;
+	}
+}
+.picto-text-image__cta-wrapper{
+    @include tablet{
+        margin-bottom: 28px;
+    }
+    &.picto-text-image__cta-margin-top{
+        margin-top: 30px;
+    }
+}

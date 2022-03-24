@@ -43,8 +43,10 @@
 
 .cta-picto__container{
 	display: flex;
+
 	@include tablet{
 		flex-direction: column-reverse;
+		align-items: flex-start;
 	}
 	&.justify-center{
 		justify-content: center;

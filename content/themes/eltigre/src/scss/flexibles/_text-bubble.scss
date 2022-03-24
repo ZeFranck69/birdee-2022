@@ -3,6 +3,10 @@
     @include tablet{
         padding: 60px 0;
     }
+	@include mobile-xl{
+		max-width: 100%;
+		width: 100%;
+	}
     &.classic{
         
         @include landscape{

@@ -139,10 +139,15 @@ $transition_speed: .2s;
 	height: 58px;
 	&.container{
 		max-width: 1600px;
+
+		@include desktop{
+			max-width: calc(1100px + 60px);
+			margin: auto;
+		}
 	}
 	// transition: padding $transition_speed ease .1s;
 	@include laptop{
-		padding: 0 15px;
+		// padding: 0 15px;
 	}
 	// @include landscape{
 	// 	bottom: 0;

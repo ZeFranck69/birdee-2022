@@ -12,6 +12,8 @@
   max-width: 100%;
   text-align: center;
   overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  will-change: transform;
   position: relative;
   transition: color 0.35s cubic-bezier(.2,1,.3,1);
   border: 2px solid transparent; // 2px

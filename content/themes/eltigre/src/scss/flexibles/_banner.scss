@@ -20,7 +20,7 @@
 }
 
 .banner__container {
-	max-width: calc(1600px - 60px);
+	max-width: calc(1600px + 60px);
 	width: 100%;
 	margin: auto;
 	height: 100%;
@@ -29,7 +29,13 @@
 	position: relative;
 	justify-content: center;
 	@include desktop-large{
-		margin: 0 30px;
+		margin: 0 auto;
+		padding: 0 30px;
+	}
+	@include desktop{
+		max-width: calc(1100px + 60px);
+		margin: 0 auto;
+		padding: 0 30px;
 	}
 	@include laptop {
 		padding: 0 30px;

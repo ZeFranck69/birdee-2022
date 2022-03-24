@@ -1,0 +1,97 @@
+<section id="{{ section.title|sanitize }}" class="text-video {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+
+	<div class="text-video-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			<div class="text-video__section-title">
+				<h2 class="title left" style="color: {{ section.color_section_title }};">{{ section.section_title }}</h2>
+			</div>
+			<div class="text-video-wrapper text-video-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+				
+				<div class="text-video__video">
+					{% if section.choice == "video"%}
+					<div class="media-part__video">
+                <div class="video-wrapper" style="max-width: {{ section.container_video_width }}px;">
+                    <div class="video-ratio"></div>
+                    <div class="video__play"></div>
+                    <video muted="muted" loop="loop" data-autoplay="true" autoplay="true">
+                        {% if section.videos.mp4 is not empty %}<source type="video/mp4" src="{{ fn( 'wp_get_attachment_url', section.videos.mp4.ID ) }}" />{% endif %}
+                        {% if section.videos.webm is not empty %}<source type="video/webm" src="{{ fn( 'wp_get_attachment_url', section.videos.webm.ID ) }}" />{% endif %}
+                        {% if section.videos.mkv is not empty %}<source type="video/m4v" src="{{ fn( 'wp_get_attachment_url', section.videos.mkv.ID ) }}" />{% endif %}
+                        {% if section.videos.ogv is not empty %}<source type="video/ogg" src="{{ fn( 'wp_get_attachment_url', section.videos.ogv.ID ) }}" />{% endif %}
+                    </video>
+                    <div class="video__mute"></div>
+                </div>
+            </div>
+						{% endif %}
+						{% if section.choice == "image"%}
+							<div class="media-part__image">
+									<div class="image-wrapper" style="max-width: {{ section.container_video_width }}px;">
+											<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="image-video">
+									</div>
+							</div>
+						{% endif %}
+				</div>
+
+				<div class="text-part__container" style="max-width: {{ section.text_container_width }}px;">
+					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
+						{% if section.surtitle %}
+						<div class="text-part__surtitle surtitle">
+							{{ section.surtitle }}
+						</div>
+						{% endif %}
+						{% if section.title %}
+						<h2 class="text-part__title title bold uppercase">
+							{{ section.title }}
+						</h2>
+						{% endif %}
+						{% if section.description_type == 'paragraph' %}
+							{% if section.description %}
+							<div class="text-part__description description" style="color:{{ section.description_color }};">
+								{{ section.description }}
+							</div>
+							{% endif %}
+							{% if section.cta %}
+							<div
+								class="text-video__cta-wrapper {{ section.cta_align }}">
+								<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.cta.target }}">
+									<span class="cta__label">
+										{{ section.cta.title }}
+									</span>
+								</a>
+							</div>
+							{% endif %}
+						{% elseif section.description_type == 'repeat' %}
+								{% if section.descriptions|length > 1 %}
+								<div class="text-video__descriptions-container">
+									{% for description in section.descriptions %}
+										<div class="descriptions__description-block">
+											{% if description.description %}
+												<div class="text-part__description description" style="color:{{ section.description_color }};">
+													{{ description.description }}
+												</div>
+											{% endif %}
+											{% if description.cta %}
+												<div
+													class="text-video__cta-wrapper {{ description.cta_align }}">
+													<a href="{{ description.cta.url }}" class="cta {{ description.cta_color }} uppercase" target="{{ description.cta.target }}">
+														<span class="cta__label">
+															{{ description.cta.title }}
+														</span>
+													</a>
+												</div>
+											{% endif %}
+										</div>
+									{% endfor %}
+								</div>
+								{% endif %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>

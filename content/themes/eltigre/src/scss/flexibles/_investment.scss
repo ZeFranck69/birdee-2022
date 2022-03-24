@@ -1,5 +1,8 @@
 .investment{
-
+	@include mobile-xl{
+		max-width: 100%;
+		width: 100%;
+	}
     &.ajust{
         padding: 60px 80px 79px;
         @include tablet{

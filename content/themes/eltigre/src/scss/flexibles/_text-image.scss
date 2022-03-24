@@ -3,16 +3,10 @@
     @include tablet{
         padding: 60px 0;
     }
-    &.classic{
-        
-        @include landscape{
-            padding: 40px !important;
-        }
-        @include mobile-xl{
-            padding: 40px 0 !important;
-            margin: 0;
-        }
-    }
+	@include mobile-xl{
+		max-width: 100%;
+		width: 100%;
+	}
 }
 .text-image__section-title{
     text-align: center;

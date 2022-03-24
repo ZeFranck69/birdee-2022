@@ -30,7 +30,11 @@
 	position: relative;
 	justify-content: space-between;
 	@include desktop-large{
-		margin: 0 30px;
+		margin: 0 auto;
+		padding: 0 80px;
+	}
+	@include desktop{
+		max-width: calc(1100px - 60px);
 	}
 	@include laptop {
 		padding: 0 30px;
