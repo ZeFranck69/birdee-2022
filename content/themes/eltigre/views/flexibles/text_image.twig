@@ -1,7 +1,12 @@
 <section id="{{ section.title|sanitize }}" class="text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
 
-	<div class="text-image-container" style="text-align: {{ section.text_align }};">
+	<div class="text-image-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			{% if section.section_title is not empty %}
+			<div class="text-image__section-title">
+				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
+			</div>
+			{% endif %}
 			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
 				<div class="text-image__image" style="max-width: {{ section.container_image_width }}px;">
 					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
@@ -36,7 +41,7 @@
 							</div>
 							{% endif %}
 						{% elseif section.description_type == 'repeat' %}
-								{% if section.descriptions|length > 1 %}
+							{% if section.descriptions|length > 1 %}
 								<div class="text-image__descriptions-container">
 									{% for description in section.descriptions %}
 										<div class="descriptions__description-block">
@@ -58,7 +63,37 @@
 										</div>
 									{% endfor %}
 								</div>
-								{% endif %}
+							{% endif %}
+						{% elseif section.description_type == 'list' %}
+							{% if section.enumerations|length > 1 %}
+								<div class="text-image__enumerations-container">
+									{% for enumeration in section.enumerations %}
+										<div class="enumeration-block">
+
+											<div class="number">
+												{{ loop.index }}
+											</div>
+											
+											{% if enumeration.enumeration %}
+												<div class="text-part__enumeration description" style="color:{{ enumeration.description_color }};">
+													{{ enumeration.enumeration }}
+												</div>
+											{% endif %}
+											{% if enumeration.cta %}
+												<div
+													class="text-image__cta-wrapper {{ enumeration.cta_align }}">
+													<a href="{{ enumeration.cta.url }}" class="cta {{ enumeration.cta_color }} uppercase" target="{{ enumeration.cta.target }}">
+														<span class="cta__label">
+															{{ enumeration.cta.title }}
+														</span>
+													</a>
+												</div>
+											{% endif %}
+											
+										</div>
+									{% endfor %}
+								</div>
+							{% endif %}
 						{% endif %}
 					</div>
 				</div>

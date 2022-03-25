@@ -87,7 +87,7 @@
 				array(
 					'labels' => array(
 						'name'          => __( 'Collaborateurs', 'eltigre' ),
-						'add_new'		=> __( 'Ajouter un collaborateurs', 'eltigre' ),
+						'add_new'		=> __( 'Ajouter un collaborateur', 'eltigre' ),
 						'singular_name' => __( 'Collaborateur', 'eltigre' ),
 						'all_items'     => __( 'Tous les collaborateurs', 'eltigre' ),
 						'edit_item'     => __( 'Modifier un collaborateur', 'eltigre' ),
@@ -99,6 +99,28 @@
 					),
 					'rewrite'     => array( 'slug' => 'collaborator' ),
 					'menu_icon'   => 'dashicons-businessperson',
+					'supports'    => array( 'title', 'editor', 'thumbnail' ),
+					'public'      => true,
+					'has_archive' => false
+				)
+			);
+
+			register_post_type( 'wallet',
+				array(
+					'labels' => array(
+						'name'          => __( 'Portefeuilles', 'eltigre' ),
+						'add_new'		=> __( 'Ajouter un portefeuille', 'eltigre' ),
+						'singular_name' => __( 'Portefeuille', 'eltigre' ),
+						'all_items'     => __( 'Tous les portefeuilles', 'eltigre' ),
+						'edit_item'     => __( 'Modifier un portefeuille', 'eltigre' ),
+						'view_item'     => __( 'Voir un portefeuille', 'eltigre' ),
+						'update_item'   => __( 'Mettre à jour un portefeuille', 'eltigre' ),
+						'add_new_item'  => __( 'Ajouter un nouveau portefeuille', 'eltigre' ),
+						'search_items'  => __( 'Chercher un portefeuille', 'eltigre' ),
+						'popular_items' => __( 'Portefeuilles les plus utilisés', 'eltigre' )
+					),
+					'rewrite'     => array( 'slug' => 'wallet' ),
+					'menu_icon'   => 'dashicons-portfolio',
 					'supports'    => array( 'title', 'editor', 'thumbnail' ),
 					'public'      => true,
 					'has_archive' => false
