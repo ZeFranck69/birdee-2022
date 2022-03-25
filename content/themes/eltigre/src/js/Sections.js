@@ -1,5 +1,9 @@
+import Performances from './flexibles/Performances';
+
 export default class Sections {
-	SECTIONS = {};
+	SECTIONS = {
+		performances: Performances,
+	};
 
 	constructor() {
 		for (let className in this.SECTIONS) {

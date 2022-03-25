@@ -74,6 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Sections; }
 /* harmony export */ });
+/* harmony import */ var _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Performances */ "./src/js/flexibles/Performances.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -82,10 +83,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+
+
 var Sections = /*#__PURE__*/_createClass(function Sections() {
   _classCallCheck(this, Sections);
 
-  _defineProperty(this, "SECTIONS", {});
+  _defineProperty(this, "SECTIONS", {
+    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__["default"]
+  });
 
   for (var className in this.SECTIONS) {
     if (document.querySelector(".".concat(className))) {
@@ -192,6 +197,78 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
 });
 
 
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Performances.js":
+/*!******************************************!*\
+  !*** ./src/js/flexibles/Performances.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Performances = /*#__PURE__*/_createClass(function Performances(className) {
+  _classCallCheck(this, Performances);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/_createClass(function Section(section) {
+  _classCallCheck(this, Section);
+
+  this.section = section;
+  var rangesSlider = document.querySelectorAll('.rs-range-line');
+  var rangeBullet = document.querySelectorAll('.rs-bullet');
+  rangesSlider.forEach(function (range) {
+    range.addEventListener('input', showSliderValue, false);
+  });
+
+  function showSliderValue() {
+    rangesSlider.forEach(function (slider) {
+      rangeBullet.forEach(function (bullet) {
+        bullet.innerHTML = slider.value;
+        var bulletPosition = slider.value / slider.max;
+        bullet.style.left = bulletPosition * 578 + 'px';
+      });
+    });
+  }
+} // animate() {
+// 	const themesSection = this.section.querySelector('.performances .main-wrapper');
+// 	const themes = themesSection.querySelector('.simple-title');
+// 	const animation = gsap
+// 		.timeline()
+// 		.fromTo(
+// 			themes,
+// 			{ y: 100, scale: 0.7, autoAlpha: 0 },
+// 			{ y: 0, scale: 1, autoAlpha: 1, stagger: 0.3, duration: 0.3 }
+// 		);
+// 	ScrollTrigger.create({
+// 		trigger: themesSection,
+// 		start: 'top bottom-=5%',
+// 		toggleActions: 'play none none reverse',
+// 		animation,
+// 	});
+// }
+);
+
+/* harmony default export */ __webpack_exports__["default"] = (Performances);
 
 /***/ }),
 

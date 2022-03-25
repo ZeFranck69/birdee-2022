@@ -1,0 +1,64 @@
+<section id="{{ section.title|sanitize }}"
+	class="performances {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}"
+	style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+
+	<div class="performances-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+			{% if section.section_title is not empty %}
+			<div class="performances__section-title">
+				<h2 class="title bold uppercase {{ section.title_text_align }}"
+					style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
+			</div>
+			{% endif %}
+			<div class="performances-wrapper performances-wrapper--{{ section.layout }}"
+				style="justify-content: {{ section.justify_content }};">
+				<div class="performances__calcul-part" style="max-width: {{ section.container_image_width }}px;">
+					{% for element in section.elements %}
+						<div class="range-slider">
+						  <span class="rs-label rs-bullet">{{ element.min }}</span>
+						  <input class="rs-range rs-range-line" type="range" value="{{ element.min }}" min="{{ element.min }}" max="{{ element.max }}">
+						</div>
+						<div class="box-minmax">
+						  <span class="range-min">{{ element.min }}</span><span class="range-max">{{ element.max }}</span>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="performances__result-part" style="max-width: {{ section.text_container_width }}px;">
+
+					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
+						{% if section.surtitle %}
+						<div class="text-part__surtitle surtitle">
+							{{ section.surtitle }}
+						</div>
+						{% endif %}
+						{% if section.title %}
+						<h2 class="text-part__title title bold uppercase">
+							{{ section.title }}
+						</h2>
+						{% endif %}
+						
+						{% if section.description %}
+						<div class="text-part__description description" style="color:{{ section.description_color }};">
+							{{ section.description }}
+						</div>
+						{% endif %}
+						
+					</div>
+				</div>
+			</div>
+			{% if section.cta %}
+			<div class="performances__cta-wrapper {{ section.cta_align }}">
+				<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.cta.target }}">
+					<span class="cta__label">
+						{{ section.cta.title }}
+					</span>
+				</a>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>
