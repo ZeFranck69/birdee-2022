@@ -3638,8 +3638,14 @@ a {
   }
 }
 
+.performances-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .box-minmax {
-  margin-top: 10px;
+  margin-top: 30px;
   width: 608px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3740,6 +3746,11 @@ a {
   font-size: 20px;
   letter-spacing: 0.07em;
   margin-top: -2px;
+}
+
+.performances__result-part {
+  width: 100%;
+  text-align: center;
 }
 
 .quote {

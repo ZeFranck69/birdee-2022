@@ -1,9 +1,12 @@
 .performances {
     
 }
+.performances-wrapper{
+	display: flex;
+}
 
 .box-minmax {
-	margin-top:10px;
+	margin-top: 30px;
 	width: 608px;
 	display: flex;
 	justify-content: space-between;
@@ -110,4 +113,9 @@
 		margin-top: -2px;
 	}
 
+}
+
+.performances__result-part{
+	width: 100%;
+	text-align: center;
 }
