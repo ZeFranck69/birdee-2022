@@ -3,6 +3,10 @@
 	overflow: hidden;
 	min-height: 100%;
 	height: auto; // Peut etre à supprimer quand j'aurais les images
+	@include mobile-xl{
+		max-width: 100%;
+		width: 100%;
+	}
 }
 .trustpilot-logo{
 	max-width: 360px;

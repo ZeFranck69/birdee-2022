@@ -1,13 +1,12 @@
 .collaborators{
-
-    &.ajust{
-        padding: 60px 80px 0;
-        @include tablet{
-            padding:40px 30px 0;
-        }
-        @include mobile-xl{
-            margin: 0;
-        }
+    padding: 60px 80px 0;
+    @include tablet{
+        padding:40px 30px 0;
+    }
+    @include mobile-xl{
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
     }
 }
 .collaborators-wrapper{
