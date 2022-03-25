@@ -18,7 +18,7 @@
     text-align: center;
 }
 .two-blocks__section-title {
-	font-family: "Metropolis", sans-serif;
+	font-family: "Favorit", sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 40px;
@@ -115,13 +115,13 @@
         .text-part__title{
 			// font-size: 30px;
 			// line-height: 1.25;
-			// font-family: "Metropolis", sans-serif;
+			// font-family: "Favorit", sans-serif;
 			// font-weight: bold;
 			// text-transform: uppercase;
 			margin-bottom: 24px;
         }
         .text-part__description{
-            // font-family: "Metropolis", sans-serif;
+            // font-family: "Favorit", sans-serif;
 			// font-size: 28px;
 			// line-height: 1.25;
 			margin-bottom: 30px;
@@ -139,6 +139,8 @@
 		@include mobile-xl{
 			max-width: 100% !important;
 			margin: auto;
+			padding: 0 36px;
+			
 		}
 		.questions-picto{
 			max-width: 257px;
@@ -151,8 +153,12 @@
 		}
 		.buttons-wrapper__list{
 			width: 100%;
-			@include mobile{
+			@include mobile-xl{
 				max-width: 100% !important;
+			}
+			.cta{
+				max-width: 100%;
+				width: 100%;
 			}
 		}
     }
