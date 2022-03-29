@@ -13,8 +13,8 @@
 			<div class="performances-wrapper performances-wrapper--{{ section.layout }}"
 				style="justify-content: {{ section.justify_content }};">
 				<div class="performances__calcul-part" style="max-width: {{ section.container_image_width }}px;">
-					{% for element in section.elements %}
-						<div class="range-slider">
+					{% for key, element in section.elements %}
+						<div class="range-slider" data-key="{{ key }}">
 						  <span class="rs-label rs-bullet">{{ element.min }}</span>
 						  <input class="rs-range rs-range-line" type="range" value="{{ element.min }}" min="{{ element.min }}" max="{{ element.max }}">
 						</div>
