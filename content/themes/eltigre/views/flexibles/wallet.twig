@@ -1,0 +1,46 @@
+<section id="{{ section.title|sanitize }}"
+	class="wallet {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}"
+	style=" {% if section.section_width == "ajust" %}background-color: {{ section.background_color }};{% endif %} padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
+
+	<div class="wallet-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "container container--big" : "" }} padding-60">
+			{% if section.section_title is not empty %}
+			<div class="wallet__section-title">
+				<h2 class="title bold uppercase {{ section.title_text_align }}"
+					style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
+			</div>
+			{% endif %}
+			<div class="wallet-wrapper wallet-wrapper--{{ section.layout }}"
+				style="justify-content: {{ section.justify_content }};">
+				
+				{% for wallet in section.wallets %}
+					<div class="wallet-block">
+						<div class="title title-wallet uppercase"> {{ wallet.post_title }} </div>
+						<div class="surtitle surtitle-wallet"> {{ wallet.surtitle }} </div>
+						<div class="title--secondary title-wallet uppercase"> {{ wallet.title }} </div>
+						<div class="description description-wallet"> {{ wallet.description }} </div>
+							
+							{% for theme in wallet.themes %}
+								<label>
+									<input type=radio class="toggleTab"  name="userType" value="{{ theme.theme_name }}" checked>
+									theme random
+								</label>
+							{% endfor %}
+					</div>
+				{% endfor %}
+			</div>
+			{% if section.cta %}
+			<div class="wallet__cta-wrapper {{ section.cta_align }}">
+				<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.cta.target }}">
+					<span class="cta__label">
+						{{ section.cta.title }}
+					</span>
+					<p class="tamere">
+					</p>
+				</a>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+

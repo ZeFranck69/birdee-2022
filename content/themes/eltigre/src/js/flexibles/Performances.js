@@ -32,6 +32,8 @@ class Section {
 					const maxWidth = rangesSlider.clientWidth;
 					rangeBullet.style.left = maxWidth * (bulletPosition / 100) + 'px';
 					this.result[key] = rangesSlider.value;
+					const operation = parseInt(this.result[0]) * parseInt(this.result[1]);
+					console.log(operation);
 				},
 				false
 			);

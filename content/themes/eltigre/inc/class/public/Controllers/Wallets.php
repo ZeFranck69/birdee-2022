@@ -4,6 +4,7 @@ namespace Eltigre\Controllers;
 
 if( !class_exists( 'Eltigre\Controllers\Wallets' ) ) {
     class Wallets {
+        
         public static function get_context() {
             $context = array( 'wallets' => self::get_posts() );
             return $context;
@@ -26,12 +27,13 @@ if( !class_exists( 'Eltigre\Controllers\Wallets' ) ) {
                 $acf_fields = get_fields();
 
                 $wallet = array(
-                    'wallet-title'                 => get_the_title(),
+                    'wallet-title'          => get_the_title(),
                     'thumbnail'             => get_the_post_thumbnail(),
                     'content'               => the_content(),
                     'permalink'             => get_the_permalink(),
+                    'surtitle'              => $acf_fields['surtitle']
                 );
-
+                
                 
                 $wallets[ $post_ID ] = $wallet;
             }
