@@ -1,7 +1,7 @@
-<section id="{{ section.title|sanitize }}" class="steps {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "classic" : "quote" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+<section id="{{ section.title|sanitize }}" class="steps {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 
 	<div class="steps-container" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+		<div class="{{ section.section_width == "fullwidth" ? "container container--big" : "" }} padding-60">
 			<div class="steps__section {{ section.text-align }}">
 				{% if section.section_title %}
 					<h2 class="steps__section-title title bold uppercase" style="color:{{ section.color_section_title }};">
@@ -14,7 +14,7 @@
 					</div>
 				{% endif %}
 			</div>
-			<div class="steps-wrapper steps-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+			<div class="steps-wrapper container--small steps-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
 				{% for step in section.steps %}
 				<div class="step__container">
 					<div class="steps__image">

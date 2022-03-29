@@ -165,7 +165,6 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
   this.body = document.querySelector('body');
   this.header = document.getElementById('site-header');
   this.navSlide = document.getElementById('slide-nav');
-  console.log(this.navSlide);
   this.toggleBtn = document.querySelector('.site__burger-menu');
   this.toggleBtn.addEventListener('click', function () {
     return _this.toggleMenu();
@@ -234,39 +233,22 @@ var Section = /*#__PURE__*/_createClass(function Section(section) {
   _classCallCheck(this, Section);
 
   this.section = section;
-  var rangesSlider = document.querySelectorAll('.rs-range-line');
-  var rangeBullet = document.querySelectorAll('.rs-bullet');
-  rangesSlider.forEach(function (range) {
+  var result = [];
+  var saving = document.querySelector('.saving');
+  var reject = document.querySelector('.rejected');
+  var ranges = document.querySelectorAll('.range-slider');
+  ranges.forEach(function (range) {
+    var rangesSlider = range.querySelector('.rs-range-line');
+    var rangeBullet = range.querySelector('.rs-bullet');
     range.addEventListener('input', showSliderValue, false);
-  });
 
-  function showSliderValue() {
-    rangesSlider.forEach(function (slider) {
-      rangeBullet.forEach(function (bullet) {
-        bullet.innerHTML = slider.value;
-        var bulletPosition = slider.value / slider.max;
-        bullet.style.left = bulletPosition * 578 + 'px';
-      });
-    });
-  }
-} // animate() {
-// 	const themesSection = this.section.querySelector('.performances .main-wrapper');
-// 	const themes = themesSection.querySelector('.simple-title');
-// 	const animation = gsap
-// 		.timeline()
-// 		.fromTo(
-// 			themes,
-// 			{ y: 100, scale: 0.7, autoAlpha: 0 },
-// 			{ y: 0, scale: 1, autoAlpha: 1, stagger: 0.3, duration: 0.3 }
-// 		);
-// 	ScrollTrigger.create({
-// 		trigger: themesSection,
-// 		start: 'top bottom-=5%',
-// 		toggleActions: 'play none none reverse',
-// 		animation,
-// 	});
-// }
-);
+    function showSliderValue() {
+      rangeBullet.innerHTML = rangesSlider.value;
+      var bulletPosition = rangesSlider.value / rangesSlider.max;
+      rangeBullet.style.left = bulletPosition * 578 + 'px';
+    }
+  });
+});
 
 /* harmony default export */ __webpack_exports__["default"] = (Performances);
 

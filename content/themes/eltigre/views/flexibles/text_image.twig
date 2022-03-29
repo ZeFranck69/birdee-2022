@@ -69,27 +69,26 @@
 								<div class="text-image__enumerations-container">
 									{% for enumeration in section.enumerations %}
 										<div class="enumeration-block">
-
 											<div class="number">
 												{{ loop.index }}
 											</div>
-											
-											{% if enumeration.enumeration %}
-												<div class="text-part__enumeration description" style="color:{{ enumeration.description_color }};">
-													{{ enumeration.enumeration }}
-												</div>
-											{% endif %}
-											{% if enumeration.cta %}
-												<div
-													class="text-image__cta-wrapper {{ enumeration.cta_align }}">
-													<a href="{{ enumeration.cta.url }}" class="cta {{ enumeration.cta_color }} uppercase" target="{{ enumeration.cta.target }}">
-														<span class="cta__label">
-															{{ enumeration.cta.title }}
-														</span>
-													</a>
-												</div>
-											{% endif %}
-											
+											<div class="text-image__enumeration-text--block">
+												{% if enumeration.enumeration %}
+													<div class="text-part__enumeration description" style="color:{{ enumeration.description_color }};">
+														{{ enumeration.enumeration }}
+													</div>
+												{% endif %}
+												{% if enumeration.cta %}
+													<div
+														class="text-image__cta-wrapper {{ enumeration.cta_align }}">
+														<a href="{{ enumeration.cta.url }}" class="cta {{ enumeration.cta_color }} uppercase" target="{{ enumeration.cta.target }}">
+															<span class="cta__label">
+																{{ enumeration.cta.title }}
+															</span>
+														</a>
+													</div>
+												{% endif %}
+											</div>
 										</div>
 									{% endfor %}
 								</div>

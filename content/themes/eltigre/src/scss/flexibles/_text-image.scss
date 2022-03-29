@@ -158,10 +158,16 @@
                     position: relative; 
                     z-index: 3;
                 }
-                .text-part__enumeration{
-                    max-width: 380px;
-                    width: 100%;
+                .text-image__enumeration-text--block{
                     margin-left: 53px;
+                    
+                    .text-part__enumeration{
+                        max-width: 380px;
+                        width: 100%;
+                    }
+                    .text-image__cta-wrapper{
+                        margin-top: 42px;
+                    }
                 }
             }   
         }

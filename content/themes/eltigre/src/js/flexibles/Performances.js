@@ -14,39 +14,23 @@ class Performances {
 class Section {
 	constructor(section) {
 		this.section = section;
-		var rangesSlider = document.querySelectorAll('.rs-range-line');
-		var rangeBullet = document.querySelectorAll('.rs-bullet');
-		rangesSlider.forEach((range) => {
+		const result = [];
+		const saving = document.querySelector('.saving');
+		const reject = document.querySelector('.rejected');
+		var ranges = document.querySelectorAll('.range-slider');
+		ranges.forEach((range) => {
+			var rangesSlider = range.querySelector('.rs-range-line');
+			var rangeBullet = range.querySelector('.rs-bullet');
 			range.addEventListener('input', showSliderValue, false);
-		});
 
-		function showSliderValue() {
-			rangesSlider.forEach((slider) => {
-				rangeBullet.forEach((bullet) => {
-					bullet.innerHTML = slider.value;
-					var bulletPosition = slider.value / slider.max;
-					bullet.style.left = bulletPosition * 578 + 'px';
-				});
-			});
-		}
+			function showSliderValue() {
+				rangeBullet.innerHTML = rangesSlider.value;
+
+				var bulletPosition = rangesSlider.value / rangesSlider.max;
+				rangeBullet.style.left = bulletPosition * 578 + 'px';
+			}
+		});
 	}
-	// animate() {
-	// 	const themesSection = this.section.querySelector('.performances .main-wrapper');
-	// 	const themes = themesSection.querySelector('.simple-title');
-	// 	const animation = gsap
-	// 		.timeline()
-	// 		.fromTo(
-	// 			themes,
-	// 			{ y: 100, scale: 0.7, autoAlpha: 0 },
-	// 			{ y: 0, scale: 1, autoAlpha: 1, stagger: 0.3, duration: 0.3 }
-	// 		);
-	// 	ScrollTrigger.create({
-	// 		trigger: themesSection,
-	// 		start: 'top bottom-=5%',
-	// 		toggleActions: 'play none none reverse',
-	// 		animation,
-	// 	});
-	// }
 }
 
 export default Performances;

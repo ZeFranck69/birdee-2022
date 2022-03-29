@@ -32,7 +32,8 @@
 	}
 }
 .simple-wrapper{
-
+	padding-top: 252px;
+	padding-bottom: 252px;
     .section-part__title{
         margin-bottom: 90px;
     }
@@ -44,7 +45,7 @@
 	}
 	&.text-only{
 		.section-part__title{
-			margin-bottom: 90px;
+			margin-bottom: 13px;
 			font-size: 36px;
 			line-height: 56px;
 			font-family: 'Favorit Bold Lining', sans-serif;

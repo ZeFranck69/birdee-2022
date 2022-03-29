@@ -7,7 +7,6 @@ export default class Menu {
 		this.body = document.querySelector('body');
 		this.header = document.getElementById('site-header');
 		this.navSlide = document.getElementById('slide-nav');
-		console.log(this.navSlide);
 		this.toggleBtn = document.querySelector('.site__burger-menu');
 
 		this.toggleBtn.addEventListener('click', () => this.toggleMenu());

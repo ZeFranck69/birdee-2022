@@ -19,7 +19,6 @@
 }
 .text-video-wrapper{
     display: flex;
-    max-width: 100%;
     width: 100%;
     height: auto;
     margin: auto;
@@ -28,7 +27,6 @@
         flex-direction: column;
     }
 	.text-part__container{
-		width: 100%;
 		display: flex;
     	justify-content: center;
 		@include desktop{

@@ -1,9 +1,9 @@
 <section id="{{ section.title|sanitize }}"
-	class="performances {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}"
-	style="background-color: {{ section.background_color }}; padding: {{ section.section_margin }}px">
+	class="performances {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}"
+	style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 
 	<div class="performances-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+		<div class="{{ section.section_width == "fullwidth" ? "container container--big" : "" }} padding-60">
 			{% if section.section_title is not empty %}
 			<div class="performances__section-title">
 				<h2 class="title bold uppercase {{ section.title_text_align }}"
@@ -24,7 +24,6 @@
 					{% endfor %}
 				</div>
 				<div class="performances__result-part" style="max-width: {{ section.text_container_width }}px;">
-
 					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
 						{% if section.surtitle %}
 						<div class="text-part__surtitle surtitle">
@@ -42,7 +41,11 @@
 							{{ section.description }}
 						</div>
 						{% endif %}
-						
+						<div class="performances__result">
+							<span class="title saving"></span> + <span class="title rejected"></span> 
+
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -52,6 +55,8 @@
 					<span class="cta__label">
 						{{ section.cta.title }}
 					</span>
+					<p class="tamere">
+					</p>
 				</a>
 			</div>
 			{% endif %}

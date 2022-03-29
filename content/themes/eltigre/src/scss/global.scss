@@ -53,6 +53,46 @@ html {
   }
 }
 
+// Container
+.container{
+	
+	margin: auto;
+	width: 100%;
+}
+.container--big{
+	max-width: 1600px;
+}
+
+.container--medium{
+	max-width: 1440px;
+}
+.container--small{
+	max-width: 1280px;
+}
+.flex-row{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+// Padding
+.padding-40{
+	padding: 0 40px;
+}
+.padding-60{
+	padding: 0 60px;
+}
+.padding-80{
+	padding: 0 80px;
+}
+.padding-120{
+	padding: 0 120px;
+}
+
+
+
+
 img {
   max-width: 100%;
 }

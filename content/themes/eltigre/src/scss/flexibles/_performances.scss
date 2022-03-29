@@ -18,15 +18,18 @@
 	}
 }
 
-.range-slider {
-	
-}
+input[type='range'] {
+	width: 600px;
+	-webkit-appearance: none;
+	background-color: $grey;
+  }
 
 .rs-range {
 	margin-top: 29px;
 	width: 600px;
-	height: 15px;
+	height: 8px;
 	-webkit-appearance: none;
+	overflow: hidden;
 
 	&:focus {
 		outline: none;
@@ -54,7 +57,7 @@
 	&::-webkit-slider-thumb {
 		box-shadow: none;
 		border: 0px solid $black;
-		box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+		box-shadow: -600px 0 0 600px $green;
 		height: 22px;
 		width: 22px;
 		border-radius: 22px;
@@ -104,7 +107,18 @@
 	font-weight: normal;
 	line-height: normal;
 	font-size: 20px;
-
+	&::before{
+		content: "";
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		background-color: $green;
+		border-radius: 50%;
+		bottom: -44px;
+		left: 41px;
+		z-index: 30;
+		pointer-events: none;
+	}
 	&::after {
 		content: "€";
 		display: inline-block;
