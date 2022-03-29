@@ -13,24 +13,32 @@ class Performances {
 
 class Section {
 	constructor(section) {
+		this.result = [];
 		this.section = section;
-		const result = [];
 		const saving = document.querySelector('.saving');
 		const reject = document.querySelector('.rejected');
-		var ranges = document.querySelectorAll('.range-slider');
+		const ranges = document.querySelectorAll('.range-slider');
+
 		ranges.forEach((range) => {
-			var rangesSlider = range.querySelector('.rs-range-line');
-			var rangeBullet = range.querySelector('.rs-bullet');
-			range.addEventListener('input', showSliderValue, false);
+			const { key } = range.dataset;
 
-			function showSliderValue() {
-				rangeBullet.innerHTML = rangesSlider.value;
-
-				var bulletPosition = rangesSlider.value / rangesSlider.max;
-				rangeBullet.style.left = bulletPosition * 578 + 'px';
-			}
+			range.addEventListener(
+				'input',
+				() => {
+					const rangesSlider = range.querySelector('.rs-range-line');
+					const rangeBullet = range.querySelector('.rs-bullet');
+					rangeBullet.innerHTML = rangesSlider.value;
+					const bulletPosition = (rangesSlider.value / rangesSlider.max) * 100;
+					const maxWidth = rangesSlider.clientWidth;
+					rangeBullet.style.left = maxWidth * (bulletPosition / 100) + 'px';
+					this.result[key] = rangesSlider.value;
+				},
+				false
+			);
 		});
 	}
+
+	updateValue() {}
 }
 
 export default Performances;

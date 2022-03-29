@@ -145,7 +145,7 @@ a {
 @font-face {
   font-family: "Favorit";
   src: url(fonts/4366d6fa911b09a54704.eot);
-  src: url(fonts/4366d6fa911b09a54704.eot?#iefix) format("embedded-opentype"), url(fonts/bcda76638a8984402c85.woff2) format("woff2"), url(fonts/6b3f2712a32663b50e6d.woff) format("woff"), url(fonts/476822ec78657dc8b238.ttf) format("truetype"), url(icons/fe083c6e31fe7a49d3c2.svg#Favorit-LightMono) format("svg");
+  src: url(fonts/4366d6fa911b09a54704.eot?#iefix) format("embedded-opentype"), url(fonts/bcda76638a8984402c85.woff2) format("woff2"), url(fonts/6b3f2712a32663b50e6d.woff) format("woff"), url(fonts/476822ec78657dc8b238.ttf) format("truetype"), url(icons/481feb3b5604f4201703.svg#Favorit-LightMono) format("svg");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -153,7 +153,7 @@ a {
 @font-face {
   font-family: "Favorit";
   src: url(fonts/1983a6d81bcd50ffb221.eot);
-  src: url(fonts/1983a6d81bcd50ffb221.eot?#iefix) format("embedded-opentype"), url(fonts/1ce9d8dc716aad52899b.woff2) format("woff2"), url(fonts/80f26179711eb5e22563.woff) format("woff"), url(fonts/2b93e74fc33111dad678.ttf) format("truetype"), url(icons/c0c9c040b5f1e83ae0fd.svg#Favorit-Regular) format("svg");
+  src: url(fonts/1983a6d81bcd50ffb221.eot?#iefix) format("embedded-opentype"), url(fonts/1ce9d8dc716aad52899b.woff2) format("woff2"), url(fonts/80f26179711eb5e22563.woff) format("woff"), url(fonts/2b93e74fc33111dad678.ttf) format("truetype"), url(icons/9c672ae698eb8a2656be.svg#Favorit-Regular) format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -161,7 +161,7 @@ a {
 @font-face {
   font-family: "Favorit";
   src: url(fonts/11797d317f4fce665ed2.eot);
-  src: url(fonts/11797d317f4fce665ed2.eot?#iefix) format("embedded-opentype"), url(fonts/4da087de462df9159de6.woff2) format("woff2"), url(fonts/2a67078baf00d0e97aed.woff) format("woff"), url(fonts/674c33d6c5d2fb5baa48.ttf) format("truetype"), url(icons/181f373f10c042f73080.svg#Favorit-Bold) format("svg");
+  src: url(fonts/11797d317f4fce665ed2.eot?#iefix) format("embedded-opentype"), url(fonts/4da087de462df9159de6.woff2) format("woff2"), url(fonts/2a67078baf00d0e97aed.woff) format("woff"), url(fonts/674c33d6c5d2fb5baa48.ttf) format("truetype"), url(icons/015b4af872f4a2ccc3bc.svg#Favorit-Bold) format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -169,7 +169,7 @@ a {
 @font-face {
   font-family: "Favorit Bold Lining";
   src: url(fonts/701af8921cb33d76579b.eot);
-  src: url(fonts/701af8921cb33d76579b.eot?#iefix) format("embedded-opentype"), url(fonts/b561648a4151ba8abe5a.woff2) format("woff2"), url(fonts/f884291ccc4368066eef.woff) format("woff"), url(fonts/1a8278ce79525a09f993.ttf) format("truetype"), url(icons/c9f40f67eaacf2fce9bc.svg#Favorit-BoldLining) format("svg");
+  src: url(fonts/701af8921cb33d76579b.eot?#iefix) format("embedded-opentype"), url(fonts/b561648a4151ba8abe5a.woff2) format("woff2"), url(fonts/f884291ccc4368066eef.woff) format("woff"), url(fonts/1a8278ce79525a09f993.ttf) format("truetype"), url(icons/aa6829d6ac332e996711.svg#Favorit-BoldLining) format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
