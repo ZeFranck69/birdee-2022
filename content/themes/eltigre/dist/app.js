@@ -75,6 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Sections; }
 /* harmony export */ });
 /* harmony import */ var _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Performances */ "./src/js/flexibles/Performances.js");
+/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -85,11 +86,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Sections = /*#__PURE__*/_createClass(function Sections() {
   _classCallCheck(this, Sections);
 
   _defineProperty(this, "SECTIONS", {
-    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__["default"]
+    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__["default"],
+    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_1__["default"]
   });
 
   for (var className in this.SECTIONS) {
@@ -265,6 +268,76 @@ var Section = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Performances);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Wallets.js":
+/*!*************************************!*\
+  !*** ./src/js/flexibles/Wallets.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Wallets = /*#__PURE__*/_createClass(function Wallets(className) {
+  _classCallCheck(this, Wallets);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/_createClass(function Section(section) {
+  _classCallCheck(this, Section);
+
+  this.section = section;
+  var tabs = document.querySelectorAll('.theme-input-content');
+  var radios = document.querySelectorAll('.theme-input');
+  var yearsContent = document.querySelectorAll('.year__content');
+  var years = document.querySelectorAll('.tab__year');
+  radios.forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      var _this = this;
+
+      tabs.forEach(function (tab) {
+        tab.classList.add('hidden');
+
+        if (_this.checked && tab.getAttribute('tabname') == _this.value) {
+          tab.classList.remove('hidden');
+        }
+      });
+    });
+  });
+  years.forEach(function (year) {
+    year.addEventListener('click', function () {
+      yearsContent.forEach(function (yearContent) {
+        yearContent.classList.add('hidden');
+        var yearValue = year.dataset.year;
+
+        if (yearContent.getAttribute('tabname') == yearValue) {
+          console.log('ici');
+          yearContent.classList.remove('hidden');
+        }
+      });
+    });
+  });
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (Wallets);
 
 /***/ }),
 

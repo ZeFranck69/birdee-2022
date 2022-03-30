@@ -1,5 +1,5 @@
 <section id="{{ section.title|sanitize }}"
-	class="wallet {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}"
+	class="wallets {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}"
 	style=" {% if section.section_width == "ajust" %}background-color: {{ section.background_color }};{% endif %} padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 
 	<div class="wallet-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
@@ -12,20 +12,54 @@
 			{% endif %}
 			<div class="wallet-wrapper wallet-wrapper--{{ section.layout }}"
 				style="justify-content: {{ section.justify_content }};">
+
 				
 				{% for wallet in section.wallets %}
+				
 					<div class="wallet-block">
-						<div class="title title-wallet uppercase"> {{ wallet.post_title }} </div>
-						<div class="surtitle surtitle-wallet"> {{ wallet.surtitle }} </div>
-						<div class="title--secondary title-wallet uppercase"> {{ wallet.title }} </div>
-						<div class="description description-wallet"> {{ wallet.description }} </div>
-							
-							{% for theme in wallet.themes %}
-								<label>
-									<input type=radio class="toggleTab"  name="userType" value="{{ theme.theme_name }}" checked>
-									theme random
-								</label>
+						<div class="wallet-block__left-part">
+							<div class="title title-wallet uppercase"> {{ wallet.post_title }} </div>
+							<div class="surtitle surtitle-wallet"> {{ wallet.surtitle }} </div>
+							<div class="title--secondary title-wallet uppercase"> {{ wallet.title }} </div>
+							<div class="description description-wallet"> {{ wallet.description }} </div>
+							<div class="wallet-themes">
+							{% for subject in wallets[wallet.ID].subjects %}
+								
+									<input type=radio class="theme-input" name="userType" value="{{ subject.subject_name }}" {{ loop.index == 1 ? 'checked' : '' }}>
+									<label>{{ subject.subject_name }}</label>
 							{% endfor %}
+							</div>	
+						</div>
+						
+						{% for subject in wallets[wallet.ID].subjects %}
+						<div class="wallet-block__right-part theme-input-content {{ loop.index == 1 ? '' : 'hidden'}}" tabname="{{ subject.subject_name }}">
+						
+							<div class="tabs__years">
+							{% for year in subject.years %}
+								<div class="tab__year" data-year="{{ year.year }}">{{ year.year }}</div>
+							{% endfor %}
+							</div>
+							<div id="panels" class="content">
+								{% for content in subject.years %}
+									<div id="{{ content.year }}" class="year__content {{ loop.index == 1 ? '' : 'hidden'}}" tabname="{{ content.year }}">
+										<div class="perform__text">{{ __('Performance du portefeuille', eltigre) }}</div>
+										{{ content.performance }}
+	
+										<div class="gain__content">
+											<div class="gain-part">
+												{{ content.estimed_gain}}
+											</div>
+											<div class="co2-part">
+												{{ content.co2_saved}}
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+
+						</div>
+						{% endfor %}
+
 					</div>
 				{% endfor %}
 			</div>

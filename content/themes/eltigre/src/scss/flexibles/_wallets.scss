@@ -1,0 +1,37 @@
+.wallets{
+
+}
+.wallet-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wallet-block{
+    display: flex;
+    max-width: 1120px;
+    width: 100%; 
+    box-shadow: 0px 5px 4px 1px rgba(0,0,0,0.8);
+}
+.wallet-block__left-part{
+    background-color: $lightblue;
+    max-width: 50%;
+    width: 100%;
+    padding: 24px;
+}
+.wallet-block__right-part{
+    background-color: $white;
+    max-width: 50%;
+    width: 100%;
+    padding: 24px;
+    .tabs__years{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.hidden{
+    visibility: hidden;
+    display: none;
+}
+
