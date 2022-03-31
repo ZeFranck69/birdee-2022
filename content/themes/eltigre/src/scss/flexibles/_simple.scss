@@ -32,8 +32,8 @@
 	}
 }
 .simple-wrapper{
-	padding-top: 252px;
-	padding-bottom: 252px;
+	padding-top: 80px;
+	padding-bottom: 80px;
     .section-part__title{
         margin-bottom: 90px;
     }
@@ -81,8 +81,8 @@
 	max-width: 310px;
 }
 .simple__labels-wrapper{
+	display: flex;
 	@include tablet{
-		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 33px;
 	}

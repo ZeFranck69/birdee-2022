@@ -44,17 +44,17 @@
                 @include desktop{
                     justify-content: space-around;
                 }
-                @include tablet{
+                @include landscape{
                     flex-direction: column;
                     align-items: center;
                 }
                 .reason{
-                    max-width: 413px;
+                    max-width: 375px;
                     width: 100%;
                     @include desktop{
                         max-width: 285px;
                     }
-                    @include tablet{
+                    @include landscape{
                         margin-bottom: 30px;
                         max-width: 100%;
                     }
@@ -71,16 +71,22 @@
         flex-direction: column;
         align-items: flex-start;
     }
+    @include landscape{
+        align-items: center;
+    }
     @include tablet{
         flex-direction: row;
         align-items: center;
     }
     .reason__title{
-        margin-left:40px;
+        margin-left:20px;
         @include desktop{
             margin-left: 0;
             margin-bottom: 6px;
             margin-top: 17px;
+        }
+        @include landscape{
+            text-align: center;
         }
         @include tablet{
             margin-left: 13px;
@@ -103,6 +109,9 @@
 .reason__content{
     text-align: left;
     margin-top: 7px;
+    @include landscape{
+        text-align: center;
+    }
     @include tablet{
         margin-left: 83px;
     }
@@ -114,11 +123,12 @@
     margin: 50px 0 58px;
     border-top: 1px solid $grey; 
     padding-top: 53px;
-    @include tablet{
+    @include landscape{
         flex-direction: column;
         padding-top: 0;
         border-top: 0px solid;
         margin-top: 37px;
+
     }
 }
 .reasons__text-image--left-part{
@@ -133,6 +143,10 @@
 }
 .reasons__text-image--right-part__title{
     margin-bottom: 30px;
+    @include landscape{
+        text-align: center;
+    }
+
     @include tablet{
         margin-bottom: 7px;
     }
@@ -140,4 +154,9 @@
 .reasons__text-image--right-part__definition{
     max-width: 336px;
     width: 100%;
+    @include landscape{
+        max-width: 100%;
+        text-align: center;
+    }
+
 }

@@ -194,6 +194,7 @@ html {
   position: relative;
   max-width: 100vw;
   overflow: hidden;
+  background-color: #F4F4FF;
 }
 
 .main-wrapper {
@@ -247,9 +248,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .padding-40 {
@@ -560,7 +560,6 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding: 0 30px;
   margin: 0 auto;
   height: 58px;
 }
@@ -1229,7 +1228,7 @@ a {
 }
 
 .banner {
-  padding: 80px 0;
+  padding: 40px 0;
   overflow: hidden;
   min-height: 100%;
   height: auto;
@@ -1432,7 +1431,7 @@ body .tp-widget-wrapper {
         justify-content: space-around;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .reasons-container .reasons-wrapper .reasons__content .reasons-list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1444,7 +1443,7 @@ body .tp-widget-wrapper {
   }
 }
 .reasons-container .reasons-wrapper .reasons__content .reasons-list .reason {
-  max-width: 413px;
+  max-width: 375px;
   width: 100%;
 }
 @media only screen and (max-width: 1400px) {
@@ -1452,7 +1451,7 @@ body .tp-widget-wrapper {
     max-width: 285px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .reasons-container .reasons-wrapper .reasons__content .reasons-list .reason {
     margin-bottom: 30px;
     max-width: 100%;
@@ -1479,6 +1478,13 @@ body .tp-widget-wrapper {
             align-items: flex-start;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .reason__title--wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 @media only screen and (max-width: 768px) {
   .reason__title--wrapper {
     -webkit-box-orient: horizontal;
@@ -1491,13 +1497,18 @@ body .tp-widget-wrapper {
   }
 }
 .reason__title--wrapper .reason__title {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 @media only screen and (max-width: 1400px) {
   .reason__title--wrapper .reason__title {
     margin-left: 0;
     margin-bottom: 6px;
     margin-top: 17px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .reason__title--wrapper .reason__title {
+    text-align: center;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1522,6 +1533,11 @@ body .tp-widget-wrapper {
   text-align: left;
   margin-top: 7px;
 }
+@media only screen and (max-width: 1024px) {
+  .reason__content {
+    text-align: center;
+  }
+}
 @media only screen and (max-width: 768px) {
   .reason__content {
     margin-left: 83px;
@@ -1542,7 +1558,7 @@ body .tp-widget-wrapper {
   border-top: 1px solid #EEEEEE;
   padding-top: 53px;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .reasons__text-image {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1571,6 +1587,11 @@ body .tp-widget-wrapper {
 .reasons__text-image--right-part__title {
   margin-bottom: 30px;
 }
+@media only screen and (max-width: 1024px) {
+  .reasons__text-image--right-part__title {
+    text-align: center;
+  }
+}
 @media only screen and (max-width: 768px) {
   .reasons__text-image--right-part__title {
     margin-bottom: 7px;
@@ -1580,6 +1601,12 @@ body .tp-widget-wrapper {
 .reasons__text-image--right-part__definition {
   max-width: 336px;
   width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .reasons__text-image--right-part__definition {
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -3340,8 +3367,8 @@ body .tp-widget-wrapper {
 }
 
 .simple-wrapper {
-  padding-top: 252px;
-  padding-bottom: 252px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .simple-wrapper .section-part__title {
   margin-bottom: 90px;
@@ -3401,11 +3428,13 @@ body .tp-widget-wrapper {
   max-width: 310px;
 }
 
+.simple__labels-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 @media only screen and (max-width: 768px) {
   .simple__labels-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
