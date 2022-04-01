@@ -1,55 +1,34 @@
 .banner {
-	padding: 40px 0;
-	overflow: hidden;
-	min-height: 100%;
-	height: auto; // Peut etre à supprimer quand j'aurais les images
-	@include tablet{
-		height: auto !important;
-	}
+	padding: 40px 0;	
 }
+
 .banner-logo{
 	max-width: 360px;
 	width: 100%;
 }
 
-// .banner__container {
-// 	max-width: calc(1600px + 60px);
-// 	width: 100%;
-// 	margin: auto;
-// 	height: 100%;
-// 	display: flex;
-// 	align-items: center;
-// 	position: relative;
-// 	justify-content: center;
-// 	@include desktop-large{
-// 		margin: 0 auto;
-// 		padding: 0 30px;
-// 	}
-// 	@include desktop{
-// 		max-width: calc(1100px + 60px);
-// 		margin: 0 auto;
-// 		padding: 0 30px;
-// 	}
-// 	@include laptop {
-// 		padding: 0 30px;
-// 		margin: 0;
-// 	}
+.banner__container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	align-items: center;
+}
 
-// 	@include tablet {
-// 		padding: 0 17px;
-// 		margin: 0;
-// 		flex-direction: column-reverse;
-// 		justify-content: center;
-// 	}
-
-// }
 .banner-content__title{
 	margin-bottom: 30px;
 }
+
 .banner-content__description{
 
 	p{
 		margin-bottom: 14px;
+	}
+}
+
+.banner__image{
+	max-width: 410px;
+	@include desktop{
+		max-width:350px;
 	}
 }
 
@@ -82,19 +61,11 @@
 }
 
 .banner__content {
-	position: relative;
-	z-index: 0;
 	max-width: 590px;
-    width: 100%;
+
 	@include tablet{
 		text-align: center;
 		margin-top: 10px;
-	}
-	&.disposition-slash{
-
-		@include tablet{
-			text-align: left;
-		}
 	}
 
 	.banner-content__cta-wrapper {
@@ -104,42 +75,14 @@
 		}
 	}
 }
+
 .banner-content__subtitle{
 	margin: 30px 0;
 }
 
-
-
-// TYPE SLASH
-.banner__image-part {
-	position: relative;
-	@include tablet{
-		position: relative;
-		bottom: initial;
-   		width: 100%;
-		max-width: 350px !important;
-	}
-	@include mobile{
-		height: auto;
-	}
-
-	.banner__image {
-		max-width: 100%;
-		width: 100%;
-		position: relative;
-		z-index: 0;
-		bottom: 0;
-		-o-object-fit: cover;
-		   object-fit: cover;
-		font-family: "object-fit: cover;";
-	}
-}
 .trustpilot__wrapper{
 	max-width: 400px;
 	width: 100%;
 	text-align: left;
 	margin-top: 26px;
-}
-body .tp-widget-wrapper{
-	justify-content: flex-start !important;
 }

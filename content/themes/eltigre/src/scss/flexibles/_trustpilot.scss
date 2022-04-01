@@ -20,9 +20,7 @@
 	height: 100%;
 	
 	position: relative;
-	@include desktop-large{
-		margin: 0 30px;
-	}
+	
 	@include laptop {
 		padding: 0 30px;
 		margin: 0;
