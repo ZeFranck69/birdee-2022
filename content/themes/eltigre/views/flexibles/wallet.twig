@@ -25,8 +25,8 @@
 							<div class="wallet-themes">
 							{% for subject in wallets[wallet.ID].subjects %}
 								
-									<input type=radio class="theme-input" name="userType" value="{{ subject.subject_name }}" {{ loop.index == 1 ? 'checked' : '' }}>
-									<label>{{ subject.subject_name }}</label>
+									<input type=radio class="theme-input" name="userType" value="{{ subject.subject_name }}"  id="{{ subject.subject_name }}" {{ loop.index == 1 ? 'checked' : '' }}>
+									<labe for="{{ subject.subject_name }}">{{ subject.subject_name }}</label>
 							{% endfor %}
 							</div>	
 						</div>
