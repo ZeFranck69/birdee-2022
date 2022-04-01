@@ -51,9 +51,7 @@
 			font-family: 'Favorit Bold Lining', sans-serif;
 		}
 		.section-part__description{
-			margin-bottom: 46px;
-			font-size: 30px;
-			line-height: 37.8px;
+			max-width: 500px;
 			@include tablet{
 				font-size: 18px;
 				line-height: 24px;
