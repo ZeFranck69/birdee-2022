@@ -18,7 +18,8 @@ class Section {
 		const saving = document.querySelector('.saving');
 		const reject = document.querySelector('.rejected');
 		const ranges = document.querySelectorAll('.range-slider');
-
+		saving.innerHTML = 0;
+		reject.innerHTML = 0;
 		ranges.forEach((range) => {
 			const { key } = range.dataset;
 
@@ -34,6 +35,7 @@ class Section {
 					this.result[key] = rangesSlider.value;
 					const operation = parseInt(this.result[0]) * parseInt(this.result[1]);
 					console.log(operation);
+					saving.innerHTML = operation;
 				},
 				false
 			);

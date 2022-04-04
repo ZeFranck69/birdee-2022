@@ -136,7 +136,9 @@ $transition_speed: .2s;
 	width: 100%;
 	margin: 0 auto;
 	height: 58px;
-
+	@include laptop-small{
+		padding: 0 40px;
+	}
 	.menu--left,
 	.menu--right{
 		display:flex;

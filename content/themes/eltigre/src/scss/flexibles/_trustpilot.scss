@@ -22,12 +22,10 @@
 	position: relative;
 	
 	@include laptop {
-		padding: 0 30px;
 		margin: 0;
 	}
 
 	@include tablet {
-		padding: 0 17px;
 		margin: 0;
 		flex-direction: column-reverse;
 		justify-content: center;
@@ -78,7 +76,7 @@
 	max-width: 590px;
     width: 100%;
 	@include tablet{
-		text-align: center;
+		
 		margin-top: 10px;
 	}
 	

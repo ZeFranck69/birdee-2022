@@ -3,6 +3,38 @@
 }
 .performances-wrapper{
 	display: flex;
+	@include landscape{
+		flex-direction:column;
+	}
+}
+.performances__section-title{
+	margin-bottom: 52px;
+}
+.performances__calcul-part{
+	max-width: 640px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.4);
+	padding: 24px 12px;
+	@include desktop{
+		max-width: 430px;
+	}
+	@include landscape{
+		max-width: 100%;
+		background-color: transparent;
+	}
+	.name__range,
+	.range-slider{
+		max-width: 100%;
+		width: 100%;
+	}
+	.performance:first-child{
+		margin-bottom: 65px;
+	}
+}
+.separator_vertical{
+	width: 2px;
+	background-color: $grey;
+	height: auto;
 }
 
 .box-minmax {
@@ -18,10 +50,15 @@
 	}
 }
 
+
 input[type='range'] {
-	width: 600px;
+	max-width: 600px;
+	width: 100%;
 	-webkit-appearance: none;
 	background-color: $grey;
+	@include landscape{
+		max-width: 100%;
+	}
   }
 
 .rs-range {
@@ -39,7 +76,6 @@ input[type='range'] {
 		width: 100%;
 		cursor: pointer;
 		box-shadow: none;
-
 		border-radius: 0px;
 		border: 0px solid $black;
 	}
@@ -59,7 +95,7 @@ input[type='range'] {
 		border: 0px solid $black;
 		box-shadow: -600px 0 0 600px $green;
 		height: 22px;
-		width: 22px;
+		width: 1px;
 		border-radius: 22px;
 		background: $green;
 		cursor: pointer;
@@ -85,8 +121,9 @@ input[type='range'] {
 	}
 }
 
-.rs-label {
-
+.rs-label {	
+	font-size: 20px;
+	line-height: 24px;
 	position: relative;
 	transform-origin: center center;
 	display: block;
@@ -94,19 +131,13 @@ input[type='range'] {
 	height: 20px;
 	background: transparent;
 	border-radius: 50%;
-	line-height: 30px;
 	text-align: center;
 	font-weight: bold;
-	padding-top: 22px;
 	box-sizing: border-box;
-	margin-top: 20px;
 	margin-left: -38px;
-	left: attr(value);
 	color: $black;
 	font-style: normal;
-	font-weight: normal;
-	line-height: normal;
-	font-size: 20px;
+	margin-top: 16px;
 	&::before{
 		content: "";
 		position: absolute;
@@ -114,8 +145,8 @@ input[type='range'] {
 		height: 22px;
 		background-color: $green;
 		border-radius: 50%;
-		bottom: -44px;
-		left: 41px;
+		top: -35px;
+		left: 35px;
 		z-index: 0;
 		pointer-events: none;
 	}
@@ -132,4 +163,38 @@ input[type='range'] {
 .performances__result-part{
 	width: 100%;
 	text-align: center;
+	max-width: 640px;
+
+	@include desktop{
+		max-width: 430px;
+	}
+	@include landscape{
+		max-width: 100%;
+	}
+
+	.text-part__description{
+		margin-bottom: 22px;
+	}
+}
+.performances__cta-wrapper{
+	margin-top: 40px;
+}
+.performances__result{
+	display: flex;
+	flex-direction: row;
+}
+.plus{
+	padding-top: 90px;
+}
+.saving__block,
+.rejected__block{
+	max-width: 298px;
+	width: 100%;
+	@include desktop{
+		max-width: 193px;
+	}
+	@include landscape{
+		max-width: 48%;
+    	margin: 0 auto;
+	}
 }

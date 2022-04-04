@@ -243,6 +243,8 @@ var Section = /*#__PURE__*/function () {
     var saving = document.querySelector('.saving');
     var reject = document.querySelector('.rejected');
     var ranges = document.querySelectorAll('.range-slider');
+    saving.innerHTML = 0;
+    reject.innerHTML = 0;
     ranges.forEach(function (range) {
       var key = range.dataset.key;
       range.addEventListener('input', function () {
@@ -255,6 +257,7 @@ var Section = /*#__PURE__*/function () {
         _this.result[key] = rangesSlider.value;
         var operation = parseInt(_this.result[0]) * parseInt(_this.result[1]);
         console.log(operation);
+        saving.innerHTML = operation;
       }, false);
     });
   }
@@ -324,13 +327,18 @@ var Section = /*#__PURE__*/_createClass(function Section(section) {
   });
   years.forEach(function (year) {
     year.addEventListener('click', function () {
+      year.classList.remove('active');
       yearsContent.forEach(function (yearContent) {
         yearContent.classList.add('hidden');
         var yearValue = year.dataset.year;
 
         if (yearContent.getAttribute('tabname') == yearValue) {
-          console.log('ici');
           yearContent.classList.remove('hidden');
+          year.classList.add('active');
+        }
+
+        if (yearContent.getAttribute('tabname') != yearValue) {
+          year.classList.remove('active');
         }
       });
     });

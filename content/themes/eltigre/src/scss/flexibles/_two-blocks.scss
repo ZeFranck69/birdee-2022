@@ -38,8 +38,6 @@
         flex-direction: column;
     }
 	.text-part__container{
-		width: 100%;
-		// max-width: 640px !important;
 		.operators__list{
 			display: flex;
 			flex-direction: column;
@@ -82,7 +80,7 @@
 			}
 		}
 		&.picto-only{
-			width: 100%;
+
 			@include laptop{
 				max-width: 220px !important;
 			}

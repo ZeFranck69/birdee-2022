@@ -118,6 +118,8 @@
     }
 
     .text-bubble__bubble{
+        max-width: 375px;
+        width: 100%;
 		@include desktop{
 			display: none;
 		}

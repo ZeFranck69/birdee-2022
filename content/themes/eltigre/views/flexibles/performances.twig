@@ -14,40 +14,64 @@
 				style="justify-content: {{ section.justify_content }};">
 				<div class="performances__calcul-part" style="max-width: {{ section.container_image_width }}px;">
 					{% for key, element in section.elements %}
-						<div class="name__range">
-							{{ element.element_name }}
-						</div>
-						<div class="range-slider" data-key="{{ key }}">
-						  <span class="rs-label rs-bullet">{{ element.min }}</span>
-						  <input class="rs-range rs-range-line" type="range" value="{{ element.min }}" min="{{ element.min }}" max="{{ element.max }}">
-						</div>
-						<div class="box-minmax">
-						  <span class="range-min">{{ element.min }}</span><span class="range-max">{{ element.max }}</span>
+						<div class="performance">
+							<div class="name__range title--secondary-unline uppercase bold">
+								{{ element.element_name }}
+							</div>
+							<div class="range-slider" data-key="{{ key }}">
+								<input class="rs-range rs-range-line" type="range" value="{{ element.min }}" min="{{ element.min }}" max="{{ element.max }}">
+								<span class="rs-label rs-bullet bold">{{ element.min }}</span>
+							</div>
+							<!-- <div class="box-minmax">
+							  <span class="range-min">{{ element.min }}</span><span class="range-max">{{ element.max }}</span>
+							</div> -->
 						</div>
 					{% endfor %}
 				</div>
-				<div class="performances__result-part" style="max-width: {{ section.text_container_width }}px;">
+				<div class="separator_vertical"></div>
+				<div class="performances__result-part">
 					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">
-						{% if section.surtitle %}
-						<div class="text-part__surtitle surtitle">
-							{{ section.surtitle }}
-						</div>
-						{% endif %}
 						{% if section.title %}
-						<h2 class="text-part__title title bold uppercase">
+						<h2 class="text-part__title surtitle bold uppercase">
 							{{ section.title }}
 						</h2>
 						{% endif %}
 						
 						{% if section.description %}
-						<div class="text-part__description description" style="color:{{ section.description_color }};">
+						<div class="text-part__description surtitle" style="color:{{ section.description_color }};">
 							{{ section.description }}
 						</div>
 						{% endif %}
 						<div class="performances__result">
-							<span class="title saving"></span> + <span class="title rejected"></span> 
+							<div class="saving__block">
+								<div class="picto-co2">
+									<img src="{{ Image(options.gain_picto).src }}" alt="{{ Image(options.gain_picto).alt }}">	
+								</div>
+								<div class="title uppercase">
+									<span class="saving"></span><span>€</span>
+								</div>  
+								<div class="saving-comparaison">
+									{{ __('vs', 'eltigre')}} <span class="comparaison"></span> {{ __('sur votre compte épargne', 'eltigre')}}
+								</div>
+							</div>
+							<div class="plus bold">
+								+
+							</div>
+							<div class="rejected__block">
+								<div class="picto-co2">
+									<img src="{{ Image(options.co2_picto).src }}" alt="{{ Image(options.co2_picto).alt }}">	
+								</div>
+								<div class="title uppercase">
+									<span class="rejected"></span><span>{{ __(' Tonnes','eltigre') }}</span>	
 
-
+								</div>
+								<div class="rejected-saved uppercase">
+									{{ __('de co2 économisé', 'eltigre')}}
+								</div>
+								<div class="rejected__report">
+									{{ __('Sur votre portefeuille par rapport à la moyenne de l’indice de référence', 'eltigre')}}
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -58,8 +82,11 @@
 					<span class="cta__label">
 						{{ section.cta.title }}
 					</span>
-					<p class="tamere">
-					</p>
+				</a>
+			</div>
+			<div class="performances__link-wrapper">
+				<a href="" class="link">
+
 				</a>
 			</div>
 			{% endif %}

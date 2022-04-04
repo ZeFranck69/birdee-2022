@@ -49,8 +49,6 @@
 	&.text-only{
 		.section-part__title{
 			margin-bottom: 13px;
-			font-size: 36px;
-			line-height: 56px;
 			font-family: 'Favorit Bold Lining', sans-serif;
 		}
 		.section-part__description{
@@ -94,8 +92,5 @@
 	height: auto;
 	&:first-child{
 		margin-right: 10px;
-	}
-	@include tablet{
-		max-width: 56px;
 	}
 }

@@ -21,26 +21,13 @@
 }
 
 .prefooter__container {
-	margin: auto;
-	height: 100%;
 	display: flex;
-	align-items: center;
-	position: relative;
 	justify-content: space-between;
-	
-	@include desktop{
-		max-width: calc(1100px - 60px);
-	}
-	@include laptop {
-		padding: 0 30px;
-		margin: 0;
-	}
 
 	@include tablet {
 		padding: 0 17px;
 		margin: 0;
 		flex-direction: column-reverse;
-		justify-content: center;
 	}
 
 }

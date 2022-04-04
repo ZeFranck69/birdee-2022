@@ -75,6 +75,12 @@ $ease: (
   }
 }
 
+@mixin laptop-small {
+  @media only screen and (max-width: 1140px) {
+    @content;
+  }
+}
+
 @mixin laptop {
   @media only screen and (max-width: 1440px) {
     @content;

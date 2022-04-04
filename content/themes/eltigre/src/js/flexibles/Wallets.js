@@ -32,12 +32,16 @@ class Section {
 		});
 		years.forEach((year) => {
 			year.addEventListener('click', function () {
+				year.classList.remove('active');
 				yearsContent.forEach((yearContent) => {
 					yearContent.classList.add('hidden');
 					const yearValue = year.dataset.year;
 					if (yearContent.getAttribute('tabname') == yearValue) {
-						console.log('ici');
 						yearContent.classList.remove('hidden');
+						year.classList.add('active');
+					}
+					if (yearContent.getAttribute('tabname') != yearValue) {
+						year.classList.remove('active');
 					}
 				});
 			});

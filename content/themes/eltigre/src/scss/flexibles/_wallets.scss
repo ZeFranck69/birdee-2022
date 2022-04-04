@@ -6,27 +6,48 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 70px;
 }
 .wallet-block{
     display: flex;
     max-width: 1120px;
     width: 100%; 
     box-shadow: 0px 5px 4px 1px rgba(0,0,0,0.8);
+    background-color: $white;
+    @include tablet{
+        flex-direction: column;
+    }
 }
 .wallet-block__left-part{
-    background-color: $lightblue;
+    background-color: rgba(244, 244, 255, 0.5);
     max-width: 50%;
     width: 100%;
     padding: 24px;
+    @include desktop{
+        max-width: 45%;
+    }
+    @include tablet{
+        max-width: 100%;
+    }
 }
 .wallet-block__right-part{
     background-color: $white;
     max-width: 50%;
     width: 100%;
     padding: 24px;
+     @include desktop{
+         max-width: 55%;
+     }
+     @include tablet{
+         max-width: 100%;
+     }   
     .tabs__years{
         display: flex;
         justify-content: space-between;
+        .tab__year{
+            cursor: pointer;
+            
+        }
     }
 }
 
@@ -34,4 +55,67 @@
     visibility: hidden;
     display: none;
 }
+.title-wallet{
+    margin-bottom: 11px;
+}
+.hook-wallet{
+    margin-bottom: 20px;
+}
+.description-wallet{
+    margin-bottom: 19px;
+}
+.wallet-theme{
+    margin-bottom: 11px;
+}
+.perform-percent{
+    text-align: center;
+    margin-bottom: 31px;
+    .perform__text{
+        margin-bottom: 27px;
+    }
+    .percent{
+        padding: 10px;
+        display: inline-block;
+        background-color: $green;
+        margin-bottom: 10px;
+    }
+}
+.gain__content{
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    @include landscape{
+        flex-direction: column;
+    }
+}
 
+.gain,
+.co2{
+    background-color: $green;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 32px;
+    font-family: "Favorit Bold Lining", sans-serif;
+    font-weight: bold;
+    max-width: 218px;
+    width: 100%;
+    text-align: center;
+    @include landscape{
+        margin: auto;
+    }
+}
+.picto-co2,
+.picto-gain{
+    text-align: center;
+    min-height: 62px;
+    margin-bottom: 6px;
+}
+.gain-part{
+    @include landscape{
+        margin-bottom: 25px;
+    }
+}
+
+.wallet__cta-wrapper{
+    margin-top: 24px;
+}
