@@ -1,6 +1,6 @@
 <section id="prefooter" class="prefooter"
 	style="background-color: {{ section.background_color }}; margin-top: {{ section.margin_top }}px; margin-bottom: {{ section.margin_bottom }}px;" >
-	<div class="prefooter__container main-wrapper prefooter__position--{{ section.layout }} padding-60">
+	<div class="prefooter__container main-wrapper prefooter__position--{{ section.layout }} padding-medium">
 
 		<div class="prefooter__content layout--{{ section.text_layout }}" style="max-width: {{ section.text_width }}px;">
 			{% if section.logo %}
@@ -28,7 +28,7 @@
 			</div>
 			{% endif %}
 		</div>
-		<div class="prefooter__image-part" style="max-width:{{ section.image_block_width }}px;">
+		<div class="prefooter__image-part">
 			{% if section.image %}
 				<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="prefooter__image" style="max-width:{{ section.width }}px;">
 			{% endif %}

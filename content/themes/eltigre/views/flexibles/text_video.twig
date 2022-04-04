@@ -1,7 +1,7 @@
-<section id="{{ section.title|sanitize }}" class="text-video {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
+<section id="{{ section.title|sanitize }}" class="text-video {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 
 	<div class="text-video-container" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "container container--big" : "" }} padding-60">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium">
 			<div class="text-video__section-title">
 				<h2 class="title left" style="color: {{ section.color_section_title }};">{{ section.section_title }}</h2>
 			</div>

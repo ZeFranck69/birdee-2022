@@ -14,7 +14,9 @@
 
 }
 .simple-container{
-	position: relative;
+	.main-wrapper{
+		position: relative;
+	}
 }
 .radius-three-corner .overlay{
 	position: absolute;
@@ -34,6 +36,7 @@
 .simple-wrapper{
 	padding-top: 80px;
 	padding-bottom: 80px;
+	position: relative;
     .section-part__title{
         margin-bottom: 90px;
     }

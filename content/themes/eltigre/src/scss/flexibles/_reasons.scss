@@ -52,7 +52,7 @@
                     max-width: 375px;
                     width: 100%;
                     @include desktop{
-                        max-width: 285px;
+                        max-width: 310px;
                     }
                     @include landscape{
                         margin-bottom: 30px;
@@ -68,7 +68,6 @@
     align-items: center;
     text-align: left;
     @include desktop{
-        flex-direction: column;
         align-items: flex-start;
     }
     @include landscape{

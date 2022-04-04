@@ -1,9 +1,9 @@
 <section id="{{ section.title|sanitize }}"
-	class="performances {{ section.section_width == "ajust" ? "container container--big" : "" }} {{ section.radius }}"
+	class="performances {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}"
 	style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 
 	<div class="performances-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "container container--big" : "" }} padding-60">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium">
 			{% if section.section_title is not empty %}
 			<div class="performances__section-title">
 				<h2 class="title bold uppercase {{ section.title_text_align }}"

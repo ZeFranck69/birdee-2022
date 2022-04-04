@@ -1,9 +1,10 @@
-<section id="{{ section.title|sanitize }}" class="simple {{ section.radius }} {{ section.section_width == "ajust" ? "container container--big" : "" }}" style="background-color: {{ section.background_color }};background-image: url({{ section.background_image.url }})">
-	<div class="overlay"></div>
+<section id="{{ section.title|sanitize }}" class="simple {{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}" style="{% if section.section_width == "fullwidth" %}background-image: url({{ section.background_image.url }});{% endif %}background-color: {{ section.background_color }};">
+	
 	<div class="simple-container" style="text-align: {{ section.text_align }};">
 		
-		<div class="{{ section.section_width == "fullwidth" ? "container container--big" : "" }}">
-			<div class="simple-wrapper {{ section.display_type }} padding-60">
+		<div class="{{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }};background-image: url({{ section.background_image.url }})">
+		<div class="overlay"></div>
+			<div class="simple-wrapper {{ section.display_type }} padding-medium">
 				{% if section.section_title %}
 					<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
 						{{ section.section_title }}
