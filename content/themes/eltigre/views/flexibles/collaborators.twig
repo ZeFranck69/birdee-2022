@@ -1,7 +1,7 @@
-<section id="{{ section.title|sanitize }}" class="collaborators {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }}" style="background-color: {{ section.background_color }};">
+<section id="{{ section.title|sanitize }}" class="collaborators">
 
 	<div class="collaborators-container" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+		<div class="main-wrapper padding-medium" style="background-color: {{ section.background_color }};" >
             <div class="collaborators-wrapper">
                 {% if section.section_title %}
                 <div class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">

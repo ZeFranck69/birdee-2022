@@ -1,6 +1,5 @@
-<section id="quote" class="quote {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.section_width == "ajust" ? "ajust" : "fullwidth" }} {{ section.radius }}" 
-	style="background-color: {{ section.background_color }};">
-	<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+<section id="quote" class="quote">
+	<div class="main-wrapper {{ section.radius }} padding-medium" style="background-color: {{ section.background_color }};">
 		<div class="quote__container quote__position--{{ section.layout }}">
 			{% for collabID in section.collaborator %}
 			<div class="quote__content" style="max-width: {{ section.text_width }}px;">

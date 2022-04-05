@@ -3116,22 +3116,24 @@ a {
   margin-top: 24px;
 }
 
-.collaborators {
-  padding: 60px 80px 0;
-}
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1140px) {
   .collaborators {
-    padding: 40px 30px 0;
+    padding: 0 40px;
   }
 }
 @media only screen and (max-width: 590px) {
   .collaborators {
     margin: 0;
+    padding: 0;
     max-width: 100%;
     width: 100%;
   }
 }
 
+.collaborators-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .collaborators-wrapper .section-part__title {
   margin-bottom: 24px;
 }
@@ -3976,19 +3978,11 @@ input[type=range] {
 }
 
 .quote {
-  padding: 60px 80px 0;
-  overflow: hidden;
   min-height: 100%;
-  height: auto;
 }
-@media only screen and (max-width: 1680px) {
+@media only screen and (max-width: 1140px) {
   .quote {
     padding: 40px 40px 0;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .quote {
-    padding: 40px 17px;
   }
 }
 @media only screen and (max-width: 590px) {
@@ -3998,6 +3992,9 @@ input[type=range] {
     max-width: 100%;
     width: 100%;
   }
+}
+.quote .main-wrapper {
+  padding-top: 40px;
 }
 
 .quote-logo {
@@ -4023,13 +4020,11 @@ input[type=range] {
 }
 @media only screen and (max-width: 1440px) {
   .quote__container {
-    padding: 0 30px;
     margin: 0;
   }
 }
 @media only screen and (max-width: 768px) {
   .quote__container {
-    padding: 0 35px;
     margin: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -4141,7 +4136,6 @@ input[type=range] {
 
 .quote__image-part {
   position: relative;
-  width: 100%;
 }
 @media only screen and (max-width: 1680px) {
   .quote__image-part {

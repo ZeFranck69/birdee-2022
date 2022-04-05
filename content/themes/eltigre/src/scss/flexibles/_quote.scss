@@ -1,20 +1,16 @@
 .quote {
-	padding: 60px 80px 0;
-	overflow: hidden;
 	min-height: 100%;
-	height: auto; // Peut etre à supprimer quand j'aurais les images
-	@include desktop{
+	@include laptop-small{
 		padding: 40px 40px 0;
-	}
-	@include tablet{
-		padding: 40px 17px;
-
 	}
 	@include mobile-xl{
 		margin: 0;
 		padding: 40px 0;
 		max-width: 100%;
 		width: 100%;
+	}
+	.main-wrapper{
+		padding-top: 40px;
 	}
 }
 .quote-logo{
@@ -33,12 +29,10 @@
 	justify-content: center;
 
 	@include laptop {
-		padding: 0 30px;
 		margin: 0;
 	}
 
 	@include tablet {
-		padding: 0 35px;
 		margin: 0;
 		flex-direction: column-reverse;
 		justify-content: center;
@@ -129,11 +123,8 @@
 .quote-content__subtitle{
 	margin: 30px 0;
 }
-
-// TYPE SLASH
 .quote__image-part {
 	position: relative;
-	width: 100%;
 	@include desktop
 	{
 		max-width: 241px !important;
