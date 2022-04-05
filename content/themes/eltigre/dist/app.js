@@ -74,8 +74,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Sections; }
 /* harmony export */ });
-/* harmony import */ var _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Performances */ "./src/js/flexibles/Performances.js");
-/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
+/* harmony import */ var _flexibles_Banner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Banner */ "./src/js/flexibles/Banner.js");
+/* harmony import */ var _flexibles_Performances__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Performances */ "./src/js/flexibles/Performances.js");
+/* harmony import */ var _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/PreFooter */ "./src/js/flexibles/PreFooter.js");
+/* harmony import */ var _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Reasons */ "./src/js/flexibles/Reasons.js");
+/* harmony import */ var _flexibles_Simple__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/Simple */ "./src/js/flexibles/Simple.js");
+/* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
+/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
+/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -87,12 +93,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
+
+
+
+
 var Sections = /*#__PURE__*/_createClass(function Sections() {
   _classCallCheck(this, Sections);
 
   _defineProperty(this, "SECTIONS", {
-    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_0__["default"],
-    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_1__["default"]
+    banner: _flexibles_Banner__WEBPACK_IMPORTED_MODULE_0__["default"],
+    reasons: _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_3__["default"],
+    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_1__["default"],
+    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_7__["default"],
+    simple: _flexibles_Simple__WEBPACK_IMPORTED_MODULE_4__["default"],
+    steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_5__["default"],
+    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_6__["default"],
+    prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_2__["default"]
   });
 
   for (var className in this.SECTIONS) {
@@ -202,6 +220,103 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
 
 /***/ }),
 
+/***/ "./src/js/flexibles/Banner.js":
+/*!************************************!*\
+  !*** ./src/js/flexibles/Banner.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Banner = /*#__PURE__*/_createClass(function Banner(className) {
+  _classCallCheck(this, Banner);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var banner = this.section.querySelector('.banner__container');
+      var title = banner.querySelector('.banner-content__title');
+      var description = banner.querySelector('.banner-content__description');
+      var button = banner.querySelector('.banner-content__cta-wrapper');
+      var ImagePart = banner.querySelector('.banner__image-part');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(button, {
+        scale: 0.8,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(ImagePart, {
+        y: 100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.25
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: banner,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Banner);
+
+/***/ }),
+
 /***/ "./src/js/flexibles/Performances.js":
 /*!******************************************!*\
   !*** ./src/js/flexibles/Performances.js ***!
@@ -242,6 +357,7 @@ var Section = /*#__PURE__*/function () {
     this.section = section;
     var saving = document.querySelector('.saving');
     var reject = document.querySelector('.rejected');
+    var comparison = document.querySelector('.comparison');
     var ranges = document.querySelectorAll('.range-slider');
     saving.innerHTML = 0;
     reject.innerHTML = 0;
@@ -254,10 +370,11 @@ var Section = /*#__PURE__*/function () {
         var bulletPosition = rangesSlider.value / rangesSlider.max * 100;
         var maxWidth = rangesSlider.clientWidth;
         rangeBullet.style.left = maxWidth * (bulletPosition / 100) + 'px';
-        _this.result[key] = rangesSlider.value;
-        var operation = parseInt(_this.result[0]) * parseInt(_this.result[1]);
-        console.log(operation);
-        saving.innerHTML = operation;
+        _this.result[key] = rangesSlider.value; // Mettre l'operation ici
+
+        var operation = parseInt(_this.result[0]) * parseInt(_this.result[1]); // Mettre l'operation de comparaison ici
+
+        saving.innerHTML = operation.toLocaleString();
       }, false);
     });
   }
@@ -271,6 +388,528 @@ var Section = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Performances);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/PreFooter.js":
+/*!***************************************!*\
+  !*** ./src/js/flexibles/PreFooter.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var PreFooter = /*#__PURE__*/_createClass(function PreFooter(className) {
+  _classCallCheck(this, PreFooter);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var preFooter = this.section.querySelector('.prefooter__container');
+      var textPart = preFooter.querySelector('.prefooter__content');
+      var title = textPart.querySelector('.prefooter-content__title');
+      var description = textPart.querySelector('.prefooter-content__description');
+      var apps = textPart.querySelector('.prefooter-content__cta-wrapper');
+      var app = apps.querySelectorAll('.prefooter-content__cta-wrapper');
+      var imagePart = preFooter.querySelector('.prefooter__image-part');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(imagePart, {
+        y: 150,
+        autoAlpha: 0
+      }, {
+        y: 1,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(app, {
+        autoAlpha: 0
+      }, {
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.25
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: preFooter,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (PreFooter);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Reasons.js":
+/*!*************************************!*\
+  !*** ./src/js/flexibles/Reasons.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Reasons = /*#__PURE__*/_createClass(function Reasons(className) {
+  _classCallCheck(this, Reasons);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var reasons = this.section.querySelector('.reasons-wrapper');
+      var title = reasons.querySelectorAll('.text-part__title');
+      var blocks = reasons.querySelector('.reasons-list');
+      var block = blocks.querySelectorAll('.reason');
+      var textImagePart = reasons.querySelector('.reasons__text-image');
+      var leftPart = textImagePart.querySelector('.reasons__text-image--left-part');
+      var rightPart = textImagePart.querySelector('.reasons__text-image--right-part');
+      var button = reasons.querySelector('.reasons__cta-wrapper');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(block, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(leftPart, {
+        scale: 0.8,
+        x: -100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        x: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(rightPart, {
+        scale: 0.8,
+        x: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        x: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(button, {
+        scale: 0.8,
+        y: 15,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: reasons,
+        start: 'top bottom-=-4%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Reasons);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Simple.js":
+/*!************************************!*\
+  !*** ./src/js/flexibles/Simple.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Simple = /*#__PURE__*/_createClass(function Simple(className) {
+  _classCallCheck(this, Simple);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var simple = this.section.querySelector('.simple-wrapper');
+      var title = simple.querySelector('.section-part__title');
+      var description = simple.querySelector('.section-part__description');
+      var button = simple.querySelector('.simple__cta-wrapper');
+      var labels = simple.querySelector('.simple__labels-wrapper');
+      var label = labels.querySelectorAll('.label-picto');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(button, {
+        scale: 0.8,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(label, {
+        autoAlpha: 0
+      }, {
+        autoAlpha: 1,
+        stagger: 0.01,
+        duration: 0.25
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: simple,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Simple);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Steps.js":
+/*!***********************************!*\
+  !*** ./src/js/flexibles/Steps.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Steps = /*#__PURE__*/_createClass(function Steps(className) {
+  _classCallCheck(this, Steps);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var steps = this.section.querySelector('.steps-container');
+      var title = steps.querySelector('.steps__section-title');
+      var description = steps.querySelector('.steps__section-description');
+      var blocks = steps.querySelector('.steps-wrapper');
+      var block = blocks.querySelectorAll('.step__container'); // const blockImage = blocks.querySelectorAll('.steps__image');
+      // const blockText = blocks.querySelectorAll('.text-part__container');
+      // const textDescription = blockText.querySelector('.text-part__description');
+
+      var button = steps.querySelector('.section-steps__cta-wrapper');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      }).fromTo(block, {
+        y: 100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.01,
+        duration: 0.35
+      }).fromTo(button, {
+        scale: 0.8,
+        y: 15,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: steps,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Steps);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/TwoBlocks.js":
+/*!***************************************!*\
+  !*** ./src/js/flexibles/TwoBlocks.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var TwoBlocks = /*#__PURE__*/_createClass(function TwoBlocks(className) {
+  _classCallCheck(this, TwoBlocks);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var TwoBlocks = this.section.querySelector('.two-blocks-wrapper');
+      var title = TwoBlocks.querySelector('.text-part__title');
+      var description = banner.querySelector('.text-part__description');
+      var buttons = TwoBlocks.querySelector('.buttons-wrapper__list');
+      var button = buttons.querySelectorAll('.cta-wrapper');
+      var ImagePart = banner.querySelector('.picto-only');
+      var operators = TwoBlocks.querySelector('.operators__list'); // const operator = operators.querySelectorAll('.operator-wrapper');
+
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.25
+      }).fromTo(button, {
+        scale: 0.8,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        autoAlpha: 1,
+        stagger: 0.01,
+        duration: 0.35
+      }).fromTo(ImagePart, {
+        y: 100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.01,
+        duration: 0.25
+      });
+
+      if (operators) {
+        var operatorAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(operators, 0.3, {
+          y: 150,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1
+        });
+        timeline.add(operatorAnimation);
+      }
+
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: TwoBlocks,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (TwoBlocks);
 
 /***/ }),
 

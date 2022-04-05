@@ -3,16 +3,17 @@
 //LIGHTNESS
 @font-face {
     font-family: 'Favorit';
-    src: url('../fonts/Favorit-LightMono.eot');
-    src: url('../fonts/Favorit-LightMono.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Favorit-LightMono.woff2') format('woff2'),
-         url('../fonts/Favorit-LightMono.woff') format('woff'),
-         url('../fonts/Favorit-LightMono.ttf') format('truetype'),
-         url('../fonts/Favorit-LightMono.svg#Favorit-LightMono') format('svg');
+    src: url('../fonts/Favorit-Light.eot');
+    src: url('../fonts/Favorit-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Favorit-Light.woff2') format('woff2'),
+         url('../fonts/Favorit-Light.woff') format('woff'),
+         url('../fonts/Favorit-Light.ttf') format('truetype'),
+         url('../fonts/Favorit-Light.svg#Favorit-Light') format('svg');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
+
 
 // REGULAR
 @font-face {
@@ -24,6 +25,20 @@
          url('../fonts/Favorit-Regular.ttf') format('truetype'),
          url('../fonts/Favorit-Regular.svg#Favorit-Regular') format('svg');
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+//MEDIUM
+@font-face {
+    font-family: 'Favorit';
+    src: url('../fonts/Favorit-Medium.eot');
+    src: url('../fonts/Favorit-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Favorit-Medium.woff2') format('woff2'),
+         url('../fonts/Favorit-Medium.woff') format('woff'),
+         url('../fonts/Favorit-Medium.ttf') format('truetype'),
+         url('../fonts/Favorit-Medium.svg#Favorit-Medium') format('svg');
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
@@ -41,6 +56,8 @@
     font-style: normal;
     font-display: swap;
 }
+
+
 
 //BOLD LINING
 @font-face {

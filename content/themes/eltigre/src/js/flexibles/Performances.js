@@ -17,6 +17,7 @@ class Section {
 		this.section = section;
 		const saving = document.querySelector('.saving');
 		const reject = document.querySelector('.rejected');
+		const comparison = document.querySelector('.comparison');
 		const ranges = document.querySelectorAll('.range-slider');
 		saving.innerHTML = 0;
 		reject.innerHTML = 0;
@@ -33,9 +34,11 @@ class Section {
 					const maxWidth = rangesSlider.clientWidth;
 					rangeBullet.style.left = maxWidth * (bulletPosition / 100) + 'px';
 					this.result[key] = rangesSlider.value;
+
+					// Mettre l'operation ici
 					const operation = parseInt(this.result[0]) * parseInt(this.result[1]);
-					console.log(operation);
-					saving.innerHTML = operation;
+					// Mettre l'operation de comparaison ici
+					saving.innerHTML = operation.toLocaleString();
 				},
 				false
 			);

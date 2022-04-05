@@ -40,6 +40,9 @@
     .text-part{
         width: 100%;
 		margin-bottom: 0;
+        @include desktop{
+            max-width: 399px !important;
+        }
         @include landscape{
             max-width: 100% !important;
             padding: 0;
@@ -57,17 +60,9 @@
 		.text-part__surtitle{
         }
         .text-part__title{
-			// font-size: 30px;
-			// line-height: 1.25;
-			// font-family: "Favorit", sans-serif;
-			// font-weight: bold;
-			// text-transform: uppercase;
 			margin-bottom: 50px;
         }
         .text-part__description{
-            // font-family: "Favorit", sans-serif;
-			// font-size: 28px;
-			// line-height: 1.25;
 			margin-bottom: 30px;
             
             p{
@@ -208,7 +203,7 @@
 .text-image-wrapper--row{
     flex-direction: row;
     @include landscape{
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 .text-image-wrapper--row-reverse{
