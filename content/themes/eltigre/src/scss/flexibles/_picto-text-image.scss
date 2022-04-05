@@ -1,14 +1,21 @@
 .picto-text-image{
     @include desktop{
-		padding: 40px;
+		padding: 0 40px;
 	}
-    @include tablet{
-        padding: 60px;
-    }
+
 	@include mobile-xl{
 		max-width: 100%;
 		width: 100%;
-		padding: 0 0 40px 0;
+		padding: 0;
+	}
+}
+.picto-text-image-container{
+
+	.main-wrapper{
+
+		@include desktop{
+			padding:40px;
+		}
 	}
 }
 .picto-text-image__section-title{

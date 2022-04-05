@@ -4,6 +4,7 @@ import PreFooter from './flexibles/PreFooter';
 import Reasons from './flexibles/Reasons';
 import Simple from './flexibles/Simple';
 import Steps from './flexibles/Steps';
+import TextImage from './flexibles/TextImage';
 import TwoBlocks from './flexibles/TwoBlocks';
 import Wallets from './flexibles/Wallets';
 
@@ -17,6 +18,7 @@ export default class Sections {
 		steps: Steps,
 		'two-blocks': TwoBlocks,
 		prefooter: PreFooter,
+		'text-image': TextImage,
 	};
 
 	constructor() {

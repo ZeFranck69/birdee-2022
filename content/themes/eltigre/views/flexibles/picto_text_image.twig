@@ -1,7 +1,7 @@
-<section id="{{ section.title|sanitize }}" class="picto-text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }};">
+<section id="{{ section.title|sanitize }}" class="picto-text-image">
 
 	<div class="picto-text-image-container" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+		<div class="main-wrapper {{ section.radius }}" style="background-color: {{ section.background_color }};">
 			<div class="picto-text-image-wrapper picto-text-image-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
 				<div class="picto-text-image__image">
 					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.image_width }}px;">

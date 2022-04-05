@@ -1,7 +1,7 @@
 .text-image{
     
     @include tablet{
-        padding: 60px 0;
+        padding: 40px 0 !important;
     }
 	@include mobile-xl{
 		max-width: 100%;
@@ -109,7 +109,7 @@
                     position: absolute;
                     background-color: $black;
                     width: 4px;
-                    height: 50%;
+                    height: 70%;
                     top: 0;
                     left: 23px;
                     transform: translateX(-50%);
@@ -125,7 +125,7 @@
                     position: absolute;
                     background-color: $black;
                     width: 4px;
-                    height: 50%;
+                    height: 70%;
                     bottom: 0;
                     transform: translateX(-50%);
                     left: 23px;
@@ -184,6 +184,7 @@
         }
         @include landscape{
             width: 412px;
+            margin-bottom: 30px;
         }
         @include mobile-xl{
             width: 288px;

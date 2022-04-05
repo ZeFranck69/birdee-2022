@@ -80,8 +80,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Reasons */ "./src/js/flexibles/Reasons.js");
 /* harmony import */ var _flexibles_Simple__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/Simple */ "./src/js/flexibles/Simple.js");
 /* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
-/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
-/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
+/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
+/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
+/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -99,6 +100,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Sections = /*#__PURE__*/_createClass(function Sections() {
   _classCallCheck(this, Sections);
 
@@ -106,11 +108,12 @@ var Sections = /*#__PURE__*/_createClass(function Sections() {
     banner: _flexibles_Banner__WEBPACK_IMPORTED_MODULE_0__["default"],
     reasons: _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_3__["default"],
     performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_1__["default"],
-    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_7__["default"],
+    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_8__["default"],
     simple: _flexibles_Simple__WEBPACK_IMPORTED_MODULE_4__["default"],
     steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_5__["default"],
-    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_6__["default"],
-    prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_2__["default"]
+    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_7__["default"],
+    prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_2__["default"],
+    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_6__["default"]
   });
 
   for (var className in this.SECTIONS) {
@@ -798,6 +801,115 @@ var Section = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Steps);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/TextImage.js":
+/*!***************************************!*\
+  !*** ./src/js/flexibles/TextImage.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var TextImage = /*#__PURE__*/_createClass(function TextImage(className) {
+  _classCallCheck(this, TextImage);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var textImage = this.section.querySelector('.text-image-wrapper');
+      var textPart = textImage.querySelector('.text-part__container');
+      var title = textPart.querySelector('.text-part__title');
+      var description = textPart.querySelector('.text-part__description');
+      var enumerationWrapper = textPart.querySelector('.text-image__enumerations-container');
+
+      if (enumerationWrapper) {
+        var enumeration = enumerationWrapper.querySelectorAll('.enumeration-block');
+      } // const descriptions = textImage.querySelector('.text-image__descriptions-container');
+      // const block = descriptions.querySelectorAll('.enumeration-block');
+
+
+      var ImagePart = textImage.querySelector('.text-image__image');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.25
+      }).fromTo(ImagePart, {
+        y: 100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.01,
+        duration: 0.25
+      }); // if (enumerationWrapper) {
+      // 	const enumerationAnimation = gsap
+      // 		.timeline()
+      // 		.fromTo(enumeration, { y: 150, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.55, duration: 0.35 });
+      // 	.add(enumerationAnimation);
+      // }
+      // if (descriptions) {
+      // 	const descriptionAnimation = gsap
+      // 		.timeline()
+      // 		.fromTo(block, { y: 150, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.55, duration: 0.35 });
+      // 	timeline.add(descriptionAnimation);
+      // }
+
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: textImage,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (TextImage);
 
 /***/ }),
 

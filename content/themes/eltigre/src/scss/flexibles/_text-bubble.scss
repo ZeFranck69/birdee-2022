@@ -1,22 +1,13 @@
 .text-bubble{
     
-    @include tablet{
-        padding: 60px 0;
+    @include laptop-small{
+        padding: 0 40px;
     }
 	@include mobile-xl{
 		max-width: 100%;
 		width: 100%;
+        padding: 0;
 	}
-    &.classic{
-        
-        @include landscape{
-            padding: 40px !important;
-        }
-        @include mobile-xl{
-            padding: 40px 0 !important;
-            margin: 0;
-        }
-    }
 }
 .text-bubble__section-title{
     text-align: center;
@@ -40,7 +31,6 @@
         flex-direction: column;
     }
 	.text-part__container{
-		width: 100%;
 		display: flex;
     	justify-content: center;
 		@include landscape{
@@ -48,47 +38,30 @@
 		}
 	}
     .text-part{
-        // max-width: 700px;
         width: 100%;
 		margin-bottom: 0;
-        // padding: 0 120px;
+        @include desktop{
+            max-width: 89% !important;
+        }
         @include landscape{
             max-width: 100% !important;
-            padding: 0px 65px 0 6px;
-        }
-        @include laptop{
-            max-width:430px;
-        }
-        @include tablet{
-            max-width: 100%;
-            padding: 0px 16px;
         }
         @include mobile-xl{
-            max-width: 100% !important;
             width: 100%;
-            padding: 0 36px;
         }
 		.bubble__content--text-part{
 			display: none;
-			@include desktop{
-				display: block;
-                margin-bottom: 21px;
-			}
+			// @include desktop{
+			// 	display: block;
+            //     margin-bottom: 21px;
+			// }
 		}
 		.text-part__surtitle{
         }
         .text-part__title{
-			// font-size: 30px;
-			// line-height: 1.25;
-			// font-family: "Favorit", sans-serif;
-			// font-weight: bold;
-			// text-transform: uppercase;
 			margin-bottom: 50px;
         }
         .text-part__description{
-            // font-family: "Favorit", sans-serif;
-			// font-size: 28px;
-			// line-height: 1.25;
 			margin-bottom: 30px;
             
             p{
@@ -120,13 +93,17 @@
     .text-bubble__bubble{
         max-width: 375px;
         width: 100%;
-		@include desktop{
-			display: none;
+		@include landscape{
+            max-width: 100%;
 		}
 		.bubble-part{
 			position: relative;
 			padding: 77px 34px 75px 33px;
 			border-radius: 21px;
+            @include landscape{
+                margin-bottom: 50px;
+                padding: 50px 20px 50px 20px;
+            }
 			&:after{
 				content: "";
 				position: absolute;
@@ -137,6 +114,12 @@
 				border-color: #fff transparent transparent transparent;
 				top: 60px;
 				right: -24px;
+                @include landscape{
+                    top: initial;
+                    right: initial;
+                    bottom: -20px;
+                    left: 116px;
+                }
 			}
 		}
 		.bubble__content{
@@ -144,13 +127,22 @@
 			line-height:24px;
 			font-family: 'Favorit Bold Lining', sans-serif;
 			text-transform: uppercase;
+            max-width: 100% !important;
+            @include landscape{
+                font-size: 24px;
+                line-height: 1.75;
+            }
+            @include mobile{
+                font-size: 18px;
+                line-height:24px;
+            }
 		}
 	}
 }
 .text-bubble-wrapper--row{
     flex-direction: row;
     @include landscape{
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
 .text-bubble-wrapper--row-reverse{

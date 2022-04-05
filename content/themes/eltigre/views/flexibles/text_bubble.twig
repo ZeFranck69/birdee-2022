@@ -1,7 +1,7 @@
-<section id="{{ section.title|sanitize }}" class="text-bubble {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }} padding-small" style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
+<section id="{{ section.title|sanitize }}" class="text-bubble">
 
 	<div class="text-bubble-container" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+		<div class="main-wrapper {{ section.radius }} padding-small" style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
 			<div class="text-bubble-wrapper text-bubble-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
 				<div class="text-bubble__bubble" style="max-width: {{ section.container_bubble_width }}px;">
 					<div class="bubble-part" style="background-color:{{ section.bubble_background_color }}">
