@@ -1078,18 +1078,17 @@ var Section = /*#__PURE__*/_createClass(function Section(section) {
   });
   years.forEach(function (year) {
     year.addEventListener('click', function () {
-      year.classList.remove('active');
+      if (year.classList.contains('active')) {
+        year.classList.remove('active');
+        this.classList.add('active');
+      }
+
       yearsContent.forEach(function (yearContent) {
         yearContent.classList.add('hidden');
         var yearValue = year.dataset.year;
 
         if (yearContent.getAttribute('tabname') == yearValue) {
           yearContent.classList.remove('hidden');
-          year.classList.add('active');
-        }
-
-        if (yearContent.getAttribute('tabname') != yearValue) {
-          year.classList.remove('active');
         }
       });
     });

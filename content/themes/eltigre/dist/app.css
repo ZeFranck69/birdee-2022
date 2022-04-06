@@ -2223,9 +2223,9 @@ a {
   width: 100%;
   height: auto;
   margin: auto;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media only screen and (max-width: 590px) {
   .text-bubble-wrapper {
@@ -2273,11 +2273,11 @@ a {
 .text-bubble-wrapper .text-part .text-part__title {
   margin-bottom: 50px;
 }
-.text-bubble-wrapper .text-part .text-part__description {
-  margin-bottom: 30px;
-}
 .text-bubble-wrapper .text-part .text-part__description p {
   margin-bottom: 14px;
+}
+.text-bubble-wrapper .text-part .text-part__description p:last-child {
+  margin-bottom: 0;
 }
 .text-bubble-wrapper .text-part .text-part__description ul li {
   position: relative;
@@ -3163,9 +3163,8 @@ a {
       flex-wrap: wrap;
   display: flex;
   flex-direction: row;
-  max-width: 1440px;
+  max-width: 1100px;
   margin: auto;
-  margin-left: -20px;
 }
 @media only screen and (max-width: 1680px) {
   .collaborators__list {
@@ -3179,7 +3178,7 @@ a {
   max-width: 260px;
   width: 100%;
   text-align: center;
-  margin: 20px 40px 90px 40px;
+  margin: 20px 40px;
 }
 @media only screen and (max-width: 1680px) {
   .collaborators__list .collaborator-wrapper {
@@ -3211,6 +3210,7 @@ a {
 }
 .collaborators__list .collaborator-wrapper .collaborator-name {
   margin-top: 20px;
+  min-height: 75px;
 }
 @media only screen and (max-width: 1680px) {
   .collaborators__list .collaborator-wrapper .collaborator-name {
@@ -3248,7 +3248,7 @@ a {
   color: #9294FB;
 }
 .collaborators__list .collaborator-wrapper .collaborator-link--wrapper .collaborator-link .fab {
-  color: #69EFCA;
+  color: #1D1D1B;
 }
 
 @media only screen and (max-width: 590px) {
@@ -3291,7 +3291,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 1400px;
+  max-width: 1100px;
   margin: auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -3683,6 +3683,10 @@ a {
   }
 }
 
+.labels__list {
+  max-width: 1100px;
+  margin: auto;
+}
 .labels__list .label-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3695,7 +3699,7 @@ a {
           align-items: center;
   max-width: 1440px;
   width: 100%;
-  margin: 52px auto;
+  margin: 52px auto 0;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
 }
@@ -3732,17 +3736,12 @@ a {
   }
 }
 .labels__list .label-wrapper .label-description {
-  max-width: 1198px;
+  max-width: 75%;
   width: 100%;
 }
-@media only screen and (max-width: 1680px) {
+@media only screen and (max-width: 768px) {
   .labels__list .label-wrapper .label-description {
-    max-width: 780px;
-  }
-}
-@media only screen and (max-width: 1440px) {
-  .labels__list .label-wrapper .label-description {
-    max-width: 622px;
+    max-width: 100%;
   }
 }
 

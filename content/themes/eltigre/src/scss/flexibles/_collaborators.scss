@@ -32,9 +32,8 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    max-width: calc(1400px + 40px);
+    max-width: 1100px;
     margin: auto;
-    margin-left: -20px;
 
     @include desktop{
         margin-left: 0;
@@ -45,7 +44,7 @@
         max-width: 260px;
         width: 100%;
         text-align: center;
-        margin: 20px 40px 90px 40px;
+        margin: 20px 40px;
         @include desktop{
             max-width: 128px;
         }
@@ -69,6 +68,7 @@
         }
         .collaborator-name{
             margin-top: 20px;
+			min-height: 75px;
             @include desktop{
                 max-width: 100px;
                 margin: 20px auto 0;
@@ -100,7 +100,7 @@
                 }
                 
                 .fab{
-                    color: $green;
+                    color: $black;
                     
                 }
             }
