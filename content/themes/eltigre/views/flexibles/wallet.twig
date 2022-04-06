@@ -57,7 +57,8 @@
 													<img src="{{ Image(options.gain_picto).src }}" alt="{{ Image(options.gain_picto).alt }}">
 												</div>
 												<div class="gain uppercase">
-													{{ __('Gain estimé : ', eltigre) }}{{ content.estimed_gain}}
+													{{ __('Gain estimé : ', eltigre) }}
+													<span>{{ content.estimed_gain}}</span>
 												</div>
 											</div>
 											<div class="co2-part">
@@ -65,7 +66,8 @@
 													<img src="{{ Image(options.co2_picto).src }}" alt="{{ Image(options.co2_picto).alt }}">	
 												</div>
 												<div class="co2 uppercase">
-													{{ __('CO2 économisés : ', eltigre) }}{{ content.co2_saved}}
+													{{ __('CO2 économisés : ', eltigre) }}
+													<span>{{ content.co2_saved}}</span>
 												</div>
 											</div>
 										</div>

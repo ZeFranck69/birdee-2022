@@ -15,8 +15,13 @@
 }
 .investment-wrapper{
 
+	.section-part__surtitle,
     .section-part__title{
-        margin-bottom: 35px;
+		max-width: 780px;
+		margin: 0 auto 35px;
+		@include laptop{
+			max-width: 600px;
+		}
     }
 }
 .investment__wrapper-list{
@@ -39,7 +44,7 @@
         max-width:264px;
         width: 100%;
         text-align: center;
-        margin: 20px 60px 82px 60px;
+        margin: 20px 60px 60px 60px;
 		@include laptop{
 			max-width:128px;
 		}
@@ -76,7 +81,7 @@
                 width: 40px;
                 height: 40px;
                 margin: auto;
-                background-color: $blue;
+                background-color: $black;
                 border-radius: 50%;
                 padding: 9px 13px;
                 border: 1px solid transparent;
@@ -91,7 +96,7 @@
                 }
                 
                 .fab{
-                    color: $green;
+                    color: $white;
                     
                 }
             }

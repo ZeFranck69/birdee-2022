@@ -54,7 +54,7 @@
 							{% for collabID in section.operators %}
 							<div class="operator-wrapper">
 								<img src="{{ Image(collabID.photo).src }}" alt="{{ Image(collabID.photo).alt }}" class="operator-image">
-								<h4 class="operator-name"> {{ collabID.post_title|split(' ')[0] }} </h4>
+								<h4 class="operator-name surtitle"> {{ collabID.post_title|split(' ')[0] }} </h4>
 							</div>
 							{% endfor %}
 						</div>

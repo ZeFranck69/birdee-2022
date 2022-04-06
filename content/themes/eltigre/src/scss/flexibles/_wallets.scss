@@ -103,6 +103,9 @@
     @include landscape{
         margin: auto;
     }
+	span{
+		display: block;
+	}
 }
 .picto-co2,
 .picto-gain{
@@ -111,6 +114,8 @@
     margin-bottom: 6px;
 }
 .gain-part{
+	max-width: 173px;
+	width: 100%;
     @include landscape{
         margin-bottom: 25px;
     }

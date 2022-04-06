@@ -2,8 +2,8 @@
     <div class="reasons-container" style="text-align: {{ section.text_align }};">
         <div class="reasons-first-background" style="background-color: {{ section.first_background_color }};"></div>
         <div class="reasons-second-background" style="background-color: {{ section.second_background_color }};"></div>
-		<div class="{{ section.section_width == "fullwidth" ? "" : "main-wrapper" }} padding-medium" >
-			<div class="reasons-wrapper {{ section.text_align }} {{ section.section_width == "ajust" ? "" : "main-wrapper" }}" style="background-color:{{ section.background_color }}">	
+		<div class="{{ section.section_width == "fullwidth" ? "" : "main-wrapper" }}" >
+			<div class="reasons-wrapper {{ section.text_align }} padding-medium" style="background-color:{{ section.background_color }}">	
                 {% if section.part_title %}
 					<h2 class="text-part__title title bold uppercase">
 						{{ section.part_title }}

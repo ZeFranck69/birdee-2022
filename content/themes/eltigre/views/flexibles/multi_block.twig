@@ -1,0 +1,42 @@
+<section id="{{ section.title|sanitize }}" class="multi-block {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.}}px;">
+
+	<div class="multi-block-container" style="text-align: {{ section.text_align }};">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
+            <div class="multi-block-wrapper">
+                {% if section.section_title %}
+                    <h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
+                        {{ section.section_title }}
+                    </h2>
+                {% endif %}
+                {% if section.section_description %}
+                    <div class="section-part__description surtitle" style="color:{{ section.description_color }};">
+                        {{ section.section_description }}
+                    </div>
+                {% endif %}
+                <div class="multi-block__wrapper-list">
+
+                </div>
+                {% if section.position %}
+                    <h4 class="section-part__description surtitle" style="color:{{ section.position_color }};">
+                        {{ section.position }}
+                    </h4>
+                {% endif %}
+                <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
+                {% if section.cta %}
+                <div
+                    class="multi-block__cta-wrapper {{ section.classic.cta_align }}">
+                    <a href="{{ section.classic.cta.url }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
+                        <span class="cta__label">
+                            {{ section.cta.title }}
+                        </span>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+	</div>
+</section>
+<style>
+
+
+</style>

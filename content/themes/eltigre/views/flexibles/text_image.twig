@@ -1,7 +1,7 @@
 <section id="{{ section.title|sanitize }}" class="text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding:{{ section.section_margin }}px 0;">
 
 	<div class="text-image-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}">
 			{% if section.section_title is not empty %}
 			<div class="text-image__section-title">
 				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
