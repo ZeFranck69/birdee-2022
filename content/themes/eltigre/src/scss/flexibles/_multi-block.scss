@@ -1,0 +1,47 @@
+.multi-block{
+
+}
+.multi-block__wrapper-list{
+	max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+	flex-flow: row wrap;
+	@include laptop-small{
+		flex-flow: column wrap;
+	}
+	.block{
+		padding: 40px;
+		background-color: $white;
+		margin: 20px 0;
+		@include laptop-small{
+			margin: 8px 0;
+		}
+		&.small{
+			max-width: 389px;
+			width: 100%;
+			@include desktop{
+				max-width: 320px;
+			}
+			@include laptop-small{
+				max-width: 100%;
+			}
+		}
+		&.large{
+			max-width: 592px;
+			width: 100%;
+			@include desktop{
+				max-width: 484px;
+			}
+			@include laptop-small{
+				max-width: 100%;
+			}
+		}
+		.block-text{
+
+			.block-text__title{
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

@@ -1,39 +1,61 @@
-<section id="{{ section.title|sanitize }}" class="multi-block {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.}}px;">
+<section id="{{ section.title|sanitize }}" class="multi-block {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
 
-	<div class="multi-block-container" style="text-align: {{ section.text_align }};">
-		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }}">
-            <div class="multi-block-wrapper">
-                {% if section.section_title %}
-                    <h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
-                        {{ section.section_title }}
-                    </h2>
-                {% endif %}
-                {% if section.section_description %}
-                    <div class="section-part__description surtitle" style="color:{{ section.description_color }};">
-                        {{ section.section_description }}
-                    </div>
-                {% endif %}
-                <div class="multi-block__wrapper-list">
-
-                </div>
-                {% if section.position %}
-                    <h4 class="section-part__description surtitle" style="color:{{ section.position_color }};">
-                        {{ section.position }}
-                    </h4>
-                {% endif %}
-                <!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
-                {% if section.cta %}
-                <div
-                    class="multi-block__cta-wrapper {{ section.classic.cta_align }}">
-                    <a href="{{ section.classic.cta.url }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
-                        <span class="cta__label">
-                            {{ section.cta.title }}
-                        </span>
-                    </a>
-                </div>
-                {% endif %}
-            </div>
-        </div>
+	<div class="multi-block-container main-wrapper padding-medium" style="text-align: {{ section.text_align }};">
+		<div class="multi-block-wrapper">
+				{% if section.section_title %}
+						<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
+								{{ section.section_title }}
+						</h2>
+				{% endif %}
+				{% if section.section_description %}
+						<div class="section-part__description surtitle" style="color:{{ section.description_color }};">
+								{{ section.section_description }}
+						</div>
+				{% endif %}
+				<div class="multi-block__wrapper-list">
+						{% for block in section.blocks %}
+							<div class="block {{ block.block_type }}">
+								{% if block.picto %}
+								<div class="block-picto">
+									<img src="{{ Image(block.picto).src }}" alt="{{ Image(block.picto).alt }}">
+								</div>
+								{% endif %}
+								<div class="block-text">
+									{% if block.bloc_title %}
+									<h4 class="block-text__title title--secondary-unline uppercase bold" style="color:{{ block.block_title_color }}">
+										{{ block.bloc_title }}
+									</h4>
+									{% endif %}
+									{% if block.block_description %}
+									<div class="block-text__description description">
+										{{ block.block_description }}	
+									</div>
+									{% endif %}
+									{% if block.block_button.title %}
+									<div class="multi-block__block-cta-wrapper">
+										<a href="{{ block.block_button.url }}" class="cta {{ block.block_cta_color }}" target="{{ block.block_button.target }}">
+											<span class="cta__label">
+												{{ block.block_button.title }}
+											</span>
+										</a>		
+									</div>
+									{% endif %}
+								</div>
+							</div>
+						{% endfor %}
+				</div>
+				<!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
+				{% if section.cta %}
+				<div
+						class="multi-block__cta-wrapper {{ section.classic.cta_align }}">
+						<a href="{{ section.classic.cta.url }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
+								<span class="cta__label">
+										{{ section.cta.title }}
+								</span>
+						</a>
+				</div>
+				{% endif %}
+		</div>
 	</div>
 </section>
 <style>
