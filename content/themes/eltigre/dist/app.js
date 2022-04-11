@@ -9207,6 +9207,12 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   // 	new App();
   // });
 });
+var menusFooter = document.querySelectorAll('.accordeon');
+menusFooter.forEach(function (menuFooter) {
+  menuFooter.addEventListener('click', function () {
+    return menuFooter.classList.toggle('open');
+  });
+});
 }();
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {

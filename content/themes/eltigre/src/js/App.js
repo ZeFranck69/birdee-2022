@@ -25,3 +25,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
 	// 	new App();
 	// });
 });
+const menusFooter = document.querySelectorAll('.accordeon');
+menusFooter.forEach((menuFooter) => {
+	menuFooter.addEventListener('click', () => menuFooter.classList.toggle('open'));
+});

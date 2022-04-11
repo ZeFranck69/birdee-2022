@@ -940,8 +940,17 @@ a {
   width: 100%;
   margin-bottom: 30px;
 }
-
-.footer__socials {
+@media only screen and (max-width: 1024px) {
+  .footer__columns {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.footer__socials,
+.footer__socials--mobile {
   color: #1D1D1B;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -951,7 +960,8 @@ a {
           justify-content: space-between;
   margin: 44px 0 70px;
 }
-.footer__socials .footer-socials__social {
+.footer__socials .footer-socials__social,
+.footer__socials--mobile .footer-socials__social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -971,19 +981,34 @@ a {
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
-.footer__socials .footer-socials__social:hover {
+.footer__socials .footer-socials__social:hover,
+.footer__socials--mobile .footer-socials__social:hover {
   border-color: #69EFCA;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.footer__socials .footer-socials__social:hover .fab {
+.footer__socials .footer-socials__social:hover .fab,
+.footer__socials--mobile .footer-socials__social:hover .fab {
   -webkit-transition: color 0.35s ease;
   transition: color 0.35s ease;
   color: #69EFCA;
 }
-.footer__socials .footer-socials__social .fab {
+.footer__socials .footer-socials__social .fab,
+.footer__socials--mobile .footer-socials__social .fab {
   -webkit-transition: color 0.35s ease;
   transition: color 0.35s ease;
+}
+
+.footer__socials--mobile {
+  display: none;
+}
+@media only screen and (max-width: 590px) {
+  .footer__socials--mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 30px;
+  }
 }
 
 .footer-column__nav li {
@@ -1014,6 +1039,21 @@ a {
 .footer__column {
   max-width: 222px;
   width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .footer__column {
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .footer__column {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .footer__column .socials-media--menu {
+    display: none;
+  }
 }
 
 .footer-column__nav li.current_page_item a {
