@@ -37,11 +37,22 @@
 				max-width: 100%;
 			}
 		}
+		.block-picto{
+			margin-bottom: 28px;
+			img{
+				max-width: 80px;
+				width: 100%;
+				height: auto;
+			}
+		}
 		.block-text{
 
 			.block-text__title{
-				margin-bottom: 20px;
+				margin-bottom: 9px;
 			}
 		}
 	}
+}
+.multi-block__block-cta-wrapper{
+	margin-top: 30px;
 }

@@ -185,6 +185,7 @@ input[type='range'] {
 }
 .plus{
 	padding-top: 90px;
+	margin: 0 15px;
 }
 .saving__block,
 .rejected__block{
@@ -197,4 +198,11 @@ input[type='range'] {
 		max-width: 48%;
     	margin: 0 auto;
 	}
+}
+.rejected-saved{
+	margin-bottom: 15px;
+}
+.rejected__report{
+    max-width: 260px;
+    margin: auto;
 }

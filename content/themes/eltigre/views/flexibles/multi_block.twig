@@ -1,4 +1,4 @@
-<section id="{{ section.title|sanitize }}" class="multi-block {{ section.section_width == "ajust" ? "main-wrapper" : "" }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
+<section id="{{ section.title|sanitize }}" class="multi-block {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
 
 	<div class="multi-block-container main-wrapper padding-medium" style="text-align: {{ section.text_align }};">
 		<div class="multi-block-wrapper">
@@ -27,7 +27,7 @@
 									</h4>
 									{% endif %}
 									{% if block.block_description %}
-									<div class="block-text__description description">
+									<div class="block-text__description description-light">
 										{{ block.block_description }}	
 									</div>
 									{% endif %}

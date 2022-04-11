@@ -166,6 +166,17 @@ a {
 		line-height: 24px;
 	}
 } 
+.description-light{
+	font-size: 18px;
+	line-height:24px;
+	letter-spacing: -0.1px;
+	font-family: 'Favorit',sans-serif;
+	font-weight: 300;
+	@include tablet{
+		font-size:18px;
+		line-height: 24px;
+	}
+}
 
 //BOLDeltigre
 .bold{

@@ -334,6 +334,20 @@ a {
   }
 }
 
+.description-light {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-family: "Favorit", sans-serif;
+  font-weight: 300;
+}
+@media only screen and (max-width: 768px) {
+  .description-light {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
 .bold {
   font-weight: bold;
 }
@@ -857,6 +871,44 @@ a {
   top: 0;
   bottom: 0;
   background-color: #1D1D1B;
+}
+
+.mobile-header__socials {
+  color: #1D1D1B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px auto;
+  max-width: 300px;
+  width: 100%;
+  padding: 0 30px;
+}
+.mobile-header__socials .footer-socials__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  vertical-align: center;
+  max-width: 25px;
+  width: 100%;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #1D1D1B;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.mobile-header__socials .footer-socials__social .fab {
+  -webkit-transition: color 0.35s ease;
+  transition: color 0.35s ease;
 }
 
 #site-footer .footer__content {
@@ -1429,14 +1481,10 @@ a {
 }
 @media only screen and (max-width: 1680px) {
   .reason__title--wrapper .reason__title {
-    margin-left: 0;
+    margin-left: 7;
     margin-bottom: 6px;
-    margin-top: 17px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .reason__title--wrapper .reason__title {
-    text-align: center;
+    margin-top: 0;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1456,6 +1504,12 @@ a {
   object-position: center;
   font-family: "object-fit:contain; object-position:center";
 }
+@media only screen and (max-width: 1680px) {
+  .reason__title--wrapper .reason__logo {
+    height: 50px;
+    max-width: 50px;
+  }
+}
 
 .reason__content {
   text-align: left;
@@ -1463,7 +1517,7 @@ a {
 }
 @media only screen and (max-width: 1140px) {
   .reason__content {
-    margin-left: 83px;
+    margin-left: 63px;
   }
 }
 
@@ -1594,11 +1648,6 @@ a {
   width: 100%;
   margin-bottom: 0;
 }
-@media only screen and (max-width: 1680px) {
-  .text-image-wrapper .text-part {
-    max-width: 399px !important;
-  }
-}
 @media only screen and (max-width: 1024px) {
   .text-image-wrapper .text-part {
     max-width: 100% !important;
@@ -1639,9 +1688,6 @@ a {
 .text-image-wrapper .text-part .text-part__description ul li::before {
   content: "";
   position: absolute;
-  background-image: url(images/346ed52b26082c0778a4.png);
-  background-position: center;
-  background-size: cover;
   width: 30px;
   height: 30px;
   left: 0;
@@ -1728,11 +1774,12 @@ a {
 .text-image-wrapper .text-image__image img {
   width: 100%;
   height: auto;
-  max-height: 460px;
-  -o-object-fit: cover;
-  object-fit: cover;
+  max-height: 560px;
+  -o-object-fit: contain;
+  object-fit: contain;
   -o-object-position: center;
   object-position: center;
+  font-family: "object-fit: contain; object-position: center";
   position: relative;
 }
 @media only screen and (max-width: 1024px) {
@@ -1755,6 +1802,21 @@ a {
 .text-image-wrapper .video-part video {
   max-width: 100%;
   width: 100%;
+}
+@media only screen and (max-width: 1680px) {
+  .text-image-wrapper.type--text-picto .text-part {
+    max-width: 530px !important;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .text-image-wrapper.type--text-image .text-part {
+    max-width: 399px !important;
+  }
+}
+@media only screen and (max-width: 1680px) {
+  .text-image-wrapper.type--text-video .text-part {
+    max-width: 399px !important;
+  }
 }
 
 .text-image-wrapper--row {
@@ -1856,8 +1918,20 @@ a {
     max-width: 100%;
   }
 }
+.multi-block__wrapper-list .block .block-picto {
+  margin-bottom: 28px;
+}
+.multi-block__wrapper-list .block .block-picto img {
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+}
 .multi-block__wrapper-list .block .block-text .block-text__title {
-  margin-bottom: 20px;
+  margin-bottom: 9px;
+}
+
+.multi-block__block-cta-wrapper {
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4031,6 +4105,7 @@ input[type=range] {
 
 .plus {
   padding-top: 90px;
+  margin: 0 15px;
 }
 
 .saving__block,
@@ -4050,6 +4125,15 @@ input[type=range] {
     max-width: 48%;
     margin: 0 auto;
   }
+}
+
+.rejected-saved {
+  margin-bottom: 15px;
+}
+
+.rejected__report {
+  max-width: 260px;
+  margin: auto;
 }
 
 .quote {

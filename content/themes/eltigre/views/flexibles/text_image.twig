@@ -7,7 +7,7 @@
 				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
 			</div>
 			{% endif %}
-			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }} type--{{ section.layout_type }}" style="justify-content: {{ section.justify_content }};">
 				<div class="text-image__image">
 					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
 				</div>
