@@ -24,8 +24,10 @@
 							<div class="wallet-themes">
 							{% for subject in wallets[wallet.ID].subjects %}
 									<div class="wallet-theme">
+										<label for="{{ subject.subject_name }}">
 										<input type=radio class="theme-input" name="userType" value="{{ subject.subject_name }}"  id="{{ subject.subject_name }}" {{ loop.index == 1 ? 'checked' : '' }}>
-										<label for="{{ subject.subject_name }}">{{ subject.subject_name }}</label>
+											<span>{{ subject.subject_name }}</span>
+										</label>
 									</div>
 							{% endfor %}
 							</div>	
@@ -36,7 +38,10 @@
 						
 							<div class="tabs__years">
 							{% for year in subject.years %}
-								<div class="tab__year title--secondary bold {{ loop.index == 1 ? 'active' : ''}}" data-year="{{ year.year }}">{{ year.year }}</div>
+								<div class="tab__year title--secondary bold {{ loop.index == 1 ? 'active' : ''}}" data-year="{{ year.year }}">
+									{{ year.year }}
+									<div class="tab__year-bullet"></div>
+								</div>
 							{% endfor %}
 							</div>
 							<div id="panels" class="content">

@@ -230,10 +230,7 @@
                 max-width: 399px !important;
             }
         }
-        .text-image__image{
 
-            
-        }
     }
     &.type--text-video{
 
@@ -241,6 +238,9 @@
             @include desktop{
                 max-width: 399px !important;
             }
+        }
+        .media-part__video{
+            
         }
     }
 

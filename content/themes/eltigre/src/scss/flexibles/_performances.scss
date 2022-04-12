@@ -198,10 +198,18 @@ input[type='range'] {
 .performances__result{
 	display: flex;
 	flex-direction: row;
+	@include mobile-xl{
+		flex-direction: column;
+		align-items: center;
+	} 
 }
 .plus{
 	padding-top: 90px;
 	margin: 0 15px;
+	@include mobile-xl{
+		padding-top: 0;
+		margin: 15px 0;
+	} 
 }
 .saving__block,
 .rejected__block{
@@ -213,6 +221,9 @@ input[type='range'] {
 	@include landscape{
 		max-width: 48%;
     	margin: 0 auto;
+	}
+	@include mobile-xl{
+		max-width: 100%;
 	}
 }
 .rejected-saved{

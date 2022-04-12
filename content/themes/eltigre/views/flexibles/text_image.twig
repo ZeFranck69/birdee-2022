@@ -8,9 +8,26 @@
 			</div>
 			{% endif %}
 			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }} type--{{ section.layout_type }}" style="justify-content: {{ section.justify_content }};">
-				<div class="text-image__image">
-					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
-				</div>
+				{% if section.layout_type == "text-video"%}
+					<div class="media-part__video">
+						<div class="video-wrapper" style="max-width: {{ section.container_video_width }}px;">
+							<div class="video-ratio"></div>
+							<div class="video__play"></div>
+							<video muted="muted" loop="loop" data-autoplay="true" autoplay="true">
+								{% if section.videos.mp4 is not empty %}<source type="video/mp4" src="{{ fn( 'wp_get_attachment_url', section.videos.mp4.ID ) }}" />{% endif %}
+								{% if section.videos.webm is not empty %}<source type="video/webm" src="{{ fn( 'wp_get_attachment_url', section.videos.webm.ID ) }}" />{% endif %}
+								{% if section.videos.mkv is not empty %}<source type="video/m4v" src="{{ fn( 'wp_get_attachment_url', section.videos.mkv.ID ) }}" />{% endif %}
+								{% if section.videos.ogv is not empty %}<source type="video/ogg" src="{{ fn( 'wp_get_attachment_url', section.videos.ogv.ID ) }}" />{% endif %}
+							</video>
+							<div class="video__mute"></div>
+						</div>
+					</div>
+				{% else %}
+					<div class="text-image__image">
+						<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
+					</div>
+				{% endif %}
+				
 				<div class="text-part__container">
 
 					<div class="text-part {{ section.text_align }}" style=" max-width: {{ section.text_width }}px;">

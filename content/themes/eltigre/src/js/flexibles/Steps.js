@@ -21,9 +21,6 @@ class Section {
 		const description = steps.querySelector('.steps__section-description');
 		const blocks = steps.querySelector('.steps-wrapper');
 		const block = blocks.querySelectorAll('.step__container');
-		// const blockImage = blocks.querySelectorAll('.steps__image');
-		// const blockText = blocks.querySelectorAll('.text-part__container');
-		// const textDescription = blockText.querySelector('.text-part__description');
 		const button = steps.querySelector('.section-steps__cta-wrapper');
 
 		const animation = gsap
@@ -34,7 +31,7 @@ class Section {
 				{ scale: 0.8, y: 100, autoAlpha: 0 },
 				{ scale: 1, y: 0, autoAlpha: 1, stagger: 0.27, duration: 0.45 }
 			)
-			.fromTo(block, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.01, duration: 0.35 })
+			.fromTo(block, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.6, duration: 0.35 })
 			.fromTo(
 				button,
 				{ scale: 0.8, y: 15, autoAlpha: 0 },

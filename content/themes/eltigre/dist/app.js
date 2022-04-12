@@ -75,14 +75,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Sections; }
 /* harmony export */ });
 /* harmony import */ var _flexibles_Banner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flexibles/Banner */ "./src/js/flexibles/Banner.js");
-/* harmony import */ var _flexibles_Performances__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Performances */ "./src/js/flexibles/Performances.js");
-/* harmony import */ var _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/PreFooter */ "./src/js/flexibles/PreFooter.js");
-/* harmony import */ var _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Reasons */ "./src/js/flexibles/Reasons.js");
-/* harmony import */ var _flexibles_Simple__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/Simple */ "./src/js/flexibles/Simple.js");
-/* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
-/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
-/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
-/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
+/* harmony import */ var _flexibles_Collaborators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flexibles/Collaborators */ "./src/js/flexibles/Collaborators.js");
+/* harmony import */ var _flexibles_Investment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flexibles/Investment */ "./src/js/flexibles/Investment.js");
+/* harmony import */ var _flexibles_Labels__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./flexibles/Labels */ "./src/js/flexibles/Labels.js");
+/* harmony import */ var _flexibles_MultiBlocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./flexibles/MultiBlocks */ "./src/js/flexibles/MultiBlocks.js");
+/* harmony import */ var _flexibles_Performances__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./flexibles/Performances */ "./src/js/flexibles/Performances.js");
+/* harmony import */ var _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./flexibles/PreFooter */ "./src/js/flexibles/PreFooter.js");
+/* harmony import */ var _flexibles_Quote__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./flexibles/Quote */ "./src/js/flexibles/Quote.js");
+/* harmony import */ var _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./flexibles/Reasons */ "./src/js/flexibles/Reasons.js");
+/* harmony import */ var _flexibles_Simple__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./flexibles/Simple */ "./src/js/flexibles/Simple.js");
+/* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
+/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
+/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
+/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -101,19 +106,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
+
+
+
 var Sections = /*#__PURE__*/_createClass(function Sections() {
   _classCallCheck(this, Sections);
 
   _defineProperty(this, "SECTIONS", {
     banner: _flexibles_Banner__WEBPACK_IMPORTED_MODULE_0__["default"],
-    reasons: _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_3__["default"],
-    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_1__["default"],
-    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_8__["default"],
-    simple: _flexibles_Simple__WEBPACK_IMPORTED_MODULE_4__["default"],
-    steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_5__["default"],
-    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_7__["default"],
-    prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_2__["default"],
-    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_6__["default"]
+    reasons: _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    quote: _flexibles_Quote__WEBPACK_IMPORTED_MODULE_7__["default"],
+    performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_5__["default"],
+    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_13__["default"],
+    simple: _flexibles_Simple__WEBPACK_IMPORTED_MODULE_9__["default"],
+    steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_10__["default"],
+    collaborators: _flexibles_Collaborators__WEBPACK_IMPORTED_MODULE_1__["default"],
+    investment: _flexibles_Investment__WEBPACK_IMPORTED_MODULE_2__["default"],
+    labels: _flexibles_Labels__WEBPACK_IMPORTED_MODULE_3__["default"],
+    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_12__["default"],
+    prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_6__["default"],
+    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_11__["default"],
+    'multi-block': _flexibles_MultiBlocks__WEBPACK_IMPORTED_MODULE_4__["default"]
   });
 
   for (var className in this.SECTIONS) {
@@ -320,6 +335,354 @@ var Section = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/js/flexibles/Collaborators.js":
+/*!*******************************************!*\
+  !*** ./src/js/flexibles/Collaborators.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Collaborators = /*#__PURE__*/_createClass(function Collaborators(className) {
+  _classCallCheck(this, Collaborators);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var collabWrapper = this.section.querySelector('.collaborators-container');
+      var title = collabWrapper.querySelector('.section-part__title');
+      var description = collabWrapper.querySelector('.section-part__description');
+      var collabs = collabWrapper.querySelector('.collaborators__list');
+      var block = collabs.querySelectorAll('.collaborator-wrapper');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(block, {
+        y: 120,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.3,
+        duration: 0.35
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: collabWrapper,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Collaborators);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Investment.js":
+/*!****************************************!*\
+  !*** ./src/js/flexibles/Investment.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Investment = /*#__PURE__*/_createClass(function Investment(className) {
+  _classCallCheck(this, Investment);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var investmentWrapper = this.section.querySelector('.investment-wrapper');
+      var title = investmentWrapper.querySelector('.section-part__title');
+      var surtitle = investmentWrapper.querySelector('.section-part__surtitle');
+      var description = investmentWrapper.querySelector('.section-part__description');
+      var collabs = investmentWrapper.querySelector('.investment__list');
+      var collab = collabs.querySelectorAll('.collaborator-wrapper');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(surtitle, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(collab, {
+        y: 120,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.3,
+        duration: 0.35
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: investmentWrapper,
+        start: 'top bottom-=5%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Investment);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Labels.js":
+/*!************************************!*\
+  !*** ./src/js/flexibles/Labels.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Labels = /*#__PURE__*/_createClass(function Labels(className) {
+  _classCallCheck(this, Labels);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var labelWrapper = this.section.querySelector('.labels-wrapper');
+      var title = labelWrapper.querySelector('.section-part__title');
+      var description = labelWrapper.querySelector('.section-part__description');
+      var labels = labelWrapper.querySelector('.labels__list');
+      var label = labels.querySelectorAll('.label-wrapper');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        y: -80,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.35
+      }).fromTo(label, {
+        y: 120,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.25,
+        duration: 0.35
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: labelWrapper,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Labels);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/MultiBlocks.js":
+/*!*****************************************!*\
+  !*** ./src/js/flexibles/MultiBlocks.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var MultiBlocks = /*#__PURE__*/_createClass(function MultiBlocks(className) {
+  _classCallCheck(this, MultiBlocks);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var multiBlocks = this.section.querySelector('.multi-block-wrapper');
+      var title = multiBlocks.querySelector('.section-part__title');
+      var blocks = multiBlocks.querySelector('.multi-block__wrapper-list');
+      var block = blocks.querySelectorAll('.block');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(block, {
+        y: 120,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.3,
+        duration: 0.35
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: multiBlocks,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (MultiBlocks);
+
+/***/ }),
+
 /***/ "./src/js/flexibles/Performances.js":
 /*!******************************************!*\
   !*** ./src/js/flexibles/Performances.js ***!
@@ -436,11 +799,11 @@ var Section = /*#__PURE__*/function () {
     key: "animate",
     value: function animate() {
       var preFooter = this.section.querySelector('.prefooter__container');
+      var title = this.section.querySelector('.prefooter-content__title');
       var textPart = preFooter.querySelector('.prefooter__content');
-      var title = textPart.querySelector('.prefooter-content__title');
       var description = textPart.querySelector('.prefooter-content__description');
       var apps = textPart.querySelector('.prefooter-content__cta-wrapper');
-      var app = apps.querySelectorAll('.prefooter-content__cta-wrapper');
+      var app = apps.querySelectorAll('.prefooter-app');
       var imagePart = preFooter.querySelector('.prefooter__image-part');
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
         y: -100,
@@ -472,7 +835,7 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 0
       }, {
         autoAlpha: 1,
-        stagger: 0.1,
+        stagger: 0.35,
         duration: 0.25
       });
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
@@ -488,6 +851,92 @@ var Section = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (PreFooter);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/Quote.js":
+/*!***********************************!*\
+  !*** ./src/js/flexibles/Quote.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Quote = /*#__PURE__*/_createClass(function Quote(className) {
+  _classCallCheck(this, Quote);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var quoteWrapper = this.section.querySelector('.quote__container');
+      var quote = quoteWrapper.querySelector('.quote-content__title');
+      var description = quoteWrapper.querySelector('.quote-content__description');
+      var photo = quoteWrapper.querySelector('.quote__image-part');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(quote, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(description, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(photo, {
+        y: 120,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.3,
+        duration: 0.35
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: quoteWrapper,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Quote);
 
 /***/ }),
 
@@ -651,8 +1100,8 @@ var Section = /*#__PURE__*/function () {
       var description = simple.querySelector('.section-part__description');
       var button = simple.querySelector('.simple__cta-wrapper');
       var labels = simple.querySelector('.simple__labels-wrapper');
-      var label = labels.querySelectorAll('.label-picto');
-      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline();
+      animation.fromTo(title, {
         y: -100,
         autoAlpha: 0
       }, {
@@ -660,7 +1109,8 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.1,
         duration: 0.45
-      }).fromTo(description, {
+      });
+      animation.fromTo(description, {
         scale: 0.8,
         y: 100,
         autoAlpha: 0
@@ -670,7 +1120,8 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.27,
         duration: 0.45
-      }).fromTo(button, {
+      });
+      animation.fromTo(button, {
         scale: 0.8,
         autoAlpha: 0
       }, {
@@ -678,16 +1129,22 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.27,
         duration: 0.45
-      }).fromTo(label, {
-        autoAlpha: 0
-      }, {
-        autoAlpha: 1,
-        stagger: 0.01,
-        duration: 0.25
       });
+
+      if (labels) {
+        var label = labels.querySelectorAll('.label-picto');
+        animation.fromTo(label, {
+          autoAlpha: 0
+        }, {
+          autoAlpha: 1,
+          stagger: 0.01,
+          duration: 0.25
+        });
+      }
+
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: simple,
-        start: 'top bottom-=1%',
+        start: 'top bottom-=5%',
         toggleActions: 'play none none reverse',
         animation: animation
       });
@@ -746,10 +1203,7 @@ var Section = /*#__PURE__*/function () {
       var title = steps.querySelector('.steps__section-title');
       var description = steps.querySelector('.steps__section-description');
       var blocks = steps.querySelector('.steps-wrapper');
-      var block = blocks.querySelectorAll('.step__container'); // const blockImage = blocks.querySelectorAll('.steps__image');
-      // const blockText = blocks.querySelectorAll('.text-part__container');
-      // const textDescription = blockText.querySelector('.text-part__description');
-
+      var block = blocks.querySelectorAll('.step__container');
       var button = steps.querySelector('.section-steps__cta-wrapper');
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
         y: -100,
@@ -775,7 +1229,7 @@ var Section = /*#__PURE__*/function () {
       }, {
         y: 0,
         autoAlpha: 1,
-        stagger: 0.01,
+        stagger: 0.6,
         duration: 0.35
       }).fromTo(button, {
         scale: 0.8,
@@ -848,17 +1302,13 @@ var Section = /*#__PURE__*/function () {
       var textImage = this.section.querySelector('.text-image-wrapper');
       var textPart = textImage.querySelector('.text-part__container');
       var title = textPart.querySelector('.text-part__title');
+      var surtitle = textPart.querySelector('.text-part__surtitle');
+      var button = textPart.querySelector('.text-image__cta-wrapper');
       var description = textPart.querySelector('.text-part__description');
       var enumerationWrapper = textPart.querySelector('.text-image__enumerations-container');
-
-      if (enumerationWrapper) {
-        var enumeration = enumerationWrapper.querySelectorAll('.enumeration-block');
-      } // const descriptions = textImage.querySelector('.text-image__descriptions-container');
-      // const block = descriptions.querySelectorAll('.enumeration-block');
-
-
       var ImagePart = textImage.querySelector('.text-image__image');
-      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline();
+      animation.fromTo(title, {
         y: -100,
         autoAlpha: 0
       }, {
@@ -866,7 +1316,33 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.1,
         duration: 0.45
-      }).fromTo(description, {
+      });
+
+      if (surtitle) {
+        animation.fromTo(surtitle, {
+          y: -100,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.1,
+          duration: 0.45
+        });
+      }
+
+      if (button) {
+        animation.fromTo(button, {
+          y: -100,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.1,
+          duration: 0.45
+        });
+      }
+
+      animation.fromTo(description, {
         scale: 0.8,
         y: 100,
         autoAlpha: 0
@@ -876,26 +1352,29 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.27,
         duration: 0.25
-      }).fromTo(ImagePart, {
-        y: 100,
+      });
+      animation.fromTo(ImagePart, {
+        y: 70,
         autoAlpha: 0
       }, {
         y: 0,
         autoAlpha: 1,
-        stagger: 0.01,
+        stagger: 0.15,
         duration: 0.25
-      }); // if (enumerationWrapper) {
-      // 	const enumerationAnimation = gsap
-      // 		.timeline()
-      // 		.fromTo(enumeration, { y: 150, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.55, duration: 0.35 });
-      // 	.add(enumerationAnimation);
-      // }
-      // if (descriptions) {
-      // 	const descriptionAnimation = gsap
-      // 		.timeline()
-      // 		.fromTo(block, { y: 150, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.55, duration: 0.35 });
-      // 	timeline.add(descriptionAnimation);
-      // }
+      });
+
+      if (enumerationWrapper) {
+        var enumeration = enumerationWrapper.querySelectorAll('.enumeration-block');
+        animation.fromTo(enumeration, {
+          y: 150,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.55,
+          duration: 0.35
+        });
+      }
 
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: textImage,
@@ -956,13 +1435,13 @@ var Section = /*#__PURE__*/function () {
     value: function animate() {
       var TwoBlocks = this.section.querySelector('.two-blocks-wrapper');
       var title = TwoBlocks.querySelector('.text-part__title');
-      var description = banner.querySelector('.text-part__description');
+      var description = TwoBlocks.querySelector('.text-part__description');
       var buttons = TwoBlocks.querySelector('.buttons-wrapper__list');
       var button = buttons.querySelectorAll('.cta-wrapper');
-      var ImagePart = banner.querySelector('.picto-only');
-      var operators = TwoBlocks.querySelector('.operators__list'); // const operator = operators.querySelectorAll('.operator-wrapper');
-
-      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+      var ImagePart = TwoBlocks.querySelector('.picto-only');
+      var operators = TwoBlocks.querySelector('.operators__list');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline();
+      animation.fromTo(title, {
         y: -100,
         autoAlpha: 0
       }, {
@@ -970,7 +1449,8 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.1,
         duration: 0.45
-      }).fromTo(description, {
+      });
+      animation.fromTo(description, {
         scale: 0.8,
         y: 100,
         autoAlpha: 0
@@ -980,33 +1460,39 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.27,
         duration: 0.25
-      }).fromTo(button, {
+      });
+      animation.fromTo(button, {
         scale: 0.8,
         autoAlpha: 0
       }, {
         scale: 1,
         autoAlpha: 1,
-        stagger: 0.01,
+        stagger: 0.35,
         duration: 0.35
-      }).fromTo(ImagePart, {
-        y: 100,
-        autoAlpha: 0
-      }, {
-        y: 0,
-        autoAlpha: 1,
-        stagger: 0.01,
-        duration: 0.25
       });
 
       if (operators) {
-        var operatorAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(operators, 0.3, {
+        var operator = operators.querySelectorAll('.operator-wrapper');
+        animation.fromTo(operator, {
+          y: 150,
+          autoAlpha: 0
+        }, {
+          y: 0,
+          autoAlpha: 1,
+          stagger: 0.45,
+          duration: 0.35
+        });
+      }
+
+      if (ImagePart) {
+        var image = ImagePart.querySelectorAll('.text-picto__wrapper');
+        animation.fromTo(image, 0.3, {
           y: 150,
           autoAlpha: 0
         }, {
           y: 0,
           autoAlpha: 1
         });
-        timeline.add(operatorAnimation);
       }
 
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
@@ -1055,45 +1541,85 @@ var Wallets = /*#__PURE__*/_createClass(function Wallets(className) {
   });
 });
 
-var Section = /*#__PURE__*/_createClass(function Section(section) {
-  _classCallCheck(this, Section);
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
 
-  this.section = section;
-  var tabs = document.querySelectorAll('.theme-input-content');
-  var radios = document.querySelectorAll('.theme-input');
-  var yearsContent = document.querySelectorAll('.year__content');
-  var years = document.querySelectorAll('.tab__year');
-  radios.forEach(function (radio) {
-    radio.addEventListener('change', function () {
-      var _this = this;
+    this.section = section;
+    this.animate();
+    var tabs = document.querySelectorAll('.theme-input-content');
+    var radios = document.querySelectorAll('.theme-input');
+    var yearsContent = document.querySelectorAll('.year__content');
+    var years = document.querySelectorAll('.tab__year');
+    radios.forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        var _this = this;
 
-      tabs.forEach(function (tab) {
-        tab.classList.add('hidden');
+        tabs.forEach(function (tab) {
+          tab.classList.add('hidden');
 
-        if (_this.checked && tab.getAttribute('tabname') == _this.value) {
-          tab.classList.remove('hidden');
-        }
+          if (_this.checked && tab.getAttribute('tabname') == _this.value) {
+            tab.classList.remove('hidden');
+          }
+        });
       });
     });
-  });
-  years.forEach(function (year) {
-    year.addEventListener('click', function () {
-      if (year.classList.contains('active')) {
-        year.classList.remove('active');
+    years.forEach(function (year) {
+      year.addEventListener('click', function () {
+        var yearsActive = document.querySelectorAll('.tab__year.active');
+        yearsActive.forEach(function (yearActive) {
+          if (yearActive.classList.contains('active')) {
+            yearActive.classList.remove('active');
+          }
+        });
         this.classList.add('active');
-      }
+        yearsContent.forEach(function (yearContent) {
+          yearContent.classList.add('hidden');
+          var yearValue = year.dataset.year;
 
-      yearsContent.forEach(function (yearContent) {
-        yearContent.classList.add('hidden');
-        var yearValue = year.dataset.year;
-
-        if (yearContent.getAttribute('tabname') == yearValue) {
-          yearContent.classList.remove('hidden');
-        }
+          if (yearContent.getAttribute('tabname') == yearValue) {
+            yearContent.classList.remove('hidden');
+          }
+        });
       });
     });
-  });
-});
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      var walletsWrapper = this.section.querySelector('.wallet-container');
+      var title = walletsWrapper.querySelector('.wallet__section-title');
+      var wallets = walletsWrapper.querySelector('.wallet-wrapper');
+      var wallet = wallets.querySelectorAll('.wallet-block');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+        y: 100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      }).fromTo(wallet, {
+        y: 120,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.45,
+        duration: 0.35
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: walletsWrapper,
+        start: 'top bottom-=1%',
+        toggleActions: 'play none none reverse',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
 
 /* harmony default export */ __webpack_exports__["default"] = (Wallets);
 
