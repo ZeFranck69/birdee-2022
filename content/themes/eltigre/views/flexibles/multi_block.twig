@@ -1,6 +1,6 @@
-<section id="{{ section.title|sanitize }}" class="multi-block {{ section.radius }}">
+<section id="{{ section.title|sanitize }}" class="multi-block {{ section.radius }}" style="{% if section.section_width == 'fullwidth' %} background-color: {{ section.background_color }};{% endif %}">
 
-	<div class="multi-block-container main-wrapper padding-medium" style="text-align: {{ section.text_align }}; background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
+	<div class="multi-block-container main-wrapper padding-medium" style="text-align: {{ section.text_align }};{% if section.section_width == 'ajust' %}background-color: {{ section.background_color }};{% endif %} padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
 		<div class="multi-block-wrapper">
 				{% if section.section_title %}
 						<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">

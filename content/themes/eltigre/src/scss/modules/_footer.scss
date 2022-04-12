@@ -145,15 +145,17 @@
 	position: relative;
 
 	&::before{
-		content: '';
-		position: absolute;
-		background-image: url('../images/arrow-down.png');
-		background-size: cover;
-		width: 16px;
-		height: 16px;
-		right: 0;
-		top: 0;
-		transition: all .35s ease-in-out;
+		@include mobile-xl{
+			content: '';
+			position: absolute;
+			background-image: url('../images/arrow-down.png');
+			background-size: cover;
+			width: 16px;
+			height: 16px;
+			right: 0;
+			top: 0;
+			transition: all .35s ease-in-out;
+		}
 	}
 
 	&::after{ 
