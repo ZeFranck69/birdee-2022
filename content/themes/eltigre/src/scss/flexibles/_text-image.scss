@@ -68,6 +68,10 @@
         }
         .text-part__title{
 			margin-bottom: 50px;
+
+            @include tablet{
+                margin-top: 27px;
+            }
         }
         .text-part__description{
 			margin-bottom: 30px;

@@ -27,10 +27,16 @@
 	margin-bottom: 30px;
 	@include landscape{
 	    flex-wrap: wrap;
-		justify-content: center;
 	}
 	@include mobile-xl{
 		margin-top: 30px;
+	}
+}
+.applications-wrapper{
+	@include mobile-xl{
+		margin-top: 30px;
+		display: flex;
+    	justify-content: center;
 	}
 }
 
@@ -72,6 +78,8 @@
 	@include mobile-xl{
 		display: flex;
 		padding: 0 30px;
+		margin: 44px auto 70px;
+    	max-width: 350px;
 	}
 }
 
@@ -135,7 +143,7 @@
 }
 
 .column__title {
-	margin-top: 8px;
+	padding-top: 10px;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 16px;
@@ -153,7 +161,7 @@
 			width: 16px;
 			height: 16px;
 			right: 0;
-			top: 0;
+			bottom: 0;
 			transition: all .35s ease-in-out;
 		}
 	}

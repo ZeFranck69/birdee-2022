@@ -119,6 +119,9 @@
     text-align: left;
     margin-top: 7px;
     @include laptop-small{
+        margin-left: 70px;
+    }
+    @include tablet{
         margin-left: 63px;
     }
 }

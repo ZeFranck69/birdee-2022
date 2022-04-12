@@ -13,7 +13,7 @@
 
 	.main-wrapper{
 
-		@include desktop{
+		@include landscape{
 			padding:40px;
 		}
 	}
@@ -41,6 +41,7 @@
     }
 	.picto-text-image__image{
 		display: flex;
+		justify-content: flex-end;
 		@include desktop{
 			max-width: 780px;
     		width: 100%;
@@ -48,7 +49,7 @@
 		img{
 			border-bottom-left-radius: 30px;
 			border-top-left-radius: 30px;
-			@include desktop{
+			@include landscape{
 				max-width: 100% !important;
 				width: 100%;
 				-o-object-fit: cover;
@@ -68,14 +69,13 @@
 		align-items: center;	
 		margin-left: 40px;
 		@include desktop{
+		}
+		@include landscape{
 			margin-left: 0;
 			flex-direction: row;
 			max-width: 100% !important;
 			align-items: flex-start;
 			margin-top: 52px;
-		}
-		@include landscape{
-			max-width: 100% !important;
 		}
 		@include mobile-xl{
 			padding: 0;
@@ -139,13 +139,13 @@
 }
 .picto-text-image-wrapper--row{
     flex-direction: row;
-    @include desktop{
+    @include landscape{
         flex-direction: column;
     }
 }
 .picto-text-image-wrapper--row-reverse{
     flex-direction: row-reverse;
-	@include desktop{
+	@include landscape{
 		flex-direction: column;
 	}
 }
