@@ -3243,9 +3243,6 @@ a {
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
 }
-.wallet-theme span:hover {
-  background-color: #fff;
-}
 .wallet-theme span:before {
   display: -webkit-box;
   display: -ms-flexbox;

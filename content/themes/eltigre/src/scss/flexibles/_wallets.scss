@@ -138,9 +138,7 @@
 		padding:0.275em 0.75em 0.275em 0.375em;
 		border-radius: 99em; 
 		transition: 0.25s ease;
-		&:hover {
-			background-color: $white;
-		}
+
 		&:before {
 			display: flex;
 			flex-shrink: 0;
