@@ -5,13 +5,13 @@
 		<div class="{{ section.section_width == "fullwidth" ? "" : "main-wrapper" }}" >
 			<div class="reasons-wrapper {{ section.text_align }} padding-medium" style="background-color:{{ section.background_color }}">	
                 {% if section.part_title %}
-					<h2 class="text-part__title title bold uppercase">
+					<h2 class="text-part__title title bold uppercase" style="text-align: {{ section.text_align }};">
 						{{ section.part_title }}
 					</h2>
                 {% endif %}
                 {% if section.description %}
-					<div class="text-part__description description" style="color:{{ section.description_color }};">
-						{{ section.description }}
+					<div class="text-part__description description" style="color:{{ section.part_description_color }}; text-align: {{ section.text_align }};">
+						{{ section.part_description }}
 					</div>
                 {% endif %}
                 <div class="reasons__content">

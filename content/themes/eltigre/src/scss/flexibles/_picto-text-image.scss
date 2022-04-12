@@ -69,7 +69,7 @@
 		margin-left: 40px;
 		@include desktop{
 			margin-left: 0;
-			flex-direction: column;
+			flex-direction: row;
 			max-width: 100% !important;
 			align-items: flex-start;
 			margin-top: 52px;
@@ -78,7 +78,9 @@
 			max-width: 100% !important;
 		}
 		@include mobile-xl{
-			padding: 0 40px;
+			padding: 0;
+			flex-direction: column;
+			align-items: center;
 		}
 	}
 	.text-part__picto{
@@ -111,6 +113,7 @@
         @include mobile-xl{
             max-width: 100% !important;
             width: 100%;
+			margin-left: 0;
         }
 		.text-part__surtitle{
         }

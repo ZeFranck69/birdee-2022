@@ -37,6 +37,10 @@
 	padding-top: 80px;
 	padding-bottom: 80px;
 	position: relative;
+	@include landscape{
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
     .section-part__title{
         margin-bottom: 90px;
     }
@@ -52,11 +56,17 @@
 			font-family: 'Favorit Bold Lining', sans-serif;
 		}
 		.section-part__description{
-			max-width: 500px;
-			@include tablet{
-				font-size: 18px;
-				line-height: 24px;
+			&.small{
+				max-width: 500px;
+				@include tablet{
+					font-size: 18px;
+					line-height: 24px;
+				}
 			}
+			&.large{
+				max-width: 800px;
+			}
+
 		}
 	}
 }
@@ -93,4 +103,8 @@
 	&:first-child{
 		margin-right: 10px;
 	}
+}
+
+.section-part__description--wrapper{
+	display: flex;
 }

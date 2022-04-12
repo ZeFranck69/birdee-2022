@@ -1,6 +1,6 @@
-<section id="{{ section.title|sanitize }}" class="text-image {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding:{{ section.section_margin }}px 0;">
+<section id="{{ section.title|sanitize }}" class="text-image " style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
 
-	<div class="text-image-container {{ section.description_type }}" style="text-align: {{ section.text_align }};">
+	<div class="text-image-container main-wrapper {{ section.description_type }} {{ section.radius }}" style="text-align: {{ section.text_align }};background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}">
 			{% if section.section_title is not empty %}
 			<div class="text-image__section-title">

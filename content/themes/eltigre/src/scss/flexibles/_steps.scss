@@ -1,8 +1,9 @@
 .steps{
-    
-    @include tablet{
-        padding: 60px 0;
+    @include landscape{
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
     }
+    
 }
 .steps__section-title {
 	margin-bottom: 30px;

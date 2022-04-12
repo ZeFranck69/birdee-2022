@@ -1,5 +1,8 @@
 .performances {
-    
+    @include landscape{
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
 }
 .performances-wrapper{
 	display: flex;
@@ -178,6 +181,19 @@ input[type='range'] {
 }
 .performances__cta-wrapper{
 	margin-top: 40px;
+}
+.performances__link-wrapper{
+	margin-top: 23px;
+	.link{
+		font-family: 'Favorit Bold Lining', sans-serif;
+		font-size: 16px;
+		line-height: 20px;
+		transition: color .35s ease-in;
+		&:hover{
+			color: $green;
+			transition: color .35s ease-in;
+		}
+	}
 }
 .performances__result{
 	display: flex;

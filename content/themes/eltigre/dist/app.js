@@ -9208,6 +9208,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
   // });
 });
 var menusFooter = document.querySelectorAll('.accordeon');
+var columns = document.querySelectorAll('.footer__column');
 menusFooter.forEach(function (menuFooter) {
   menuFooter.addEventListener('click', function () {
     return menuFooter.classList.toggle('open');

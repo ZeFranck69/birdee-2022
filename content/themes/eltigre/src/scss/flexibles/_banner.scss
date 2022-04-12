@@ -30,6 +30,9 @@
 	@include desktop{
 		max-width:350px !important;
 	}
+	@include tablet{
+		max-width:250px !important;
+	}
 }
 @media screen and (max-height: 700px) {
 	.banner__image{

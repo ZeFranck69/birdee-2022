@@ -84,9 +84,11 @@
 					</span>
 				</a>
 			</div>
-			<div class="performances__link-wrapper">
-				<a href="" class="link">
-
+			{% endif %}
+			{% if section.cta_no_style %}
+			<div class="performances__link-wrapper {{ section.cta_no_style_align }}">
+				<a href="{{ section.cta_no_style.url }}" class="link" target="{{ section.cta_no_style.target }}">
+					{{ section.cta_no_style.title }}
 				</a>
 			</div>
 			{% endif %}

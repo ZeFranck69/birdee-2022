@@ -1,6 +1,6 @@
-<section id="{{ section.title|sanitize }}" class="labels {{ section.section_width == "ajust" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}" style="background-color: {{ section.background_color }};padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
+<section id="{{ section.title|sanitize }}" class="labels">
 
-	<div class="labels-container" style="text-align: {{ section.text_align }};">
+	<div class="labels-container {{ section.section_width == "ajust" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}" style="text-align: {{ section.text_align }};background-color: {{ section.background_color }};padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} ">
 			<div class="labels-wrapper">
                 {% if section.section_title %}

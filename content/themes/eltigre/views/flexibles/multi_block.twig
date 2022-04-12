@@ -1,6 +1,6 @@
-<section id="{{ section.title|sanitize }}" class="multi-block {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
+<section id="{{ section.title|sanitize }}" class="multi-block {{ section.radius }}">
 
-	<div class="multi-block-container main-wrapper padding-medium" style="text-align: {{ section.text_align }};">
+	<div class="multi-block-container main-wrapper padding-medium" style="text-align: {{ section.text_align }}; background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
 		<div class="multi-block-wrapper">
 				{% if section.section_title %}
 						<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
@@ -26,6 +26,12 @@
 										{{ block.bloc_title }}
 									</h4>
 									{% endif %}
+									{% if block.block_subtitle %}
+									<div class="block-text__subtitle title--secondary-unline bold" style="color:{{ block.block_subtitle_color }}">
+										{{ block.block_subtitle }}
+									</div>
+									{% endif %}
+
 									{% if block.block_description %}
 									<div class="block-text__description description-light">
 										{{ block.block_description }}	

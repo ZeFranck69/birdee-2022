@@ -6,17 +6,21 @@
 		<div class="overlay"></div>
 			<div class="simple-wrapper {{ section.display_type }} padding-medium">
 				{% if section.section_title %}
-					<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
+					<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }}; text-align: {{ section.text_align }};">
 						{{ section.section_title }}
 					</h2>
 				{% endif %}
 				{% if section.picto %}
-					<img src="{{ Image(section.picto).src }}" alt="{{ Image(section.picto).alt }}" class="picto-simple">
+					<div class="picto-simple--wrapper" style="text-align: {{ section.text_align }};">
+						<img src="{{ Image(section.picto).src }}" alt="{{ Image(section.picto).alt }}" class="picto-simple">
+					</div>
 				{% endif %}
 				
 				{% if section.section_description %}
-					<div class="section-part__description description" style="color:{{ section.description_color }};">
-						{{ section.section_description }}
+					<div class="section-part__description--wrapper" style="color:{{ section.description_color }};justify-content: {{ section.text_align }};">
+						<p class="section-part__description description {{ section.text_width }}"> 
+							{{ section.section_description }}
+						</p>
 					</div>
 				{% endif %}
 				<div class="cta-picto__container {{ section.labels|length < 1 ? "justify-center" : "space-between" }}">

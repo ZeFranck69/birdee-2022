@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function (ev) {
 	// });
 });
 const menusFooter = document.querySelectorAll('.accordeon');
+const columns = document.querySelectorAll('.footer__column');
 menusFooter.forEach((menuFooter) => {
 	menuFooter.addEventListener('click', () => menuFooter.classList.toggle('open'));
 });

@@ -1,5 +1,11 @@
 .multi-block{
 
+	@include laptop-small{
+		padding: 0 40px;
+	}
+	@include mobile-xl{
+		padding: 0;
+	}
 }
 .multi-block__wrapper-list{
 	max-width: 1200px;
@@ -48,6 +54,9 @@
 		.block-text{
 
 			.block-text__title{
+				margin-bottom: 9px;
+			}
+			.block-text__subtitle{
 				margin-bottom: 9px;
 			}
 		}
