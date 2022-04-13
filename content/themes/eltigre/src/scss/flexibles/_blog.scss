@@ -1,0 +1,84 @@
+.blog__wrapper-list{
+    max-width: 1100px;
+    width: 100%;
+    margin: 12px auto 0;
+
+}
+.feedzy-rss{
+
+    .rss_header{
+        display: none;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include landscape{
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+        .rss_item{            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 300px;
+            width: 100%;
+            margin: 20px;
+            border-bottom: 0px solid;
+            padding:0 0 40px 0!important;
+            background-color: $white;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            @include landscape{
+                flex-direction: row;
+                max-width: 100%;
+                padding: 0 !important;
+                align-items: center;
+            }
+            @include tablet{
+                flex-direction: column;
+                max-width: 300px;
+                padding:0 0 40px 0!important;
+                align-items: center;
+            }
+            .title{
+                font-size: 20px;
+                line-height: 1.25;
+                font-family: 'Favorit', sans-serif;
+                text-transform: uppercase;
+                margin-top: 15px;
+                padding: 8px 20px;
+                @include landscape{
+                    font-size: 18px;
+                    line-height: 1.25;
+                }
+            }
+        }
+        .rss_image{
+            width: 100% !important;
+            height: 210px !important;
+            margin: 0 !important;
+            @include landscape{
+                width: 260px !important;
+                height: 200px !important;
+            }
+            @include tablet{
+                width: 100% !important;
+                height: 210px !important;
+            }
+            span{
+                border-top-left-radius: 40px;
+                border-top-right-radius: 40px;
+                border-bottom-right-radius: 40px;
+            }
+        }
+        .rss_content{
+            display: none;
+        }
+    }
+}
+.blog__cta-wrapper{
+    margin-top: 50px;
+}
