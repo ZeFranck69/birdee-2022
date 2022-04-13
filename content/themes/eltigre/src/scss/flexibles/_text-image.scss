@@ -214,6 +214,9 @@
             width: 100%;
         }
     }
+    .text-image__image--mobile {
+        display: none;
+    }
     &.type--text-picto{
 
         .text-part{
@@ -222,8 +225,33 @@
             }
         }
         .text-image__image{
-            @include tablet{
+            @include landscape{
                 max-width: 170px !important;
+            }
+            &.bottom-title{
+                @include landscape{
+                    display: none;
+                }
+            }
+            &.disappear{
+                @include landscape{
+                    display: none;
+                }
+            }
+        }
+        .text-image__image--mobile{
+            @include landscape{
+                max-width: 170px !important;
+            }
+            &.bottom-title{
+                @include landscape{
+                    display: block;
+                    max-width: 170px !important;
+                    margin-bottom: 45px;
+                }
+            }
+            img{
+                max-width: 100% !important;
             }
         }
     }
@@ -232,6 +260,57 @@
         .text-part{
             @include desktop{
                 max-width: 399px !important;
+            }
+        }
+        .text-image__image{
+            
+            &.top-title{
+                @include landscape{
+                    
+                }
+            }
+
+            &.bottom-title{
+                @include landscape{
+                    display: none;
+                }
+            }
+            &.disappear{
+                @include landscape{
+                    display: none;
+                }
+            }
+            img{
+                border-top-left-radius: 40px;
+                border-top-right-radius: 40px;
+                border-bottom-right-radius: 40px;
+                -o-object-fit: cover;
+                   object-fit: cover;
+                -o-object-position: center;
+                object-position: center;
+                font-family: "object-fit: cover; object-position: center";
+                @include laptop-small{
+                    max-width: 420px !important;
+                }
+                @include landscape{
+                    max-height: 450px;
+                }
+            }
+        }
+        .text-image__image--mobile{
+            @include landscape{
+                max-width: 170px !important;
+            }
+            &.bottom-title{
+                @include landscape{
+                    display: block;
+                    max-width: 170px !important;
+                    margin: auto;
+                    margin-bottom: 45px;
+                }
+            }
+            img{
+                max-width: 100% !important;
             }
         }
 
@@ -269,3 +348,8 @@
         margin-top: 30px;
     }
 }
+
+// MOBILE VERSION
+
+
+

@@ -15,6 +15,7 @@ class Section {
 	constructor(section) {
 		this.result = [];
 		this.section = section;
+		this.modalManager();
 		const saving = document.querySelector('.saving');
 		const reject = document.querySelector('.rejected');
 		const comparison = document.querySelector('.comparison');
@@ -44,8 +45,34 @@ class Section {
 			);
 		});
 	}
+	modalManager() {
+		const link = document.querySelector('.link');
+		const modal = document.querySelector('.modal');
+		const closeBtn = document.querySelector('.close');
+		const closeWindow = document.querySelector('.modal.open');
+		link.addEventListener('click', function () {
+			modal.classList.add('open');
+			if (modal.classList.contains('closed')) {
+				modal.classList.remove('closed');
+				modal.classList.add('open');
+			} else if (modal.classList.contains('open')) {
+				modal.classList.remove('open');
+				modal.classList.add('closed');
+			}
+		});
 
-	updateValue() {}
+		closeBtn.addEventListener('click', function () {
+			modal.classList.remove('open');
+			modal.classList.add('closed');
+		});
+		if (closeWindow) {
+			console.log('dedans');
+			window.addEventListener('click', function () {
+				modal.classList.remove('open');
+				modal.classList.add('closed');
+			});
+		}
+	}
 }
 
 export default Performances;

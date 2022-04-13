@@ -1,3 +1,19 @@
+<!-- MODAL -->
+<div class="modal closed">
+    <div class="modal-wrapper container">
+      <div class="modal-content" >
+        <div class="close"></div>
+		<h2 class="popup-title title uppercase">{{ section.popup_title }}</h2>
+		<div class="popup-content--wrapper">
+			<div class="popup-content">
+				{{ section.popup_content }}
+			</div>
+		</div>
+      </div>
+    </div>
+</div>
+<!-- END MODAL -->
+
 <section id="{{ section.title|sanitize }}"
 	class="performances {{ section.section_width == "ajust" ? "main-wrapper" : "" }} {{ section.radius }}"
 	style="background-color: {{ section.background_color }}; padding-top: {{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
@@ -87,7 +103,7 @@
 			{% endif %}
 			{% if section.cta_no_style %}
 			<div class="performances__link-wrapper {{ section.cta_no_style_align }}">
-				<a href="{{ section.cta_no_style.url }}" class="link" target="{{ section.cta_no_style.target }}">
+				<a data-popup=".modal" class="link" target="{{ section.cta_no_style.target }}">
 					{{ section.cta_no_style.title }}
 				</a>
 			</div>

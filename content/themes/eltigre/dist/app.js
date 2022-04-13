@@ -721,6 +721,7 @@ var Section = /*#__PURE__*/function () {
 
     this.result = [];
     this.section = section;
+    this.modalManager();
     var saving = document.querySelector('.saving');
     var reject = document.querySelector('.rejected');
     var comparison = document.querySelector('.comparison');
@@ -746,8 +747,36 @@ var Section = /*#__PURE__*/function () {
   }
 
   _createClass(Section, [{
-    key: "updateValue",
-    value: function updateValue() {}
+    key: "modalManager",
+    value: function modalManager() {
+      var link = document.querySelector('.link');
+      var modal = document.querySelector('.modal');
+      var closeBtn = document.querySelector('.close');
+      var closeWindow = document.querySelector('.modal.open');
+      link.addEventListener('click', function () {
+        modal.classList.add('open');
+
+        if (modal.classList.contains('closed')) {
+          modal.classList.remove('closed');
+          modal.classList.add('open');
+        } else if (modal.classList.contains('open')) {
+          modal.classList.remove('open');
+          modal.classList.add('closed');
+        }
+      });
+      closeBtn.addEventListener('click', function () {
+        modal.classList.remove('open');
+        modal.classList.add('closed');
+      });
+
+      if (closeWindow) {
+        console.log('dedans');
+        window.addEventListener('click', function () {
+          modal.classList.remove('open');
+          modal.classList.add('closed');
+        });
+      }
+    }
   }]);
 
   return Section;

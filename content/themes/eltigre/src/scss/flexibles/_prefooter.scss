@@ -4,8 +4,9 @@
 	min-height: 100%;
 	height: auto; // Peut etre à supprimer quand j'aurais les images
 	@include tablet{
-		display: none;
+		// display: none;
 		height: auto !important;
+		padding: 40px 0 ;
 	}
 	&.prefooter--without-slider{
 		min-height: 600px;
@@ -13,6 +14,9 @@
 		@include mobile{
 			padding-bottom: 15px;
 		}
+	}
+	@include mobile-xl{
+		margin-top: 0 !important;
 	}
 }
 .prefooter-logo{
@@ -52,6 +56,7 @@
 		margin-right: 30px;
 		@include tablet{
 			margin-right:0;
+			display: none;
 		}
 	}
 }
@@ -66,6 +71,7 @@
 		text-align: center;
 		@include tablet{
 			margin-left:0;
+			display: none;
 		}
 	}
 	
@@ -96,6 +102,7 @@
 			flex-direction: column;
 		}
 		@include tablet{
+			margin: auto;
 			margin-top: 22px;
 		}
 	}

@@ -171,10 +171,14 @@
 .gain__content{
     padding: 0 24px;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between; // NE PAS EFFACER LES DONNEES NE SONT PAS ENCORE DISPONIBLE
+    justify-content: center;
     @include landscape{
         flex-direction: column;
         align-items: center;
+    }
+    .co2-part{
+        display: none; // NE PAS EFFACER LES DONNEES NE SONT PAS ENCORE DISPONIBLE
     }
 }
 

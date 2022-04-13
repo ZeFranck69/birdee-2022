@@ -23,8 +23,8 @@
 						</div>
 					</div>
 				{% else %}
-					<div class="text-image__image">
-						<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;">
+					<div class="text-image__image {{ section.image_layout }}">
+						<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;" class="image">
 					</div>
 				{% endif %}
 				
@@ -41,6 +41,9 @@
 							{{ section.title }}
 						</h2>
 						{% endif %}
+						<div class="text-image__image--mobile {{ section.image_layout }}">
+							<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" style=" max-width: {{ section.width }}px;" class="image">
+						</div>
 						{% if section.description_type == 'paragraph' %}
 							{% if section.description %}
 							<div class="text-part__description description" style="color:{{ section.description_color }};">
