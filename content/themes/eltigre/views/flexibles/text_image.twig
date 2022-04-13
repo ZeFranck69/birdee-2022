@@ -7,6 +7,11 @@
 				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
 			</div>
 			{% endif %}
+			{% if section.section_description is not empty %}
+			<div class="text-image__section-description">
+				<p class="description {{ section.title_text_align }}" style="color:{{ section.color_section_description }}}">{{ section.section_description }}</p>
+			</div>
+			{% endif %}
 			<div class="text-image-wrapper text-image-wrapper--{{ section.layout }} type--{{ section.layout_type }}" style="justify-content: {{ section.justify_content }};">
 				{% if section.layout_type == "text-video"%}
 					<div class="media-part__video">

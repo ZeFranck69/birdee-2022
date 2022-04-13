@@ -51,6 +51,28 @@
                     flex-direction: column;
                     align-items: center;
                 }
+                &.reasons-list--center{
+                    justify-content: center;
+                    @include laptop-small{
+                        flex-direction: row;
+                        align-items: center;
+                    }
+                    @include landscape{
+                        flex-direction:row;
+                        align-items: center;
+                    }
+                    .reason{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        .reason__content{
+                            @include laptop-small{
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                } 
                 .reason{
                     max-width: 375px;
                     width: 100%;

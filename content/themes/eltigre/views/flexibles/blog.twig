@@ -1,0 +1,35 @@
+<section id="{{ section.title|sanitize }}" class="blog {{ section.radius }}" style="{% if section.section_width == 'fullwidth' %} background-color: {{ section.background_color }};{% endif %}">
+
+	<div class="blog-container main-wrapper padding-medium" style="text-align: {{ section.text_align }};{% if section.section_width == 'ajust' %}background-color: {{ section.background_color }};{% endif %} padding-top:{{ section.section_margin }}px; padding-bottom:{{ section.section_margin }}px;">
+		<div class="blog-wrapper">
+				{% if section.section_title %}
+						<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }};">
+								{{ section.section_title }}
+						</h2>
+				{% endif %}
+				{% if section.section_description %}
+						<div class="section-part__description surtitle" style="color:{{ section.description_color }};">
+								{{ section.section_description }}
+						</div>
+				{% endif %}
+				<div class="blog__wrapper-list">
+					{{ section.flux_rss }}
+				</div>
+				<!-- RAJOUTER UN CHAMP BOUTON POUR LA SECTION AU CAS OU -->
+				{% if section.cta %}
+				<div
+					class="blog__cta-wrapper {{ section.classic.cta_align }}">
+					<a href="{{ section.classic.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.classic.cta.target }}">
+						<span class="cta__label">
+								{{ section.cta.title }}
+						</span>
+					</a>
+				</div>
+				{% endif %}
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>

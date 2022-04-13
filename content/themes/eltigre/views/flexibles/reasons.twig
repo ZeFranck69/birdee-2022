@@ -15,7 +15,7 @@
 					</div>
                 {% endif %}
                 <div class="reasons__content">
-                    <div class="reasons-list">
+                    <div class="reasons-list {% if section.reasons| length <= 2 %}reasons-list--center{% endif %}">
                         {% for reason in section.reasons %}
                          <div class="reason">
                             <div class="reason__title--wrapper">
@@ -30,6 +30,7 @@
                          </div>       
                         {% endfor %}
                     </div>
+                    {% if section.title and section.definition %}
                     <div class="reasons__text-image">
                         <div class="reasons__text-image--left-part">
                             <img src="{{ Image(section.logo).src }}" alt="{{ Image(section.logo).alt }}" class="reason-picto" style="max-width: {{ section.image_width }}px;">
@@ -43,6 +44,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
                 {% if section.cta %}
 					<div
