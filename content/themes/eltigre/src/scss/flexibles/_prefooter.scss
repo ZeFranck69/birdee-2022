@@ -1,12 +1,12 @@
 .prefooter {
-	padding: 40px 0;
+	padding: 60px 0;
 	overflow: hidden;
 	min-height: 100%;
 	height: auto; // Peut etre à supprimer quand j'aurais les images
 	@include tablet{
 		// display: none;
 		height: auto !important;
-		padding: 40px 0 ;
+		padding: 60px 0 ;
 	}
 	&.prefooter--without-slider{
 		min-height: 600px;
@@ -29,7 +29,7 @@
 	justify-content: space-between;
 	max-width: 1100px;
 	margin: auto;
-
+	position: relative;
 	@include tablet {
 		padding: 0 17px;
 		margin: 0;
@@ -112,7 +112,10 @@
 }
 
 .prefooter__image-part {
-	position: relative;
+	position: absolute;
+	right: 0;
+	top: -97px;
+
 	@include tablet{
 		position: relative;
 		bottom: initial;

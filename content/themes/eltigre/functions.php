@@ -126,6 +126,28 @@
 					'has_archive' => false
 				)
 			);
+
+			register_post_type( 'offers',
+				array(
+					'labels' => array(
+						'name'          => __( 'Offres', 'eltigre' ),
+						'add_new'		=> __( 'Ajouter une offre', 'eltigre' ),
+						'singular_name' => __( 'Offre', 'eltigre' ),
+						'all_items'     => __( 'Toutes les Offres', 'eltigre' ),
+						'edit_item'     => __( 'Modifier une Offre', 'eltigre' ),
+						'view_item'     => __( 'Voir une Offre', 'eltigre' ),
+						'update_item'   => __( 'Mettre à jour une Offre', 'eltigre' ),
+						'add_new_item'  => __( 'Ajouter une nouvelle offre', 'eltigre' ),
+						'search_items'  => __( 'Chercher une offre', 'eltigre' ),
+						'popular_items' => __( 'Offres les plus utilisés', 'eltigre' )
+					),
+					'rewrite'     => array( 'slug' => 'offers' ),
+					'menu_icon'   => 'dashicons-text-page',
+					'supports'    => array( 'title', 'editor', 'thumbnail' ),
+					'public'      => true,
+					'has_archive' => false
+				)
+			);
 		}
 	
 	

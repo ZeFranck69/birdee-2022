@@ -139,6 +139,9 @@ $transition_speed: .2s;
 	@include laptop-small{
 		padding: 0 25px;
 	}
+	@include mobile{
+		padding: 0 15px;
+	}
 	.menu--left,
 	.menu--right{
 		display:flex;
@@ -172,7 +175,9 @@ $transition_speed: .2s;
 		.nav__links{
 			margin-right:25px;
 			@include mobile-xl{
-				display: none;
+				// display: none;
+				margin-right: 0;
+				font-size: 13px;
 			}
 		}
 	}
@@ -242,8 +247,8 @@ $transition_speed: .2s;
 			.header__logo-wrapper--mobile {
 				display: block;
 			}
-			.menu--left,
-			.menu--right{
+			.menu--left
+			{
 
 				.nav__links{
 					visibility: hidden;
@@ -252,7 +257,14 @@ $transition_speed: .2s;
 				
 				}
 			}
-
+			.menu--right{
+				.nav__links{
+					visibility: visible;
+					opacity: 1;
+					transition: opacity 0.25s ease;
+				
+				}
+			}
 			
 		}
 		.header__nav {

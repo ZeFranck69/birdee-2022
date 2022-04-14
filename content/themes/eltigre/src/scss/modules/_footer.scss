@@ -1,17 +1,27 @@
 
 #site-footer {
 	.footer__content{
-		padding: 55px 0 42px;
+		padding: 55px 60px 42px;
+		@include landscape{
+			padding: 55px 40px 42px;
+		}
+		@include mobile{
+			padding: 55px 20px 42px;
+		}
 	}
 	.site-logo{
-		max-width: 147px;
+		max-width: 120px;
 		width:100%;
 
 	}
 }
+
 .footer__content{
     padding-top: 80px;
     padding-bottom: 85px;
+}
+.footer__logo-wrapper{
+	margin-bottom: 20px;
 }
 
 .footer__logo-wrapper img {
@@ -114,7 +124,7 @@
 }
 
 .footer__column{
-    max-width: 222px;
+    max-width: 33%;
     width: 100%;
 	@include landscape{
 		max-width: 50%;
@@ -123,6 +133,7 @@
 		max-width: 100%;	
 	}
 	.socials-media--menu{
+		max-width: 300px;
 		@include mobile-xl{
 			display: none;
 		}
