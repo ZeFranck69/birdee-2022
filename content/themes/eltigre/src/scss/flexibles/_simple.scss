@@ -42,13 +42,14 @@
         padding-bottom: 40px !important;
     }
     .section-part__title{
-        margin-bottom: 90px;
+        margin-bottom: 78px;
     }
     .section-part__description{
         margin-bottom: 46px;
     }
     .picto-simple{
-		margin-bottom: 39px;
+		// margin-bottom: 39px;
+		max-width: 100px;
 	}
 	&.text-only{
 		.section-part__title{

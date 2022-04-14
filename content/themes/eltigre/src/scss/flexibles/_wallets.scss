@@ -17,8 +17,11 @@
     display: flex;
     max-width: 1120px;
     width: 100%; 
-    box-shadow: 0px 5px 4px 1px rgba(0,0,0,0.8);    
+    box-shadow: 0px 5px 4px 1px rgb(0 0 0 / 9%);   
     background-color: $white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
     @include tablet{
         flex-direction: column;
     }
@@ -28,6 +31,8 @@
     max-width: 50%;
     width: 100%;
     padding: 24px;
+    border-top-left-radius: 40px;
+    
     @include desktop{
         max-width: 45%;
     }
@@ -40,6 +45,8 @@
     max-width: 50%;
     width: 100%;
     padding: 24px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
      @include desktop{
          max-width: 55%;
      }
