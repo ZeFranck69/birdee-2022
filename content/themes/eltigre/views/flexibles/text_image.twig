@@ -18,7 +18,7 @@
 						<div class="video-wrapper" style="max-width: {{ section.container_video_width }}px;">
 							<div class="video-ratio"></div>
 							<div class="video__play"></div>
-							<video muted="muted" loop="loop" data-autoplay="true" autoplay="true">
+							<video muted="muted" loop="loop" onmouseover="this.play();" onmouseout="this.pause();">
 								{% if section.videos.mp4 is not empty %}<source type="video/mp4" src="{{ fn( 'wp_get_attachment_url', section.videos.mp4.ID ) }}" />{% endif %}
 								{% if section.videos.webm is not empty %}<source type="video/webm" src="{{ fn( 'wp_get_attachment_url', section.videos.webm.ID ) }}" />{% endif %}
 								{% if section.videos.mkv is not empty %}<source type="video/m4v" src="{{ fn( 'wp_get_attachment_url', section.videos.mkv.ID ) }}" />{% endif %}
