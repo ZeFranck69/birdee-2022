@@ -46,11 +46,11 @@ window.geotargetly_loaded = function () {
 		userCountryLanguage = DEFAULT_COUNTRY_LANGUAGE;
 	}
 
-	setLanguageCookies(userNavigatorLanguage, userCountryCode);
+	// setLanguageCookies(userNavigatorLanguage, userCountryCode);  a decommenter 15/04/2022
 
 	if (!window.location.href.includes(userCountryLanguage)) {
 		const language = wp_geo.languages[userCountryLanguage];
 		const separator = language.url.includes('?') ? '&' : '?';
-		// window.location.href = `${language.url}${separator}language-redirect=true`;
+		// window.location.href = `${language.url}${separator}language-redirect=true`; a decommenter 15/04/2022
 	}
 };
