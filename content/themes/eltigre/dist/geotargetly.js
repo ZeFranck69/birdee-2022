@@ -247,17 +247,16 @@ function checkPhoneNumber(number) {
 function checkDate(date) {
   var regex = /^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1][9][0-9][0-9]|[2][0][0-9]{2})$/;
   return regex.test(date);
-}
-var VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
-var VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
+} // const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
+// const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
+
 function setLanguageCookies(language, country) {
   var options = {
     expires: 365,
     path: '/',
     domain: window.location.host
-  };
-  js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].set(VISITOR_LANGUAGE_COOKIE, language, options);
-  js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].set(VISITOR_COUNTRY_COOKIE, country, options);
+  }; // 	Cookies.set(VISITOR_LANGUAGE_COOKIE, language, options);
+  // 	Cookies.set(VISITOR_COUNTRY_COOKIE, country, options);
 }
 
 /***/ }),

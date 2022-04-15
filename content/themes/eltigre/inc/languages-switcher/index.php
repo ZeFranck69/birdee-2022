@@ -53,7 +53,7 @@ function get_language_country_info() {
         return array(
         'country' => $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ],
         'countryCode' => $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ],
-        // 'flag' => getTranslationCountry()[ $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ]
+        // 'flag' => getTranslationCountry()[ $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ]  --> A decommenter
         );
     }else{
         return null;
