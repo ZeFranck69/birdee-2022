@@ -6,7 +6,7 @@ define( 'BIRDEE_COOKIES', array(
 ) );
 
 if ( ! empty( $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] ) && ! empty( $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ) ) {
-    add_action( 'template_redirect', 'redirect_to_cookie_language' );
+    // add_action( 'template_redirect', 'redirect_to_cookie_language' ); --> A decommenter
 
     function redirect_to_cookie_language( ) {
         global $wp;
