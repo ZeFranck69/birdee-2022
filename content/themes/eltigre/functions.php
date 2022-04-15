@@ -142,8 +142,8 @@
 						'popular_items' => __( 'Offres les plus utilisés', 'eltigre' )
 					),
 					'rewrite'     => array( 'slug' => 'offers' ),
-					'menu_icon'   => 'dashicons-text-page',
-					'supports'    => array( 'title', 'editor', 'thumbnail' ),
+					'menu_icon'   => 'dashicons-businessperson',
+					'supports'    => array( 'title', 'thumbnail' ),
 					'public'      => true,
 					'has_archive' => false
 				)

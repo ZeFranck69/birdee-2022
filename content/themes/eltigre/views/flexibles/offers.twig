@@ -1,0 +1,46 @@
+<section id="{{ section.title|sanitize }}" class="offers" style="background-color: {{ section.background_color }};">
+	
+	<div class="offers-container {{ section.section_width == 'fullwidth' ? 'main-wrapper' : '' }}" style="text-align: {{ section.text_align }};">
+		
+		<div class="{{ section.section_width == 'ajust' ? 'main-wrapper' : '' }} {{ section.radius }}" style="background-color: {{ section.background_color }};background-image: url({{ section.background_image.url }})">
+
+			<div class="offers-wrapper {{ section.display_type }} padding-medium">
+				{% if section.section_title %}
+					<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }}; text-align: {{ section.text_align }};">
+						{{ section.section_title }}
+					</h2>
+				{% endif %}				
+				{% if section.section_description %}
+					<div class="section-part__description--wrapper" style="color:{{ section.description_color }};justify-content: {{ section.text_align }};">
+						<p class="section-part__description description {{ section.text_width }}"> 
+							{{ section.section_description }}
+						</p>
+					</div>
+				{% endif %}
+				
+				<div class="offers__list--wrapper">
+					<div class="offers__list">
+					
+						{% for job in section.jobs %}
+							<ul class="dropdown">
+								<li>
+									<div class="dropdown-toggle">{{ job.post_title }}</div>
+									<div class="dropdown-content">
+										{{ job.contenu }}
+									</div>
+								</li>
+
+
+							</ul>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<style>
+
+
+</style>

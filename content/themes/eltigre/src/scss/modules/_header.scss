@@ -515,3 +515,85 @@ $transition_speed: .2s;
 		}
 	}
 }
+
+//Language switcher CSS
+
+#slide-nav ul .menu-item{
+
+	&.wpml-ls-current-language{
+		padding: 0 10px 0 19px;
+		border: 2px solid transparent;
+		max-height: 42px;
+		position: relative;
+		margin: 0 20px;
+		overflow: hidden;
+		width: 345px;
+		&::before{
+			width: 9px;
+			height: 9px;
+			border: 0;
+			background: url('../images/arrow-down.png') 50% 50% no-repeat;
+			background-size: 9px;
+			transition: transform 0.2s ease;
+			margin-top: -3px;
+			right: 7px;
+			position: absolute;
+			right: 0;
+			top: 25px;
+			transform-origin: center;
+			content: "";
+			cursor: pointer;
+			
+		}
+		a{
+			cursor: pointer;
+			pointer-events: none;
+			text-transform: none;
+		}
+		& > ul {
+			overflow: hidden;
+			position: absolute;
+			top: 40px;
+			background-color: $green;
+			min-width: 256px;
+			left: 50%;
+			transform: translateX(-50%);
+	
+			& > li{
+				display: flex;
+				background: 0 0;
+				border: 0;
+				font-weight: 400;
+				flex-direction: column;
+				align-items: center;
+				float: left; width: 130px; 
+				display: none; 
+				font-family:"Favorit", sans-serif;
+				font-size: 16px;
+    			line-height: 1.25;
+    			color: #1B1F1E; 
+			}
+	
+		}
+		&.active{
+			overflow: initial;
+			& > ul {
+
+		
+				& > li{
+					display: flex;
+					flex-direction: column; 
+				}
+			}
+		}
+	}
+}
+.wpml-ls-native{
+	font: normal 16px "Favorit";
+	line-height: 1.25;
+	color: #1B1F1E; 
+}
+.wpml-ls-display{
+	display: none;
+}
+

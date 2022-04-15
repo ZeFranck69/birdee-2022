@@ -927,6 +927,96 @@ a {
   transition: color 0.35s ease;
 }
 
+#slide-nav ul .menu-item.wpml-ls-current-language {
+  padding: 0 10px 0 19px;
+  border: 2px solid transparent;
+  max-height: 42px;
+  position: relative;
+  margin: 0 20px;
+  overflow: hidden;
+  width: 345px;
+}
+#slide-nav ul .menu-item.wpml-ls-current-language::before {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  background: url(images/dfdcb8262df7154f7af6.png) 50% 50% no-repeat;
+  background-size: 9px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  margin-top: -3px;
+  right: 7px;
+  position: absolute;
+  right: 0;
+  top: 25px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  content: "";
+  cursor: pointer;
+}
+#slide-nav ul .menu-item.wpml-ls-current-language a {
+  cursor: pointer;
+  pointer-events: none;
+  text-transform: none;
+}
+#slide-nav ul .menu-item.wpml-ls-current-language > ul {
+  overflow: hidden;
+  position: absolute;
+  top: 40px;
+  background-color: #69EFCA;
+  min-width: 256px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+#slide-nav ul .menu-item.wpml-ls-current-language > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: 0 0;
+  border: 0;
+  font-weight: 400;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  float: left;
+  width: 130px;
+  display: none;
+  font-family: "Favorit", sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #1B1F1E;
+}
+#slide-nav ul .menu-item.wpml-ls-current-language.active {
+  overflow: visible;
+  overflow: initial;
+}
+#slide-nav ul .menu-item.wpml-ls-current-language.active > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wpml-ls-native {
+  font: normal 16px "Favorit";
+  line-height: 1.25;
+  color: #1B1F1E;
+}
+
+.wpml-ls-display {
+  display: none;
+}
+
 #site-footer .footer__content {
   padding: 55px 60px 42px;
 }

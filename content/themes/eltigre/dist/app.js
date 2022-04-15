@@ -232,6 +232,10 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
   hashtagLinks.forEach(function (link) {
     return link.parentElement.classList.remove('current_page_item');
   });
+  var selectLang = document.querySelector('.wpml-ls-current-language');
+  selectLang.addEventListener('click', function () {
+    selectLang.classList.toggle('active');
+  });
 });
 
 

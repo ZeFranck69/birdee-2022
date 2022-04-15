@@ -31,8 +31,7 @@ if( !class_exists( 'Eltigre\Controllers\Offers' ) ) {
                     'thumbnail'             => get_the_post_thumbnail(),
                     'content'               => the_content(),
                     'permalink'             => get_the_permalink(),
-                   
-                    
+                    'contenu'               => $acf_fields['content'],
                 );
                 
                 $offers[ $post_ID ] = $offer;
