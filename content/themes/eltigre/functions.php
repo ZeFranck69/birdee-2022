@@ -15,6 +15,7 @@
 	require_once 'inc/helper-functions.php';
 	require_once 'inc/constants/colors.php';
 	require_once 'inc/class/Eltigre.php';
+	require_once 'inc/languages-switcher/index.php';
 	
 	class Init extends Timber\Site {
    
@@ -26,7 +27,8 @@
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ));
 	
 			add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-	
+			
+
 			parent::__construct();
 		}
 
@@ -220,6 +222,8 @@
 				)
 			);
 		}
+
+		
 	}
 
 	new Init();

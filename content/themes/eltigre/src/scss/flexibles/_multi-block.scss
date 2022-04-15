@@ -24,6 +24,9 @@
 		@include laptop-small{
 			margin: 8px 0;
 		}
+		@include mobile-xl{
+			padding: 20px;
+		}
 		&.small{
 			max-width: 389px;
 			width: 100%;
@@ -33,6 +36,7 @@
 			@include laptop-small{
 				max-width: 100%;
 			}
+			
 		}
 		&.large{
 			max-width: 592px;

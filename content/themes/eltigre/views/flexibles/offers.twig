@@ -20,19 +20,17 @@
 				
 				<div class="offers__list--wrapper">
 					<div class="offers__list">
-					
-						{% for job in section.jobs %}
-							<ul class="dropdown">
-								<li>
-									<div class="dropdown-toggle">{{ job.post_title }}</div>
-									<div class="dropdown-content">
-										{{ job.contenu }}
-									</div>
-								</li>
 
-
-							</ul>
+						<ul class="dropdown">
+						{% for job in section.job %}
+							<li>
+								<div class="dropdown-toggle">{{ job.post_title }}</div>
+								<div class="dropdown-content">
+									{{ job.content }}
+								</div>
+							</li>
 						{% endfor %}
+						</ul>
 					</div>
 				</div>
 			</div>

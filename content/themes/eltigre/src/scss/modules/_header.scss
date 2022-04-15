@@ -517,83 +517,139 @@ $transition_speed: .2s;
 }
 
 //Language switcher CSS
+#slide-nav{
 
-#slide-nav ul .menu-item{
-
-	&.wpml-ls-current-language{
-		padding: 0 10px 0 19px;
-		border: 2px solid transparent;
-		max-height: 42px;
-		position: relative;
-		margin: 0 20px;
-		overflow: hidden;
-		width: 345px;
-		&::before{
-			width: 9px;
-			height: 9px;
-			border: 0;
-			background: url('../images/arrow-down.png') 50% 50% no-repeat;
-			background-size: 9px;
-			transition: transform 0.2s ease;
-			margin-top: -3px;
-			right: 7px;
-			position: absolute;
-			right: 0;
-			top: 25px;
-			transform-origin: center;
-			content: "";
-			cursor: pointer;
-			
+	.nav-selectors-new{
+		display: flex;
+		align-items: flex-start;
+		// min-height: 69px;
+		margin: 0 auto;
+		max-width: 450px;
+		width: 100%;
+		@include mobile-xl{
+			flex-direction: column;
+			align-items: center;
 		}
-		a{
-			cursor: pointer;
-			pointer-events: none;
-			text-transform: none;
-		}
-		& > ul {
-			overflow: hidden;
-			position: absolute;
-			top: 40px;
-			background-color: $green;
-			min-width: 256px;
-			left: 50%;
-			transform: translateX(-50%);
-	
-			& > li{
-				display: flex;
-				background: 0 0;
-				border: 0;
-				font-weight: 400;
-				flex-direction: column;
-				align-items: center;
-				float: left; width: 130px; 
-				display: none; 
-				font-family:"Favorit", sans-serif;
-				font-size: 16px;
-    			line-height: 1.25;
-    			color: #1B1F1E; 
+		.container-lang{
+			position: relative;
+			margin: 0 20px;
+			@include mobile-xl{
+				max-width: 100%;
+				width: 100%;
+				height: 40px;
+				margin-top: 20px;
 			}
-	
-		}
-		&.active{
-			overflow: initial;
+			.country-list{
+				cursor: pointer;
+				padding: 0;
+				margin: 0;
+				text-align: left;
+				&.active{
+					@include mobile-xl{
+						top: 0;
+					}
+				}
+			}
 			& > ul {
+				max-height: 30px;
+				overflow: hidden;
+				position: absolute;
+				top: -15px;
+				min-width: 256px;
+				padding: 0 10px 0 19px;
+				max-height: 42px;
+	
+				&:before{
+					width: 9px;
+					height: 9px;
+					border: 0;
+					background: url('../images/arrow-down.png') 50% 50% no-repeat;
+					background-size: 9px;
+					transition: transform 0.2s ease;
+					margin-top: -3px;
+					right: 7px;
+					position: absolute;
+					right: 20px;
+					top: 25px;
+					transform-origin: center;
+					content: "";
+				}
 
-		
+				&.active{
+					border: 2px solid #1b1f1e;
+					border-radius: 24px;
+					background: #69efc9;
+					box-shadow: none;
+					padding-top: 3px;
+					padding: 0 10px 0 19px;
+					max-height: 200px;
+					overflow: auto;
+					&:before{
+						transform: rotate(-180deg);
+					}
+				}
+	
 				& > li{
 					display: flex;
-					flex-direction: column; 
+					align-items: flex-start;
+					background: 0 0;
+					border: 0;
+					padding: 15px 0 0 0;
+					font-weight: 400;
+					flex-direction: column;
+					max-width: 100%;
+					width: 100%;
+
+					&.active{
+						padding: 15px 0 0 0;
+					}
+				}
+	
+				li {
+	
+					ul{
+						max-width: none;
+						align-items: flex-start;
+						margin-left: 29px;
+						width: auto;
+
+						li{
+							padding: 3px 0;
+
+							a{
+								font-size: 14px;
+							}
+						}
+					}
 				}
 			}
 		}
+		.langTitle{
+			display: flex;
+			align-items: center;
+		}
+		.flag{
+			margin: 0 10px 0 0;
+			width: 24px;
+			height: 20px;
+			vertical-align: middle;
+			float: left;
+			margin-right: 5px;
+			max-width: 64px;
+		}
 	}
 }
-.wpml-ls-native{
-	font: normal 16px "Favorit";
-	line-height: 1.25;
-	color: #1B1F1E; 
+.country-list::-webkit-scrollbar {
+    width: 9px;
 }
-.wpml-ls-display{
-	display: none;
+ 
+.country-list::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 24px;
+    margin: 13px;
 }
-
+ 
+.country-list::-webkit-scrollbar-thumb {
+    border-radius: 24px;
+    background-color: black; 
+}

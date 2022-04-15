@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie';
+
 export function initSwipers(swipersContainer, properties) {
 	let className, hasNavigation, hasPagination, navigation, pagination, slidesCount;
 	let swipers = [];
@@ -230,4 +232,13 @@ export function checkDate(date) {
 	let regex = /^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1][9][0-9][0-9]|[2][0][0-9]{2})$/;
 
 	return regex.test(date);
+}
+
+const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
+const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
+
+export function setLanguageCookies(language, country) {
+	const options = { expires: 365, path: '/', domain: window.location.host };
+	Cookies.set(VISITOR_LANGUAGE_COOKIE, language, options);
+	Cookies.set(VISITOR_COUNTRY_COOKIE, country, options);
 }

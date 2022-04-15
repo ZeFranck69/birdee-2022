@@ -240,6 +240,21 @@ a {
 	}
 }
 
+body::-webkit-scrollbar {
+    width: 9px;
+}
+ 
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 24px;
+    margin: 13px;
+}
+ 
+body::-webkit-scrollbar-thumb {
+    border-radius: 24px;
+    background-color: $black; 
+}
+
 
 
 // Modules
@@ -266,4 +281,5 @@ a {
 @import 'flexibles/_labels';
 @import 'flexibles/_performances';
 @import 'flexibles/_quote';
+@import 'flexibles/_offers';
 @import 'flexibles/_prefooter';

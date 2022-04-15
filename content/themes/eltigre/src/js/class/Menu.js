@@ -32,7 +32,7 @@ export default class Menu {
 		});
 		const hashtagLinks = document.querySelectorAll('a[href*="#"]');
 		hashtagLinks.forEach((link) => link.parentElement.classList.remove('current_page_item'));
-		const selectLang = document.querySelector('.wpml-ls-current-language');
+		const selectLang = document.querySelector('.country-list');
 		selectLang.addEventListener('click', () => {
 			selectLang.classList.toggle('active');
 		});

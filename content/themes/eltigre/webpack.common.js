@@ -12,6 +12,7 @@ module.exports = {
 		'app': ['./src/js/App.js', './src/scss/global.scss'],
 		'services/support': ['./inc/services/support/js/index.js', './inc/services/support/style/index.scss'],
 		'services/acf': './inc/services/acf/js/index.js',
+		'geotargetly': './src/js/geotargetly.js',
 	},
 	resolve: {
 		preferRelative: true,

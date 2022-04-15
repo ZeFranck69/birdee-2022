@@ -3,6 +3,7 @@ import Collaborators from './flexibles/Collaborators';
 import Investment from './flexibles/Investment';
 import Labels from './flexibles/Labels';
 import MultiBlocks from './flexibles/MultiBlocks';
+import Offers from './flexibles/Offers';
 import Performances from './flexibles/Performances';
 import PreFooter from './flexibles/PreFooter';
 import Quote from './flexibles/Quote';
@@ -21,6 +22,7 @@ export default class Sections {
 		performances: Performances,
 		wallets: Wallets,
 		simple: Simple,
+		offers: Offers,
 		steps: Steps,
 		collaborators: Collaborators,
 		investment: Investment,

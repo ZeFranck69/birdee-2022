@@ -26,8 +26,7 @@
 <nav id="slide-nav">
 	{% include "partial/menu.twig" with {'items': menuHeader.get_items} %}
 	<div class="separator"></div>
-	<!-- {% include "partial/menu.twig" with {'items': menu.header.left.get_items} %} -->
-	<!-- AJOUTER LE LANGUAGE SWITCHER -->
+	{% do action('wp_languages_switcher') %}
 	<div class="separator"></div>
 	<div class="mobile-header__socials">
 		{% for social in options.socials_media %}
