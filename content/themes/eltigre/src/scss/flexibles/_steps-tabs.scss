@@ -46,17 +46,33 @@
 	max-width: 480px;
 	width: 100%;
 	flex-direction: column;
-	&:first-child{
-
-		&::before{
-			content: none;
-		}
-	}
 	@include landscape{
 		position: relative;
 		pointer-events: none;
 	}
+	&:first-child{
+
+		.tab-label{
+
+			&::before{
+				content: none;
+			}
+		}
+	}
 	
+  }
+  .tab-switch {
+    display: none;
+  }
+  .tab-label {
+	display: flex;
+    padding: 30px 0;
+    position: relative;
+    height: auto;
+    cursor: pointer;
+    top: 0;
+    transition: all 0.25s;
+	z-index: 3;
 	&::before{
 		content: "";
 		position: absolute;
@@ -79,18 +95,6 @@
 		transform: translateX(-50%);
 		left: 23px;
 	}
-  }
-  .tab-switch {
-    display: none;
-  }
-  .tab-label {
-	display: flex;
-    padding: 30px 0;
-    position: relative;
-    height: auto;
-    cursor: pointer;
-    top: 0;
-    transition: all 0.25s;
 	.step-number{
 		max-width: 46px;
 		width: 100%;
@@ -125,8 +129,11 @@
 	}
   }
   .tab-label:hover {
-    top: -0.25rem;
-    transition: top 0.25s;
+	.step-number{
+		background-color: $blue;
+		transition: background-color 0.25s;
+	}
+
 	@include landscape{
 		top: 0;
 	}
@@ -158,7 +165,7 @@
     z-index: 1;
 	.step-number{
 
-		background-color: $green;
+		background-color: $blue;
 		@include landscape{
 			background-color: $white;
 		}

@@ -1,4 +1,4 @@
-<section id="{{ section.title|sanitize }}" class="steps-tabs" style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
+<section id="{{ section.section_title|sanitize }}" class="steps-tabs" style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
 
 	<div class="steps-tabs-container main-wrapper {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}">
@@ -17,7 +17,7 @@
 					{% for stepTab in section.enumerations %} 
 					<div class="tab">
 						
-						<input type="radio" name="css-tabs" id="tab-{{ loop.index }}" checked class="tab-switch">
+						<input type="radio" name="css-tabs" id="tab-{{ loop.index }}" {% if loop.index == 1 %}checked{% endif %} class="tab-switch">
 						<label for="tab-{{ loop.index }}" class="tab-label">
 							<div class="step-number">
 								{{ loop.index }}

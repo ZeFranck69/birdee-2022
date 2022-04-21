@@ -86,9 +86,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./flexibles/Reasons */ "./src/js/flexibles/Reasons.js");
 /* harmony import */ var _flexibles_Simple__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./flexibles/Simple */ "./src/js/flexibles/Simple.js");
 /* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
-/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
-/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
-/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
+/* harmony import */ var _flexibles_StepsTabs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./flexibles/StepsTabs */ "./src/js/flexibles/StepsTabs.js");
+/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
+/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
+/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -96,6 +97,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -121,16 +123,17 @@ var Sections = /*#__PURE__*/_createClass(function Sections() {
     reasons: _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_9__["default"],
     quote: _flexibles_Quote__WEBPACK_IMPORTED_MODULE_8__["default"],
     performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_6__["default"],
-    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_14__["default"],
+    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_15__["default"],
     simple: _flexibles_Simple__WEBPACK_IMPORTED_MODULE_10__["default"],
     offers: _flexibles_Offers__WEBPACK_IMPORTED_MODULE_5__["default"],
     steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_11__["default"],
     collaborators: _flexibles_Collaborators__WEBPACK_IMPORTED_MODULE_1__["default"],
     investment: _flexibles_Investment__WEBPACK_IMPORTED_MODULE_2__["default"],
     labels: _flexibles_Labels__WEBPACK_IMPORTED_MODULE_3__["default"],
-    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_13__["default"],
+    'steps-tabs': _flexibles_StepsTabs__WEBPACK_IMPORTED_MODULE_12__["default"],
+    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_14__["default"],
     prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_7__["default"],
-    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_12__["default"],
+    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_13__["default"],
     'multi-block': _flexibles_MultiBlocks__WEBPACK_IMPORTED_MODULE_4__["default"]
   });
 
@@ -1354,6 +1357,111 @@ var Section = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ __webpack_exports__["default"] = (Steps);
+
+/***/ }),
+
+/***/ "./src/js/flexibles/StepsTabs.js":
+/*!***************************************!*\
+  !*** ./src/js/flexibles/StepsTabs.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var StepsTabs = /*#__PURE__*/_createClass(function StepsTabs(className) {
+  _classCallCheck(this, StepsTabs);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/function () {
+  function Section(section) {
+    _classCallCheck(this, Section);
+
+    this.section = section;
+    this.animate();
+  }
+
+  _createClass(Section, [{
+    key: "animate",
+    value: function animate() {
+      console.log('ici');
+      var stepstabs = this.section.querySelector('.steps-tabs .steps-tabs-container');
+      var title = stepstabs.querySelector('.steps-tabs__section-title');
+      var description = stepstabs.querySelector('.steps__section-description');
+      var blocks = stepstabs.querySelector('.tabs');
+      var block = blocks.querySelectorAll('.tab .tab-label');
+      var button = stepstabs.querySelector('.section-steps__cta-wrapper');
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline();
+      animation.fromTo(title, {
+        y: -100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.1,
+        duration: 0.45
+      });
+      animation.fromTo(description, {
+        scale: 0.8,
+        y: 100,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      });
+      animation.fromTo(block, {
+        y: 100,
+        autoAlpha: 0
+      }, {
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.6,
+        duration: 0.35
+      });
+      animation.fromTo(button, {
+        scale: 0.8,
+        y: 15,
+        autoAlpha: 0
+      }, {
+        scale: 1,
+        y: 0,
+        autoAlpha: 1,
+        stagger: 0.27,
+        duration: 0.45
+      });
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+        trigger: stepstabs,
+        start: 'top bottom-=3%',
+        toggleActions: 'play none none reset',
+        animation: animation
+      });
+    }
+  }]);
+
+  return Section;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (StepsTabs);
 
 /***/ }),
 

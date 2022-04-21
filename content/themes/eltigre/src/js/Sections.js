@@ -10,6 +10,7 @@ import Quote from './flexibles/Quote';
 import Reasons from './flexibles/Reasons';
 import Simple from './flexibles/Simple';
 import Steps from './flexibles/Steps';
+import StepsTabs from './flexibles/StepsTabs';
 import TextImage from './flexibles/TextImage';
 import TwoBlocks from './flexibles/TwoBlocks';
 import Wallets from './flexibles/Wallets';
@@ -27,6 +28,7 @@ export default class Sections {
 		collaborators: Collaborators,
 		investment: Investment,
 		labels: Labels,
+		'steps-tabs': StepsTabs,
 		'two-blocks': TwoBlocks,
 		prefooter: PreFooter,
 		'text-image': TextImage,

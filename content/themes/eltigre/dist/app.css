@@ -2435,36 +2435,14 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.tab:first-child::before {
-  content: none;
-}
 @media only screen and (max-width: 1024px) {
   .tab {
     position: relative;
     pointer-events: none;
   }
 }
-.tab::before {
-  content: "";
-  position: absolute;
-  background-color: #1D1D1B;
-  width: 4px;
-  height: 70%;
-  top: 0;
-  left: 23px;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-.tab:after {
-  content: "";
-  position: absolute;
-  background-color: #1D1D1B;
-  width: 4px;
-  height: 70%;
-  bottom: 0;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  left: 23px;
+.tab:first-child .tab-label::before {
+  content: none;
 }
 
 .tab-switch {
@@ -2482,6 +2460,29 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
+  z-index: 3;
+}
+.tab-label::before {
+  content: "";
+  position: absolute;
+  background-color: #1D1D1B;
+  width: 4px;
+  height: 70%;
+  top: 0;
+  left: 23px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.tab-label:after {
+  content: "";
+  position: absolute;
+  background-color: #1D1D1B;
+  width: 4px;
+  height: 70%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 23px;
 }
 .tab-label .step-number {
   max-width: 46px;
@@ -2518,10 +2519,10 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.tab-label:hover {
-  top: -0.25rem;
-  -webkit-transition: top 0.25s;
-  transition: top 0.25s;
+.tab-label:hover .step-number {
+  background-color: #9294FB;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
 }
 @media only screen and (max-width: 1024px) {
   .tab-label:hover {
@@ -2559,7 +2560,7 @@ body::-webkit-scrollbar-thumb {
   z-index: 1;
 }
 .tab-switch:checked + .tab-label .step-number {
-  background-color: #69EFCA;
+  background-color: #9294FB;
 }
 @media only screen and (max-width: 1024px) {
   .tab-switch:checked + .tab-label .step-number {
