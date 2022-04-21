@@ -234,8 +234,8 @@ export function checkDate(date) {
 	return regex.test(date);
 }
 
-// const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
-// const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
+const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
+const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
 
 export function setLanguageCookies(language, country) {
 	const options = { expires: 365, path: '/', domain: window.location.host };

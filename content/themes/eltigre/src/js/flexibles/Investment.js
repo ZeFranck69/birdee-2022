@@ -33,7 +33,7 @@ class Section {
 		ScrollTrigger.create({
 			trigger: investmentWrapper,
 			start: 'top bottom-=5%',
-			toggleActions: 'play none none reverse',
+			toggleActions: 'play none none none',
 			animation,
 		});
 	}

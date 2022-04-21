@@ -97,8 +97,9 @@ a {
 	font-size: 40px;
 	line-height:56px;
 	font-family: 'Favorit Bold Lining', sans-serif;
+	letter-spacing: 6px;
 	@include laptop{
-		font-size: 25px;
+		font-size: 33px;
 		line-height:40px;
 	}
 }
@@ -107,8 +108,9 @@ a {
 	font-size: 36px;
 	line-height:56px;
 	font-family: 'Favorit Bold Lining', sans-serif;
+	letter-spacing: 5px;
 	@include laptop{
-		font-size: 25px;
+		font-size: 30px;
 		line-height:40px;
 	}
 }
@@ -267,6 +269,7 @@ body::-webkit-scrollbar-thumb {
 @import 'flexibles/_banner';
 @import 'flexibles/_reasons';
 @import 'flexibles/_text-image';
+@import 'flexibles/_steps-tabs';
 @import 'flexibles/_multi-block';
 @import 'flexibles/_picto-text-image';
 @import 'flexibles/_text-bubble';

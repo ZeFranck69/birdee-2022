@@ -247,9 +247,9 @@ function checkPhoneNumber(number) {
 function checkDate(date) {
   var regex = /^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1][9][0-9][0-9]|[2][0][0-9]{2})$/;
   return regex.test(date);
-} // const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
-// const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
-
+}
+var VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
+var VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
 function setLanguageCookies(language, country) {
   var options = {
     expires: 365,
@@ -535,12 +535,12 @@ window.geotargetly_loaded = function () {
 
   if (!ALLOWED_COUNTRY_LANGUAGE_CODES.includes(userCountryLanguage)) {
     userCountryLanguage = DEFAULT_COUNTRY_LANGUAGE;
-  } // setLanguageCookies(userNavigatorLanguage, userCountryCode);  a decommenter 15/04/2022
+  } // setLanguageCookies(userNavigatorLanguage, userCountryCode);
 
 
   if (!window.location.href.includes(userCountryLanguage)) {
     var language = wp_geo.languages[userCountryLanguage];
-    var separator = language.url.includes('?') ? '&' : '?'; // window.location.href = `${language.url}${separator}language-redirect=true`; a decommenter 15/04/2022
+    var separator = language.url.includes('?') ? '&' : '?'; // window.location.href = `${language.url}${separator}language-redirect=true`;
   }
 };
 }();

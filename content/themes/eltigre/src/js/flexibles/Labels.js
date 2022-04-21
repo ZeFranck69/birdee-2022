@@ -31,7 +31,7 @@ class Section {
 		ScrollTrigger.create({
 			trigger: labelWrapper,
 			start: 'top bottom-=1%',
-			toggleActions: 'play none none reverse',
+			toggleActions: 'play none none none',
 			animation,
 		});
 	}

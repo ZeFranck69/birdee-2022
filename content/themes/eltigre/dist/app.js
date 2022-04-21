@@ -329,7 +329,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: banner,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -416,7 +416,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: collabWrapper,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -512,7 +512,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: investmentWrapper,
         start: 'top bottom-=5%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -599,7 +599,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: labelWrapper,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -677,7 +677,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: multiBlocks,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -841,7 +841,6 @@ var Section = /*#__PURE__*/function () {
       });
 
       if (closeWindow) {
-        console.log('dedans');
         window.addEventListener('click', function () {
           modal.classList.remove('open');
           modal.classList.add('closed');
@@ -941,7 +940,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: preFooter,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1027,7 +1026,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: quoteWrapper,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1141,7 +1140,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: reasons,
         start: 'top bottom-=-4%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1245,7 +1244,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: simple,
         start: 'top bottom-=5%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1345,7 +1344,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: steps,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1479,7 +1478,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: textImage,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1598,7 +1597,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: TwoBlocks,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1712,7 +1711,7 @@ var Section = /*#__PURE__*/function () {
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: walletsWrapper,
         start: 'top bottom-=1%',
-        toggleActions: 'play none none reverse',
+        toggleActions: 'play none none none',
         animation: animation
       });
     }
@@ -1971,9 +1970,9 @@ function checkPhoneNumber(number) {
 function checkDate(date) {
   var regex = /^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1][9][0-9][0-9]|[2][0][0-9]{2})$/;
   return regex.test(date);
-} // const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
-// const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
-
+}
+var VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
+var VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
 function setLanguageCookies(language, country) {
   var options = {
     expires: 365,

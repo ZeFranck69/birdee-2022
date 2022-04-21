@@ -50,7 +50,7 @@ class Section {
 		ScrollTrigger.create({
 			trigger: reasons,
 			start: 'top bottom-=-4%',
-			toggleActions: 'play none none reverse',
+			toggleActions: 'play none none none',
 			animation,
 		});
 	}

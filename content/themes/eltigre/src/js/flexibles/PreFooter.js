@@ -37,7 +37,7 @@ class Section {
 		ScrollTrigger.create({
 			trigger: preFooter,
 			start: 'top bottom-=1%',
-			toggleActions: 'play none none reverse',
+			toggleActions: 'play none none none',
 			animation,
 		});
 	}

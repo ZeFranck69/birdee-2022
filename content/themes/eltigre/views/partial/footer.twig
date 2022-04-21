@@ -46,7 +46,7 @@
 							<h4 class="column__title accordeon">{{ __('À propos','eltigre')}}</h4>
 							<div class="applications-wrapper">
 								{% for app in options.applications %}
-								<a href="{{ app.link.url }}">
+								<a href="{{ app.link.url }}" target="_blank">
 									<img src="{{ Image(app.image).src }}" alt="{{ Image(app.image).alt }}">
 								</a>
 								{% endfor %}

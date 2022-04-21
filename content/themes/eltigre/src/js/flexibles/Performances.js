@@ -66,7 +66,6 @@ class Section {
 			modal.classList.add('closed');
 		});
 		if (closeWindow) {
-			console.log('dedans');
 			window.addEventListener('click', function () {
 				modal.classList.remove('open');
 				modal.classList.add('closed');

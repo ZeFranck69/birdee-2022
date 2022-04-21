@@ -1,5 +1,7 @@
 <?php
 
+// require_once '/modules/wpml/wpml-legacy-api.php';
+
 $translation_country    = getTranslateCountry();
 $translation_languages  = getTranslateLanguages();
 $currentLangueInfos     = get_language_country_info();

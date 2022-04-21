@@ -35,7 +35,7 @@ class Section {
 		ScrollTrigger.create({
 			trigger: banner,
 			start: 'top bottom-=1%',
-			toggleActions: 'play none none reverse',
+			toggleActions: 'play none none none',
 			animation,
 		});
 	}

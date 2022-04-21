@@ -47,7 +47,7 @@ class Section {
 		ScrollTrigger.create({
 			trigger: textImage,
 			start: 'top bottom-=1%',
-			toggleActions: 'play none none reverse',
+			toggleActions: 'play none none none',
 			animation,
 		});
 	}
