@@ -46,16 +46,17 @@
 	max-width: 480px;
 	width: 100%;
 	flex-direction: column;
-	@include landscape{
-		position: relative;
-		pointer-events: none;
-	}
 	&:first-child{
 
 		&::before{
 			content: none;
 		}
 	}
+	@include landscape{
+		position: relative;
+		pointer-events: none;
+	}
+	
 	&::before{
 		content: "";
 		position: absolute;

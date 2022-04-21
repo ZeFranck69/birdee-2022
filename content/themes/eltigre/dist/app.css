@@ -2435,14 +2435,14 @@ body::-webkit-scrollbar-thumb {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.tab:first-child::before {
+  content: none;
+}
 @media only screen and (max-width: 1024px) {
   .tab {
     position: relative;
     pointer-events: none;
   }
-}
-.tab:first-child::before {
-  content: none;
 }
 .tab::before {
   content: "";

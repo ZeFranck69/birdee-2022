@@ -1,10 +1,10 @@
 <section id="{{ section.title|sanitize }}" class="steps-tabs" style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
 
-	<div class="steps-tabs-container main-wrapper {{ section.description_type }} {{ section.radius }}" style="text-align: {{ section.text_align }};background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
+	<div class="steps-tabs-container main-wrapper {{ section.radius }}" style="background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}">
 			{% if section.section_title is not empty %}
 			<div class="steps-tabs__section-title">
-				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
+				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}">{{ section.section_title }}</h2>
 			</div>
 			{% endif %}
 			{% if section.section_description is not empty %}
@@ -12,7 +12,7 @@
 				<p class="description {{ section.title_text_align }}" style="color:{{ section.color_section_description }}}">{{ section.section_description }}</p>
 			</div>
 			{% endif %}
-			<div class="steps-tabs-wrapper steps-tabs-wrapper--{{ section.layout }} type--{{ section.layout_type }}" style="justify-content: {{ section.justify_content }};">
+			<div class="steps-tabs-wrapper steps-tabs-wrapper--{{ section.layout }} type--{{ section.layout_type }}">
 				<div class="tabs">
 					{% for stepTab in section.enumerations %} 
 					<div class="tab">
