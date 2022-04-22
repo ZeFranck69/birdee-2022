@@ -3536,6 +3536,7 @@ body::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   margin-top: 15px;
   padding: 8px 20px;
+  letter-spacing: 1px;
 }
 @media only screen and (max-width: 1024px) {
   .feedzy-rss ul .rss_item .title {
@@ -4549,6 +4550,27 @@ body::-webkit-scrollbar-thumb {
   display: flex;
 }
 
+.section-part__description ol li {
+  list-style: decimal;
+  font-size: 16px;
+  font-family: "Favorit", sans-serif;
+  line-height: 1.25;
+  color: #1D1D1B;
+  font-weight: bold;
+}
+.section-part__description p {
+  font-size: 16px;
+  font-family: "Favorit", sans-serif;
+  line-height: 1.25;
+  color: #1D1D1B;
+}
+.section-part__description a {
+  font-size: 16px;
+  font-family: "Favorit", sans-serif;
+  line-height: 1.25;
+  color: #1D1D1B;
+}
+
 .trustpilot {
   padding: 80px 0;
   overflow: hidden;
@@ -5489,6 +5511,17 @@ input[type=range] {
   padding-top: 80px;
   padding-bottom: 80px;
 }
+@media only screen and (max-width: 1024px) {
+  .contact-form {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .contact-form .contact-form-container.padding-medium {
+    padding: 0;
+  }
+}
 .contact-form .section-part__title {
   margin-bottom: 23px;
 }
@@ -5502,11 +5535,33 @@ input[type=range] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+@media only screen and (max-width: 768px) {
+  .contact-form-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 .contact-form-wrapper .informations-part {
   max-width: 505px;
   width: 100%;
-  padding: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .contact-form-wrapper .informations-part {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+}
+.contact-form-wrapper .informations-part .contact-informations-part {
+  padding: 30px 30px 0 30px;
 }
 .contact-form-wrapper .informations-part .contact__section-infos .contact-info--block {
   display: -webkit-box;
@@ -5531,6 +5586,10 @@ input[type=range] {
   margin-bottom: 30px;
 }
 
+.contact__additional-infos-wrapper {
+  padding: 30px;
+  background-color: #9294FB;
+}
 .contact__additional-infos-wrapper .additional-infos {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5543,11 +5602,98 @@ input[type=range] {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media only screen and (max-width: 1024px) {
+  .contact__additional-infos-wrapper .additional-infos {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.contact__additional-infos-wrapper .additional-infos .additional-info-block {
+  max-width: 153px;
+  width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .contact__additional-infos-wrapper .additional-infos .additional-info-block {
+    margin-bottom: 15px;
+  }
+}
 
 .contact__form-part {
-  max-width: 505px;
+  max-width: 550px;
   width: 100%;
-  padding: 30px;
+  padding: 0 0 0 30px;
+}
+@media only screen and (max-width: 768px) {
+  .contact__form-part {
+    padding: 0 20px;
+  }
+}
+.contact__form-part .contact__form .nf-form-content {
+  padding: 0;
+}
+.contact__form-part .contact__form .nf-form-content input.ninja-forms-field {
+  height: 50px;
+}
+.contact__form-part .contact__form .nf-form-content textarea {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent !important;
+  color: #1B1F1E;
+  padding: 12px 20px;
+  font-size: 16px;
+  outline: none;
+  width: 100% !important;
+  border-radius: 24px !important;
+}
+.contact__form-part .contact__form .nf-form-content input:not([type=button]) {
+  background: #f7f7f7;
+  border: 1px solid #c4c4c4;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #787878;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: #1B1F1E;
+  padding: 12px 20px;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  border-radius: 24px;
+}
+.contact__form-part .contact__form .nf-form-content input[type=button] {
+  max-width: 100%;
+  width: 100%;
+  color: #1B1F1E;
+  background-color: #69EFCA;
+  border: 3px solid #69EFCA;
+}
+.contact__form-part .contact__form .nf-form-content input[type=button]:hover {
+  background-color: transparent;
+  border: 3px solid #1B1F1E;
+}
+.contact__form-part .contact__form .nf-form-content .nf-field-label label {
+  padding-left: 20px;
+}
+.contact__form-part .contact__form .nf-before-form-content {
+  display: none;
+}
+.contact__form-part .contact__form .nf-error.field-wrap .nf-field-element:after {
+  content: none;
+}
+.contact__form-part .contact__form .nf-error-wrap.nf-error {
+  display: none;
+}
+.contact__form-part .contact__form .ninja-forms-req-symbol {
+  display: none;
+}
+.contact__form-part .contact__form .nf-error-msg.nf-error-field-errors {
+  color: #1D1D1B;
+  text-align: center;
+  padding: 16px 0;
 }
 
 .prefooter {

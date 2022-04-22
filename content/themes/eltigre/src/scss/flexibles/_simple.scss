@@ -109,3 +109,29 @@
 .section-part__description--wrapper{
 	display: flex;
 }
+
+.section-part__description{
+
+	ol{
+		li{
+			list-style: decimal;
+			font-size: 16px; 
+			font-family: "Favorit",sans-serif;
+			line-height: 1.25;
+			color:$black;
+			font-weight: bold;
+		}
+	}
+	p{
+		font-size: 16px; 
+		font-family: "Favorit",sans-serif;
+		line-height: 1.25;
+		color:$black;
+	}
+	a{
+		font-size: 16px; 
+		font-family: "Favorit",sans-serif;
+		line-height: 1.25;
+		color:$black;
+	}
+}

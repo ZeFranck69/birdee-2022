@@ -1,6 +1,20 @@
 .contact-form{
     padding-top: 80px;
     padding-bottom: 80px;
+    @include landscape{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        
+    }
+    .contact-form-container{
+
+        &.padding-medium{
+
+            @include mobile-xl{
+                padding: 0;
+            }
+        }
+    }
     .section-part__title{
         margin-bottom: 23px;
     }
@@ -12,10 +26,21 @@
     max-width: 1200px;
     margin: auto;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include tablet{
+        flex-direction: column;
+    }
     .informations-part{
         max-width: 505px;
         width: 100%;
-        padding: 30px;
+        @include tablet{
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        .contact-informations-part{
+            padding: 30px 30px 0 30px;
+        }
         .contact__section-infos{
 
             .contact-info--block{
@@ -40,17 +65,105 @@
     }
 }
 .contact__additional-infos-wrapper{
-
+    padding: 30px;
+    background-color: $blue;
     .additional-infos{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @include landscape{
+            flex-direction: column;
+        }
+        .additional-info-block{
+            max-width: 153px;
+            width: 100%;
+            @include landscape{
+                margin-bottom:15px ;
+            }
+        }
     }
 }
 
 .contact__form-part{
 
-    max-width: 505px;
+    max-width: 550px;
     width: 100%;
-    padding: 30px;
+    padding: 0 0 0 30px;
+
+    @include tablet{
+        padding: 0 20px;
+    }
+
+    .contact__form{
+
+        .nf-form-content{
+            padding: 0;
+            input{
+
+                &.ninja-forms-field{
+                    height: 50px;
+                }
+            }
+            textarea{
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                background: transparent !important;
+                color: #1B1F1E;
+                padding: 12px 20px;
+                font-size: 16px;
+                outline: none;
+                width: 100% !important;
+                border-radius: 24px !important;
+            }
+
+            input:not([type=button]){
+                background: #f7f7f7;
+                border: 1px solid #c4c4c4;
+                border-radius: 0;
+                box-shadow: none;
+                color: #787878;
+                transition: all .5s;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                background: transparent;
+                color: #1B1F1E;
+                padding: 12px 20px;
+                font-size: 16px;
+                outline: none;
+                width: 100% ;
+                border-radius: 24px;
+            }
+            input[type=button]{
+                max-width: 100%;
+                width: 100%;
+                color: #1B1F1E;
+                background-color: $green;
+                border: 3px solid $green;
+
+                &:hover{
+                    background-color: transparent;
+                    border: 3px solid #1B1F1E;
+                }
+            }
+            .nf-field-label label{
+                padding-left: 20px ;
+            }
+        } 
+        .nf-before-form-content{
+            display: none;
+        }
+        .nf-error.field-wrap .nf-field-element:after{
+            content: none;
+        }
+        .nf-error-wrap.nf-error{
+            display: none;
+        }
+        .ninja-forms-req-symbol{
+            display: none;
+        }
+        .nf-error-msg.nf-error-field-errors{
+            color: $black;
+            text-align: center;
+            padding: 16px 0;
+        }
+    }
+
 }
