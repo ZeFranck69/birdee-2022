@@ -4557,12 +4557,14 @@ body::-webkit-scrollbar-thumb {
   line-height: 1.25;
   color: #1D1D1B;
   font-weight: bold;
+  margin: 10px 0;
 }
 .section-part__description p {
   font-size: 16px;
   font-family: "Favorit", sans-serif;
   line-height: 1.25;
   color: #1D1D1B;
+  margin: 10px 0;
 }
 .section-part__description a {
   font-size: 16px;
