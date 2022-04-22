@@ -2718,6 +2718,9 @@ body::-webkit-scrollbar-thumb {
 .multi-block__wrapper-list .block .block-text .block-text__subtitle {
   margin-bottom: 9px;
 }
+.multi-block__wrapper-list .block .block-text .block-text__description {
+  min-height: 250px;
+}
 
 .multi-block__block-cta-wrapper {
   margin-top: 30px;
