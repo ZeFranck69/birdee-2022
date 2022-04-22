@@ -4550,7 +4550,10 @@ body::-webkit-scrollbar-thumb {
   display: flex;
 }
 
-.section-part__description ol li {
+.section-part__description ol, .section-part__description ul {
+  padding-left: 40px;
+}
+.section-part__description ol li, .section-part__description ul li {
   list-style: decimal;
   font-size: 16px;
   font-family: "Favorit", sans-serif;
