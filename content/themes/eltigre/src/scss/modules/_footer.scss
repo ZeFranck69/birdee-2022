@@ -230,3 +230,31 @@
 	color: $black;
 	opacity: 0.4;
 }
+.footer-landing{
+	
+	.footer__logo-wrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.main-footer-logo{
+			margin-right: 28px;
+		}
+		.logo-partner--footer{
+			position: relative;
+			&::before{
+				content: "";
+				height: 26px;
+				width: 2px;
+				background-color: #1D1D1B;
+				position: absolute;
+				left: -16px;
+				top: 0px;
+			}
+			img{
+				width: 78px;
+				height: auto;
+				
+			}
+		}
+	}
+}

@@ -211,9 +211,13 @@ var Menu = /*#__PURE__*/_createClass(function Menu() {
   this.header = document.getElementById('site-header');
   this.navSlide = document.getElementById('slide-nav');
   this.toggleBtn = document.querySelector('.site__burger-menu');
-  this.toggleBtn.addEventListener('click', function () {
-    return _this.toggleMenu();
-  });
+
+  if (this.toggleBtn) {
+    this.toggleBtn.addEventListener('click', function () {
+      return _this.toggleMenu();
+    });
+  }
+
   window.addEventListener('scroll', this.stickyMenu); // REMOVE NO SCROLL ON PAGE CHANGE
 
   document.querySelector('body').classList.remove('no-scroll');
@@ -1754,39 +1758,42 @@ var Section = /*#__PURE__*/function () {
 
     this.section = section;
     this.animate();
-    var tabs = document.querySelectorAll('.theme-input-content');
-    var radios = document.querySelectorAll('.theme-input');
-    var yearsContent = document.querySelectorAll('.year__content');
-    var years = document.querySelectorAll('.tab__year');
-    radios.forEach(function (radio) {
-      radio.addEventListener('change', function () {
-        var _this = this;
+    var wallets = document.querySelectorAll('.wallet-block');
+    wallets.forEach(function (wallet) {
+      var radios = wallet.querySelectorAll('.wallet-theme .theme-input');
+      var tabs = wallet.querySelectorAll('.theme-input-content');
+      var yearsContent = wallet.querySelectorAll('.year__content');
+      var years = wallet.querySelectorAll('.tab__year');
+      radios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          var _this = this;
 
-        tabs.forEach(function (tab) {
-          tab.classList.add('hidden');
+          tabs.forEach(function (tab) {
+            tab.classList.add('hidden');
 
-          if (_this.checked && tab.getAttribute('tabname') == _this.value) {
-            tab.classList.remove('hidden');
-          }
+            if (_this.checked && tab.getAttribute('tabname') == _this.value) {
+              tab.classList.remove('hidden');
+            }
+          });
         });
       });
-    });
-    years.forEach(function (year) {
-      year.addEventListener('click', function () {
-        var yearsActive = document.querySelectorAll('.tab__year.active');
-        yearsActive.forEach(function (yearActive) {
-          if (yearActive.classList.contains('active')) {
-            yearActive.classList.remove('active');
-          }
-        });
-        this.classList.add('active');
-        yearsContent.forEach(function (yearContent) {
-          yearContent.classList.add('hidden');
-          var yearValue = year.dataset.year;
+      years.forEach(function (year) {
+        year.addEventListener('click', function () {
+          var yearsActive = wallet.querySelectorAll('.tab__year.active');
+          yearsActive.forEach(function (yearActive) {
+            if (yearActive.classList.contains('active')) {
+              yearActive.classList.remove('active');
+            }
+          });
+          this.classList.add('active');
+          yearsContent.forEach(function (yearContent) {
+            yearContent.classList.add('hidden');
+            var yearValue = year.dataset.year;
 
-          if (yearContent.getAttribute('tabname') == yearValue) {
-            yearContent.classList.remove('hidden');
-          }
+            if (yearContent.getAttribute('tabname') == yearValue) {
+              yearContent.classList.remove('hidden');
+            }
+          });
         });
       });
     });

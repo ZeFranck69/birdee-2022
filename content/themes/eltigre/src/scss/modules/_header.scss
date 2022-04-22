@@ -659,3 +659,28 @@ $transition_speed: .2s;
     border-radius: 24px;
     background-color: black; 
 }
+
+//Header Landing
+.header-landing{
+	.main-logo{
+		margin-right: 10px;
+	}
+	.main-logo__partner{
+		position: relative;
+		
+		&::before{
+			content: "";
+			height: 16px;
+			width: 2px;
+			background-color: $black;
+			position: absolute;
+			left: -3px;
+			top: 2px;
+		}
+	}
+	.header-logo-partner-img{
+		height: 17px;
+		margin-left: 7px;
+		margin-top: 2px;
+	}
+}

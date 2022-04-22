@@ -62,6 +62,12 @@
 
 			// Global options
 			$context['options'] 	= get_fields( 'options' );
+			
+			// Landing mode
+			$context['landing_mode'] 	= get_field( 'landing_mode' );
+			$context['landing_logo'] 	= get_field( 'landing_logo' );
+			$context['landing_link'] 	= get_field( 'landing_link' );
+			
 
 			// Menus
 			$context['menu'] = array(

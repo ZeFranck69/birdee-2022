@@ -8,8 +8,9 @@ export default class Menu {
 		this.header = document.getElementById('site-header');
 		this.navSlide = document.getElementById('slide-nav');
 		this.toggleBtn = document.querySelector('.site__burger-menu');
-
-		this.toggleBtn.addEventListener('click', () => this.toggleMenu());
+		if (this.toggleBtn) {
+			this.toggleBtn.addEventListener('click', () => this.toggleMenu());
+		}
 
 		window.addEventListener('scroll', this.stickyMenu);
 

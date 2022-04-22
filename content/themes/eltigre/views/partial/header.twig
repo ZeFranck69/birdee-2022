@@ -1,42 +1,60 @@
 
-<div class='header__content main-wrapper'>
-	<div class="menu--left">
-		<div class='main-logo'>
-			<a class='logo--link' href='{{ site.url }}'>
-					{{ logo }}
-			</a>
-		</div>
+{% if landing_mode == true %}
+	<div class='header__content main-wrapper header-landing'>
+		<div class="menu--left">
+			<div class='main-logo'>
+				<a class='logo--link' href='{{ site.url }}'>
+						{{ logo }}
+				</a>
+			</div>
+			<div class="main-logo__partner">
+				<a href="{{ landing_link }}" target="_blank">
+					<img src="{{ landing_logo.url }}" alt="{{ landing_logo.alt }}" class="header-logo-partner-img">
+				</a>
+			</div>
+		</div> 
+	</div>
+{% elseif landing_mode == false %}
+	<div class='header__content main-wrapper'>
+		<div class="menu--left">
+			<div class='main-logo'>
+				<a class='logo--link' href='{{ site.url }}'>
+						{{ logo }}
+				</a>
+			</div>
 			<nav class='nav__links'>
 				{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
 			</nav>
-	</div>
-	<div class="menu--right">
-		<nav class='nav__links'>
-				{% include 'partial/menu.twig' with {'items': menu.header.left.get_items} %}
-		</nav>
-		<div class="site__burger-menu">
-			<div class="burger-menu__wrapper">
-					<span class="burger-menu__line"></span>
-					<span class="burger-menu__line"></span>
-					<span class="burger-menu__line"></span>
-			</div>
+		</div>
+		<div class="menu--right">
+			<nav class='nav__links'>
+					{% include 'partial/menu.twig' with {'items': menu.header.left.get_items} %}
+			</nav>
+			<div class="site__burger-menu">
+				<div class="burger-menu__wrapper">
+						<span class="burger-menu__line"></span>
+						<span class="burger-menu__line"></span>
+						<span class="burger-menu__line"></span>
+				</div>
+			</div>  
 		</div>  
-	</div>  
-</div>
-<nav id="slide-nav">
-	{% include "partial/menu.twig" with {'items': menuHeader.get_items} %}
-	<div class="separator"></div>
-	{% do action('wp_languages_switcher') %}
-	<div class="separator"></div>
-	<div class="mobile-header__socials">
-		{% for social in options.socials_media %}
-			<div class="footer-socials__social">
-					<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
-							{{ social.logo }}
-					</a>
-			</div>
-		{% endfor %}
 	</div>
-</nav>
+	<nav id="slide-nav">
+		{% include "partial/menu.twig" with {'items': menuHeader.get_items} %}
+		<div class="separator"></div>
+		{% do action('wp_languages_switcher') %}
+		<div class="separator"></div>
+		<div class="mobile-header__socials">
+			{% for social in options.socials_media %}
+				<div class="footer-socials__social">
+						<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
+								{{ social.logo }}
+						</a>
+				</div>
+			{% endfor %}
+		</div>
+	</nav>
+{% endif %}
+
   
 

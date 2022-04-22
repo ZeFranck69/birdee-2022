@@ -18,9 +18,9 @@
 				
 				{% if section.section_description %}
 					<div class="section-part__description--wrapper" style="color:{{ section.description_color }};justify-content: {{ section.text_align }};">
-						<p class="section-part__description description {{ section.text_width }}"> 
+						<div class="section-part__description description {{ section.text_width }}"> 
 							{{ section.section_description }}
-						</p>
+						</div>
 					</div>
 				{% endif %}
 				<div class="cta-picto__container {{ section.labels|length < 1 ? "justify-center" : "space-between" }}">

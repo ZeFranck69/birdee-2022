@@ -1,3 +1,4 @@
+{% if landing_mode == false %}
 <div class="footer__content" style="background-color: {{ options.footer_background_color }}">
     <div class="footer-wrapper main-wrapper">
 			<div class="footer__logo-wrapper center">        
@@ -70,3 +71,22 @@
 		</div>
 	</div>
 </div>
+{% elseif landing_mode == true %}
+<div class="footer__content footer-landing" style="background-color: {{ options.footer_background_color }}">
+    <div class="footer-wrapper main-wrapper">
+		<div class="footer__logo-wrapper center"> 
+			<div class="main-footer-logo">
+				<a href="{{ site.url }}">
+					{{ logo }}
+				</a>
+			</div>  
+			<div class="logo-partner--footer">
+				<a href="{{ landing_link }}" target="_blank">
+					<img src="{{ landing_logo.url }}" alt="{{ landing_logo.alt }}" class="footer-logo-partner-img">
+				</a>
+			</div>     
+		</div>
+	</div>
+</div>
+
+{% endif %}

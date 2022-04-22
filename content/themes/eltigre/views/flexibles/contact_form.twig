@@ -1,0 +1,72 @@
+<section id="{{ section.title|sanitize }}" class="contact-form " style="background-color: {{ section.background_color }};">
+	
+	<div class="contact-form-container {{ section.section_width == 'fullwidth' ? 'main-wrapper padding-medium' : '' }}" style="text-align: {{ section.text_align }};">
+		
+		<div class="{{ section.section_width == 'ajust' ? 'main-wrapper' : '' }} {{ section.radius }}" style="background-color: {{ section.background_color }};">
+			{% if section.section_title %}
+				<h2 class="section-part__title title bold uppercase" style="color:{{ section.title_color }}; text-align: {{ section.text_align }};">
+					{{ section.section_title }}
+				</h2>
+			{% endif %}
+			{% if section.section_description %}
+				<div class="section-part__description--wrapper" style="color:{{ section.description_color }};justify-content: {{ section.text_align }};">
+					<div class="section-part__description description {{ section.text_width }}"> 
+						{{ section.section_description }}
+					</div>
+				</div>
+			{% endif %}
+			<div class="contact-form-wrapper {{ section.display_type }}">
+				<div class="informations-part" style="background-color:{{ section.info_background_color }}">
+					<div class="contact-informations-part">
+						{% if section.description %}
+						<div class="contact__section-desciption description">
+							{{ section.description }}
+						</div>
+						{% endif %}
+						<div class="contact__section-infos">
+							{% for info in section.contact_infos %}
+							<div class="contact-info--block">
+								<div class="info-picto--wrapper">
+									<img src="{{ info.picto.url }}" alt="{{ info.picto.alt }}" class="info-picto">
+								</div>
+								{% if info.info_type == "text" %}
+								<div class="info-info description">
+									{{ info.info_text }}
+								</div>
+								{% elseif info.info_type == "mail" %}
+								<div class="info-email description">
+									<a href="mailto:{{ info.email }}">
+										{{ info.email }}
+									</a>
+								</div>
+								{% endif %}
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="contact__additional-infos-wrapper">
+						<div class="additional-infos">
+							{% for additional in section.additional_inofs %}
+							<div class="additional-info-block description">
+								<div class="block-label bold">
+									{{ additional.label }}
+								</div>
+								<div class="block-number">
+									{{ additional.number }}
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="contact__form-part">
+					<div class="contact__form">
+						{% if section.form is not empty %}
+							{{ section.form }}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

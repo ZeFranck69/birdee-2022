@@ -15,38 +15,42 @@ class Section {
 	constructor(section) {
 		this.section = section;
 		this.animate();
-		const tabs = document.querySelectorAll('.theme-input-content');
-		const radios = document.querySelectorAll('.theme-input');
+		const wallets = document.querySelectorAll('.wallet-block');
 
-		const yearsContent = document.querySelectorAll('.year__content');
-		const years = document.querySelectorAll('.tab__year');
-		radios.forEach((radio) => {
-			radio.addEventListener('change', function () {
-				tabs.forEach((tab) => {
-					tab.classList.add('hidden');
-					if (this.checked && tab.getAttribute('tabname') == this.value) {
-						tab.classList.remove('hidden');
-					}
+		wallets.forEach((wallet) => {
+			const radios = wallet.querySelectorAll('.wallet-theme .theme-input');
+			const tabs = wallet.querySelectorAll('.theme-input-content');
+
+			const yearsContent = wallet.querySelectorAll('.year__content');
+			const years = wallet.querySelectorAll('.tab__year');
+			radios.forEach((radio) => {
+				radio.addEventListener('change', function () {
+					tabs.forEach((tab) => {
+						tab.classList.add('hidden');
+						if (this.checked && tab.getAttribute('tabname') == this.value) {
+							tab.classList.remove('hidden');
+						}
+					});
 				});
 			});
-		});
 
-		years.forEach((year) => {
-			year.addEventListener('click', function () {
-				const yearsActive = document.querySelectorAll('.tab__year.active');
-				yearsActive.forEach((yearActive) => {
-					if (yearActive.classList.contains('active')) {
-						yearActive.classList.remove('active');
-					}
-				});
-				this.classList.add('active');
+			years.forEach((year) => {
+				year.addEventListener('click', function () {
+					const yearsActive = wallet.querySelectorAll('.tab__year.active');
+					yearsActive.forEach((yearActive) => {
+						if (yearActive.classList.contains('active')) {
+							yearActive.classList.remove('active');
+						}
+					});
+					this.classList.add('active');
 
-				yearsContent.forEach((yearContent) => {
-					yearContent.classList.add('hidden');
-					const yearValue = year.dataset.year;
-					if (yearContent.getAttribute('tabname') == yearValue) {
-						yearContent.classList.remove('hidden');
-					}
+					yearsContent.forEach((yearContent) => {
+						yearContent.classList.add('hidden');
+						const yearValue = year.dataset.year;
+						if (yearContent.getAttribute('tabname') == yearValue) {
+							yearContent.classList.remove('hidden');
+						}
+					});
 				});
 			});
 		});
