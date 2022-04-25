@@ -429,13 +429,14 @@ $transition_speed: .2s;
 		transform: translateY(0);
 		z-index: 9;
 	}
-	.separator{
-		max-width: 400px;
-		width: 100%;
-		height: 1px;
-		background-color: $black;
-		margin: 20px auto;
-	}
+	// .separator{
+	// 	max-width: 400px;
+	// 	width: 100%;
+	// 	height: 1px;
+	// 	background-color: $black;
+	// 	margin: 20px auto;
+	// }
+
 	ul{
 		height: auto;
 		max-width: 100%;
@@ -519,13 +520,49 @@ $transition_speed: .2s;
 //Language switcher CSS
 #slide-nav{
 
-	.nav-selectors-new{
+	.language-switcher {
 		display: flex;
 		align-items: flex-start;
 		// min-height: 69px;
 		margin: 0 auto;
 		max-width: 450px;
 		width: 100%;
+		position: relative;
+		cursor: pointer;
+		user-select: none;
+		margin-top: 20px;
+		padding: 20px 0;
+		border-top: 1px solid $black;
+		border-bottom: 1px solid $black;
+
+		&:before{
+			width: 9px;
+			height: 9px;
+			border: 0;
+			background: url('../images/arrow-down.png') 50% 50% no-repeat;
+			background-size: 9px;
+			transition: transform 0.15s ease;
+			position: absolute;
+			right: 5px;
+			top: 50%;
+			transform: translateY(-50%);
+			transform-origin: center;
+			content: "";
+		}
+
+		&.active{
+
+			&:before{
+				transform: rotate(-180deg) translateY(50%);
+			}
+
+			ul.country-list {
+				display: block;
+				
+			}
+		}
+
+
 		@include mobile-xl{
 			flex-direction: column;
 			align-items: center;
@@ -536,9 +573,12 @@ $transition_speed: .2s;
 			line-height: 1;
 			font-family: "Favorit", sans-serif;
 		}
-		.container-lang{
+		.language-switcher__languages {
 			position: relative;
 			margin: 0 20px;
+
+		
+
 			@include mobile-xl{
 				max-width: 100%;
 				width: 100%;
@@ -550,6 +590,14 @@ $transition_speed: .2s;
 				padding: 0;
 				margin: 0;
 				text-align: left;
+				border: 2px solid #1b1f1e;
+				border-radius: 24px;
+				background: #69efc9;
+				box-shadow: none;
+				padding-top: 3px;
+				padding: 0 10px 0 19px;
+				max-height: 200px;
+				overflow: auto;
 				&.active{
 					@include mobile-xl{
 						top: 0;
@@ -557,44 +605,14 @@ $transition_speed: .2s;
 				}
 			}
 			& > ul {
-				max-height: 30px;
-				overflow: hidden;
 				position: absolute;
-				top: -15px;
 				min-width: 256px;
 				padding: 0 10px 0 19px;
-				max-height: 42px;
+				bottom: -10px;
+				display: none;
+				transform: translateY(100%);
 	
-				&:before{
-					width: 9px;
-					height: 9px;
-					border: 0;
-					background: url('../images/arrow-down.png') 50% 50% no-repeat;
-					background-size: 9px;
-					transition: transform 0.2s ease;
-					margin-top: -3px;
-					right: 7px;
-					position: absolute;
-					right: 20px;
-					top: 25px;
-					transform-origin: center;
-					content: "";
-				}
-
-				&.active{
-					border: 2px solid #1b1f1e;
-					border-radius: 24px;
-					background: #69efc9;
-					box-shadow: none;
-					padding-top: 3px;
-					padding: 0 10px 0 19px;
-					max-height: 200px;
-					overflow: auto;
-					&:before{
-						transform: rotate(-180deg);
-					}
-				}
-	
+			
 				& > li{
 					display: flex;
 					align-items: flex-start;

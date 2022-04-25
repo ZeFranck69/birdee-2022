@@ -117,5 +117,3 @@ class Contact extends Service {
         }
     }
 }
-
-new Contact();

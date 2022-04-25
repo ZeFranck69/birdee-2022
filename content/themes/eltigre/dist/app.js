@@ -160,93 +160,157 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Menu; }
 /* harmony export */ });
 /* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/functions */ "./src/js/utils/functions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-var Menu = /*#__PURE__*/_createClass(function Menu() {
-  var _this = this;
+var Menu = /*#__PURE__*/function () {
+  function Menu() {
+    var _this = this;
 
-  _classCallCheck(this, Menu);
+    _classCallCheck(this, Menu);
 
-  _defineProperty(this, "distanceBeforeSticky", window.innerHeight / 10);
+    _defineProperty(this, "distanceBeforeSticky", window.innerHeight / 10);
 
-  _defineProperty(this, "stickyMenu", function () {
-    var header = _this.header;
+    _defineProperty(this, "stickyMenu", function () {
+      var header = _this.header;
 
-    if (window.pageYOffset > _this.distanceBeforeSticky && !_this.isSticky()) {
-      header.classList.add('sticky');
-    } else if (window.pageYOffset < _this.distanceBeforeSticky && _this.isSticky()) {
-      header.classList.remove('sticky');
-    }
-  });
-
-  _defineProperty(this, "isSticky", function () {
-    return _this.header.classList.contains('sticky');
-  });
-
-  _defineProperty(this, "toggleMenu", function () {
-    var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'toggle';
-    var VALID_ACTIONS = ['add', 'remove', 'toggle'];
-    if (!VALID_ACTIONS.includes(action)) return console.error("\"".concat(action, "\" is not allowed. Allowed actions: ").concat(VALID_ACTIONS.join(' ')));
-
-    _this.body.classList[action]('no-scroll');
-
-    _this.header.classList[action]('active');
-
-    _this.navSlide.classList[action]('active-slide');
-
-    _this.header.setAttribute('aria-hidden', !_this.header.classList.contains('active'));
-
-    _this.navSlide.setAttribute('aria-hidden', !_this.navSlide.classList.contains('active'));
-  });
-
-  this.body = document.querySelector('body');
-  this.header = document.getElementById('site-header');
-  this.navSlide = document.getElementById('slide-nav');
-  this.toggleBtn = document.querySelector('.site__burger-menu');
-
-  if (this.toggleBtn) {
-    this.toggleBtn.addEventListener('click', function () {
-      return _this.toggleMenu();
+      if (window.pageYOffset > _this.distanceBeforeSticky && !_this.isSticky()) {
+        header.classList.add('sticky');
+      } else if (window.pageYOffset < _this.distanceBeforeSticky && _this.isSticky()) {
+        header.classList.remove('sticky');
+      }
     });
+
+    _defineProperty(this, "isSticky", function () {
+      return _this.header.classList.contains('sticky');
+    });
+
+    _defineProperty(this, "toggleMenu", function () {
+      var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'toggle';
+      var VALID_ACTIONS = ['add', 'remove', 'toggle'];
+      if (!VALID_ACTIONS.includes(action)) return console.error("\"".concat(action, "\" is not allowed. Allowed actions: ").concat(VALID_ACTIONS.join(' ')));
+
+      _this.body.classList[action]('no-scroll');
+
+      _this.header.classList[action]('active');
+
+      _this.navSlide.classList[action]('active-slide');
+
+      _this.header.setAttribute('aria-hidden', !_this.header.classList.contains('active'));
+
+      _this.navSlide.setAttribute('aria-hidden', !_this.navSlide.classList.contains('active'));
+    });
+
+    this.body = document.querySelector('body');
+    this.header = document.getElementById('site-header');
+    this.navSlide = document.getElementById('slide-nav');
+    this.toggleBtn = document.querySelector('.site__burger-menu');
+    this.languageSwitcher = document.querySelector('.language-switcher');
+    this.onCloseLanguageSwitcher = this.closeLanguageSwitcher.bind(this);
+
+    if (this.toggleBtn) {
+      this.toggleBtn.addEventListener('click', function () {
+        return _this.toggleMenu();
+      });
+    }
+
+    window.addEventListener('scroll', this.stickyMenu); // REMOVE NO SCROLL ON PAGE CHANGE
+
+    document.querySelector('body').classList.remove('no-scroll');
+    this.header.classList.remove('active');
+    this.navSlide.classList.remove('active-slide');
+    var menuItems = document.querySelectorAll('.menu-item, .site-logo, .footer_phone-number, .footer-contact');
+    menuItems.forEach(function (item) {
+      item.addEventListener('click', function (ev) {
+        var activeItems = document.querySelectorAll('.current_page_item');
+        activeItems.forEach(function (activeItem) {
+          return activeItem.classList.remove('current_page_item');
+        });
+        var link = item.querySelector('a');
+        var newActivesLinks = document.querySelectorAll("a[href=\"".concat(link.href, "\"]"));
+        link.parentElement.classList.add('current_page_item');
+        newActivesLinks.forEach(function (item) {
+          return item.parentElement.classList.add('current_page_item');
+        });
+      });
+    });
+    var hashtagLinks = document.querySelectorAll('a[href*="#"]');
+    hashtagLinks.forEach(function (link) {
+      return link.parentElement.classList.remove('current_page_item');
+    });
+    this.initLanguageSwitcher();
   }
 
-  window.addEventListener('scroll', this.stickyMenu); // REMOVE NO SCROLL ON PAGE CHANGE
+  _createClass(Menu, [{
+    key: "initLanguageSwitcher",
+    value: function initLanguageSwitcher() {
+      var _this2 = this;
 
-  document.querySelector('body').classList.remove('no-scroll');
-  this.header.classList.remove('active');
-  this.navSlide.classList.remove('active-slide');
-  var menuItems = document.querySelectorAll('.menu-item, .site-logo, .footer_phone-number, .footer-contact');
-  menuItems.forEach(function (item) {
-    item.addEventListener('click', function (ev) {
-      var activeItems = document.querySelectorAll('.current_page_item');
-      activeItems.forEach(function (activeItem) {
-        return activeItem.classList.remove('current_page_item');
+      var selectLang = document.querySelector('.language-switcher');
+      selectLang.addEventListener('click', function (ev) {
+        if (selectLang.classList.contains('active')) {
+          _this2.closeLanguageSwitcher();
+        } else {
+          ev.stopPropagation();
+
+          _this2.openLanguageSwitcher();
+        }
       });
-      var link = item.querySelector('a');
-      var newActivesLinks = document.querySelectorAll("a[href=\"".concat(link.href, "\"]"));
-      link.parentElement.classList.add('current_page_item');
-      newActivesLinks.forEach(function (item) {
-        return item.parentElement.classList.add('current_page_item');
+      var languageLinks = selectLang.querySelectorAll('a[data-lang]');
+      languageLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var _this$dataset$lang$sp = this.dataset.lang.split('-'),
+              _this$dataset$lang$sp2 = _slicedToArray(_this$dataset$lang$sp, 2),
+              language = _this$dataset$lang$sp2[0],
+              country = _this$dataset$lang$sp2[1];
+
+          if (language && country) {
+            (0,_utils_functions__WEBPACK_IMPORTED_MODULE_0__.setLanguageCookies)(language, country);
+          }
+        });
       });
-    });
-  });
-  var hashtagLinks = document.querySelectorAll('a[href*="#"]');
-  hashtagLinks.forEach(function (link) {
-    return link.parentElement.classList.remove('current_page_item');
-  });
-  var selectLang = document.querySelector('.country-list');
-  selectLang.addEventListener('click', function () {
-    selectLang.classList.toggle('active');
-  });
-});
+    }
+  }, {
+    key: "openLanguageSwitcher",
+    value: function openLanguageSwitcher(ev) {
+      this.languageSwitcher.classList.add('active');
+      document.body.addEventListener('click', this.onCloseLanguageSwitcher);
+      document.body.addEventListener('keydown', this.onCloseLanguageSwitcher);
+    }
+  }, {
+    key: "closeLanguageSwitcher",
+    value: function closeLanguageSwitcher() {
+      var ev = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (!ev || ev && ev.keyCode === 27 || !ev.keyCode) {
+        this.languageSwitcher.classList.remove('active');
+        document.body.removeEventListener('click', this.onCloseLanguageSwitcher);
+        document.body.removeEventListener('keydown', this.onCloseLanguageSwitcher);
+      }
+    }
+  }]);
+
+  return Menu;
+}();
 
 
 
@@ -1866,8 +1930,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "checkDate": function() { return /* binding */ checkDate; },
 /* harmony export */   "setLanguageCookies": function() { return /* binding */ setLanguageCookies; }
 /* harmony export */ });
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
-
 function initSwipers(swipersContainer, properties) {
   var className, hasNavigation, hasPagination, navigation, pagination, slidesCount;
   var swipers = [];
@@ -2085,17 +2147,14 @@ function checkPhoneNumber(number) {
 function checkDate(date) {
   var regex = /^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1][9][0-9][0-9]|[2][0][0-9]{2})$/;
   return regex.test(date);
-} // const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
-// const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
-
+}
 function setLanguageCookies(language, country) {
-  var options = {
-    expires: 365,
-    path: '/',
-    domain: window.location.host
-  };
-  js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].set(VISITOR_LANGUAGE_COOKIE, language, options);
-  js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].set(VISITOR_COUNTRY_COOKIE, country, options);
+  var VISITOR_COUNTRY_COOKIE = 'wordpress_country_preference';
+  var VISITOR_LANGUAGE_COOKIE = 'wordpress_language_preference';
+  var expires = new Date();
+  expires.setFullYear(expires.getFullYear() + 1);
+  document.cookie = "".concat(VISITOR_LANGUAGE_COOKIE, "=").concat(language, "; expires=").concat(expires, "; path=/; domain: ").concat(window.location.host);
+  document.cookie = "".concat(VISITOR_COUNTRY_COOKIE, "=").concat(country, "; expires=").concat(expires, "; path=/; domain: ").concat(window.location.host);
 }
 
 /***/ }),
@@ -9851,152 +9910,6 @@ __webpack_require__.r(__webpack_exports__);
 var gsapWithCSS = _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(_CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__.CSSPlugin) || _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap,
     // to protect from tree shaking
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
-
-
-/***/ }),
-
-/***/ "./node_modules/js-cookie/dist/js.cookie.mjs":
-/*!***************************************************!*\
-  !*** ./node_modules/js-cookie/dist/js.cookie.mjs ***!
-  \***************************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/*! js-cookie v3.0.1 | MIT */
-/* eslint-disable no-var */
-function assign (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-    for (var key in source) {
-      target[key] = source[key];
-    }
-  }
-  return target
-}
-/* eslint-enable no-var */
-
-/* eslint-disable no-var */
-var defaultConverter = {
-  read: function (value) {
-    if (value[0] === '"') {
-      value = value.slice(1, -1);
-    }
-    return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
-  },
-  write: function (value) {
-    return encodeURIComponent(value).replace(
-      /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
-      decodeURIComponent
-    )
-  }
-};
-/* eslint-enable no-var */
-
-/* eslint-disable no-var */
-
-function init (converter, defaultAttributes) {
-  function set (key, value, attributes) {
-    if (typeof document === 'undefined') {
-      return
-    }
-
-    attributes = assign({}, defaultAttributes, attributes);
-
-    if (typeof attributes.expires === 'number') {
-      attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
-    }
-    if (attributes.expires) {
-      attributes.expires = attributes.expires.toUTCString();
-    }
-
-    key = encodeURIComponent(key)
-      .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
-      .replace(/[()]/g, escape);
-
-    var stringifiedAttributes = '';
-    for (var attributeName in attributes) {
-      if (!attributes[attributeName]) {
-        continue
-      }
-
-      stringifiedAttributes += '; ' + attributeName;
-
-      if (attributes[attributeName] === true) {
-        continue
-      }
-
-      // Considers RFC 6265 section 5.2:
-      // ...
-      // 3.  If the remaining unparsed-attributes contains a %x3B (";")
-      //     character:
-      // Consume the characters of the unparsed-attributes up to,
-      // not including, the first %x3B (";") character.
-      // ...
-      stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
-    }
-
-    return (document.cookie =
-      key + '=' + converter.write(value, key) + stringifiedAttributes)
-  }
-
-  function get (key) {
-    if (typeof document === 'undefined' || (arguments.length && !key)) {
-      return
-    }
-
-    // To prevent the for loop in the first place assign an empty array
-    // in case there are no cookies at all.
-    var cookies = document.cookie ? document.cookie.split('; ') : [];
-    var jar = {};
-    for (var i = 0; i < cookies.length; i++) {
-      var parts = cookies[i].split('=');
-      var value = parts.slice(1).join('=');
-
-      try {
-        var foundKey = decodeURIComponent(parts[0]);
-        jar[foundKey] = converter.read(value, foundKey);
-
-        if (key === foundKey) {
-          break
-        }
-      } catch (e) {}
-    }
-
-    return key ? jar[key] : jar
-  }
-
-  return Object.create(
-    {
-      set: set,
-      get: get,
-      remove: function (key, attributes) {
-        set(
-          key,
-          '',
-          assign({}, attributes, {
-            expires: -1
-          })
-        );
-      },
-      withAttributes: function (attributes) {
-        return init(this.converter, assign({}, this.attributes, attributes))
-      },
-      withConverter: function (converter) {
-        return init(assign({}, this.converter, converter), this.attributes)
-      }
-    },
-    {
-      attributes: { value: Object.freeze(defaultAttributes) },
-      converter: { value: Object.freeze(converter) }
-    }
-  )
-}
-
-var api = init(defaultConverter, { path: '/' });
-/* eslint-enable no-var */
-
-/* harmony default export */ __webpack_exports__["default"] = (api);
 
 
 /***/ })

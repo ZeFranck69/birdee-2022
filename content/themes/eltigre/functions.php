@@ -15,7 +15,6 @@
 	require_once 'inc/helper-functions.php';
 	require_once 'inc/constants/colors.php';
 	require_once 'inc/class/Eltigre.php';
-	require_once 'inc/languages-switcher/index.php';
 	
 	class Init extends Timber\Site {
    
@@ -85,7 +84,8 @@
 	
 			// Global site
 			$context['site']  = $this;
-			return $context;
+
+			return apply_filters( 'eltigre_context', $context );
 		}
 	
 	
