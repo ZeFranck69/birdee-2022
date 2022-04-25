@@ -1,33 +1,37 @@
 
-<section class="press" data-post-type="press" data-term="{{ term }}">
-    <div class="main-wrapper">
-      
-        <div class="">
-            <div class="press__posts infinite-scroll">
-
-
-                {% for key, post in press_posts %}
-                   
-
-                    
-                {% endfor %}
-
-                  <div class="pagination">
-                    {% if posts.pagination.next %}
-                        <a href="{{posts.pagination.next.link}}" class="next"></a>
-                    {% endif %}
-                </div>
-            </div>
+<section  id="press" class="press" data-post-type="press" data-term="{{ term }}" style="background-color: {{ section.background_color }};">
+    <div class="press-container {{ section.section_width == 'fullwidth' ? 'main-wrapper' : '' }}" style="text-align: {{ section.text_align }};">
+        <div class="{{ section.section_width == 'ajust' ? 'main-wrapper' : '' }} {{ section.radius }}" style="background-color: {{ section.background_color }};background-image: url({{ section.background_image.url }})">
             
-            {% if posts.pagination.next %}
-                <div class="cta cta--red view-more-button">
-                    {{ __( 'Charger plus',  'eltigre' ) }}
-                </div>
-            {% endif %}
+            
+            <div class="press-wrapper padding-medium">
+              
+                <div class="press__posts infinite-scroll">
+                    {% for key, post in press_posts %}
+                        <div class="press__post">
+                                {{ loop.index }}
 
-            <div class="page-load-status">
-                <p class="infinite-scroll-request"></p>
-            </div>
+                                {{ post.post_name }}
+                        </div>
+                    {% endfor %}
+    
+                    <div class="pagination">
+                        {% if press_posts.pagination.next %}
+                            <a href="{{press_posts.pagination.next.link}}" class="next"></a>
+                        {% endif %} 
+                    </div>
+                </div>
+                
+                {% if press_posts.pagination.next %}
+                    <div class="cta cta--red view-more-button">
+                        {{ __( 'Charger plus',  'eltigre' ) }}
+                    </div>
+                {% endif %}
+    
+                <div class="page-load-status">
+                    <p class="infinite-scroll-request"></p>
+                </div>
+            </div> 
         </div>
-    </div> 
+    </div>
 </section>
