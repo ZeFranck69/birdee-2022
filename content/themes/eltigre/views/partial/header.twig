@@ -23,12 +23,12 @@
 				</a>
 			</div>
 			<nav class='nav__links'>
-				{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
+				{% include 'partial/menu.twig' with {'items': menu.header.left.get_items} %}
 			</nav>
 		</div>
 		<div class="menu--right">
 			<nav class='nav__links'>
-					{% include 'partial/menu.twig' with {'items': menu.header.left.get_items} %}
+				{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
 			</nav>
 			<div class="site__burger-menu">
 				<div class="burger-menu__wrapper">
