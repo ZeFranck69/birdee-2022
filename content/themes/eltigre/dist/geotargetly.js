@@ -10,26 +10,24 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "initSwipers": function() { return /* binding */ initSwipers; },
-/* harmony export */   "scrollTopOnLinksCurrentUrl": function() { return /* binding */ scrollTopOnLinksCurrentUrl; },
-/* harmony export */   "post": function() { return /* binding */ post; },
-/* harmony export */   "containsSection": function() { return /* binding */ containsSection; },
-/* harmony export */   "addTransition": function() { return /* binding */ addTransition; },
 /* harmony export */   "addEvents": function() { return /* binding */ addEvents; },
-/* harmony export */   "scrollToTop": function() { return /* binding */ scrollToTop; },
-/* harmony export */   "scrollToElement": function() { return /* binding */ scrollToElement; },
-/* harmony export */   "getNavigator": function() { return /* binding */ getNavigator; },
-/* harmony export */   "toggleScroll": function() { return /* binding */ toggleScroll; },
-/* harmony export */   "getQueryParam": function() { return /* binding */ getQueryParam; },
-/* harmony export */   "cleanURL": function() { return /* binding */ cleanURL; },
-/* harmony export */   "pageEnabled": function() { return /* binding */ pageEnabled; },
+/* harmony export */   "addTransition": function() { return /* binding */ addTransition; },
+/* harmony export */   "checkDate": function() { return /* binding */ checkDate; },
 /* harmony export */   "checkMail": function() { return /* binding */ checkMail; },
 /* harmony export */   "checkPhoneNumber": function() { return /* binding */ checkPhoneNumber; },
-/* harmony export */   "checkDate": function() { return /* binding */ checkDate; },
-/* harmony export */   "setLanguageCookies": function() { return /* binding */ setLanguageCookies; }
+/* harmony export */   "cleanURL": function() { return /* binding */ cleanURL; },
+/* harmony export */   "containsSection": function() { return /* binding */ containsSection; },
+/* harmony export */   "getNavigator": function() { return /* binding */ getNavigator; },
+/* harmony export */   "getQueryParam": function() { return /* binding */ getQueryParam; },
+/* harmony export */   "initSwipers": function() { return /* binding */ initSwipers; },
+/* harmony export */   "pageEnabled": function() { return /* binding */ pageEnabled; },
+/* harmony export */   "post": function() { return /* binding */ post; },
+/* harmony export */   "scrollToElement": function() { return /* binding */ scrollToElement; },
+/* harmony export */   "scrollToTop": function() { return /* binding */ scrollToTop; },
+/* harmony export */   "scrollTopOnLinksCurrentUrl": function() { return /* binding */ scrollTopOnLinksCurrentUrl; },
+/* harmony export */   "setLanguageCookies": function() { return /* binding */ setLanguageCookies; },
+/* harmony export */   "toggleScroll": function() { return /* binding */ toggleScroll; }
 /* harmony export */ });
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
-
 function initSwipers(swipersContainer, properties) {
   var className, hasNavigation, hasPagination, navigation, pagination, slidesCount;
   var swipers = [];
@@ -247,163 +245,15 @@ function checkPhoneNumber(number) {
 function checkDate(date) {
   var regex = /^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1][9][0-9][0-9]|[2][0][0-9]{2})$/;
   return regex.test(date);
-} // const VISITOR_COUNTRY_COOKIE = window.birdeeCookies.COUNTRY;
-// const VISITOR_LANGUAGE_COOKIE = window.birdeeCookies.LANGUAGE;
-
+}
 function setLanguageCookies(language, country) {
-  var options = {
-    expires: 365,
-    path: '/',
-    domain: window.location.host
-  };
-  js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].set(VISITOR_LANGUAGE_COOKIE, language, options);
-  js_cookie__WEBPACK_IMPORTED_MODULE_0__["default"].set(VISITOR_COUNTRY_COOKIE, country, options);
+  var VISITOR_COUNTRY_COOKIE = 'wordpress_country_preference';
+  var VISITOR_LANGUAGE_COOKIE = 'wordpress_language_preference';
+  var expires = new Date();
+  expires.setFullYear(expires.getFullYear() + 1);
+  document.cookie = "".concat(VISITOR_LANGUAGE_COOKIE, "=").concat(language, "; expires=").concat(expires, "; path=/; domain: ").concat(window.location.host);
+  document.cookie = "".concat(VISITOR_COUNTRY_COOKIE, "=").concat(country, "; expires=").concat(expires, "; path=/; domain: ").concat(window.location.host);
 }
-
-/***/ }),
-
-/***/ "./node_modules/js-cookie/dist/js.cookie.mjs":
-/*!***************************************************!*\
-  !*** ./node_modules/js-cookie/dist/js.cookie.mjs ***!
-  \***************************************************/
-/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/*! js-cookie v3.0.1 | MIT */
-/* eslint-disable no-var */
-function assign (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-    for (var key in source) {
-      target[key] = source[key];
-    }
-  }
-  return target
-}
-/* eslint-enable no-var */
-
-/* eslint-disable no-var */
-var defaultConverter = {
-  read: function (value) {
-    if (value[0] === '"') {
-      value = value.slice(1, -1);
-    }
-    return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
-  },
-  write: function (value) {
-    return encodeURIComponent(value).replace(
-      /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
-      decodeURIComponent
-    )
-  }
-};
-/* eslint-enable no-var */
-
-/* eslint-disable no-var */
-
-function init (converter, defaultAttributes) {
-  function set (key, value, attributes) {
-    if (typeof document === 'undefined') {
-      return
-    }
-
-    attributes = assign({}, defaultAttributes, attributes);
-
-    if (typeof attributes.expires === 'number') {
-      attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
-    }
-    if (attributes.expires) {
-      attributes.expires = attributes.expires.toUTCString();
-    }
-
-    key = encodeURIComponent(key)
-      .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
-      .replace(/[()]/g, escape);
-
-    var stringifiedAttributes = '';
-    for (var attributeName in attributes) {
-      if (!attributes[attributeName]) {
-        continue
-      }
-
-      stringifiedAttributes += '; ' + attributeName;
-
-      if (attributes[attributeName] === true) {
-        continue
-      }
-
-      // Considers RFC 6265 section 5.2:
-      // ...
-      // 3.  If the remaining unparsed-attributes contains a %x3B (";")
-      //     character:
-      // Consume the characters of the unparsed-attributes up to,
-      // not including, the first %x3B (";") character.
-      // ...
-      stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
-    }
-
-    return (document.cookie =
-      key + '=' + converter.write(value, key) + stringifiedAttributes)
-  }
-
-  function get (key) {
-    if (typeof document === 'undefined' || (arguments.length && !key)) {
-      return
-    }
-
-    // To prevent the for loop in the first place assign an empty array
-    // in case there are no cookies at all.
-    var cookies = document.cookie ? document.cookie.split('; ') : [];
-    var jar = {};
-    for (var i = 0; i < cookies.length; i++) {
-      var parts = cookies[i].split('=');
-      var value = parts.slice(1).join('=');
-
-      try {
-        var foundKey = decodeURIComponent(parts[0]);
-        jar[foundKey] = converter.read(value, foundKey);
-
-        if (key === foundKey) {
-          break
-        }
-      } catch (e) {}
-    }
-
-    return key ? jar[key] : jar
-  }
-
-  return Object.create(
-    {
-      set: set,
-      get: get,
-      remove: function (key, attributes) {
-        set(
-          key,
-          '',
-          assign({}, attributes, {
-            expires: -1
-          })
-        );
-      },
-      withAttributes: function (attributes) {
-        return init(this.converter, assign({}, this.attributes, attributes))
-      },
-      withConverter: function (converter) {
-        return init(assign({}, this.converter, converter), this.attributes)
-      }
-    },
-    {
-      attributes: { value: Object.freeze(defaultAttributes) },
-      converter: { value: Object.freeze(converter) }
-    }
-  )
-}
-
-var api = init(defaultConverter, { path: '/' });
-/* eslint-enable no-var */
-
-/* harmony default export */ __webpack_exports__["default"] = (api);
-
 
 /***/ })
 
@@ -466,11 +316,11 @@ var api = init(defaultConverter, { path: '/' });
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-/*!*******************************!*\
-  !*** ./src/js/geotargetly.js ***!
-  \*******************************/
+/*!**************************************************!*\
+  !*** ./inc/services/multilang/js/geotargetly.js ***!
+  \**************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/functions */ "./src/js/utils/functions.js");
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../utils/functions */ "./src/js/utils/functions.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -535,12 +385,15 @@ window.geotargetly_loaded = function () {
 
   if (!ALLOWED_COUNTRY_LANGUAGE_CODES.includes(userCountryLanguage)) {
     userCountryLanguage = DEFAULT_COUNTRY_LANGUAGE;
-  } // setLanguageCookies(userNavigatorLanguage, userCountryCode);
+  }
 
+  (0,_utils_functions__WEBPACK_IMPORTED_MODULE_0__.setLanguageCookies)(userNavigatorLanguage, userCountryCode);
+  var language = wp_geo.languages[userCountryLanguage];
+  var languageURL = language === null || language === void 0 ? void 0 : language.url;
 
-  if (!window.location.href.includes(userCountryLanguage)) {
-    var language = wp_geo.languages[userCountryLanguage];
-    var separator = language.url.includes('?') ? '&' : '?'; // window.location.href = `${language.url}${separator}language-redirect=true`;
+  if (languageURL && !window.location.href.includes(languageURL)) {
+    var separator = languageURL.includes('?') ? '&' : '?';
+    window.location.href = "".concat(languageURL).concat(separator, "language-redirect=true");
   }
 };
 }();

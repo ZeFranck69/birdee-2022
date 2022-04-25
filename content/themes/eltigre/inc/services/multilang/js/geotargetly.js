@@ -1,4 +1,4 @@
-import { setLanguageCookies } from './utils/functions';
+import { setLanguageCookies } from '/utils/functions';
 
 const { languages } = wp_geo;
 
@@ -46,11 +46,13 @@ window.geotargetly_loaded = function () {
 		userCountryLanguage = DEFAULT_COUNTRY_LANGUAGE;
 	}
 
-	// setLanguageCookies(userNavigatorLanguage, userCountryCode);
+	setLanguageCookies(userNavigatorLanguage, userCountryCode);
 
-	if (!window.location.href.includes(userCountryLanguage)) {
-		const language = wp_geo.languages[userCountryLanguage];
-		const separator = language.url.includes('?') ? '&' : '?';
-		// window.location.href = `${language.url}${separator}language-redirect=true`;
+	const language = wp_geo.languages[userCountryLanguage];
+	const languageURL = language?.url;
+
+	if (languageURL && !window.location.href.includes(languageURL)) {
+		const separator = languageURL.includes('?') ? '&' : '?';
+		window.location.href = `${languageURL}${separator}language-redirect=true`;
 	}
 };

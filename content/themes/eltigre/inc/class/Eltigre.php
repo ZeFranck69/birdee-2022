@@ -5,12 +5,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 use Eltigre\Services\Support;
 use Eltigre\Services\Contact;
 use Eltigre\Services\ACF;
+use Eltigre\Services\Multilang;
 
 define( 'SERVICES', 
     array(
         'Support'       => Support::class,
         'Contact'       => Contact::class,
         'ACF'           => ACF::class,
+        'Multilang'   => Multilang::class
     ) 
 );
 
@@ -48,9 +50,10 @@ class Eltigre {
         $this->load_service( 'Support' );
         self::require_folder( 'admin' );
     }
-
-
+    
+    
     private function load_public() {
+        $this->load_service( 'Multilang' );
         self::require_folder( 'public' );
 		self::require_folder( 'public/controllers' );
     }
@@ -132,6 +135,12 @@ class Eltigre {
         $service = get_services_directory() . "/$name/$name.php";
         if ( file_exists( $service ) ) {
             include_once get_services_directory() . "/$name/$name.php";
+        }
+    }
+
+    public static function get_service( $name ) {
+        if ( self::$services[ $name ] ) {
+            return self::$services[ $name ];
         }
     }
 

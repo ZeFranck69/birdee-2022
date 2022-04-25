@@ -1,4 +1,4 @@
-import { addTransition } from '../utils/functions';
+import { setLanguageCookies } from '../utils/functions';
 
 export default class Menu {
 	distanceBeforeSticky = window.innerHeight / 10;
@@ -8,6 +8,9 @@ export default class Menu {
 		this.header = document.getElementById('site-header');
 		this.navSlide = document.getElementById('slide-nav');
 		this.toggleBtn = document.querySelector('.site__burger-menu');
+		this.languageSwitcher = document.querySelector('.language-switcher');
+		this.onCloseLanguageSwitcher = this.closeLanguageSwitcher.bind(this);
+
 		if (this.toggleBtn) {
 			this.toggleBtn.addEventListener('click', () => this.toggleMenu());
 		}
@@ -33,10 +36,8 @@ export default class Menu {
 		});
 		const hashtagLinks = document.querySelectorAll('a[href*="#"]');
 		hashtagLinks.forEach((link) => link.parentElement.classList.remove('current_page_item'));
-		const selectLang = document.querySelector('.country-list');
-		selectLang.addEventListener('click', () => {
-			selectLang.classList.toggle('active');
-		});
+
+		this.initLanguageSwitcher();
 	}
 
 	stickyMenu = () => {
@@ -61,4 +62,41 @@ export default class Menu {
 		this.header.setAttribute('aria-hidden', !this.header.classList.contains('active'));
 		this.navSlide.setAttribute('aria-hidden', !this.navSlide.classList.contains('active'));
 	};
+
+	initLanguageSwitcher() {
+		const selectLang = document.querySelector('.language-switcher');
+
+		selectLang.addEventListener('click', (ev) => {
+			if (selectLang.classList.contains('active')) {
+				this.closeLanguageSwitcher();
+			} else {
+				ev.stopPropagation();
+				this.openLanguageSwitcher();
+			}
+		});
+
+		const languageLinks = selectLang.querySelectorAll('a[data-lang]');
+		languageLinks.forEach((link) => {
+			link.addEventListener('click', function () {
+				const [language, country] = this.dataset.lang.split('-');
+				if (language && country) {
+					setLanguageCookies(language, country);
+				}
+			});
+		});
+	}
+
+	openLanguageSwitcher(ev) {
+		this.languageSwitcher.classList.add('active');
+		document.body.addEventListener('click', this.onCloseLanguageSwitcher);
+		document.body.addEventListener('keydown', this.onCloseLanguageSwitcher);
+	}
+
+	closeLanguageSwitcher(ev = null) {
+		if (!ev || (ev && ev.keyCode === 27) || !ev.keyCode) {
+			this.languageSwitcher.classList.remove('active');
+			document.body.removeEventListener('click', this.onCloseLanguageSwitcher);
+			document.body.removeEventListener('keydown', this.onCloseLanguageSwitcher);
+		}
+	}
 }
