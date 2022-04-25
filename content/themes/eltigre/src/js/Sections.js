@@ -6,6 +6,7 @@ import MultiBlocks from './flexibles/MultiBlocks';
 import Offers from './flexibles/Offers';
 import Performances from './flexibles/Performances';
 import PreFooter from './flexibles/PreFooter';
+import Press from './flexibles/Press';
 import Quote from './flexibles/Quote';
 import Reasons from './flexibles/Reasons';
 import Simple from './flexibles/Simple';
@@ -33,6 +34,7 @@ export default class Sections {
 		prefooter: PreFooter,
 		'text-image': TextImage,
 		'multi-block': MultiBlocks,
+		press: Press,
 	};
 
 	constructor() {

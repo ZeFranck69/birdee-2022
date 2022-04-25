@@ -16,7 +16,8 @@ if( !class_exists( 'Eltigre\Controllers\Press' ) ) {
                 'orderby'           => "menu_order",
                 'order'             => "ASC",
                 'posts_per_page'    => -1,
-                'post_status'       =>"published"
+                'post_status'       =>"publish"
+                
             );
 
             $query = new \WP_Query( $query_args );
@@ -34,6 +35,9 @@ if( !class_exists( 'Eltigre\Controllers\Press' ) ) {
                     'permalink'             => get_the_permalink(),
                     'author'                => get_the_author(),
                     'published_date'        => get_the_date(),
+                    'press_date'            => get_field('presse_date'),
+                    'press_author'          => get_field('presse_author'),
+                    'press_link'            => get_field('cta'),
                 );
                 
                 $press[ $post_ID ] = $press_post;

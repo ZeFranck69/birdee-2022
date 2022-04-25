@@ -3762,6 +3762,9 @@ body::-webkit-scrollbar-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 @media only screen and (max-width: 1024px) {
   .press-wrapper {
@@ -3829,6 +3832,12 @@ body::-webkit-scrollbar-thumb {
 .press_posts-part .press__posts .press__post .press__post-description .post-published-date {
   font-size: 12px;
   padding-top: 5px;
+}
+.press_posts-part .view-more-button {
+  display: block;
+  margin: 24px auto 0;
+  max-width: 340px;
+  width: 100%;
 }
 
 .aside-part {

@@ -28,10 +28,10 @@
 	<article class="post-type-{{ post.post_type }} main-wrapper padding-medium" id="post-{{ post.ID }}">
 		<section class="article-content">
 			<p class="blog-author center">
-				<span>{{ __('Auteur : ', 'eltigre') }}</span><a href="{{post.author.path}}"> {{ post.author.name }} </a>
+				<span>{{ __('Auteur : ', 'eltigre') }}</span><a href="{{post.author.path}}"> {{ post.presse_author }} </a>
 			</p>
 			<div class="published-date center">
-				<span>{{ __('Date de publication : ', 'eltigre') }}</span>{{ post.date }}
+				<span>{{ __('Date de publication : ', 'eltigre') }}</span>{{ post.presse_date|date("d/m/Y") }}
 			</div>
 			<div class="single-press__social-network center">
 				{% for social in options.socials_media %}
@@ -48,7 +48,7 @@
 				{{post.content}}
 			</div>
 			<div class="single-press__see-more--wrapper center">
-				<a href="{{ post.cta.url }}" class="cta cta-green uppercase" target=_blank">
+				<a href="{{ post.cta }}" class="cta cta-green uppercase" target=_blank">
 					<span class="cta__label">
 						{{ __('Voir l\'article', 'eltigre' ) }}
 					</span>	
