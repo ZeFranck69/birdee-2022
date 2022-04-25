@@ -161,7 +161,7 @@
 					'labels' => array(
 						'name'          => __( 'Articles de presse', 'eltigre' ),
 						'add_new'		=> __( 'Ajouter un article de presse', 'eltigre' ),
-						'singular_name' => __( 'article de presse', 'eltigre' ),
+						'singular_name' => __( 'Article de presse', 'eltigre' ),
 						'all_items'     => __( 'Toutes les articles de presse', 'eltigre' ),
 						'edit_item'     => __( 'Modifier un article de presse', 'eltigre' ),
 						'view_item'     => __( 'Voir un article de presse', 'eltigre' ),
