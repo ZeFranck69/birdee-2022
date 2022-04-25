@@ -37,7 +37,7 @@ export default class Menu {
 		const hashtagLinks = document.querySelectorAll('a[href*="#"]');
 		hashtagLinks.forEach((link) => link.parentElement.classList.remove('current_page_item'));
 
-		this.initLanguageSwitcher();
+		// this.initLanguageSwitcher();
 	}
 
 	stickyMenu = () => {
