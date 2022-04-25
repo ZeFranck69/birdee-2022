@@ -43,6 +43,9 @@ if ( post_password_required( $timber_post->ID ) ) {
             case 'offers' :
                 $context = array_merge( $context, Eltigre\Controllers\Offers::get_context() );
                 break;
+            case 'press' :
+                $context = array_merge( $context, Eltigre\Controllers\Press::get_context() );
+                break;
             default: 
                 break;
         }
