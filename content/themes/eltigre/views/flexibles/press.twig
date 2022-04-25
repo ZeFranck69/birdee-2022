@@ -1,0 +1,33 @@
+
+<section class="press" data-post-type="press" data-term="{{ term }}">
+    <div class="main-wrapper">
+      
+        <div class="">
+            <div class="press__posts infinite-scroll">
+
+
+                {% for key, post in press_posts %}
+                   
+
+                    
+                {% endfor %}
+
+                  <div class="pagination">
+                    {% if posts.pagination.next %}
+                        <a href="{{posts.pagination.next.link}}" class="next"></a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if posts.pagination.next %}
+                <div class="cta cta--red view-more-button">
+                    {{ __( 'Charger plus',  'eltigre' ) }}
+                </div>
+            {% endif %}
+
+            <div class="page-load-status">
+                <p class="infinite-scroll-request"></p>
+            </div>
+        </div>
+    </div> 
+</section>

@@ -6,7 +6,7 @@ if( !class_exists( 'Eltigre\Controllers\Press' ) ) {
     class Press {
         
         public static function get_context() {
-            $context = array( 'press' => self::get_posts() );
+            $context = array( 'press_posts' => self::get_posts() );
             return $context;
         }
 		
@@ -15,11 +15,12 @@ if( !class_exists( 'Eltigre\Controllers\Press' ) ) {
                 'post_type'         => "press",
                 'orderby'           => "menu_order",
                 'order'             => "ASC",
-                'posts_per_page'     => -1
+                'posts_per_page'    => -1,
+                'post_status'       =>"published"
             );
 
             $query = new \WP_Query( $query_args );
-            $press = array();
+            $press= array();
 
             while( $query->have_posts() ) {
                 $query->the_post();
