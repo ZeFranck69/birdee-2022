@@ -30,8 +30,10 @@ if( !class_exists( 'Eltigre\Controllers\Press' ) ) {
                 $press_post = array(
                     'title'                 => get_the_title(),
                     'thumbnail'             => get_the_post_thumbnail(),
-                    'content'               => the_content(),
+                    'content'               => get_the_content(),
                     'permalink'             => get_the_permalink(),
+                    'author'                => get_the_author(),
+                    'published_date'        => get_the_date(),
                 );
                 
                 $press[ $post_ID ] = $press_post;

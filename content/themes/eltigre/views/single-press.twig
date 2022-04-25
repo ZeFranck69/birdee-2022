@@ -1,23 +1,61 @@
-Tu es bien sur la page de single press
-Avec un banner, la description, la partie info avec reseaux sociaux et un bouton pour voir l'article que est soit un lien soit un fichier
 
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.date }}
-				</p>
-				<div class="article-body">
-					{{post.content}}
+<div class="content-wrapper">
+	<div class="single-press--banner"
+		style="background-color: {{ post.background_color }};">
+		<div class="single-press--banner__container main-wrapper padding-medium">
+			<div class="single-press--banner__content">
+				
+				<h1 class="single-press--banner-content__title bold uppercase">
+					{{ post.title }}
+				</h1>
+				
+				<div class="single-press--banner-content__cta-wrapper">
+					<a href="{{ post.cta.url }}" class="cta--nostyle" target="{{ section.cta.target }}">
+						<span class="cta__label">
+							{{ __('Tous les articles de presse', 'eltigre' ) }}
+						</span>	
+					</a>
 				</div>
-			</section>
+			</div>
+			<div class="single-press--banner__image-part">
+				<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="single-press--banner__image">
+			</div>
+		</div>
+	</div>
+	<article class="post-type-{{ post.post_type }} main-wrapper padding-medium" id="post-{{ post.ID }}">
+		<section class="article-content">
+			<p class="blog-author center">
+				<span>{{ __('Auteur : ', 'eltigre') }}</span><a href="{{post.author.path}}"> {{ post.author.name }} </a>
+			</p>
+			<div class="published-date center">
+				<span>{{ __('Date de publication : ', 'eltigre') }}</span>{{ post.date }}
+			</div>
+			<div class="single-press__social-network center">
+				{% for social in options.socials_media %}
+					<div class="single-press-socials__social">
+						<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
+								{{ social.logo }}
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="social-bar"></div>
 
-		</article>
-	</div><!-- /content-wrapper -->
+			<div class="article-body">
+				{{post.content}}
+			</div>
+			<div class="single-press__see-more--wrapper center">
+				<a href="{{ post.cta.url }}" class="cta cta-green uppercase" target=_blank">
+					<span class="cta__label">
+						{{ __('Voir l\'article', 'eltigre' ) }}
+					</span>	
+				</a>
+			</div>
+		</section>
+
+	</article>
+</div><!-- /content-wrapper -->
 {% endblock %}

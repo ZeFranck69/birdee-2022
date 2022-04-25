@@ -57,11 +57,10 @@ html {
 }
 .padding-medium{
 	padding: 0 60px;
-
-	@include mobile-xl{
+	@include landscape{
 		padding: 0 40px;
 	}
-	@include mobile{
+	@include mobile-xl{
 		padding: 0 20px;
 	}
 
@@ -264,6 +263,7 @@ body::-webkit-scrollbar-thumb {
 @import 'modules/_header';
 @import 'modules/_footer';
 @import 'modules/_cta';
+@import 'modules/_single-press';
 
 // FLEXIBLES
 @import 'flexibles/_banner';
@@ -275,6 +275,7 @@ body::-webkit-scrollbar-thumb {
 @import 'flexibles/_text-bubble';
 @import 'flexibles/_steps';
 @import 'flexibles/_blog';
+@import 'flexibles/_press';
 @import 'flexibles/_two-blocks';
 @import 'flexibles/_wallets';
 @import 'flexibles/_collaborators';

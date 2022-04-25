@@ -3,33 +3,80 @@
     <div class="press-container {{ section.section_width == 'fullwidth' ? 'main-wrapper' : '' }}" style="text-align: {{ section.text_align }};">
         <div class="{{ section.section_width == 'ajust' ? 'main-wrapper' : '' }} {{ section.radius }}" style="background-color: {{ section.background_color }};background-image: url({{ section.background_image.url }})">
             
-            
+            {% if section.section_title %}
+                <h2 class="section-part__title title bold uppercase padding-medium" style="color:{{ section.title_color }}; text-align: {{ section.text_align }};">
+                    {{ section.section_title }}
+                </h2>
+            {% endif %}
             <div class="press-wrapper padding-medium">
-              
-                <div class="press__posts infinite-scroll">
-                    {% for key, post in press_posts %}
-                        <div class="press__post">
-                                {{ loop.index }}
-
-                                {{ post.post_name }}
+                <div class="press_posts-part">
+                    <div class="press__posts infinite-scroll">
+                        {% for key, post in press_posts %}
+                        <a href="{{ post.permalink }}" >
+                            <div class="press__post">
+                                    <div class="press__post-thumbnails">
+                                        {{ post.thumbnail }}
+                                    </div>
+                                    <div class="press__post-description">
+                                        <div class="post-title">
+                                            {{ post.title }}
+                                        </div>
+                                        <div class="post-published-date">
+                                            {{ __('Posté le ', 'eltigre') }}{{ post.published_date }}
+                                        </div>
+        
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+        
+                        <div class="pagination">
+                            {% if press_posts.pagination.next %}
+                                <a href="{{press_posts.pagination.next.link}}" class="next"></a>
+                            {% endif %} 
                         </div>
-                    {% endfor %}
-    
-                    <div class="pagination">
-                        {% if press_posts.pagination.next %}
-                            <a href="{{press_posts.pagination.next.link}}" class="next"></a>
-                        {% endif %} 
                     </div>
+                    {% if press_posts.pagination.next %}
+                        <div class="cta cta--red view-more-button">
+                            {{ __( 'Charger plus',  'eltigre' ) }}
+                        </div>
+                    {% endif %}
+                    <div class="page-load-status">
+                        <p class="infinite-scroll-request"></p>
+                    </div>
+
                 </div>
-                
-                {% if press_posts.pagination.next %}
-                    <div class="cta cta--red view-more-button">
-                        {{ __( 'Charger plus',  'eltigre' ) }}
+                <div class="aside-part" style="background-color: {{ section.aside_background_color }};">
+                    <div class="download-kit-part">
+                        <h2 class="download-kit-part__title uppercase bold">
+                            {{ section.download_part.title }}
+                        </h2>
+                        <div class="download-kit-part__files">
+                            {% for file in section.download_part.files %}
+                            <div class="files__file">
+                                <a href="{{ file.file.url }}" target="_blank" download>
+                                    {{ file.doc_name }}</a>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                {% endif %}
-    
-                <div class="page-load-status">
-                    <p class="infinite-scroll-request"></p>
+                    <div class="question-part">
+                        <h2 class="question-part__title uppercase bold">
+                            {{ section.question_part.title }}
+                        </h2>
+                        <div class="question-part__contact-name bold">
+                            {{ section.question_part.contact_name }}
+                        </div>
+                        <div class="question-part__contact-email">
+                            <a href="mailto:{{ section.question_part.contact_email }}">
+                                {{ section.question_part.contact_email }}
+                            </a>
+                        </div>
+                        <div class="question-part__contact-phone">
+                            {{ section.question_part.phone_contact }}
+                        </div>
+                    </div>
+
                 </div>
             </div> 
         </div>

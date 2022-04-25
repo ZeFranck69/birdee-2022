@@ -1,0 +1,119 @@
+.press{
+
+    padding: 80px 0;
+    @include tablet{
+        padding: 40px 0;
+    }
+    .section-part__title{
+        margin-bottom: 60px;
+    }
+}
+.press-wrapper{
+    display: flex;
+    @include landscape{
+        flex-direction: column;
+    }
+}
+.press_posts-part{
+    max-width: 65%;
+    width: 100%;
+    @include landscape{
+        max-width: 100%;
+    }
+    .press__posts{
+        padding-right: 7%;
+        overflow: hidden;
+        margin-top: 0;
+        text-align: left;
+        @include landscape{
+            padding-right: 0;
+        }
+        .press__post{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            border-bottom: 1px solid #1B1F1E;
+            padding: 1.5em 0;
+            .press__post-thumbnails{
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                max-width: 100px; 
+                @include tablet{
+                    max-width: 70px;
+                }
+            }
+            .press__post-description{
+                padding-left: 63px;
+                @include tablet{
+                    padding-left: 23px;
+                }
+                .post-title{
+                    text-decoration: underline;
+                    font-family: 'Favorit',sans-serif;
+                    font-size: 16px;
+                }
+                .post-published-date{
+                    font-size: 12px;
+                    padding-top: 5px;
+                }
+            }
+        }
+    }
+}
+.aside-part{
+    padding: 20px 40px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 35%;
+    @include landscape{
+        width: 100%;
+        margin-top: 28px;
+    }
+    .download-kit-part{
+        margin: 1em 0 2em;
+        .download-kit-part__title{
+            font-size: 25px;
+            font-family: 'Favorit',sans-serif;
+            margin-bottom: 20px;
+            line-height: 1.25;
+        }
+        .download-kit-part__files{
+
+            .files__file{
+                text-align: left;
+                padding: 7px 0;
+                display: flex;
+                position: relative;
+                &:before{
+                    content: "";
+                    display: inline-block;
+                    height: 20px;
+                    max-width: 30px;
+                    width: 100%;
+                    background: url('../images/arrow-right.svg') 0 0 no-repeat;       
+                }
+            }
+        }
+    }
+    .question-part{
+        padding-top: 1em;
+        border-top: 1px solid #1B1F1E;
+
+        .question-part__title{
+            font-size: 25px;
+            margin: 20px 0;
+            line-height: 1.25;
+            font-family: 'Favorit',sans-serif;
+        }
+        .question-part__contact-phone,
+        .question-part__contact-email,
+        .question-part__contact-name{
+            margin: 16px 0;
+        }
+
+    }
+
+}
