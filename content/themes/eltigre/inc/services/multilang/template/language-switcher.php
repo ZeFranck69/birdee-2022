@@ -2,7 +2,7 @@
     <span class="title"><?php echo __('Language / Pays : ', 'birdee' ); ?></span>
 
     
-    <?php if ($translation_country ) :?>
+    <?php if ( $translation_country ) :?>
         <div class="language-switcher__languages">
             <?php if( $currentLangueInfos ): ?>
                 <div class="language-switcher__active">
