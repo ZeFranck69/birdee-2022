@@ -22,6 +22,7 @@
 							<div class="title--secondary hook-wallet uppercase"> {{ wallet.title }} </div>
 							<div class="description description-wallet"> {{ wallet.description }} </div>
 							<div class="wallet-themes">
+					
 							{% for subject in wallets[wallet.ID].subjects %}
 									<div class="wallet-theme">
 										<label for="{{ subject.subject_name }}">
