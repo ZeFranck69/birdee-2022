@@ -5508,7 +5508,7 @@ input[type=range] {
 @media only screen and (max-width: 1680px) {
   .saving__block,
 .rejected__block {
-    max-width: 193px;
+    max-width: 55%;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -5523,6 +5523,10 @@ input[type=range] {
 .rejected__block {
     max-width: 100%;
   }
+}
+
+.saving-comparaison {
+  margin-top: 7px;
 }
 
 .rejected-saved {

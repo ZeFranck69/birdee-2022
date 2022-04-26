@@ -298,7 +298,8 @@ input[type='range'] {
 	max-width: 298px;
 	width: 100%;
 	@include desktop{
-		max-width: 193px;
+		// max-width: 193px;
+		max-width: 55%;
 	}
 	@include landscape{
 		max-width: 48%;
@@ -307,6 +308,9 @@ input[type='range'] {
 	@include mobile-xl{
 		max-width: 100%;
 	}
+}
+.saving-comparaison{
+	margin-top: 7px;
 }
 .rejected-saved{
 	margin-bottom: 15px;

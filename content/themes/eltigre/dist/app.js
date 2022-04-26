@@ -874,6 +874,8 @@ var Section = /*#__PURE__*/function () {
     reject.innerHTML = 0;
     ranges.forEach(function (range) {
       var key = range.dataset.key;
+      _this.result[0] = 50;
+      _this.result[1] = 10;
       range.addEventListener('input', function () {
         var rangesSlider = range.querySelector('.rs-range-line');
         var rangeBullet = range.querySelector('.rs-bullet');
@@ -881,12 +883,29 @@ var Section = /*#__PURE__*/function () {
         var bulletPosition = rangesSlider.value / rangesSlider.max * 100;
         var maxWidth = rangesSlider.clientWidth;
         rangeBullet.style.left = maxWidth * (bulletPosition / 100) + 'px';
-        _this.result[key] = rangesSlider.value; // Mettre l'operation ici
+        _this.result[key] = rangesSlider.value;
+        var initialDepot = Math.round(parseInt(_this.result[0]) * Math.pow(1 + 0.0053, 180) * 100) / 100;
+        var reccurentDepot = Math.round(parseInt(_this.result[1]) * ((Math.pow(1 + 0.0053, 180) - 1) / 0.0053) * 100) / 100;
+        var operation = initialDepot + reccurentDepot;
+        saving.innerHTML = operation.toLocaleString(); // Mettre l'operation de comparaison ici
 
-        var operation = parseInt(_this.result[0]) * parseInt(_this.result[1]); // Mettre l'operation de comparaison ici
+        var initialDepotEpargne = Math.round(parseInt(_this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
+        var reccurentDepotEpargne = Math.round(parseInt(_this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
+        var operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
+        console.log(reccurentDepotEpargne);
+        comparison.innerHTML = operationEpargne.toLocaleString();
+      }, false); // Mettre l'operation ici
 
-        saving.innerHTML = operation.toLocaleString();
-      }, false);
+      var initialDepot = Math.round(parseInt(_this.result[0]) * Math.pow(1 + 0.0053, 180) * 100) / 100;
+      var reccurentDepot = Math.round(parseInt(_this.result[1]) * ((Math.pow(1 + 0.0053, 180) - 1) / 0.0053) * 100) / 100;
+      var operation = initialDepot + reccurentDepot;
+      saving.innerHTML = operation.toLocaleString(); // Mettre l'operation de comparaison ici
+
+      var initialDepotEpargne = Math.round(parseInt(_this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
+      var reccurentDepotEpargne = Math.round(parseInt(_this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
+      var operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
+      console.log(reccurentDepotEpargne);
+      comparison.innerHTML = operationEpargne.toLocaleString();
     });
   }
 

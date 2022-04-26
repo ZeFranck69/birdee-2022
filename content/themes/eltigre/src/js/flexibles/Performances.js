@@ -24,7 +24,8 @@ class Section {
 		reject.innerHTML = 0;
 		ranges.forEach((range) => {
 			const { key } = range.dataset;
-
+			this.result[0] = 50;
+			this.result[1] = 10;
 			range.addEventListener(
 				'input',
 				() => {
@@ -34,15 +35,40 @@ class Section {
 					const bulletPosition = (rangesSlider.value / rangesSlider.max) * 100;
 					const maxWidth = rangesSlider.clientWidth;
 					rangeBullet.style.left = maxWidth * (bulletPosition / 100) + 'px';
-					this.result[key] = rangesSlider.value;
 
-					// Mettre l'operation ici
-					const operation = parseInt(this.result[0]) * parseInt(this.result[1]);
-					// Mettre l'operation de comparaison ici
+					this.result[key] = rangesSlider.value;
+					const initialDepot = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.0053, 180) * 100) / 100;
+					const reccurentDepot =
+						Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.0053, 180) - 1) / 0.0053) * 100) / 100;
+
+					const operation = initialDepot + reccurentDepot;
 					saving.innerHTML = operation.toLocaleString();
+
+					// Mettre l'operation de comparaison ici
+					const initialDepotEpargne = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
+					const reccurentDepotEpargne =
+						Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
+					const operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
+					console.log(reccurentDepotEpargne);
+					comparison.innerHTML = operationEpargne.toLocaleString();
 				},
 				false
 			);
+			// Mettre l'operation ici
+			const initialDepot = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.0053, 180) * 100) / 100;
+			const reccurentDepot =
+				Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.0053, 180) - 1) / 0.0053) * 100) / 100;
+
+			const operation = initialDepot + reccurentDepot;
+			saving.innerHTML = operation.toLocaleString();
+
+			// Mettre l'operation de comparaison ici
+			const initialDepotEpargne = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
+			const reccurentDepotEpargne =
+				Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
+			const operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
+			console.log(reccurentDepotEpargne);
+			comparison.innerHTML = operationEpargne.toLocaleString();
 		});
 	}
 	modalManager() {
