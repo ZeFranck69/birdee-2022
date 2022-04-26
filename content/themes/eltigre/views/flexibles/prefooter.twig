@@ -22,7 +22,7 @@
 				<div class="prefooter-content__cta-wrapper">
 					{% for app in section.cta_application %}
 					<div class="prefooter-app">
-						<a href="{{ app.link.url }}" class="app-link" target="_blank">
+						<a href="{{ app.link }}" class="app-link" target="_blank">
 							<img src="{{ Image(app.image).src }}" alt="{{ Image(app.image).alt }}">
 						</a>
 					</div>
