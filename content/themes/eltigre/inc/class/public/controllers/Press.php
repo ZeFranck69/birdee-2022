@@ -14,10 +14,11 @@ if( !class_exists( 'Eltigre\Controllers\Press' ) ) {
         public static function get_posts() {
             $query_args = array(
                 'post_type'         => "press",
-                'orderby'           => "menu_order",
-                'order'             => "DESC",
                 'posts_per_page'    => 10,
                 'paged'             => get_paged_query_param(),
+                'meta_key'			=> 'presse_date',
+                'orderby'			=> 'meta_value',
+                'order'				=> 'DESC',
                 'post_status'       =>"publish"
                 
             );
