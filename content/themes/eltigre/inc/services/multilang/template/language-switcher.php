@@ -22,7 +22,7 @@
                         <li data-country="<?php echo $keyc; ?>">
                             <span class="langTitle">
                                 <span class="flag"><img src="<?php echo get_template_directory_uri().$country['flag']; ?>" class="dd-selected-image"></span>
-                                <?php echo $country['titre']; ?>
+                                <?php echo $country['label']; ?>
                             </span>
                             
                             <?php if($translation_languages): ?>

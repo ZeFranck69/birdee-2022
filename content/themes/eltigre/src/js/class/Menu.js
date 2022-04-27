@@ -37,7 +37,7 @@ export default class Menu {
 		const hashtagLinks = document.querySelectorAll('a[href*="#"]');
 		hashtagLinks.forEach((link) => link.parentElement.classList.remove('current_page_item'));
 
-		// this.initLanguageSwitcher();
+		this.initLanguageSwitcher();
 	}
 
 	stickyMenu = () => {
@@ -64,26 +64,26 @@ export default class Menu {
 	};
 
 	initLanguageSwitcher() {
-		const selectLang = document.querySelector('.language-switcher');
-
-		selectLang.addEventListener('click', (ev) => {
-			if (selectLang.classList.contains('active')) {
-				this.closeLanguageSwitcher();
-			} else {
-				ev.stopPropagation();
-				this.openLanguageSwitcher();
-			}
-		});
-
-		const languageLinks = selectLang.querySelectorAll('a[data-lang]');
-		languageLinks.forEach((link) => {
-			link.addEventListener('click', function () {
-				const [language, country] = this.dataset.lang.split('-');
-				if (language && country) {
-					setLanguageCookies(language, country);
+		if (this.languageSwitcher) {
+			this.languageSwitcher.addEventListener('click', (ev) => {
+				if (this.languageSwitcher.classList.contains('active')) {
+					this.closeLanguageSwitcher();
+				} else {
+					ev.stopPropagation();
+					this.openLanguageSwitcher();
 				}
 			});
-		});
+
+			const languageLinks = this.languageSwitcher.querySelectorAll('a[data-lang]');
+			languageLinks.forEach((link) => {
+				link.addEventListener('click', function () {
+					const [language, country] = this.dataset.lang.split('-');
+					if (language && country) {
+						setLanguageCookies(language, country);
+					}
+				});
+			});
+		}
 	}
 
 	openLanguageSwitcher(ev) {

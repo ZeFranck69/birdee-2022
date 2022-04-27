@@ -53,7 +53,7 @@ class Eltigre {
     
     
     private function load_public() {
-        // $this->load_service( 'Multilang' );
+        $this->load_service( 'Multilang' );
         self::require_folder( 'public' );
 		self::require_folder( 'public/controllers' );
     }

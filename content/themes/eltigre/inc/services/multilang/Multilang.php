@@ -25,6 +25,8 @@ class Multilang extends Service {
         }
 
 
+        self::getCurrentLanguageInfos();
+
         add_action('wp_languages_switcher',  array( __CLASS__, 'languages_switcher' ) );
     }
 
@@ -90,19 +92,31 @@ class Multilang extends Service {
     
     private static function getTranslateCountry(){
         $translation_country = array(
-            'eu' => array('titre' => __('Europe', 'Birdee'), 'flag' => '/src/images/flags/eu.svg' ),
-            'fr' => array('titre' => __('France', 'Birdee') , 'flag' => '/src/images/flags/fr.svg' ),
-            'be' => array('titre' => __('Belgium', 'Birdee'), 'flag' => '/src/images/flags/be.svg' ),
-            'lu' => array('titre' => __('Luxembourg', 'Birdee'), 'flag' => '/src/images/flags/lu.svg' ),
+            'eu' => array( 
+                'label' => __('Europe', 'eltigre'), 
+                'flag' => '/src/images/flags/eu.svg' 
+            ),
+            'fr' => array( 
+                'label' => __('France', 'eltigre') , 
+                'flag' => '/src/images/flags/fr.svg' 
+            ),
+            'be' => array( 
+                'label' => __('Belgium', 'eltigre'), 
+                'flag' => '/src/images/flags/be.svg' 
+            ),
+            'lu' => array( 
+                'label' => __('Luxembourg', 'eltigre'), 
+                'flag' => '/src/images/flags/lu.svg' 
+            ),
         );
         return $translation_country;
     }
 
      private static function getTranslateLanguages(){
         $translation_languages = array(
-            'fr'=> __('French', 'Birdee'),
-            'nl' => __('Dutch', 'Birdee'),
-            'en' => __('English', 'Birdee'),
+            'fr'=> __( 'French', 'eltigre' ),
+            'nl' => __( 'Dutch', 'eltigre' ),
+            'en' => __( 'English', 'eltigre' ),
         );
         return  $translation_languages;
     }
@@ -113,6 +127,7 @@ class Multilang extends Service {
         $translation_languages  = self::getTranslateLanguages();
         $currentLang            = (function_exists('icl_object_id')) ? ICL_LANGUAGE_CODE : 'en-eu';
         $currentLangueInfos     = array();
+
         preg_match('#(.+)-(.+)#',$currentLang,$langCountryTab);
     
         if(isset($langCountryTab[1])){
@@ -124,7 +139,7 @@ class Multilang extends Service {
         if(isset($langCountryTab[2])){
             if(array_key_exists($langCountryTab[2],$translation_country)){
     
-                $currentLangueInfos['country'] = $translation_country[$langCountryTab[2]]['titre'];
+                $currentLangueInfos['country'] = $translation_country[$langCountryTab[2]]['label'];
                 $currentLangueInfos['countrycode'] = $langCountryTab[2];
                 $currentLangueInfos['flag'] = $translation_country[$langCountryTab[2]]['flag'];
             }

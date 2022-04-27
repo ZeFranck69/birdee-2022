@@ -259,7 +259,8 @@ var Menu = /*#__PURE__*/function () {
     var hashtagLinks = document.querySelectorAll('a[href*="#"]');
     hashtagLinks.forEach(function (link) {
       return link.parentElement.classList.remove('current_page_item');
-    }); // this.initLanguageSwitcher();
+    });
+    this.initLanguageSwitcher();
   }
 
   _createClass(Menu, [{
@@ -267,29 +268,30 @@ var Menu = /*#__PURE__*/function () {
     value: function initLanguageSwitcher() {
       var _this2 = this;
 
-      var selectLang = document.querySelector('.language-switcher');
-      selectLang.addEventListener('click', function (ev) {
-        if (selectLang.classList.contains('active')) {
-          _this2.closeLanguageSwitcher();
-        } else {
-          ev.stopPropagation();
+      if (this.languageSwitcher) {
+        this.languageSwitcher.addEventListener('click', function (ev) {
+          if (_this2.languageSwitcher.classList.contains('active')) {
+            _this2.closeLanguageSwitcher();
+          } else {
+            ev.stopPropagation();
 
-          _this2.openLanguageSwitcher();
-        }
-      });
-      var languageLinks = selectLang.querySelectorAll('a[data-lang]');
-      languageLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          var _this$dataset$lang$sp = this.dataset.lang.split('-'),
-              _this$dataset$lang$sp2 = _slicedToArray(_this$dataset$lang$sp, 2),
-              language = _this$dataset$lang$sp2[0],
-              country = _this$dataset$lang$sp2[1];
-
-          if (language && country) {
-            (0,_utils_functions__WEBPACK_IMPORTED_MODULE_0__.setLanguageCookies)(language, country);
+            _this2.openLanguageSwitcher();
           }
         });
-      });
+        var languageLinks = this.languageSwitcher.querySelectorAll('a[data-lang]');
+        languageLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            var _this$dataset$lang$sp = this.dataset.lang.split('-'),
+                _this$dataset$lang$sp2 = _slicedToArray(_this$dataset$lang$sp, 2),
+                language = _this$dataset$lang$sp2[0],
+                country = _this$dataset$lang$sp2[1];
+
+            if (language && country) {
+              (0,_utils_functions__WEBPACK_IMPORTED_MODULE_0__.setLanguageCookies)(language, country);
+            }
+          });
+        });
+      }
     }
   }, {
     key: "openLanguageSwitcher",
