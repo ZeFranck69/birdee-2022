@@ -1,0 +1,16 @@
+<a href="{{ post.permalink }}" >
+    <div class="press__post">
+        <div class="press__post-thumbnails">
+            <img src="{{ Image(post.thumbnail).src }}" alt="{{ Image(post.thumbnail).alt }}" />
+        </div>
+        <div class="press__post-description">
+            <div class="post-title">
+                {{ post.title }}
+            </div>
+            <div class="post-published-date">
+                {{ __('Posté le ', 'eltigre') }}{{ fn( 'get_field', 'presse_date' )|date("d/m/Y") }}
+            </div>
+
+        </div>
+    </div>
+</a>

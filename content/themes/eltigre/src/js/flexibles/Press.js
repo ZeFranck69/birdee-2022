@@ -47,7 +47,7 @@ class Section {
 	initInfiniteScroll = () => {
 		this.InfiniteScroll = new InfiniteScroll(this.postsContainer, {
 			path: 'page/{{#}}',
-			append: '.post',
+			append: '.press__post',
 			status: '.page-load-status',
 			hideNav: '.pagination',
 			button: this.loadMoreButton,
