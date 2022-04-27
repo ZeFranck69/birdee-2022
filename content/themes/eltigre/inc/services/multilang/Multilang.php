@@ -24,9 +24,6 @@ class Multilang extends Service {
             add_action( 'wp_footer', array( __CLASS__, 'add_geotargetly_script' ), 99 );
         }
 
-
-        self::getCurrentLanguageInfos();
-
         add_action('wp_languages_switcher',  array( __CLASS__, 'languages_switcher' ) );
     }
 

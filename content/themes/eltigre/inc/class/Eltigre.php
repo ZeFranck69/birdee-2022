@@ -12,7 +12,7 @@ define( 'SERVICES',
         'Support'       => Support::class,
         'Contact'       => Contact::class,
         'ACF'           => ACF::class,
-        'Multilang'   => Multilang::class
+        'Multilang'     => Multilang::class
     ) 
 );
 
@@ -132,9 +132,10 @@ class Eltigre {
 
 
     private function register_service( $name ) {
-        $service = get_services_directory() . "/$name/$name.php";
+        $name = strtolower( $name );
+        $service = get_services_directory() . "/$name/index.php";
         if ( file_exists( $service ) ) {
-            include_once get_services_directory() . "/$name/$name.php";
+            include_once $service;
         }
     }
 
