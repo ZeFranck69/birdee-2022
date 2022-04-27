@@ -1072,7 +1072,7 @@ body::-webkit-scrollbar-thumb {
   width: auto;
 }
 #slide-nav .language-switcher .language-switcher__languages > ul li ul li {
-  padding: 3px 0;
+  padding: 3px 5px;
 }
 #slide-nav .language-switcher .language-switcher__languages > ul li ul li a {
   font-size: 14px;
@@ -1091,7 +1091,7 @@ body::-webkit-scrollbar-thumb {
   height: 20px;
   vertical-align: middle;
   float: left;
-  margin-right: 5px;
+  margin-right: 10px;
   max-width: 64px;
 }
 
