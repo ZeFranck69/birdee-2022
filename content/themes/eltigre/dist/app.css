@@ -4879,7 +4879,7 @@ body::-webkit-scrollbar-thumb {
   font-family: "Favorit", sans-serif;
   line-height: 1.25;
   color: #1D1D1B;
-  margin: 10px 0;
+  margin: 16px 0;
 }
 .section-part__description strong {
   font-weight: bold;
@@ -4889,9 +4889,62 @@ body::-webkit-scrollbar-thumb {
   font-family: "Favorit", sans-serif;
   line-height: 1.25;
   color: #1D1D1B;
-  margin: 10px 0;
+  margin: 16px 0;
 }
 .section-part__description a {
+  font-size: 16px;
+  font-family: "Favorit", sans-serif;
+  line-height: 1.25;
+  color: #1D1D1B;
+}
+.section-part__description h2 {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section-part__description h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section-part__description h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.section-part__description hr {
+  margin: 30px 0;
+  background-color: #69EFCA;
+  height: 1px;
+  border: 0;
+}
+.section-part__description table {
+  min-width: 850px;
+  display: block;
+}
+.section-part__description table thead {
+  border-bottom: 2px solid #69efc9;
+}
+.section-part__description table thead td {
+  padding: 15px;
+  vertical-align: middle;
+}
+.section-part__description table thead th {
+  padding: 15px;
+  font-weight: bold;
+}
+.section-part__description table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+.section-part__description table tbody tr td {
+  max-width: 200px;
+  word-wrap: break-word;
+  padding: 15px;
+  vertical-align: middle;
+}
+.section-part__description table p {
   font-size: 16px;
   font-family: "Favorit", sans-serif;
   line-height: 1.25;
