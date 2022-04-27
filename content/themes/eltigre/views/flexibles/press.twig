@@ -11,31 +11,16 @@
                 <div class="press_posts-part">
                     <div class="press__posts infinite-scroll">
                         {% for key, post in press_posts %}
-                        <a href="{{ post.permalink }}" >
-                            <div class="press__post">
-                                    <div class="press__post-thumbnails">
-                                        {{ post.thumbnail }}
-                                    </div>
-                                    <div class="press__post-description">
-                                        <div class="post-title">
-                                            {{ post.title }}
-                                        </div>
-                                        <div class="post-published-date">
-                                            {{ __('Posté le ', 'eltigre') }}{{ post.press_date|date("d/m/Y") }}
-                                        </div>
-        
-                                    </div>
-                                </div>
-                            </a>
+                            {% include 'partial/tease-press.twig' with { 'post': post } %}
                         {% endfor %}
                        
                         <div class="pagination">
-                            {% if posts.pagination.next %}
+                            {% if press_posts.pagination.next %}
                                 <a href="{{press_posts.pagination.next.link}}" class="next"></a>
                             {% endif %} 
                         </div>
                     </div>
-                    {% if posts.pagination.next %}
+                    {% if press_posts.pagination.next %}
                         <div class="cta cta-green view-more-button center uppercase">
                             <span class="cta__label">{{ __( 'Charger plus',  'eltigre' ) }}</span>
                         </div>

@@ -1088,7 +1088,7 @@ var Section = /*#__PURE__*/_createClass(function Section(section) {
   _defineProperty(this, "initInfiniteScroll", function () {
     _this.InfiniteScroll = new (infinite_scroll__WEBPACK_IMPORTED_MODULE_3___default())(_this.postsContainer, {
       path: 'page/{{#}}',
-      append: '.post',
+      append: '.press__post',
       status: '.page-load-status',
       hideNav: '.pagination',
       button: _this.loadMoreButton,
