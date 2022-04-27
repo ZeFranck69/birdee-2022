@@ -1,7 +1,9 @@
 <a href="{{ post.link }}" >
     <div class="press__post">
         <div class="press__post-thumbnails">
-            <img src="{{ Image(post.thumbnail).src }}" alt="{{ Image(post.thumbnail).alt }}" />
+            {% if post.thumbnail %}
+                <img src="{{ Image(post.thumbnail).src }}" alt="{{ Image(post.thumbnail).alt }}" />
+            {% endif %}
         </div>
         <div class="press__post-description">
             <div class="post-title">
