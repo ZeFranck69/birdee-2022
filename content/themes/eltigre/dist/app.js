@@ -364,8 +364,8 @@ var Section = /*#__PURE__*/function () {
       var banner = this.section.querySelector('.banner__container');
       var title = banner.querySelector('.banner-content__title');
       var description = banner.querySelector('.banner-content__description');
-      var button = banner.querySelector('.banner-content__cta-wrapper');
-      var ImagePart = banner.querySelector('.banner__image-part');
+      var button = banner.querySelector('.banner-content__cta-wrapper'); // const ImagePart = banner.querySelector('.banner__image-part');
+
       var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
         y: -100,
         autoAlpha: 0
@@ -392,15 +392,8 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.27,
         duration: 0.45
-      }).fromTo(ImagePart, {
-        y: 100,
-        autoAlpha: 0
-      }, {
-        y: 0,
-        autoAlpha: 1,
-        stagger: 0.1,
-        duration: 0.25
-      });
+      }); // .fromTo(ImagePart, { y: 100, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.1, duration: 0.25 })
+
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
         trigger: banner,
         start: 'top bottom-=1%',
