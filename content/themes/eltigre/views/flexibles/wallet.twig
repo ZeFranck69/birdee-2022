@@ -76,11 +76,11 @@
 												</div>
 											</div>
 										</div>
-										{% if content.cta %}
+										{% if wallet.cta %}
 										<div class="wallet__cta-wrapper center">
-											<a href="{{ content.cta.url }}" class="cta cta--black-green uppercase" target="{{ content.cta.target }}">
+											<a href="{{ wallet.cta.url }}" class="cta {{ wallet.cta_color }} uppercase" target="{{ wallet.cta.target }}">
 												<span class="cta__label">
-													{{ content.cta.title }}
+													{{ wallet.cta.title }}
 												</span>
 											</a>
 										</div>
