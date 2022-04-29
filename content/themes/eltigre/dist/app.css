@@ -6264,4 +6264,13 @@ input[type=range] {
   font-family: "object-fit: cover;";
 }
 
+.prefooter-app {
+  max-width: 220px;
+  width: 100%;
+}
+.prefooter-app img {
+  max-width: 100%;
+  width: 100%;
+}
+
 /*# sourceMappingURL=app.css.map*/
