@@ -1197,6 +1197,10 @@ body::-webkit-scrollbar-thumb {
             justify-content: center;
   }
 }
+.applications-wrapper img {
+  max-width: 220px;
+  width: 100%;
+}
 
 .footer__socials,
 .footer__socials--mobile {
