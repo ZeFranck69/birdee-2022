@@ -86,11 +86,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _flexibles_Quote__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./flexibles/Quote */ "./src/js/flexibles/Quote.js");
 /* harmony import */ var _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./flexibles/Reasons */ "./src/js/flexibles/Reasons.js");
 /* harmony import */ var _flexibles_Simple__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./flexibles/Simple */ "./src/js/flexibles/Simple.js");
-/* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
-/* harmony import */ var _flexibles_StepsTabs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./flexibles/StepsTabs */ "./src/js/flexibles/StepsTabs.js");
-/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
-/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
-/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
+/* harmony import */ var _flexibles_Simulator__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./flexibles/Simulator */ "./src/js/flexibles/Simulator.js");
+/* harmony import */ var _flexibles_Steps__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./flexibles/Steps */ "./src/js/flexibles/Steps.js");
+/* harmony import */ var _flexibles_StepsTabs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./flexibles/StepsTabs */ "./src/js/flexibles/StepsTabs.js");
+/* harmony import */ var _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./flexibles/TextImage */ "./src/js/flexibles/TextImage.js");
+/* harmony import */ var _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./flexibles/TwoBlocks */ "./src/js/flexibles/TwoBlocks.js");
+/* harmony import */ var _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./flexibles/Wallets */ "./src/js/flexibles/Wallets.js");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
@@ -98,6 +99,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -125,19 +127,20 @@ var Sections = /*#__PURE__*/_createClass(function Sections() {
     reasons: _flexibles_Reasons__WEBPACK_IMPORTED_MODULE_10__["default"],
     quote: _flexibles_Quote__WEBPACK_IMPORTED_MODULE_9__["default"],
     performances: _flexibles_Performances__WEBPACK_IMPORTED_MODULE_6__["default"],
-    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_16__["default"],
+    wallets: _flexibles_Wallets__WEBPACK_IMPORTED_MODULE_17__["default"],
     simple: _flexibles_Simple__WEBPACK_IMPORTED_MODULE_11__["default"],
     offers: _flexibles_Offers__WEBPACK_IMPORTED_MODULE_5__["default"],
-    steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_12__["default"],
+    steps: _flexibles_Steps__WEBPACK_IMPORTED_MODULE_13__["default"],
     collaborators: _flexibles_Collaborators__WEBPACK_IMPORTED_MODULE_1__["default"],
     investment: _flexibles_Investment__WEBPACK_IMPORTED_MODULE_2__["default"],
     labels: _flexibles_Labels__WEBPACK_IMPORTED_MODULE_3__["default"],
-    'steps-tabs': _flexibles_StepsTabs__WEBPACK_IMPORTED_MODULE_13__["default"],
-    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_15__["default"],
+    'steps-tabs': _flexibles_StepsTabs__WEBPACK_IMPORTED_MODULE_14__["default"],
+    'two-blocks': _flexibles_TwoBlocks__WEBPACK_IMPORTED_MODULE_16__["default"],
     prefooter: _flexibles_PreFooter__WEBPACK_IMPORTED_MODULE_7__["default"],
-    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_14__["default"],
+    'text-image': _flexibles_TextImage__WEBPACK_IMPORTED_MODULE_15__["default"],
     'multi-block': _flexibles_MultiBlocks__WEBPACK_IMPORTED_MODULE_4__["default"],
-    press: _flexibles_Press__WEBPACK_IMPORTED_MODULE_8__["default"]
+    press: _flexibles_Press__WEBPACK_IMPORTED_MODULE_8__["default"],
+    simulator: _flexibles_Simulator__WEBPACK_IMPORTED_MODULE_12__["default"]
   });
 
   for (var className in this.SECTIONS) {
@@ -887,7 +890,6 @@ var Section = /*#__PURE__*/function () {
         var initialDepotEpargne = Math.round(parseInt(_this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
         var reccurentDepotEpargne = Math.round(parseInt(_this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
         var operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
-        console.log(reccurentDepotEpargne);
         comparison.innerHTML = operationEpargne.toLocaleString();
       }, false); // Mettre l'operation ici
 
@@ -1439,6 +1441,98 @@ var Section = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/js/flexibles/Simulator.js":
+/*!***************************************!*\
+  !*** ./src/js/flexibles/Simulator.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+
+var Simulator = /*#__PURE__*/_createClass(function Simulator(className) {
+  _classCallCheck(this, Simulator);
+
+  this.sections = document.querySelectorAll(".".concat(className));
+  this.sections.forEach(function (section) {
+    new Section(section);
+  });
+});
+
+var Section = /*#__PURE__*/_createClass(function Section(section) {
+  _classCallCheck(this, Section);
+
+  this.section = section;
+  var simulatorRange = document.querySelector('.range-slider');
+  var range = document.querySelector('.rs-range');
+  var valueRangeV = document.querySelector('.valueRangeV');
+  var rangeV = document.getElementById('rangeV');
+  var topValue = Number((range.value - range.min) * 100 / (range.max - range.min));
+  var topPosition = 10 - topValue * 0.7;
+  rangeV.style.left = "calc(".concat(topValue, "% + (").concat(topPosition, "px))"); // Calcul Economies réalisées
+
+  var savingValue = 0;
+  var economy = (range.value * (2 / 100) / 12 - range.value * (1 / 100) / 12) * 2;
+  var rendement = Math.pow(1 + 5 / 100, 1 / 6) - 1;
+
+  for (var periode = 0; periode < 60; periode++) {
+    var projection = economy * Math.pow(1 + rendement, periode);
+    savingValue = savingValue + projection;
+  }
+
+  var feesSaving = Math.round(savingValue);
+  var feesSavingAmount = document.querySelector('.fees-saving');
+  feesSavingAmount.innerHTML = feesSaving.toLocaleString() + '€';
+
+  var setValue = function setValue() {
+    var newValue = Number((range.value - range.min) * 100 / (range.max - range.min));
+    var newPosition = 10 - newValue * 0.7;
+    var newRangeValue = range.value;
+    valueRangeV.innerHTML = newRangeValue + ' €';
+    rangeV.style.left = "calc(".concat(newValue, "% + (").concat(newPosition, "px))"); // Calcul Frais birdee
+
+    var feesBirdee = Math.round(range.value * (1 / 100) / 12);
+    var feesBirdeeAmount = document.querySelector('.amount strong');
+    feesBirdeeAmount.innerHTML = feesBirdee.toLocaleString() + '€'; // Calcul Frais bancaire constaté
+
+    var feesConstat = Math.round(range.value * (5 / 100) / 12);
+    var feesConstatAmount = document.querySelector('.fees-constat');
+    feesConstatAmount.innerHTML = feesConstat.toLocaleString() + '€'; // Calcul Economies réalisées
+
+    var savingValue = 0;
+    var economy = (range.value * (2 / 100) / 12 - range.value * (1 / 100) / 12) * 2;
+    var rendement = Math.pow(1 + 5 / 100, 1 / 6) - 1;
+
+    for (var periode = 0; periode < 60; periode++) {
+      var projection = economy * Math.pow(1 + rendement, periode);
+      savingValue = savingValue + projection;
+    }
+
+    var feesSaving = Math.round(savingValue);
+    var feesSavingAmount = document.querySelector('.fees-saving');
+    feesSavingAmount.innerHTML = feesSaving.toLocaleString() + '€';
+  };
+
+  document.addEventListener('DOMContentLoaded', setValue);
+  range.addEventListener('input', setValue);
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (Simulator);
+
+/***/ }),
+
 /***/ "./src/js/flexibles/Steps.js":
 /*!***********************************!*\
   !*** ./src/js/flexibles/Steps.js ***!
@@ -1943,11 +2037,20 @@ var Section = /*#__PURE__*/function () {
         radio.addEventListener('change', function () {
           var _this = this;
 
+          var yearActive = wallet.querySelector('.tab__year.active');
+          var dataYearActive = yearActive.dataset.year;
           tabs.forEach(function (tab) {
             tab.classList.add('hidden');
 
             if (_this.checked && tab.getAttribute('tabname') == _this.value) {
               tab.classList.remove('hidden');
+              var yearsActive = wallet.querySelectorAll('.tab__year.active');
+              yearsActive.forEach(function (yearActive) {
+                if (yearActive.classList.contains('active')) {
+                  yearActive.classList.remove('active');
+                }
+              });
+              tab.querySelector(".tab__year[data-year='".concat(dataYearActive, "']")).classList.add('active');
             }
           });
         });

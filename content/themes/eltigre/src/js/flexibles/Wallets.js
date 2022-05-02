@@ -25,10 +25,19 @@ class Section {
 			const years = wallet.querySelectorAll('.tab__year');
 			radios.forEach((radio) => {
 				radio.addEventListener('change', function () {
+					const yearActive = wallet.querySelector('.tab__year.active');
+					const dataYearActive = yearActive.dataset.year;
 					tabs.forEach((tab) => {
 						tab.classList.add('hidden');
 						if (this.checked && tab.getAttribute('tabname') == this.value) {
 							tab.classList.remove('hidden');
+							const yearsActive = wallet.querySelectorAll('.tab__year.active');
+							yearsActive.forEach((yearActive) => {
+								if (yearActive.classList.contains('active')) {
+									yearActive.classList.remove('active');
+								}
+							});
+							tab.querySelector(`.tab__year[data-year='${dataYearActive}']`).classList.add('active');
 						}
 					});
 				});
@@ -55,6 +64,7 @@ class Section {
 			});
 		});
 	}
+
 	animate() {
 		const walletsWrapper = this.section.querySelector('.wallet-container');
 		const title = walletsWrapper.querySelector('.wallet__section-title');

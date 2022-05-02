@@ -14,9 +14,9 @@
 				{% endif %}
 				<div class="multi-block__wrapper-list">
 						{% for block in section.blocks %}
-							<div class="block {{ block.block_type }}">
+							<div class="block {{ block.block_type }} {{ block.block_align }}">
 								{% if block.picto %}
-								<div class="block-picto">
+								<div class="block-picto {{ block.picto_width }}">
 									<img src="{{ Image(block.picto).src }}" alt="{{ Image(block.picto).alt }}">
 								</div>
 								{% endif %}

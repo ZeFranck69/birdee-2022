@@ -50,10 +50,19 @@
 		}
 		.block-picto{
 			margin-bottom: 28px;
-			img{
-				max-width: 80px;
-				width: 100%;
-				height: auto;
+			&.small-picto{
+				img{
+					max-width: 80px;
+					width: 100%;
+					height: auto;
+				}
+			}
+			&.big-picto{
+				img{
+					max-width: 130px;
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 		.block-text{

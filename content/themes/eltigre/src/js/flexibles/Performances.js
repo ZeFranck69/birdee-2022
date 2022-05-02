@@ -49,7 +49,6 @@ class Section {
 					const reccurentDepotEpargne =
 						Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
 					const operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
-					console.log(reccurentDepotEpargne);
 					comparison.innerHTML = operationEpargne.toLocaleString();
 				},
 				false

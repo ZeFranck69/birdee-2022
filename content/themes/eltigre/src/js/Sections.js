@@ -10,6 +10,7 @@ import Press from './flexibles/Press';
 import Quote from './flexibles/Quote';
 import Reasons from './flexibles/Reasons';
 import Simple from './flexibles/Simple';
+import Simulator from './flexibles/Simulator';
 import Steps from './flexibles/Steps';
 import StepsTabs from './flexibles/StepsTabs';
 import TextImage from './flexibles/TextImage';
@@ -35,6 +36,7 @@ export default class Sections {
 		'text-image': TextImage,
 		'multi-block': MultiBlocks,
 		press: Press,
+		simulator: Simulator,
 	};
 
 	constructor() {
