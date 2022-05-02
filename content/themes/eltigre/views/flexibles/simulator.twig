@@ -1,0 +1,163 @@
+<section id="{{ section.title|sanitize }}" class="simulator" style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
+
+	<div class="simulator-container main-wrapper {{ section.description_type }} {{ section.radius }}" style="text-align: {{ section.text_align }};background-color: {{ section.background_color }}; padding-top:{{ section.section_margin }}px; padding-bottom: {{ section.section_margin }}px">
+		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}">
+			{% if section.section_title is not empty %}
+			<div class="simulator__section-title">
+				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
+			</div>
+			{% endif %}
+			{% if section.section_description is not empty %}
+			<div class="simulator__section-description">
+				<p class="description {{ section.title_text_align }}" style="color:{{ section.color_section_description }}}">{{ section.section_description }}</p>
+			</div>
+			{% endif %}
+			<div class="simulator-wrapper simulator-wrapper--{{ section.layout }} type--{{ section.layout_type }}" style="justify-content: {{ section.justify_content }};">
+				<div class="simulator-part__container">
+
+					<div class="invest">
+                    
+
+                        <div id="slider">
+                            <div class="background"></div>
+                            <span class="tooltip fixed">
+                            <span id="amount-tooltip" class="tooltip-content">
+                                <strong id="invest-amount">{{ section.invest }} €</strong>
+                            </span>
+                        </span>
+                        </div>
+                        <div class="range-values">
+                            <span>{{ section.min_amount}} €</span>
+                            <span>{{ section.max_amount}} €</span>
+                        </div>
+                    </div>
+
+                    <div class="simulator">
+                        <?php if (!empty(get_sub_field('fees_birdee'))) : ?>
+                            <?php $fees_birdee = get_sub_field('fees_birdee'); ?>
+                        <?php else : ?>
+                            <?php $fees_birdee = 1; ?>
+                        <?php endif; ?>
+
+                        <?php $fees_birdee_value = number_format(round($invest * ($fees_birdee / 100) / 12), 0, ',', ' '); ?>
+                        {% set fees_birdee_value = section.invest * ( section.fees_birdee / 100 ) /100 %}
+                        {{dump(fees_birdee_value) }}
+                        <div class="simulator-block">
+                            <p class="frais">
+                                {{ __('Frais Birdee', 'eltigre') }}
+                                    <span class="tooltip">
+                                        <div class="tooltip-icon"alt="tooltip icon"/></div>
+                                <span class="tooltip-content">{{ section.fees_birdee_legend }}</span>
+                            </span>
+                            </p>
+
+                            <p class="amount big pure-u-1-2">
+                                <strong id="fees-birdee"
+                                        data-fees-birdee="<?php echo $fees_birdee; ?>">{{ fees_birdee_value }}
+                                    €</strong>
+                                /{{ __('mois', 'eltigre') }}
+                            </p>
+                        </div>
+
+                        <?php if (!empty(get_sub_field('savings'))) : ?>
+                            <?php $savings = get_sub_field('savings'); ?>
+                        <?php else : ?>
+                            <?php $savings = 5; ?>
+                        <?php endif; ?>
+
+
+                        <?php if (!empty(get_sub_field('fees_constat'))) : ?>
+                            <?php $fees = get_sub_field('fees_constat'); ?>
+                        <?php else : ?>
+                            <?php $fees = 2; ?>
+                        <?php endif; ?>
+
+                        <?php $fees_value = number_format(round($invest * ($fees / 100) / 12), 0, ',', ' '); ?>
+                        {% set fees_value = section.invest * ( section.fees_constat / 100 ) /100 %}
+                        <div class="simulator-block">
+                            <p class="frais">
+                                {{ __('Frais bancaire constatés', 'eltigre') }}
+                                    <span class="tooltip">
+                                    <div class="tooltip-icon"alt="tooltip icon"/></div>
+                                <span class="tooltip-content">{{ section.fees_constat_legend }}</span>
+                            </span>
+                            </p>
+
+
+                            <p class="amount">
+                                <strong class="fees-strong"><span id="fees"
+                                                                  data-fees="{{ section.fees_constat}}">{{ fees_value }}
+                                    €</span></strong>
+                                /{{ __('mois', 'eltigre') }}
+                            </p>
+                        </div>
+                        <?php
+
+                        $savings_value = 0;
+                        $economie = (($invest * ($fees / 100) / 12) - ($invest * ($fees_birdee / 100) / 12)) * 2;
+                        $rendement = pow(1 + $savings / 100, 1 / 6) - 1;
+
+                        for ($periode = 0; $periode < 60; $periode++) {
+                            $projection = $economie * pow(1 + $rendement, $periode);
+                            $savings_value = $savings_value + $projection;
+                        }
+
+                        $savings_value = number_format(round($savings_value), 0, ',', ' ');
+
+                        ?>
+
+                        <div class="simulator-block pure-g">
+                            <p class="frais pure-u-2-5">
+                                <span>{{ __('Economies réalisées', 'eltigre') }}</span>
+
+                                <?php if (!empty(get_sub_field('savings_legend'))) : ?>
+                                    <?php $savings_legend = get_sub_field('savings_legend'); ?>
+                                    <span class="tooltip">
+                                <span class="tooltip-content">{{ section.savings_value_legend }}</span>
+
+                                <div class="tooltip-icon"alt="tooltip icon"/></div>
+                            </span>
+                                <?php endif; ?>
+                            </p>
+                            <p class="amount big pure-u-3-5">
+                                <strong id="savings"
+                                        data-savings="<?php echo $savings; ?>"><?php echo $savings_value; ?>
+                                    €</strong>
+                                /<?php _e('10 years', 'birdee'); ?>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+				</div>				
+				<div class="text-part__container">
+
+					<div class="text-part {{ section.text_align }}">
+						{% if section.title %}
+						<h2 class="text-part__title title bold uppercase">
+							{{ section.title }}
+						</h2>
+						{% endif %}
+						{% if section.description %}
+						<div class="text-part__description description" style="color:{{ section.description_color }};">
+							{{ section.description }}
+						</div>
+						{% endif %}
+						{% if section.cta %}
+						<div
+							class="simulator__cta-wrapper {{ section.cta_align }}">
+							<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.cta.target }}">
+								<span class="cta__label">
+									{{ section.cta.title }}
+								</span>
+							</a>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

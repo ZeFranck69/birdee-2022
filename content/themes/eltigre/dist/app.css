@@ -4960,6 +4960,10 @@ body::-webkit-scrollbar-thumb {
   color: #1D1D1B;
 }
 
+.tooltip-icon {
+  background-image: url(icons/e21c384cf12ed920cc93.svg);
+}
+
 .trustpilot {
   padding: 80px 0;
   overflow: hidden;
