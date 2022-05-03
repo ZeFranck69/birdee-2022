@@ -34,7 +34,9 @@
                         {% set fees_birdee_value = section.invest * ( section.fees_birdee / 100 ) / 12 %}
                         <div class="simulator-block">
                             <div class="frais">
-                                {{ __('Frais Birdee', 'eltigre') }}
+                                <p>
+                                    {{ __('Frais Birdee', 'eltigre') }}
+                                </p>
                                 <div class="tooltip-icon" alt="tooltip icon"/>
                                     <span class="tooltip fixed">
                                         <span class="tooltip-content">{{ section.fees_birdee_legend }}</span>
@@ -53,7 +55,9 @@
                         {% set fees_value = section.invest * ( section.fees_constat / 100 ) /12 %}
                         <div class="simulator-block">
                             <div class="frais">
-                                {{ __('Frais bancaire constatés', 'eltigre') }}
+                                <p>
+                                    {{ __('Frais bancaire constatés', 'eltigre') }}
+                                </p>
                                 <div class="tooltip-icon" alt="tooltip icon"/>
                                     <span class="tooltip fixed">
                                         <span class="tooltip-content">{{ section.fees_constat_legend }}</span>
@@ -68,7 +72,7 @@
 
                         <div class="simulator-block">
                             <div class="frais">
-                                <span>{{ __('Economies réalisées', 'eltigre') }}</span>
+                                <p>{{ __('Economies réalisées', 'eltigre') }}</p>
 
                                 <div class="tooltip-icon" alt="tooltip icon"/>
                                     <span class="tooltip fixed">

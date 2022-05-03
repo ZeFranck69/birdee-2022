@@ -907,7 +907,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 15px auto;
+  margin: 10px auto;
   max-width: 300px;
   width: 100%;
   padding: 0 30px;
@@ -950,10 +950,10 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  margin-top: 20px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 5px;
   padding: 20px 0;
   border-top: 1px solid #1D1D1B;
   border-bottom: 1px solid #1D1D1B;
@@ -969,7 +969,7 @@ body::-webkit-scrollbar-thumb {
   transition: transform 0.15s ease;
   transition: transform 0.15s ease, -webkit-transform 0.15s ease;
   position: absolute;
-  right: 5px;
+  right: 20px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -977,12 +977,30 @@ body::-webkit-scrollbar-thumb {
           transform-origin: center;
   content: "";
 }
+@media only screen and (max-width: 590px) {
+  #slide-nav .language-switcher:before {
+    top: 53%;
+  }
+}
 #slide-nav .language-switcher.active:before {
   -webkit-transform: rotate(-180deg) translateY(50%);
           transform: rotate(-180deg) translateY(50%);
+  top: 11%;
+}
+@media only screen and (max-width: 590px) {
+  #slide-nav .language-switcher.active:before {
+    top: 20%;
+  }
+}
+@media only screen and (max-width: 590px) {
+  #slide-nav .language-switcher.active .language-switcher__languages {
+    height: auto;
+  }
 }
 #slide-nav .language-switcher.active ul.country-list {
   display: block;
+  position: relative;
+  bottom: 193px;
 }
 @media only screen and (max-width: 590px) {
   #slide-nav .language-switcher {
@@ -993,6 +1011,7 @@ body::-webkit-scrollbar-thumb {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 10px 20px;
   }
 }
 #slide-nav .language-switcher .title {
@@ -1000,10 +1019,12 @@ body::-webkit-scrollbar-thumb {
   font-size: 20px;
   line-height: 1;
   font-family: "Favorit", sans-serif;
+  font-weight: bold;
+  color: #1D1D1B;
 }
 #slide-nav .language-switcher .language-switcher__languages {
   position: relative;
-  margin: 0 20px;
+  margin: 0 8px;
 }
 @media only screen and (max-width: 590px) {
   #slide-nav .language-switcher .language-switcher__languages {
@@ -5445,6 +5466,15 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   font-size: 16px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.simulator .simulator .frais p {
+  max-width: 102px;
 }
 .simulator .simulator .frais .tooltip {
   position: relative;
@@ -5473,15 +5503,15 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  bottom: 180%;
+  bottom: 26px;
   padding: 10px;
   font-size: 12px;
   text-align: center;
   color: #fff;
   border-radius: 34px;
   background-color: #1D1D1B;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-45%);
+          transform: translateX(-45%);
   left: 50%;
   z-index: 10;
   width: 250px;
@@ -5502,12 +5532,12 @@ body::-webkit-scrollbar-thumb {
   border-width: 16px 9px 0;
 }
 
-.tooltip-icon:hover > .tooltip-content {
+.tooltip-icon:hover .tooltip-content {
   opacity: 1;
   visibility: visible;
 }
 
-.tooltip-icon:active > .tooltip-content {
+.tooltip-icon:active .tooltip-content {
   opacity: 1;
   visibility: visible;
 }
