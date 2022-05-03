@@ -1,6 +1,7 @@
 import Animations from './Animations';
 import Sections from './Sections';
 import Menu from './class/Menu';
+import Intercom from './class/Intercom';
 // import Swup from 'swup';
 
 import gsap from 'gsap';
@@ -13,7 +14,7 @@ require('./Polyfills');
 export default class App {
 	constructor() {
 		this.keepUtmParams();
-
+		new Intercom();
 		new Sections();
 		new Animations();
 		this.menu = new Menu();

@@ -1,0 +1,57 @@
+#intercom_messenger {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 99999;
+	cursor: pointer;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+
+	.intercom-container {
+
+		width: 45px;
+		height: 45px;
+		border-radius: 25px;
+		background: $green;
+		border: 2px solid $white;
+		display: flex;
+
+		align-items: center;
+		-webkit-align-items: center;
+
+		text-align: center;
+		position: relative;
+
+		@include mobile-xl {
+			width: 56px;
+			height: 56px;
+		}
+
+		img {
+			max-width: 25px;
+			max-height: 25px;
+			margin: 0 auto;
+
+			@include mobile-xl {
+				width: 27px;
+				height: 31px;
+			}
+		}
+
+		p {
+			position: absolute;
+			transform: rotate(-90deg);
+			bottom: 110px;
+			width: 150px;
+			right: -55px;
+
+
+			@include mobile-xl {
+				display: none;
+			}
+		}
+	}
+
+
+}

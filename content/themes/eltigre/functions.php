@@ -69,6 +69,11 @@
 			$context['landing_link'] 	= get_field( 'landing_link' );
 			
 
+			//INTERCOM
+			$context['intercom'] = array(
+				'app_id' => INTERCOM_ID
+			);
+			
 			// Menus
 			$context['menu'] = array(
 				'header' => array(
@@ -299,3 +304,4 @@ function init_axeptio() {
     </script>
     <?php
 }
+

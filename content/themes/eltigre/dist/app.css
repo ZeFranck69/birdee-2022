@@ -1785,6 +1785,63 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 24px;
 }
 
+#intercom_messenger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#intercom_messenger .intercom-container {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background: #69EFCA;
+  border: 2px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-items: center;
+  text-align: center;
+  position: relative;
+}
+@media only screen and (max-width: 590px) {
+  #intercom_messenger .intercom-container {
+    width: 56px;
+    height: 56px;
+  }
+}
+#intercom_messenger .intercom-container img {
+  max-width: 25px;
+  max-height: 25px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 590px) {
+  #intercom_messenger .intercom-container img {
+    width: 27px;
+    height: 31px;
+  }
+}
+#intercom_messenger .intercom-container p {
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  bottom: 110px;
+  width: 150px;
+  right: -55px;
+}
+@media only screen and (max-width: 590px) {
+  #intercom_messenger .intercom-container p {
+    display: none;
+  }
+}
+
 .banner {
   padding: 40px 0;
 }

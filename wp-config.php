@@ -12,6 +12,7 @@ define( 'DB_HOST', getenv( 'DB_HOST' ) );
 $table_prefix  = getenv( 'DB_TABLE_PREFIX' ) ;
 
 define( 'DB_CHARSET', 'utf8' );
+define('INTERCOM_ID', 'isg49vuw');
 define( 'DB_COLLATE', '' );
 define( 'FS_METHOD', 'direct' );
 /**

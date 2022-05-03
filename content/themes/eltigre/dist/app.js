@@ -154,6 +154,113 @@ var Sections = /*#__PURE__*/_createClass(function Sections() {
 
 /***/ }),
 
+/***/ "./src/js/class/Intercom.js":
+/*!**********************************!*\
+  !*** ./src/js/class/Intercom.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Intercom; }
+/* harmony export */ });
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Intercom = /*#__PURE__*/_createClass(function Intercom() {
+  _classCallCheck(this, Intercom);
+
+  //intercom
+  var APP_ID = intercom.app_id;
+  var lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+  window.intercomSettings = {
+    app_id: APP_ID,
+    hide_default_launcher: true,
+    custom_launcher_selector: '#intercom_messenger'
+  };
+
+  (function () {
+    var w = window;
+    var ic = w.Intercom;
+
+    if (typeof ic === 'function') {
+      ic('reattach_activator');
+      ic('update', intercomSettings);
+    } else {
+      var l = function l() {
+        var s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://widget.intercom.io/widget/' + APP_ID;
+        var x = d.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      };
+
+      var d = document;
+
+      var i = function i() {
+        i.c(arguments);
+      };
+
+      i.q = [];
+
+      i.c = function (args) {
+        i.q.push(args);
+      };
+
+      w.Intercom = i;
+
+      if (w.attachEvent) {
+        w.attachEvent('onload', l);
+      } else {
+        w.addEventListener('load', l, false);
+      }
+    }
+  })();
+
+  window.Intercom('boot', {
+    app_id: APP_ID
+  });
+
+  try {
+    var language = document.documentElement.lang.toLowerCase().split('-')[0];
+
+    if (language === 'fr') {
+      window.Intercom('boot', {
+        language_override: 'fr'
+      });
+    }
+
+    if (language === 'en') {
+      window.Intercom('boot', {
+        language_override: 'en'
+      });
+    }
+
+    if (language === 'nl') {
+      window.Intercom('boot', {
+        language_override: 'nl'
+      });
+    }
+  } catch (error) {}
+
+  var chatIcon = document.getElementById('chat-launch');
+
+  if (chatIcon) {
+    chatIcon.addEventListener('click', function () {
+      window.Intercom('show');
+    });
+  }
+});
+
+
+
+/***/ }),
+
 /***/ "./src/js/class/Menu.js":
 /*!******************************!*\
   !*** ./src/js/class/Menu.js ***!
@@ -11736,10 +11843,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Animations */ "./src/js/Animations.js");
 /* harmony import */ var _Sections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sections */ "./src/js/Sections.js");
 /* harmony import */ var _class_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./class/Menu */ "./src/js/class/Menu.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/functions */ "./src/js/utils/functions.js");
+/* harmony import */ var _class_Intercom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./class/Intercom */ "./src/js/class/Intercom.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var _utils_functions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/functions */ "./src/js/utils/functions.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -11760,12 +11868,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+
  // import Swup from 'swup';
 
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_4__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_5__["default"].registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollToPlugin, gsap_all__WEBPACK_IMPORTED_MODULE_7__.ScrollTrigger);
 
 __webpack_require__(/*! ./Polyfills */ "./src/js/Polyfills.js");
 
@@ -11774,6 +11883,7 @@ var App = /*#__PURE__*/function () {
     _classCallCheck(this, App);
 
     this.keepUtmParams();
+    new _class_Intercom__WEBPACK_IMPORTED_MODULE_3__["default"]();
     new _Sections__WEBPACK_IMPORTED_MODULE_1__["default"]();
     new _Animations__WEBPACK_IMPORTED_MODULE_0__["default"]();
     this.menu = new _class_Menu__WEBPACK_IMPORTED_MODULE_2__["default"]();
@@ -11783,9 +11893,9 @@ var App = /*#__PURE__*/function () {
     key: "keepUtmParams",
     value: function keepUtmParams() {
       var utmParams = {
-        source: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getQueryParam)('utm_source'),
-        medium: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getQueryParam)('utm_medium'),
-        campaign: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.getQueryParam)('utm_campaign')
+        source: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.getQueryParam)('utm_source'),
+        medium: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.getQueryParam)('utm_medium'),
+        campaign: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_4__.getQueryParam)('utm_campaign')
       };
       console.log(utmParams);
       var UTM = Object.entries(utmParams).map(function (_ref) {

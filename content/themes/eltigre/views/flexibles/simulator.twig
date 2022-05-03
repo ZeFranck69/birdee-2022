@@ -33,13 +33,14 @@
 
                         {% set fees_birdee_value = section.invest * ( section.fees_birdee / 100 ) / 12 %}
                         <div class="simulator-block">
-                            <p class="frais">
+                            <div class="frais">
                                 {{ __('Frais Birdee', 'eltigre') }}
-                                <div class="tooltip-icon" alt="tooltip icon"/></div>
-                                 <span class="tooltip fixed">
-                                     <span class="tooltip-content">{{ section.fees_birdee_legend }}</span>
-                                </span>
-                            </p>
+                                <div class="tooltip-icon" alt="tooltip icon"/>
+                                    <span class="tooltip fixed">
+                                        <span class="tooltip-content">{{ section.fees_birdee_legend }}</span>
+                                    </span>
+                                </div>
+                            </div>
 
                             <p class="amount">
                                 <strong id="fees-birdee"
@@ -51,32 +52,30 @@
 
                         {% set fees_value = section.invest * ( section.fees_constat / 100 ) /12 %}
                         <div class="simulator-block">
-                            <p class="frais">
+                            <div class="frais">
                                 {{ __('Frais bancaire constatés', 'eltigre') }}
-                                <div class="tooltip-icon" alt="tooltip icon"/></div>
-                                <span class="tooltip fixed">
-                                    <span class="tooltip-content">{{ section.fees_constat_legend }}</span>
-                                </span>
-                            </p>
-
-
+                                <div class="tooltip-icon" alt="tooltip icon"/>
+                                    <span class="tooltip fixed">
+                                        <span class="tooltip-content">{{ section.fees_constat_legend }}</span>
+                                    </span>
+                                </div>
+                            </div>
                             <p class="amount">
                                 <strong class="fees-strong fees-constat" data-fees="{{ section.fees_constat}}">{{ fees_value|round }} €</strong> /{{ __('mois', 'eltigre') }}
-                               
                             </p>
                         </div>
 
 
                         <div class="simulator-block">
-                            <p class="frais">
+                            <div class="frais">
                                 <span>{{ __('Economies réalisées', 'eltigre') }}</span>
 
-                                <div class="tooltip-icon" alt="tooltip icon"/></div>
-                                <span class="tooltip fixed">
-                                        <span class="tooltip-content">{{ section.savings_value_legend }}</span>
-
-                                </span>
-                            </p>
+                                <div class="tooltip-icon" alt="tooltip icon"/>
+                                    <span class="tooltip fixed">
+                                            <span class="tooltip-content">{{ section.savings_value_legend }}</span>
+                                    </span>
+                                </div>
+                            </div>
                             <p class="amount big pure-u-3-5">
                                 <strong id="savings" class="fees-saving"
                                         data-savings="<?php echo $savings; ?>">

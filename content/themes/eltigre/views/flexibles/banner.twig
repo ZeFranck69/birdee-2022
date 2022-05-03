@@ -40,13 +40,10 @@
 			{% endif %}
 		</div>
 		<div class="banner__image-part">
-			{% if section.image_type == "normal" %}
+			
 			{% if section.image %}
 				<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="banner__image" style="max-width:{{ section.width }}px;">
-			{% endif %}	
-			{% elseif section.image_type == 'html'%}
-				{{ section.image_html_code }}	
-			{% endif%}
+			{% endif %}
 			
 		</div>
 
