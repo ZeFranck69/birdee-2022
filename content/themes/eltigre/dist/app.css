@@ -5310,7 +5310,14 @@ body::-webkit-scrollbar-thumb {
 .simulator {
   background: #fff;
   color: #1D1D1B;
-  padding: 1.5em 60px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media only screen and (max-width: 768px) {
+  .simulator {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .simulator input {
   background: none;
