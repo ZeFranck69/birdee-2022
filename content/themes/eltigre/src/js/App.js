@@ -1,8 +1,8 @@
 import Animations from './Animations';
 import Sections from './Sections';
 import Menu from './class/Menu';
-import Intercom from './class/Intercom';
 // import Swup from 'swup';
+import Intercom from './class/Intercom';
 
 import gsap from 'gsap';
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
@@ -14,8 +14,8 @@ require('./Polyfills');
 export default class App {
 	constructor() {
 		this.keepUtmParams();
-		new Intercom();
 		new Sections();
+		new Intercom();
 		new Animations();
 		this.menu = new Menu();
 	}

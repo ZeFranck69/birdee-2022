@@ -175,7 +175,7 @@ var Intercom = /*#__PURE__*/_createClass(function Intercom() {
   _classCallCheck(this, Intercom);
 
   //intercom
-  var APP_ID = intercom.app_id;
+  var APP_ID = 'isg49vuw';
   var lang = document.getElementsByTagName('html')[0].getAttribute('lang');
   window.intercomSettings = {
     app_id: APP_ID,
@@ -11868,8 +11868,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-
  // import Swup from 'swup';
+
 
 
 
@@ -11883,8 +11883,8 @@ var App = /*#__PURE__*/function () {
     _classCallCheck(this, App);
 
     this.keepUtmParams();
-    new _class_Intercom__WEBPACK_IMPORTED_MODULE_3__["default"]();
     new _Sections__WEBPACK_IMPORTED_MODULE_1__["default"]();
+    new _class_Intercom__WEBPACK_IMPORTED_MODULE_3__["default"]();
     new _Animations__WEBPACK_IMPORTED_MODULE_0__["default"]();
     this.menu = new _class_Menu__WEBPACK_IMPORTED_MODULE_2__["default"]();
   }

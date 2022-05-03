@@ -68,12 +68,6 @@
 			$context['landing_logo'] 	= get_field( 'landing_logo' );
 			$context['landing_link'] 	= get_field( 'landing_link' );
 			
-
-			//INTERCOM
-			$context['intercom'] = array(
-				'app_id' => INTERCOM_ID
-			);
-			
 			// Menus
 			$context['menu'] = array(
 				'header' => array(
@@ -195,7 +189,6 @@
 			// SWIPER
 			wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
 			wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js' );
-
 			//FA
 			wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/inc/vendor/css/fontawesome.min.css' );
 			wp_enqueue_style( 'fa-brands', get_template_directory_uri() . '/inc/vendor/css/brands.min.css' );
