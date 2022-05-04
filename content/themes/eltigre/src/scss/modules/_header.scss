@@ -688,6 +688,10 @@ $transition_speed: .2s;
 		}
 	}
 }
+#site-header.sticky #slide-nav .language-switcher .language-switcher__languages .country-list{
+	background-color: $blue;
+}
+
 .country-list::-webkit-scrollbar {
     width: 9px;
 }
@@ -702,6 +706,8 @@ $transition_speed: .2s;
     border-radius: 24px;
     background-color: black; 
 }
+
+
 
 //Header Landing
 .header-landing{

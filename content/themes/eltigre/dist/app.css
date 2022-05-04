@@ -1121,6 +1121,10 @@ body::-webkit-scrollbar-thumb {
   max-width: 64px;
 }
 
+#site-header.sticky #slide-nav .language-switcher .language-switcher__languages .country-list {
+  background-color: #9294FB;
+}
+
 .country-list::-webkit-scrollbar {
   width: 9px;
 }
@@ -3955,6 +3959,14 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
   border-bottom: 1px solid #1B1F1E;
   padding: 1.5em 0;
+}
+.press_posts-part .press__posts .press__post a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .press_posts-part .press__posts .press__post .press__post-thumbnails {
   display: inline-block;
