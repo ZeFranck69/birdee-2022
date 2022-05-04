@@ -2,10 +2,36 @@
 
 {% block content %}
 
+<section id="not_found" class="404 not_found"
+	style="background-color: {{ options.not_found_background_color }};">
+	<div class="not_found__container main-wrapper padding-medium">
 
+		<div class="not_found__content">
+		
+			<h1 class="not_found-content__title title title-not_found bold uppercase">
+				{{ __('Oups !', 'eltigre') }} 
+			</h1>
+		
+			<div class="not_found-content__description description">
+				{{ __('Il semblerait que la page que vous cherchez soit inexistante', 'eltigre') }} 
+			</div>
+			
+			<div class="not_found-content__cta-wrapper">
+					<a href="{{ site.url }}" class="cta cta-black uppercase"> 
+						<span class='cta__label'>{{ __('Restez avec nous', 'eltigre') }}</span> 
+					</a>
+			</div>
+		</div>
+		<div class="not_found__image-part">
+			
+			{% if options.not_found_image %}
+				<img src="{{ options.not_found_image.url }}" alt="{{ options.not_found_image.alt }}" class="not_found__image">
+			{% endif %}
+			
+		</div>
 
-
-
+	</div>
+</section>
 
 
 {% endblock %}
