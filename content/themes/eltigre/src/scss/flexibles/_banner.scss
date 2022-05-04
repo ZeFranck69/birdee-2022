@@ -101,11 +101,12 @@
 }
 
 .trustpilot__wrapper{
-	max-width: 266px;
+	max-width: 400px;
 	width: 100%;
 	text-align: left;
 	margin-top: 26px;
 	@include tablet {
 		max-width: 400px;
+		margin: 26px auto 0;
 	}
 }

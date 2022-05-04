@@ -877,6 +877,11 @@ body::-webkit-scrollbar-thumb {
   display: block;
   padding: 10px 0;
 }
+@media only screen and (max-width: 590px) {
+  #slide-nav ul .menu-item a {
+    font-size: 16px;
+  }
+}
 #slide-nav ul .cta--connect:after {
   content: none;
 }
@@ -1999,7 +2004,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .trustpilot__wrapper {
-  max-width: 266px;
+  max-width: 400px;
   width: 100%;
   text-align: left;
   margin-top: 26px;
@@ -2007,6 +2012,7 @@ body::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 768px) {
   .trustpilot__wrapper {
     max-width: 400px;
+    margin: 26px auto 0;
   }
 }
 

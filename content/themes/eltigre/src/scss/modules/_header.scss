@@ -456,6 +456,9 @@ $transition_speed: .2s;
 			line-height: 1.25;
 			display: block;
 			padding: 10px 0;
+			@include mobile-xl{
+				font-size: 16px;
+			}
 			}
 		}
 		.cta--connect{
