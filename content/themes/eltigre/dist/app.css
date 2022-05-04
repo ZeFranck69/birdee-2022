@@ -1228,9 +1228,12 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .applications-wrapper img {
-  max-width: 220px;
+  max-width: 190px;
   width: auto;
   height: 66px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  font-family: "object-fit:contain;";
 }
 
 .footer__socials,
@@ -6935,9 +6938,12 @@ input[type=range] {
   width: 100%;
 }
 .prefooter-app img {
-  max-width: 220px;
+  max-width: 190px;
   width: auto;
   height: 66px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  font-family: "object-fit:contain;";
 }
 
 /*# sourceMappingURL=app.css.map*/

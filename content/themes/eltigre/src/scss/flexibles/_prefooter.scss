@@ -142,8 +142,10 @@
 	max-width:220px;
 	width: 100%;
 	img{
-		max-width: 220px;
+		max-width: 190px;
 		width: auto;
 		height: 66px;
+		object-fit: contain;
+		font-family: "object-fit:contain;";
 	}
 }

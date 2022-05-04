@@ -1376,10 +1376,9 @@ var Section = /*#__PURE__*/function () {
       var blocks = reasons.querySelector('.reasons-list');
       var block = blocks.querySelectorAll('.reason');
       var textImagePart = reasons.querySelector('.reasons__text-image');
-      var leftPart = textImagePart.querySelector('.reasons__text-image--left-part');
-      var rightPart = textImagePart.querySelector('.reasons__text-image--right-part');
       var button = reasons.querySelector('.reasons__cta-wrapper');
-      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline().fromTo(title, {
+      var animation = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].timeline();
+      animation.fromTo(title, {
         y: -100,
         autoAlpha: 0
       }, {
@@ -1387,7 +1386,8 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.1,
         duration: 0.45
-      }).fromTo(block, {
+      });
+      animation.fromTo(block, {
         scale: 0.8,
         y: 100,
         autoAlpha: 0
@@ -1397,27 +1397,39 @@ var Section = /*#__PURE__*/function () {
         autoAlpha: 1,
         stagger: 0.27,
         duration: 0.45
-      }).fromTo(leftPart, {
-        scale: 0.8,
-        x: -100,
-        autoAlpha: 0
-      }, {
-        scale: 1,
-        x: 0,
-        autoAlpha: 1,
-        stagger: 0.27,
-        duration: 0.45
-      }).fromTo(rightPart, {
-        scale: 0.8,
-        x: 100,
-        autoAlpha: 0
-      }, {
-        scale: 1,
-        x: 0,
-        autoAlpha: 1,
-        stagger: 0.27,
-        duration: 0.45
-      }).fromTo(button, {
+      });
+
+      if (textImagePart) {
+        var leftPart = textImagePart.querySelector('.reasons__text-image--left-part');
+        animation.fromTo(leftPart, {
+          scale: 0.8,
+          x: -100,
+          autoAlpha: 0
+        }, {
+          scale: 1,
+          x: 0,
+          autoAlpha: 1,
+          stagger: 0.27,
+          duration: 0.45
+        });
+      }
+
+      if (textImagePart) {
+        var rightPart = textImagePart.querySelector('.reasons__text-image--right-part');
+        animation.fromTo(rightPart, {
+          scale: 0.8,
+          x: 100,
+          autoAlpha: 0
+        }, {
+          scale: 1,
+          x: 0,
+          autoAlpha: 1,
+          stagger: 0.27,
+          duration: 0.45
+        });
+      }
+
+      animation.fromTo(button, {
         scale: 0.8,
         y: 15,
         autoAlpha: 0

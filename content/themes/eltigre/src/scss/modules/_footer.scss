@@ -50,9 +50,11 @@
 		flex-direction: column;
 	}
 	img{
-		max-width: 220px;
+		max-width: 190px;
 		width: auto;
 		height: 66px;
+		object-fit: contain;
+		font-family: "object-fit:contain;";
 	}
 }
 
