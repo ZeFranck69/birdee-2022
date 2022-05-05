@@ -110,3 +110,13 @@
 		margin: 26px auto 0;
 	}
 }
+
+html[lang='nl-be'] .page-child{
+	.banner{
+
+		.banner__content{
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+}
