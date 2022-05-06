@@ -44,7 +44,17 @@
 							</div>
 						</div>
 						<div class="applications--menu">
-							<h4 class="column__title accordeon">{{ __('Telecharger notre application','eltigre')}}</h4>
+							{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+							<h4 class="column__title accordeon">{{ __('Télécharger notre application','eltigre')}}</h4>
+							
+							{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+						
+							<h4 class="column__title accordeon">{{ __('Download the app','eltigre')}}</h4>
+							
+							{% elseif site.language == "nl_BE" %}
+							<h4 class="column__title accordeon">{{ __('De app downloaden','eltigre')}}</h4>
+							
+							{% endif %}
 							<div class="applications-wrapper">
 								{% for application in options.applications %}
 								<a href="{{ application.link }}" target="_blank">

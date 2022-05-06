@@ -1,124 +1,197 @@
-<section id="{{ section.title|sanitize }}" class="simulator padding-medium" style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
+<section id="{{ section.title|sanitize }}" class="simulator padding-medium"
+	style="{% if section.section_width == 'fullwidth' %}background-color: {{ section.background_color }}{% endif %}">
 
-	<div class="simulator-container main-wrapper {{ section.radius }} " style="text-align: {{ section.text_align }};background-color: {{ section.background_color }};">
+	<div class="simulator-container main-wrapper {{ section.radius }} "
+		style="text-align: {{ section.text_align }};background-color: {{ section.background_color }};">
 		<div class="{{ section.section_width == "fullwidth" ? "main-wrapper" : "" }} padding-medium {{ section.radius }}">
 			{% if section.section_title is not empty %}
 			<div class="simulator__section-title">
-				<h2 class="title bold uppercase {{ section.title_text_align }}" style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
+				<h2 class="title bold uppercase {{ section.title_text_align }}"
+					style="color:{{ section.color_section_title }}}">{{ section.section_title }}</h2>
 			</div>
 			{% endif %}
 			{% if section.section_description is not empty %}
 			<div class="simulator__section-description">
-				<p class="description {{ section.title_text_align }}" style="color:{{ section.color_section_description }}}">{{ section.section_description }}</p>
+				<p class="description {{ section.title_text_align }}" style="color:{{ section.color_section_description }}}">
+					{{ section.section_description }}</p>
 			</div>
 			{% endif %}
-			<div class="simulator-wrapper simulator-wrapper--{{ section.layout }}" style="justify-content: {{ section.justify_content }};">
+			<div class="simulator-wrapper simulator-wrapper--{{ section.layout }}"
+				style="justify-content: {{ section.justify_content }};">
 				<div class="simulator-part__container">
 
 					<div class="invest">
-                        <div class="range-slider">
-                            <!-- <span class="rs-label rs-bullet bold"></span> -->
-                            <div class="range-value" id="rangeV">
-                                <span class="valueRangeV">{{ section.invest }} €</span>
-                            </div>
-                            <input class="rs-range rs-range-line" type="range" value="{{ section.invest }}" min="{{ section.min_amount }}" max="{{ section.max_amount }}" step="500">
-                        </div>
-                        <div class="box-minmax">
-                          <span class="range-min">{{ section.min_amount }} €</span><span class="range-max">{{ section.max_amount }} €</span>
-                        </div>
-                    </div>
+						<div class="range-slider">
+							<!-- <span class="rs-label rs-bullet bold"></span> -->
+							<div class="range-value" id="rangeV">
+								<span class="valueRangeV">{{ section.invest }} €</span>
+							</div>
+							<input class="rs-range rs-range-line" type="range" value="{{ section.invest }}"
+								min="{{ section.min_amount }}" max="{{ section.max_amount }}" step="500">
+						</div>
+						<div class="box-minmax">
+							<span class="range-min">{{ section.min_amount }} €</span><span class="range-max">{{ section.max_amount }}
+								€</span>
+						</div>
+					</div>
 
-                    <div class="simulator">
+					<div class="simulator">
 
 
-                        {% set fees_birdee_value = section.invest * ( section.fees_birdee / 100 ) / 12 %}
-                        <div class="simulator-block">
-                            <div class="frais">
-                                <p>
-                                    {{ __('Frais Birdee', 'eltigre') }}
-                                </p>
-                                <div class="tooltip-icon" alt="tooltip icon"/>
-                                    <span class="tooltip fixed">
-                                        <span class="tooltip-content">{{ section.fees_birdee_legend }}</span>
-                                    </span>
-                                </div>
-                            </div>
+						{% set fees_birdee_value = section.invest * ( section.fees_birdee / 100 ) / 12 %}
+						<div class="simulator-block">
+							<div class="frais">
+								
+								{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+								<p>
+									{{ __('Frais Birdee', 'eltigre') }}
+								</p>
 
-                            <p class="amount">
-                                <strong id="fees-birdee"
-                                        data-fees-birdee="{{ section.fees_birdee}}" class="fees-birdee">{{ fees_birdee_value|round }}
-                                    €</strong>
-                                /{{ __('mois', 'eltigre') }}
-                            </p>
-                        </div>
+								{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+								<p>
+									{{ __('Birdee charges', 'eltigre') }}
+								</p>
 
-                        {% set fees_value = section.invest * ( section.fees_constat / 100 ) /12 %}
-                        <div class="simulator-block">
-                            <div class="frais">
+								{% elseif site.language == "nl_BE" %}
+								<p>
+									{{ __('Birdee tarieven', 'eltigre') }}
+								</p>
+
+								{% endif %}
+								<div class="tooltip-icon" alt="tooltip icon" />
+								<span class="tooltip fixed">
+									<span class="tooltip-content">{{ section.fees_birdee_legend }}</span>
+								</span>
+							</div>
+						</div>
+
+						<p class="amount">
+							<strong id="fees-birdee" data-fees-birdee="{{ section.fees_birdee}}"
+								class="fees-birdee">{{ fees_birdee_value|round }}
+								€</strong>
+                                {% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+								/{{ __('mois', 'eltigre') }}
+
+								{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+								/{{ __('month', 'eltigre') }}
+
+								{% elseif site.language == "nl_BE" %}
+								/{{ __('maand', 'eltigre') }}
+								{% endif %}
+							
+						</p>
+					</div>
+
+					{% set fees_value = section.invest * ( section.fees_constat / 100 ) /12 %}
+					<div class="simulator-block">
+						<div class="frais">
+							
+                            {% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
                                 <p>
                                     {{ __('Frais bancaire constatés', 'eltigre') }}
                                 </p>
-                                <div class="tooltip-icon" alt="tooltip icon"/>
-                                    <span class="tooltip fixed">
-                                        <span class="tooltip-content">{{ section.fees_constat_legend }}</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <p class="amount">
-                                <strong class="fees-strong fees-constat" data-fees="{{ section.fees_constat}}">{{ fees_value|round }} €</strong> /{{ __('mois', 'eltigre') }}
-                            </p>
-                        </div>
 
+								{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+								<p>
+									{{ __('Bank charges', 'eltigre') }}
+								</p>
 
-                        <div class="simulator-block">
-                            <div class="frais">
-                                <p>{{ __('Economies réalisées', 'eltigre') }}</p>
+								{% elseif site.language == "nl_BE" %}
+								<p>
+									{{ __('Banktarieven', 'eltigre') }}
+								</p>
 
-                                <div class="tooltip-icon" alt="tooltip icon"/>
-                                    <span class="tooltip fixed">
-                                            <span class="tooltip-content">{{ section.savings_value_legend }}</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <p class="amount big pure-u-3-5">
-                                <strong id="savings" class="fees-saving"
-                                        data-savings="<?php echo $savings; ?>">
-                                    €</strong>
-                                /{{ __('10 ans', 'eltigre') }}
-                            </p>
-                        </div>
-
-                    </div>
-
-
-				</div>				
-				<div class="text-part__container">
-
-					<div class="text-part {{ section.text_align }}">
-						{% if section.title %}
-						<h2 class="text-part__title title bold uppercase">
-							{{ section.title }}
-						</h2>
-						{% endif %}
-						{% if section.description %}
-						<div class="text-part__description description" style="color:{{ section.description_color }};">
-							{{ section.description }}
+								{% endif %}
+							<div class="tooltip-icon" alt="tooltip icon" />
+							<span class="tooltip fixed">
+								<span class="tooltip-content">{{ section.fees_constat_legend }}</span>
+							</span>
 						</div>
-						{% endif %}
-						{% if section.cta %}
-						<div
-							class="simulator__cta-wrapper {{ section.cta_align }}">
-							<a href="{{ section.cta.url }}" class="cta cta-green uppercase" target="{{ section.cta.target }}">
-								<span class="cta__label">
-									{{ section.cta.title }}
-								</span>
-							</a>
-						</div>
-						{% endif %}
+					</div>
+					<p class="amount">
+						<strong class="fees-strong fees-constat" data-fees="{{ section.fees_constat}}">{{ fees_value|round }}
+							€</strong> 
+                            {% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+                            /{{ __('mois', 'eltigre') }}
+
+                            {% elseif site.language == "en_EU" or site.language == "en_LU" %}
+                            /{{ __('month', 'eltigre') }}
+
+                            {% elseif site.language == "nl_BE" %}
+                            /{{ __('maand', 'eltigre') }}
+                            {% endif %}
+					</p>
+				</div>
+
+
+				<div class="simulator-block">
+					<div class="frais">
+						
+                        {% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+                        <p>{{ __('Economies réalisées', 'eltigre') }}</p>
+
+                        {% elseif site.language == "en_EU" or site.language == "en_LU" %}
+                        <p>
+                            {{ __('Savings achieved', 'eltigre') }}
+                        </p>
+
+                        {% elseif site.language == "nl_BE" %}
+                        <p>
+                            {{ __('Besparingen', 'eltigre') }}
+                        </p>
+
+                        {% endif %}
+						<div class="tooltip-icon" alt="tooltip icon" />
+						<span class="tooltip fixed">
+							<span class="tooltip-content">{{ section.savings_value_legend }}</span>
+						</span>
 					</div>
 				</div>
+				<p class="amount big pure-u-3-5">
+					<strong id="savings" class="fees-saving" data-savings="<?php echo $savings; ?>">
+						€</strong>
+				
+                    {% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+                    /{{ __('10 ans', 'eltigre') }}
+
+                    {% elseif site.language == "en_EU" or site.language == "en_LU" %}
+                    /{{ __('10 years', 'eltigre') }}
+
+                    {% elseif site.language == "nl_BE" %}
+                    /{{ __('10 jaar', 'eltigre') }}
+                    {% endif %}
+				</p>
 			</div>
+
+		</div>
+
+
+	</div>
+	<div class="text-part__container">
+
+		<div class="text-part {{ section.text_align }}">
+			{% if section.title %}
+			<h2 class="text-part__title title bold uppercase">
+				{{ section.title }}
+			</h2>
+			{% endif %}
+			{% if section.description %}
+			<div class="text-part__description description" style="color:{{ section.description_color }};">
+				{{ section.description }}
+			</div>
+			{% endif %}
+			{% if section.cta %}
+			<div class="simulator__cta-wrapper {{ section.cta_align }}">
+				<a href="{{ section.cta.url }}" class="cta cta-green uppercase" target="{{ section.cta.target }}">
+					<span class="cta__label">
+						{{ section.cta.title }}
+					</span>
+				</a>
+			</div>
+			{% endif %}
 		</div>
 	</div>
+	</div>
+	</div>
+	</div>
 </section>
-
