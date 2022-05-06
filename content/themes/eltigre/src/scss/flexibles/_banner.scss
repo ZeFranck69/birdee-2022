@@ -41,6 +41,78 @@
 	}
 }
 
+.banner__image--safari{
+	display:none;
+}
+.banner__image--safari-mobile{
+	display: none;
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image-part--mobile{
+	display: none;
+	@include tablet{
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image--safari{
+	display:block;
+	max-width: 410px;
+	@include desktop{
+		max-width:350px !important;
+	}
+	@include tablet{
+		max-width:250px !important;
+	}
+}
+_::-webkit-full-page-media, _:future, :root .banner__image--safari-mobile{
+	display:none;
+	max-width: 410px;
+
+	@include desktop{
+		display:block;
+		max-width:350px !important;
+	}
+	@include tablet{
+		display: block;
+		max-width:250px !important;
+	}
+}
+
+
+
+_::-webkit-full-page-media, _:future, :root .banner__image--mobile{
+	display:none;
+}
+_::-webkit-full-page-media, _:future, :root .banner__image{
+	display:none;
+}
+_::-webkit-full-page-media, _:future, :root .banner__image.display-safari{
+	display:block;
+	max-width: 410px;
+	@include desktop{
+		max-width:350px !important;
+	}
+	@include tablet{
+		max-width:250px !important;
+	}
+}
+_::-webkit-full-page-media, _:future, :root .banner__image--mobile.display-safari{
+	display:none;
+	max-width: 410px;
+	@include desktop{
+		display:block;
+		max-width:350px !important;
+	}
+	@include tablet{
+		display: block;
+		max-width:250px !important;
+	}
+}
+
+
 .banner__position--left {
 	flex-direction: row-reverse;
 	@include tablet{
@@ -105,9 +177,30 @@
 	width: 100%;
 	text-align: left;
 	margin-top: 26px;
+	margin-left: -27px;
 	@include tablet {
 		max-width: 400px;
 		margin: 26px auto 0;
+	}
+	@include mobile-xl{
+		display: none;
+	}
+}
+.trustpilot__wrapper--mobile{
+	display: none;
+	max-width: 400px;
+	width: 100%;
+	text-align: left;
+	margin-top: 26px;
+	margin-left: -27px;
+	@include mobile-xl{
+		display: block;
+		max-width: 400px;
+		margin: 26px auto 0;
+		.trustpilot-widget{
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
 

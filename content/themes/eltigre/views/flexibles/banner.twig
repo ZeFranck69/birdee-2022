@@ -13,8 +13,11 @@
 			{% endif %}
 			<div class="banner__image-part--mobile">
 				{% if section.image %}
-					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="banner__image--mobile" style="max-width:{{ section.width }}px;">
+					<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="banner__image--mobile {% if section.image_safari is empty %} display-safari {% endif %} " style="max-width:{{ section.width }}px;">
 				{% endif %}
+				{% if section.image_safari %}
+				<img src="{{ section.image_safari.url }}" alt="{{ section.image_safari.alt }}" class="banner__image--safari-mobile">
+			{% endif %}
 				
 			</div>
 			{% if section.description %}
@@ -38,11 +41,19 @@
 				{{ section.trustpilot }}
 			</div>
 			{% endif %}
+			{% if section.trustpilot %}	
+			<div class="trustpilot__wrapper--mobile">
+				{{ section.trustpilot_moible }}
+			</div>
+			{% endif %}
 		</div>
 		<div class="banner__image-part">
 			
 			{% if section.image %}
-				<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="banner__image" style="max-width:{{ section.width }}px;">
+				<img src="{{ section.image.url }}" alt="{{ section.image.alt }}" class="banner__image {% if section.image_safari is empty %} display-safari {% endif %}  "  style="max-width:{{ section.width }}px;">
+			{% endif %}
+			{% if section.image_safari %}
+				<img src="{{ section.image_safari.url }}" alt="{{ section.image_safari.alt }}" class="banner__image--safari">
 			{% endif %}
 			
 		</div>

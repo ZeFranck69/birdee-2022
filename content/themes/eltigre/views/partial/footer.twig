@@ -75,7 +75,16 @@
  <div id="intercom_messenger" class="wow fadeIn">
 	<div class="intercom-container">
 		<img src="{{ options.logo_intercom.url }}" alt="logo intercom">
+		{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+		<p>{{ __('Besoin d\'aide ?', 'eltigre') }}</p>
+		
+		{% elseif site.language == "en_EU" or site.language == "en_LU" %}
 		<p>{{ __('Need some help ?', 'eltigre') }}</p>
+		
+		{% elseif site.language == "nl_BE" %}
+		<p>{{ __('Help nodig ?', 'eltigre') }}</p>
+		
+		{% endif %}
 	</div>
 </div>
 {% elseif landing_mode == true %}

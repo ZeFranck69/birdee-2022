@@ -1978,6 +1978,99 @@ body::-webkit-scrollbar-thumb {
     max-height: 70vh;
   }
 }
+.banner__image--safari {
+  display: none;
+}
+
+.banner__image--safari-mobile {
+  display: none;
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image-part--mobile {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image-part--mobile {
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image--safari {
+  display: block;
+  max-width: 410px;
+}
+@media only screen and (max-width: 1680px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image--safari {
+    max-width: 350px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image--safari {
+    max-width: 250px !important;
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image--safari-mobile {
+  display: none;
+  max-width: 410px;
+}
+@media only screen and (max-width: 1680px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image--safari-mobile {
+    display: block;
+    max-width: 350px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image--safari-mobile {
+    display: block;
+    max-width: 250px !important;
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image--mobile {
+  display: none;
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image {
+  display: none;
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image.display-safari {
+  display: block;
+  max-width: 410px;
+}
+@media only screen and (max-width: 1680px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image.display-safari {
+    max-width: 350px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image.display-safari {
+    max-width: 250px !important;
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .banner__image--mobile.display-safari {
+  display: none;
+  max-width: 410px;
+}
+@media only screen and (max-width: 1680px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image--mobile.display-safari {
+    display: block;
+    max-width: 350px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  _::-webkit-full-page-media, _:future, :root .banner__image--mobile.display-safari {
+    display: block;
+    max-width: 250px !important;
+  }
+}
+
 .banner__position--left {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -2065,11 +2158,41 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   text-align: left;
   margin-top: 26px;
+  margin-left: -27px;
 }
 @media only screen and (max-width: 768px) {
   .trustpilot__wrapper {
     max-width: 400px;
     margin: 26px auto 0;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .trustpilot__wrapper {
+    display: none;
+  }
+}
+
+.trustpilot__wrapper--mobile {
+  display: none;
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+  margin-top: 26px;
+  margin-left: -27px;
+}
+@media only screen and (max-width: 590px) {
+  .trustpilot__wrapper--mobile {
+    display: block;
+    max-width: 400px;
+    margin: 26px auto 0;
+  }
+  .trustpilot__wrapper--mobile .trustpilot-widget {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
