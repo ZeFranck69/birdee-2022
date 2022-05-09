@@ -3,7 +3,9 @@
     <div class="modal-wrapper container">
       <div class="modal-content" >
         <div class="close"></div>
+		{% if section.popup_title %}
 		<h2 class="popup-title title uppercase">{{ section.popup_title }}</h2>
+		{% endif %}
 		<div class="popup-content--wrapper">
 			<div class="popup-content">
 				{{ section.popup_content }}

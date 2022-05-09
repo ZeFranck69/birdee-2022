@@ -112,6 +112,10 @@ a {
 		font-size: 30px;
 		line-height:40px;
 	}
+	@include mobile-xl{
+		font-size: 27px;
+		line-height: 35px;
+	}
 }
 
 .title--secondary{
