@@ -186,6 +186,20 @@ _::-webkit-full-page-media, _:future, :root .banner__image--mobile.display-safar
 		display: none;
 	}
 }
+html[lang="fr-be"],
+html[lang="fr-lu"],
+html[lang="fr-fr"]{
+	.trustpilot__wrapper{
+		margin-left: -27px;
+	}
+
+}
+
+html[lang="nl-be"]{
+	.trustpilot__wrapper{
+		margin-left: -12px;
+	}
+}
 .trustpilot__wrapper--mobile{
 	display: none;
 	max-width: 400px;

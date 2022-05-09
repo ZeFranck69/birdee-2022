@@ -2178,6 +2178,16 @@ _::-webkit-full-page-media, _:future, :root .banner__image--mobile.display-safar
   }
 }
 
+html[lang=fr-be] .trustpilot__wrapper,
+html[lang=fr-lu] .trustpilot__wrapper,
+html[lang=fr-fr] .trustpilot__wrapper {
+  margin-left: -27px;
+}
+
+html[lang=nl-be] .trustpilot__wrapper {
+  margin-left: -12px;
+}
+
 .trustpilot__wrapper--mobile {
   display: none;
   max-width: 400px;
