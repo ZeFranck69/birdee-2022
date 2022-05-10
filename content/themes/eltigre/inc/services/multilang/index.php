@@ -66,12 +66,13 @@ class Multilang extends Service {
     }
 
     public static function add_geotargetly_script() { 
-         if ( ! defined( 'GEOTARGETLY_URL' ) ) return; ?>
+        $geotargetly_url = getenv( 'GEOTARGETLY_URL' );
+         if ( empty( $geotargetly_url ) ) return; ?>
 
         <script>
             (function(g,e,o,t,a,r,ge,tl,y){
             t=g.getElementsByTagName(e)[0];y=g.createElement(e);y.async=true;
-            y.src=<?php echo GEOTARGETLY_URL; ?>'&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+            y.src=<?php echo $geotargetly_url; ?>'&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
             t.parentNode.insertBefore(y,t);
             })(document,'script');
         </script>
