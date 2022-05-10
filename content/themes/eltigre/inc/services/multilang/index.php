@@ -72,7 +72,7 @@ class Multilang extends Service {
         <script>
             (function(g,e,o,t,a,r,ge,tl,y){
             t=g.getElementsByTagName(e)[0];y=g.createElement(e);y.async=true;
-            y.src=<?php echo $geotargetly_url; ?>'&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+            y.src="<?php echo $geotargetly_url; ?>&refurl="+g.referrer+"&winurl="+encodeURIComponent(window.location);
             t.parentNode.insertBefore(y,t);
             })(document,'script');
         </script>
