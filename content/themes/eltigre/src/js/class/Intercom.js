@@ -1,7 +1,7 @@
 export default class Intercom {
 	constructor() {
 		//intercom
-		var APP_ID = 'isg49vuw';
+		var APP_ID = site.intercom_id;
 
 		var lang = document.getElementsByTagName('html')[0].getAttribute('lang');
 
