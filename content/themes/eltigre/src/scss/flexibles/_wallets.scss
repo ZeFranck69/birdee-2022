@@ -80,6 +80,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            letter-spacing: 3px;
             &.active{
                 color: $blue;
                 transition: color .35s ease-in-out;
@@ -111,6 +112,7 @@
     margin-bottom: 11px;
 }
 .hook-wallet{
+    letter-spacing: 4px;
     margin-bottom: 20px;
 }
 .description-wallet{
@@ -164,7 +166,7 @@
 
 .perform-percent{
     text-align: center;
-    margin-bottom: 31px;
+    margin-bottom: 10px;
     margin-top: 51px;
     .perform__text{
         margin-bottom: 27px;
@@ -173,7 +175,14 @@
         padding: 10px;
         display: inline-block;
         background-color: $green;
-        margin-bottom: 10px;
+        margin-bottom: 31px;
+    }
+    .separator{
+        height: 1px;
+        background-color: #EEEEEE;
+        margin: 0 auto 31px;
+        max-width: 250px;
+        width: 100%;
     }
 }
 .gain__content{
@@ -201,6 +210,7 @@
     max-width: 218px;
     width: 100%;
     text-align: center;
+    letter-spacing: 3px;
     @include landscape{
         margin: auto;
     }

@@ -592,10 +592,9 @@ $transition_speed: .2s;
 		}
 		.title{
 			letter-spacing: 0;
-			font-size: 20px;
+			font-size: 16px;
 			line-height: 1;
 			font-family: "Favorit", sans-serif;
-			font-weight: bold;
 			color: $black;
 		}
 		.language-switcher__languages {
@@ -679,8 +678,8 @@ $transition_speed: .2s;
 		}
 		.flag{
 			margin: 0 10px 0 0;
-			width: 24px;
-			height: 20px;
+			width: 20px;
+			height: 16px;
 			vertical-align: middle;
 			float: left;
 			margin-right: 10px;

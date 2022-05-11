@@ -31,7 +31,7 @@
   
 	.modal-content {
 	  background-color: $white;
-	  padding: 30px;
+	  padding: 50px 30px 30px;
 	  position: relative;
 	  border-top-left-radius: 40px;
 	  border-top-right-radius: 40px;
@@ -105,6 +105,12 @@
 	.range-slider{
 		max-width: 100%;
 		width: 100%;
+		@include desktop{
+			max-width: 90%;
+		}
+		@include tablet{
+			max-width: 95%;
+		}
 	}
 	.performance:first-child{
 		margin-bottom: 65px;
