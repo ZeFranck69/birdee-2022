@@ -1259,7 +1259,7 @@ body::-webkit-scrollbar-thumb {
   width: auto;
   height: 66px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   font-family: "object-fit:contain;";
 }
 
@@ -1426,8 +1426,10 @@ body::-webkit-scrollbar-thumb {
   bottom: -10px;
   left: 0;
 }
-.column__title.open {
-  margin-top: 8px;
+@media only screen and (max-width: 590px) {
+  .column__title.open {
+    margin-top: 8px;
+  }
 }
 .column__title.open::before {
   -webkit-transform: rotateZ(180deg);
@@ -6247,7 +6249,10 @@ input[type=range] {
   width: 600px;
   height: 8px;
   -webkit-appearance: none;
-  overflow: hidden;
+  outline: none;
+  -webkit-transition: background 450ms ease-in;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
 }
 .rs-range:focus {
   outline: none;
@@ -6270,30 +6275,28 @@ input[type=range] {
   border: 0px solid #1D1D1B;
 }
 .rs-range::-webkit-slider-thumb {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: 0px solid #1D1D1B;
+  -webkit-appearance: none;
+  appearance: none;
   -webkit-box-shadow: -600px 0 0 600px #69EFCA;
           box-shadow: -600px 0 0 600px #69EFCA;
+  width: 22px;
   height: 22px;
-  width: 1px;
-  border-radius: 22px;
-  background: #69EFCA;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #69EFCA;
+  border-radius: 50%;
   cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: 0px;
 }
 .rs-range::-moz-range-thumb {
-  box-shadow: none;
-  border: 0px solid #1D1D1B;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-  height: 42px;
   width: 22px;
-  border-radius: 22px;
-  background: white;
+  height: 22px;
+  border: 0;
+  right: 16px;
+  background-color: #69EFCA;
+  border-radius: 50%;
   cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -20px;
+  box-shadow: -600px 0 0 600px #69EFCA;
 }
 .rs-range::-moz-focus-outer {
   border: 0;
@@ -6314,13 +6317,13 @@ input[type=range] {
   font-weight: bold;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-left: -38px;
+  margin-left: -44px;
   color: #1D1D1B;
   font-style: normal;
   margin-top: 16px;
 }
 .rs-label::before {
-  content: "";
+  content: none;
   position: absolute;
   width: 22px;
   height: 22px;

@@ -151,7 +151,12 @@ input[type='range'] {
 	width: 600px;
 	height: 8px;
 	-webkit-appearance: none;
-	overflow: hidden;
+	// overflow: hidden;
+	// background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
+
+	outline: none;
+	transition: background 450ms ease-in;
+	-webkit-appearance: none;
 
 	&:focus {
 		outline: none;
@@ -175,31 +180,55 @@ input[type='range'] {
 		border: 0px solid $black;
 	}
 
+	// &::-webkit-slider-thumb {
+	// 	box-shadow: none;
+	// 	border: 0px solid $black;
+	// 	box-shadow: -600px 0 0 600px $green;
+	// 	height: 22px;
+	// 	width: 1px;
+	// 	border-radius: 22px;
+	// 	background: $green;
+	// 	cursor: pointer;
+	// 	-webkit-appearance: none;
+	// 	margin-top: -0px;
+	// }
+
+	// &::-moz-range-thumb {
+	// 	box-shadow: none;
+	// 	border: 0px solid $black;
+	// 	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+	// 	height: 42px;
+	// 	width: 22px;
+	// 	border-radius: 22px;
+	// 	background: rgba(255, 255, 255, 1);
+	// 	cursor: pointer;
+	// 	-webkit-appearance: none;
+	// 	margin-top: -20px;
+	// }
 	&::-webkit-slider-thumb {
-		box-shadow: none;
-		border: 0px solid $black;
-		box-shadow: -600px 0 0 600px $green;
-		height: 22px;
-		width: 1px;
-		border-radius: 22px;
-		background: $green;
-		cursor: pointer;
 		-webkit-appearance: none;
-		margin-top: -0px;
+		appearance: none;
+		box-shadow: -600px 0 0 600px $green;
+		width: 22px;
+		height: 22px;
+		border: 0;
+		box-shadow: none;
+		background-color: $green;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	  
+	  &::-moz-range-thumb {
+		width: 22px;
+		height: 22px;
+		border: 0;
+		right: 16px;
+		background-color: $green;
+		border-radius: 50%;
+		cursor: pointer;
+		box-shadow: -600px 0 0 600px $green;
 	}
 
-	&::-moz-range-thumb {
-		box-shadow: none;
-		border: 0px solid $black;
-		box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-		height: 42px;
-		width: 22px;
-		border-radius: 22px;
-		background: rgba(255, 255, 255, 1);
-		cursor: pointer;
-		-webkit-appearance: none;
-		margin-top: -20px;
-	}
 
 	&::-moz-focus-outer {
 		border: 0;
@@ -219,12 +248,13 @@ input[type='range'] {
 	text-align: center;
 	font-weight: bold;
 	box-sizing: border-box;
-	margin-left: -38px;
+	margin-left: -44px;
 	color: $black;
 	font-style: normal;
 	margin-top: 16px;
 	&::before{
-		content: "";
+		// content: "";
+		content: none;
 		position: absolute;
 		width: 22px;
 		height: 22px;

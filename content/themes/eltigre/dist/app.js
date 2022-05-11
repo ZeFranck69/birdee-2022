@@ -998,6 +998,9 @@ var Section = /*#__PURE__*/function () {
         var reccurentDepotEpargne = Math.round(parseInt(_this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
         var operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
         comparison.innerHTML = operationEpargne.toLocaleString();
+        var value = (rangesSlider.value - rangesSlider.min) / (rangesSlider.max - rangesSlider.min) * 100;
+        rangesSlider.style.background = 'linear-gradient(to right, #69efca 0%, #69efca ' + value + '%, #fff ' + value + '%, white 100%)';
+        console.log(value);
       }, false); // Mettre l'operation ici
 
       var initialDepot = Math.round(parseInt(_this.result[0]) * Math.pow(1 + 0.0053, 180) * 100) / 100;

@@ -59,7 +59,8 @@
 		max-width: 190px;
 		width: auto;
 		height: 66px;
-		object-fit: contain;
+		-o-object-fit: contain;
+		   object-fit: contain;
 		font-family: "object-fit:contain;";
 	}
 }
@@ -201,7 +202,9 @@
 		left: 0;
 	}
 	&.open{
-		margin-top: 8px;
+		@include mobile-xl{
+			margin-top: 8px;
+		}
 		&::before{
 			
 			transform: rotateZ(180deg);
