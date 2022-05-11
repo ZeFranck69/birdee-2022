@@ -7,23 +7,54 @@
 					</a>
 			</div>
 			<div class="footer__columns">
+					<!-- Il y a un souci avec WPML d'où cette façon de faire  -->
 					<div class="footer__column">
-							<h4 class="column__title accordeon">{{ __('Tout savoir sur Birdee','eltigre')}}</h4>
-							<nav class="footer-column__nav">
-									{% include "partial/menu.twig" with {'items': menu.footer.birdee.get_items} %}
-							</nav>
+						{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
+						<h4 class="column__title accordeon">{{ __('Tout savoir sur Birdee','eltigre')}}</h4>
+						
+						{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+						<h4 class="column__title accordeon">{{ __('All about Birdee','eltigre')}}</h4>
+						
+						
+						{% elseif site.language == "nl_BE" %}
+						<h4 class="column__title accordeon">{{ __('Kom alles te weten over Birdee','eltigre')}}</h4>
+						
+						{% endif %}
+						<nav class="footer-column__nav">
+								{% include "partial/menu.twig" with {'items': menu.footer.birdee.get_items} %}
+						</nav>
 					</div>        
 							
 							
 					<div class="footer__column">
 						<div class="help__menu">
+							{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
 							<h4 class="column__title accordeon">{{ __('Besoin d\'aide','eltigre')}}</h4>
+							
+							{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+							<h4 class="column__title accordeon">{{ __('Need help ?','eltigre')}}</h4>
+							
+							
+							{% elseif site.language == "nl_BE" %}
+							<h4 class="column__title accordeon">{{ __('Hulp nodig?','eltigre')}}</h4>
+							
+							{% endif %}
 							<nav class="footer-column__nav">
 									{% include "partial/menu.twig" with {'items': menu.footer.help.get_items} %}
 							</nav>
 						</div>
 						<div class="about--menu">
+							{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
 							<h4 class="column__title accordeon">{{ __('À propos','eltigre')}}</h4>
+							
+							{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+							<h4 class="column__title accordeon">{{ __('About us','eltigre')}}</h4>
+							
+							
+							{% elseif site.language == "nl_BE" %}
+							<h4 class="column__title accordeon">{{ __('Over','eltigre')}}</h4>
+							
+							{% endif %}
 							<nav class="footer-column__nav">
 									{% include "partial/menu.twig" with {'items': menu.footer.about.get_items} %}
 							</nav>
@@ -32,7 +63,17 @@
 
 					<div class="footer__column">
 						<div class="socials-media--menu">
+							{% if site.language == "fr_FR" or site.language == "fr_LU" or site.language == "fr_BE"%}
 							<h4 class="column__title accordeon">{{ __('Réseaux sociaux','eltigre')}}</h4>
+							
+							{% elseif site.language == "en_EU" or site.language == "en_LU" %}
+							<h4 class="column__title accordeon">{{ __('Social Media','eltigre')}}</h4>
+							
+							
+							{% elseif site.language == "nl_BE" %}
+							<h4 class="column__title accordeon">{{ __('Sociale netwerken','eltigre')}}</h4>
+							
+							{% endif %}
 							<div class="footer__socials">
 								{% for social in options.socials_media %}
 									<div class="footer-socials__social">
