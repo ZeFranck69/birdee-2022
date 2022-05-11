@@ -969,6 +969,11 @@ body::-webkit-scrollbar-thumb {
   border-top: 1px solid #1D1D1B;
   border-bottom: 1px solid #1D1D1B;
 }
+@media only screen and (max-width: 768px) {
+  #slide-nav .language-switcher {
+    max-width: 310px;
+  }
+}
 #slide-nav .language-switcher:before {
   width: 9px;
   height: 9px;
