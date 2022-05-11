@@ -689,6 +689,11 @@ $transition_speed: .2s;
 		}
 	}
 }
+
+#site-header.sticky + * {
+	margin-top: 58px;
+}
+
 #site-header.sticky #slide-nav .language-switcher .language-switcher__languages .country-list{
 	background-color: $blue;
 }
