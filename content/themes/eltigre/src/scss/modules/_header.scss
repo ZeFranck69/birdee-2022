@@ -437,7 +437,7 @@ $transition_speed: .2s;
 	// 	margin: 20px auto;
 	// }
 
-	ul{
+	> ul{
 		height: auto;
 		max-width: 100%;
 		width: 100%;
@@ -521,7 +521,7 @@ $transition_speed: .2s;
 }
 
 //Language switcher CSS
-#slide-nav{
+// #slide-nav{
 
 	.language-switcher {
 		display: flex;
@@ -560,6 +560,9 @@ $transition_speed: .2s;
 			
 				top: 53%;
 			}
+		}
+		ul.country-list {
+			display: none;
 		}
 
 		&.active{
@@ -688,7 +691,7 @@ $transition_speed: .2s;
 			max-width: 64px;
 		}
 	}
-}
+// }
 
 #site-header.sticky + * {
 	margin-top: 58px;

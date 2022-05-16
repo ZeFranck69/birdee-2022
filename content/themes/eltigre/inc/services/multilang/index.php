@@ -26,6 +26,19 @@ class Multilang extends Service {
         }
 
         add_action('wp_languages_switcher',  array( __CLASS__, 'languages_switcher' ) );
+        add_filter( 'timber/context', array( __CLASS__, 'add_language_banner_to_context' ) );
+
+    }
+
+
+    public static function add_language_banner_to_context( $context ) {
+        if ( ! empty( $_GET[ 'language-redirect' ] ) ) {
+            ob_start();
+            include __DIR__ . '/template/language-banner.php';
+            $content = ob_get_clean();
+            $context[ 'language_banner' ] = $content;
+        }
+        return $context;
     }
 
     public static function redirect_to_cookie_language( ) {
@@ -140,5 +153,4 @@ class Multilang extends Service {
             return false;
         }
     }
-
 }

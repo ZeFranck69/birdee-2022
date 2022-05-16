@@ -11,6 +11,11 @@
 		<div id="content" role="main" class="content-wrapper" data-barba="wrapper" data-template="{{template}}">
 			<div class="" data-barba="container" data-barba-namespace="{{ template }}">
 
+				{% if language_banner is not empty %}
+					{{ language_banner }}
+				{% endif %}
+
+
 				<header id="site-header">
 					{% block header %}
 						{% include 'partial/header.twig' %}
