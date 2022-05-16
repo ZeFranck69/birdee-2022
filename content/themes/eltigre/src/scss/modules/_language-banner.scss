@@ -1,0 +1,116 @@
+.birdee__language-redirect {
+    background-color: $blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    padding: 10px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        padding-right: 80px;
+        max-width: 1600px;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1680px) {
+            padding: 0 20px;
+            max-width: 1140px;
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+    }
+
+    .close-notice {
+        position: absolute;
+        right: 0;
+        width: 80px;
+        height: 100%;
+        cursor: pointer;
+
+       
+
+        &:after,
+        &:before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            @media screen and (max-width: 768px) {
+                top: 20px;
+            }
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+
+
+    .birdee-country-popup__title {
+        margin-right: 2em;
+        font-size: 12px;
+        font-family: "Favorit";
+        font-weight: bold;
+        width: 60%;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin-right: 40px;
+            margin-bottom: 1em;
+        }
+    }
+
+    .language-switcher {
+        border: none;
+        max-width: 200px;
+        border: 2px solid black;
+        border-radius: 28px;
+        padding: 10px 0;
+
+
+        @media screen and (max-width: 768px) {
+            padding: 10px;
+
+            .language-switcher__languages {
+                margin-top: 0 !important;
+                height: auto; 
+            }
+        }
+        .title {
+            display: none;
+        }
+
+        &.active{
+
+            &:before {
+                top: 50% !important;
+            }
+            
+            ul.country-list {
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                transform: translateY(100%);
+                background-color: $blue !important;
+            }
+        } 
+    }
+
+    + header {
+        transform: translateY(100%);
+    }
+}

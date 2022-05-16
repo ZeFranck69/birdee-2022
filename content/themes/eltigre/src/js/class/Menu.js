@@ -8,7 +8,7 @@ export default class Menu {
 		this.header = document.getElementById('site-header');
 		this.navSlide = document.getElementById('slide-nav');
 		this.toggleBtn = document.querySelector('.site__burger-menu');
-		this.languageSwitcher = document.querySelector('.language-switcher');
+		this.languageSwitcher = document.querySelectorAll('.language-switcher');
 		this.onCloseLanguageSwitcher = this.closeLanguageSwitcher.bind(this);
 
 		if (this.toggleBtn) {
@@ -38,6 +38,7 @@ export default class Menu {
 		hashtagLinks.forEach((link) => link.parentElement.classList.remove('current_page_item'));
 
 		this.initLanguageSwitcher();
+		this.initRedirectBanner();
 	}
 
 	stickyMenu = () => {
@@ -63,38 +64,53 @@ export default class Menu {
 		this.navSlide.setAttribute('aria-hidden', !this.navSlide.classList.contains('active'));
 	};
 
-	initLanguageSwitcher() {
-		if (this.languageSwitcher) {
-			this.languageSwitcher.addEventListener('click', (ev) => {
-				if (this.languageSwitcher.classList.contains('active')) {
-					this.closeLanguageSwitcher();
-				} else {
-					ev.stopPropagation();
-					this.openLanguageSwitcher();
-				}
-			});
+	initRedirectBanner() {
+		const banner = document.querySelector('.birdee__language-redirect');
+		if (banner) {
+			const closeButton = banner.querySelector('.close-notice');
 
-			const languageLinks = this.languageSwitcher.querySelectorAll('a[data-lang]');
-			languageLinks.forEach((link) => {
-				link.addEventListener('click', function () {
-					const [language, country] = this.dataset.lang.split('-');
-					if (language && country) {
-						setLanguageCookies(language, country);
+			if (closeButton) {
+				closeButton.addEventListener('click', function () {
+					banner.parentElement.removeChild(banner);
+				});
+			}
+		}
+	}
+
+	initLanguageSwitcher() {
+		if (this.languageSwitcher.length) {
+			this.languageSwitcher.forEach((languageSwitcher) => {
+				languageSwitcher.addEventListener('click', (ev) => {
+					if (languageSwitcher.classList.contains('active')) {
+						this.closeLanguageSwitcher();
+					} else {
+						ev.stopPropagation();
+						this.openLanguageSwitcher(languageSwitcher);
 					}
+				});
+
+				const languageLinks = languageSwitcher.querySelectorAll('a[data-lang]');
+				languageLinks.forEach((link) => {
+					link.addEventListener('click', function () {
+						const [language, country] = this.dataset.lang.split('-');
+						if (language && country) {
+							setLanguageCookies(language, country);
+						}
+					});
 				});
 			});
 		}
 	}
 
-	openLanguageSwitcher(ev) {
-		this.languageSwitcher.classList.add('active');
+	openLanguageSwitcher(element) {
+		element.classList.add('active');
 		document.body.addEventListener('click', this.onCloseLanguageSwitcher);
 		document.body.addEventListener('keydown', this.onCloseLanguageSwitcher);
 	}
 
-	closeLanguageSwitcher(ev = null) {
+	closeLanguageSwitcher(ev) {
 		if (!ev || (ev && ev.keyCode === 27) || !ev.keyCode) {
-			this.languageSwitcher.classList.remove('active');
+			this.languageSwitcher.forEach((languageSwitcher) => languageSwitcher.classList.remove('active'));
 			document.body.removeEventListener('click', this.onCloseLanguageSwitcher);
 			document.body.removeEventListener('keydown', this.onCloseLanguageSwitcher);
 		}
