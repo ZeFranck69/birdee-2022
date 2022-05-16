@@ -17,6 +17,7 @@ class Multilang extends Service {
     public function __construct() {
         parent::__construct( __DIR__ );
 
+
         if ( ! empty( $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] ) && ! empty( $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ) ) {
             add_action( 'template_redirect', array( __CLASS__, 'redirect_to_cookie_language' ) ); 
         } else {
@@ -120,43 +121,23 @@ class Multilang extends Service {
     }
     
     
-     private static function getCurrentLanguageInfos(){
-        $translation_country    = self::getTranslateCountry();
-        $translation_languages  = self::getTranslateLanguages();
-        $currentLang            = (function_exists('icl_object_id')) ? ICL_LANGUAGE_CODE : 'en-eu';
-        $currentLangueInfos     = array();
-
-        preg_match('#(.+)-(.+)#',$currentLang,$langCountryTab);
-    
-        if(isset($langCountryTab[1])){
-            if(array_key_exists($langCountryTab[1],$translation_languages)){
-                $currentLangueInfos['lang'] = $translation_languages[$langCountryTab[1]];
-                $currentLangueInfos['langcode'] = $langCountryTab[1];
-            }
-        }
-        if(isset($langCountryTab[2])){
-            if(array_key_exists($langCountryTab[2],$translation_country)){
-    
-                $currentLangueInfos['country'] = $translation_country[$langCountryTab[2]]['label'];
-                $currentLangueInfos['countrycode'] = $langCountryTab[2];
-                $currentLangueInfos['flag'] = $translation_country[$langCountryTab[2]]['flag'];
-            }
-        }
-        return $currentLangueInfos;
-    }
-    
      private static function get_language_country_info() {
-        if ( ! empty( $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] ) && ! empty( $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ) ) {
+
+        try {
+            $language_code = explode( '-', ICL_LANGUAGE_CODE )[0];
+            $country_code = explode( '-', ICL_LANGUAGE_CODE )[1];
             $languages = self::getTranslateLanguages();
             $countries = self::getTranslateCountry();
 
-            $language = isset( $languages[ $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] ] ) ? $languages[ $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] ] : '';
-            $flag = ! empty( $countries[ $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ] ) ? $countries[ $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ] ][ 'flag' ] : '';
+            $language = isset( $languages[ $language_code ] ) ? $languages[ $language_code ] : '';
+            $flag = ! empty( $countries[ $country_code ] ) ? $countries[ $country_code ][ 'flag' ] : '';
 
             return array(
                 'lang' => $language,
                 'flag' => $flag
             );
+        } catch (Exception $e) { 
+            return false;
         }
     }
 
