@@ -1,8 +1,12 @@
 <?php
 
 require_once(__DIR__ . '/vendor/autoload.php' );
-$dotenv = Dotenv\Dotenv::create(__DIR__);
-$dotenv->load();
+
+$env_filename = $_SERVER[ 'HTTP_HOST' ] === 'birdee.co' 
+	? '.env.production' 
+	: '.env';
+$dotenv = Dotenv\Dotenv::create(__DIR__, $env_filename );
+$dotenv->safeLoad();
 
 /** Database information **/
 define( 'DB_NAME', getenv( 'DB_NAME' ) );
