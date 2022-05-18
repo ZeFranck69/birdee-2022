@@ -1,7 +1,7 @@
 <?php
 
 namespace Eltigre\Services;
-
+use Eltigre;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 define( 'BIRDEE_COOKIES', array(
@@ -72,11 +72,12 @@ class Multilang extends Service {
     }
 
     public static function enqueue_scripts() {
-        wp_enqueue_script( 'geo', get_template_directory_uri() . '/dist/geotargetly.js', '', '', true ); 
-        wp_localize_script( 'geo', 'wp_geo', array(
+        Eltigre::enqueue_directory( '/dist', 'geotargetly' );
+        // wp_enqueue_script( 'geo', get_template_directory_uri() . '/dist/geotargetly.js', '', '', true ); 
+        wp_localize_script( 'geotargetly', 'wp_geo', array(
             'languages' => icl_get_languages(),
         ) );
-        wp_localize_script( 'geo', 'birdeeCookies', BIRDEE_COOKIES );
+        wp_localize_script( 'geotargetly', 'birdeeCookies', BIRDEE_COOKIES );
     }
 
     public static function add_geotargetly_script() { 

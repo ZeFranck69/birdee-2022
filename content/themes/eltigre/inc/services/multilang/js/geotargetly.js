@@ -55,6 +55,10 @@ window.geotargetly_loaded = function () {
 		const separator = languageURL.includes('?') ? '&' : '?';
 		let redirectURL = languageURL;
 
+		if (redirectURL === window.location.href) {
+			return;
+		}
+
 		if (!window.location.href.includes(languageURL)) {
 			redirectURL += `${separator}language-redirect=true`;
 		}
