@@ -240,6 +240,6 @@ export function setLanguageCookies(language, country) {
 	expires.setFullYear(expires.getFullYear() + 1);
 
 	const domain = `domain=${document.domain.match(/[^\.]*\.[^.]*$/)[0]};`;
-	document.cookie = `${VISITOR_LANGUAGE_COOKIE}=${language}; expires=${expires}; ${domain}`;
-	document.cookie = `${VISITOR_COUNTRY_COOKIE}=${country}; expires=${expires}; ${domain}`;
+	document.cookie = `${VISITOR_LANGUAGE_COOKIE}=${language}; expires=${expires}; path=/; ${domain}`;
+	document.cookie = `${VISITOR_COUNTRY_COOKIE}=${country}; expires=${expires}; path=/; ${domain}`;
 }
