@@ -25,39 +25,30 @@ window.geotargetly_loaded = function () {
 		currencyCode: geotargetly_currency_code(),
 		currencySymbol: geotargetly_currency_symbol(),
 		callingCode: geotargetly_calling_code(),
-		navigatorLang: navigator.language || navigator.userLanguage,
+		language: navigator.language || navigator.userLanguage,
 	};
 
-	// Validate user navigator language
-	let userNavigatorLanguage = data.navigatorLang.split('-')[0];
-	if (!ALLOWED_LANGUAGES.includes(userNavigatorLanguage)) {
-		userNavigatorLanguage = DEFAULT_LANGUAGE;
-	}
-
-	// Validate user country code
-	let userCountryCode = data.countryCode.toLowerCase();
-	if (!ALLOWED_COUNTRIES.includes(userCountryCode)) {
-		userCountryCode = DEFAULT_COUNTRY;
-	}
-
 	// Validate user country/language combination
-	let userCountryLanguage = `${userNavigatorLanguage}-${userCountryCode}`;
+	let userCountryLanguage = `${data.language}-${data.countryCode}`;
 	if (!ALLOWED_COUNTRY_LANGUAGE_CODES.includes(userCountryLanguage)) {
 		userCountryLanguage = DEFAULT_COUNTRY_LANGUAGE;
 	}
 
-	setLanguageCookies(userNavigatorLanguage, userCountryCode);
-
 	const language = wp_geo.languages[userCountryLanguage];
-	const redirectURL = language?.url;
+	if (language) {
+		const [userLanguage, userCountry] = userCountryLanguage.split('-');
 
-	if (redirectURL) {
-		if (redirectURL === window.location.href) {
-			return;
+		setLanguageCookies(userLanguage, userCountry);
+
+		const redirectURL = language?.url;
+		if (redirectURL) {
+			if (redirectURL === window.location.href) {
+				return;
+			}
+
+			const separator = redirectURL.includes('?') ? '&' : '?';
+
+			window.location.href = `${redirectURL}${separator}language-redirect=true`;
 		}
-
-		const separator = redirectURL.includes('?') ? '&' : '?';
-
-		window.location.href = `${redirectURL}${separator}language-redirect=true`;
 	}
 };

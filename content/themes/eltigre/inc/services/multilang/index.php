@@ -56,7 +56,6 @@ class Multilang extends Service {
         $strict_url = ! empty( $wp->request );
         $redirect_url = untrailingslashit( apply_filters( 'wpml_permalink', $current_url , $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] . '-' . $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ], $strict_url ) );
         $redirect_with_params = $redirect_url;
-
         foreach ( $params_to_keep as $name ) {
             if ( isset( $_GET[ $name ] ) && ! empty( $_GET[ $name ] ) ) {
                 $redirect_with_params = add_query_arg( array(
@@ -77,6 +76,7 @@ class Multilang extends Service {
         wp_localize_script( 'geotargetly', 'wp_geo', array(
             'languages' => icl_get_languages(),
         ) );
+
         wp_localize_script( 'geotargetly', 'birdeeCookies', BIRDEE_COOKIES );
     }
 
