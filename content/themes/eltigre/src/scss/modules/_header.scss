@@ -14,6 +14,7 @@ $transition_speed: .2s;
 	z-index: 10;
 	transition: background-color 0.2s ease 0.1s;
 	border-bottom:2px solid $black;
+	position: fixed;
 
 	.header__nav-container,
 	.header__logo-wrapper,
