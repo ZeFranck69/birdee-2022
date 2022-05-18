@@ -65,7 +65,7 @@ class Multilang extends Service {
             }
         }
 
-        if ( strpos( $current_url, $redirect_url ) === false ) {
+        if ( untrailingslashit( $current_url ) !==  untrailingslashit( $redirect_url ) ) {
             wp_redirect( $redirect_with_params );
             exit();
         }
