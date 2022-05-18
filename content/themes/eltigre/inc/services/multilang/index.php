@@ -52,10 +52,17 @@ class Multilang extends Service {
             'utm_medium'
         );
 
+        if ( ! in_array( $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] . '-' . $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ], array_keys( icl_get_languages() ) ) ) {
+            setcookie( BIRDEE_COOKIES[ 'LANGUAGE' ], null, -1, '/' ); 
+            setcookie( BIRDEE_COOKIES[ 'COUNTRY' ], null, -1, '/' ); 
+            return;
+        }
+
         $current_url = home_url( $wp->request );
         $strict_url = ! empty( $wp->request );
         $redirect_url = untrailingslashit( apply_filters( 'wpml_permalink', $current_url , $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] . '-' . $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ], $strict_url ) );
         $redirect_with_params = $redirect_url;
+
         foreach ( $params_to_keep as $name ) {
             if ( isset( $_GET[ $name ] ) && ! empty( $_GET[ $name ] ) ) {
                 $redirect_with_params = add_query_arg( array(
