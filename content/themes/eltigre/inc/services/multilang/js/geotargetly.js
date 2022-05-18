@@ -56,7 +56,7 @@ window.geotargetly_loaded = function () {
 			return;
 		}
 
-		const separator = languageURL.includes('?') ? '&' : '?';
+		const separator = redirectURL.includes('?') ? '&' : '?';
 
 		window.location.href = `${redirectURL}${separator}language-redirect=true`;
 	}
