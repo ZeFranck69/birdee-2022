@@ -51,8 +51,14 @@ window.geotargetly_loaded = function () {
 	const language = wp_geo.languages[userCountryLanguage];
 	const languageURL = language?.url;
 
-	if (languageURL && !window.location.href.includes(languageURL)) {
+	if (languageURL) {
 		const separator = languageURL.includes('?') ? '&' : '?';
-		window.location.href = `${languageURL}${separator}language-redirect=true`;
+		let redirectURL = languageURL;
+
+		if (!window.location.href.includes(languageURL)) {
+			redirectURL += `${separator}language-redirect=true`;
+		}
+
+		window.location.href = redirectURL;
 	}
 };
