@@ -49,20 +49,15 @@ window.geotargetly_loaded = function () {
 	setLanguageCookies(userNavigatorLanguage, userCountryCode);
 
 	const language = wp_geo.languages[userCountryLanguage];
-	const languageURL = language?.url;
+	const redirectURL = language?.url;
 
-	if (languageURL) {
-		const separator = languageURL.includes('?') ? '&' : '?';
-		let redirectURL = languageURL;
-
+	if (redirectURL) {
 		if (redirectURL === window.location.href) {
 			return;
 		}
 
-		if (!window.location.href.includes(languageURL)) {
-			redirectURL += `${separator}language-redirect=true`;
-		}
+		const separator = redirectURL.includes('?') ? '&' : '?';
 
-		window.location.href = redirectURL;
+		window.location.href = `${redirectURL}${separator}language-redirect=true`;
 	}
 };
