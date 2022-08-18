@@ -532,7 +532,6 @@ $transition_speed: .2s;
 		max-width: 450px;
 		width: 100%;
 		position: relative;
-		cursor: pointer;
 		-webkit-user-select: none;
 		   -moz-user-select: none;
 		    -ms-user-select: none;
@@ -543,6 +542,11 @@ $transition_speed: .2s;
 		border-bottom: 1px solid $black;
 		@include tablet{
 			max-width: 310px;
+		}
+
+		.language-switcher__active,
+		.title {
+			cursor: pointer;
 		}
 		&:before{
 			width: 9px;
@@ -616,7 +620,6 @@ $transition_speed: .2s;
 				margin-top: 20px;
 			}
 			.country-list{
-				cursor: pointer;
 				padding: 0;
 				margin: 0;
 				text-align: left;
@@ -672,6 +675,7 @@ $transition_speed: .2s;
 
 							a{
 								font-size: 14px;
+								text-decoration: underline;
 							}
 						}
 					}

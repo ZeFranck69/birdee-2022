@@ -53,7 +53,10 @@ class Eltigre {
     
     
     private function load_public() {
-        $this->load_service( 'Multilang' );
+        if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+            $this->load_service( 'Multilang' );
+        }
+
         self::require_folder( 'public' );
 		self::require_folder( 'public/controllers' );
     }
