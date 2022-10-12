@@ -53,7 +53,8 @@ class Eltigre {
     
     
     private function load_public() {
-        if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+        $is_google_bot = strpos( strtolower( $_SERVER['HTTP_USER_AGENT'] ), 'googlebot') > -1;
+        if ( ! $is_google_bot && defined( 'ICL_SITEPRESS_VERSION' ) ) {
             $this->load_service( 'Multilang' );
         }
 
