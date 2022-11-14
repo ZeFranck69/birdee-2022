@@ -23,7 +23,7 @@ window.geotargetly_loaded = function () {
 	};
 
 	// Validate user country/language combination
-	let userCountryLanguage = `${data.language}-${data.countryCode}`;
+	let userCountryLanguage = `${data.language}-${data.countryCode}`.toLowerCase();
 	if (!ALLOWED_COUNTRY_LANGUAGE_CODES.includes(userCountryLanguage)) {
 		userCountryLanguage = DEFAULT_COUNTRY_LANGUAGE;
 	}
