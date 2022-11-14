@@ -1,14 +1,8 @@
 import { setLanguageCookies } from '/utils/functions';
 
 const { languages } = wp_geo;
-
-const DEFAULT_LANGUAGE = 'en';
-const DEFAULT_COUNTRY = 'eu';
-const DEFAULT_COUNTRY_LANGUAGE = `${DEFAULT_LANGUAGE}-${DEFAULT_COUNTRY}`;
-
+const DEFAULT_COUNTRY_LANGUAGE = `en-eu`;
 const ALLOWED_COUNTRY_LANGUAGE_CODES = Object.keys(languages);
-const ALLOWED_LANGUAGES = [...new Set(ALLOWED_COUNTRY_LANGUAGE_CODES.map((code) => code.split('-')[0]))];
-const ALLOWED_COUNTRIES = [...new Set(ALLOWED_COUNTRY_LANGUAGE_CODES.map((code) => code.split('-')[1]))];
 
 window.geotargetly_loaded = function () {
 	const data = {
@@ -25,7 +19,7 @@ window.geotargetly_loaded = function () {
 		currencyCode: geotargetly_currency_code(),
 		currencySymbol: geotargetly_currency_symbol(),
 		callingCode: geotargetly_calling_code(),
-		language: navigator.language || navigator.userLanguage,
+		language: (navigator.language || navigator.userLanguage || '').split('-').shift()
 	};
 
 	// Validate user country/language combination
