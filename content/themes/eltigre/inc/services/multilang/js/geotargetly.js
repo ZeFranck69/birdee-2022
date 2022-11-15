@@ -19,7 +19,7 @@ window.geotargetly_loaded = function () {
 		currencyCode: geotargetly_currency_code(),
 		currencySymbol: geotargetly_currency_symbol(),
 		callingCode: geotargetly_calling_code(),
-		language: (navigator.language || navigator.userLanguage || '').split('-').shift(),
+		language: (navigator.language || navigator.userLanguage || '').split('-').shift()
 	};
 
 	// Validate user country/language combination
