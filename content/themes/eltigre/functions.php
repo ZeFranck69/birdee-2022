@@ -299,3 +299,14 @@ function init_axeptio() {
     <?php
 }
 
+add_filter('wpml_alternate_hreflang', 'wps_head_hreflang_xdefault', 10, 2);
+function wps_head_hreflang_xdefault($url, $lang_code) {
+      
+    if($lang_code == apply_filters('wpml_default_language', NULL )) {
+          
+        // echo '<link rel="alternate" href="' . $url . '" hreflang="x-default"/>'.PHP_EOL;
+        echo '<link rel="alternate" href="https://birdee.co/eu-en" hreflang="x-default"/>'.PHP_EOL;
+    }
+      
+    return $url;
+}
