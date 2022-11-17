@@ -299,6 +299,17 @@ function init_axeptio() {
     <?php
 }
 
+add_filter( 'wpml_hreflangs', 'wps_head_hreflang_xdefault_remove' );
+function wps_head_hreflang_xdefault_remove($hreflangs){
+    foreach ($hreflangs as $key => $lang)
+    {
+        if ($key == "x-default"){
+            unset ($hreflangs[$key]);
+        }
+    }
+    return $hreflangs;
+}
+
 add_filter('wpml_alternate_hreflang', 'wps_head_hreflang_xdefault', 10, 2);
 function wps_head_hreflang_xdefault($url, $lang_code) {
       
