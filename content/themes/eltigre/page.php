@@ -40,9 +40,6 @@ if ( post_password_required( $timber_post->ID ) ) {
             case 'wallet' :
                 $context = array_merge( $context, Eltigre\Controllers\Wallets::get_context() );
                 break;
-            case 'glossary' :
-                $context = array_merge( $context, Eltigre\Controllers\Glossary::get_context() );
-                break;
             case 'offers' :
                 $context = array_merge( $context, Eltigre\Controllers\Offers::get_context() );
                 break;
