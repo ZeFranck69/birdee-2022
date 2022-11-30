@@ -135,6 +135,28 @@
 				)
 			);
 
+			register_post_type( 'glossary',
+				array(
+					'labels' => array(
+						'name'          => __( 'Glossaire', 'eltigre' ),
+						'add_new'		=> __( 'Ajouter une définition', 'eltigre' ),
+						'singular_name' => __( 'Définition', 'eltigre' ),
+						'all_items'     => __( 'Toutes les définitions', 'eltigre' ),
+						'edit_item'     => __( 'Modifier une définition', 'eltigre' ),
+						'view_item'     => __( 'Voir une définition', 'eltigre' ),
+						'update_item'   => __( 'Mettre à jour une définition', 'eltigre' ),
+						'add_new_item'  => __( 'Ajouter une nouvelle définition', 'eltigre' ),
+						'search_items'  => __( 'Chercher une définition', 'eltigre' ),
+						'popular_items' => __( 'Définitions les plus utilisés', 'eltigre' )
+					),
+					'rewrite'     => array( 'slug' => 'glossary' ),
+					'menu_icon'   => 'dashicons-book',
+					'supports'    => array( 'title', 'editor' ),
+					'public'      => true,
+					'has_archive' => false
+				)
+			);
+
 			register_post_type( 'offers',
 				array(
 					'labels' => array(

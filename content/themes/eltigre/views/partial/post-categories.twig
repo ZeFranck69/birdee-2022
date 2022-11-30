@@ -1,0 +1,53 @@
+
+<div class="realisation__categories" id="realisation__categories">
+  <a class="archive-tag" href="{{  fn( 'get_post_type_archive_link', 'realisation' ) }}" style="color: {{ category.color }}">
+    <div class="tag__block">
+      <div class="tag__picto">
+        <img src="https://eltigredev.fr/trapeze/content/uploads/2022/07/trapeze-tout.svg" alt="">
+      </div>
+      <div class="tag__name hind">
+        {{ __('Tout', 'eltigre') }}
+      </div>
+    </div>
+  </a>
+  {% for category in themes %}
+      <a class="realisation-categories__category" href="{{ category.permalink }}" style="color: {{ category.color }}">
+        <div class="tag__block  {{ theme_id == category.term ? 'active' : '' }}">
+          <div class="tag__picto">
+            <img src="{{ category.picto.url }}" alt="">
+          </div>
+          <div class="tag__name hind">
+            {{ category.name }}
+          </div>
+        </div>
+      </a>
+  {% endfor %}
+</div>
+
+<div class="realisation__categories--mobile" id="realisation__categories">
+  <ul class="list-unstyled tag__select">
+    <li class="init">
+      <div class="tag__picto">
+        <img src="https://eltigredev.fr/trapeze/content/uploads/2022/07/trapeze-tout.svg" alt="">
+      </div>
+      <div class="tag__name hind">
+        <a class="archive-tag" href="{{  fn( 'get_post_type_archive_link', 'realisation' ) }}">
+          {{ __('Tout voir', 'eltigre') }}
+        </a>
+        </div>
+    </li>
+    
+    {% for category in themes %}
+    <li data-value="value {{ loop.index }}" class="tag__name hind">
+      <div class="tag__picto">
+        <img src="{{ category.picto.url }}" alt="">
+      </div>
+      <div class="tag__name hind">
+        <a class="realisation-categories__category" href="{{ category.permalink }}" >
+          {{ category.name }}
+        </a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

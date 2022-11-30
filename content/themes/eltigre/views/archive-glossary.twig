@@ -1,0 +1,95 @@
+{# This file demonstrates using most of the index.twig template and modifying 
+  just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "index.twig" %}
+
+{% block content %}
+<section class="realisations projects" id="{{ section.title|sanitize }}">
+<div class="main-wrapper">
+  <div class="realisation__content-wrapper">
+    <div class="realisation__content-paragraph">
+      
+      {% if options.paragraph is not empty %}
+      <div class="realisation__paragraph description">
+    
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="archive archive-realisations">
+  <div class="realisation-tag__wrapper archive-tag">
+    <div class="main-wrapper">
+      {% include 'partial/post-categories.twig' %}
+    </div>
+  </div>
+  <div class="realisation__container">
+    <div class="realisation__lines main-wrapper">
+
+      <div class="posts-wrapper">
+        <div class="posts__list-wrapper">
+          <div class="posts__list infinite-scroll" data-posts-per-page="6">
+            {% for post in posts %}
+
+            <div class="post post--{{loop.index}}">
+
+              <div class="post-container--realisation-thumbnail">
+                <a href="{{ post.link }}" class="">
+                  <div class="overlay">
+                    <div class="realisation--title hind">
+                      {{post.title}}
+                    </div>
+                    <div class="realisation--description hind">
+                      {{post.post_content}}
+                    </div>
+                  </div>
+                  <a href="{{ post.link }}" class="thumbnail-post">
+                    {{ fn('get_the_post_thumbnail', post.ID)}}
+                  </a>
+                </a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="pagination">
+            {% if posts.pagination.next %}
+            <a href="{{posts.pagination.next.link}}" class="next"></a>
+            {% endif %}
+          </div>
+
+          <div class="page-load-status">
+            <div class="infinite-scroll-request loader-ellips">
+              <span class="loader-ellips__dot"></span>
+              <span class="loader-ellips__dot"></span>
+              <span class="loader-ellips__dot"></span>
+              <span class="loader-ellips__dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="section-{{ index }}" class="section_simple_content  simple newsletter">
+  <div class="main-wrapper simple-content__wrapper" style="text-align: {{ options.nl_text_align }};">
+    {% if options.title is not empty %}
+    <div class="simple-content__title">
+      <span class="handestonie font150">{{ options.title }}</span>
+    </div>
+    {% endif %}
+    {% if options.content is not empty %}
+    <div class="simple-content__content description">
+      {{ options.content }}
+    </div>
+    {% endif %}
+    {# BUTTON LINK #}
+    {% if options.cta is not empty %}
+    {% set cta = options.cta %}
+    {% include 'components/cta.twig' %}
+    {% endif %}
+  </div>
+</div>
+</section>
+
+{% endblock %}

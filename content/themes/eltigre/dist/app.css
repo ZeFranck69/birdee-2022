@@ -6393,7 +6393,6 @@ input[type=range] {
   outline: none;
   -webkit-transition: background 450ms ease-in;
   transition: background 450ms ease-in;
-  -webkit-appearance: none;
 }
 .rs-range:focus {
   outline: none;
@@ -6415,6 +6414,29 @@ input[type=range] {
   border-radius: 0px;
   border: 0px solid #1D1D1B;
 }
+.rs-range::-ms-track {
+  width: 300px;
+  height: 5px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  /*remove default tick marks*/
+  color: transparent;
+}
+.rs-range::-ms-fill-lower {
+  border-radius: 10px;
+}
+.rs-range::-ms-fill-upper {
+  border-radius: 10px;
+}
+.rs-range::-ms-thumb {
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 .rs-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -6430,14 +6452,17 @@ input[type=range] {
   cursor: pointer;
 }
 .rs-range::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: -600px 0 0 600px #69EFCA;
   width: 22px;
   height: 22px;
   border: 0;
-  right: 16px;
+  box-shadow: none;
   background-color: #69EFCA;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: -600px 0 0 600px #69EFCA;
 }
 .rs-range::-moz-focus-outer {
   border: 0;

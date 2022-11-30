@@ -156,7 +156,6 @@ input[type='range'] {
 
 	outline: none;
 	transition: background 450ms ease-in;
-	-webkit-appearance: none;
 
 	&:focus {
 		outline: none;
@@ -179,6 +178,37 @@ input[type='range'] {
 		border-radius: 0px;
 		border: 0px solid $black;
 	}
+	&::-ms-track {
+		width: 300px;
+		height: 5px;
+		
+		/*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+		background: transparent;
+		
+		/*leave room for the larger thumb to overflow with a transparent border */
+		border-color: transparent;
+		
+	
+		/*remove default tick marks*/
+		color: transparent;
+	}
+	&::-ms-fill-lower {
+		
+		border-radius: 10px;
+	}
+	&::-ms-fill-upper  {
+			
+			border-radius: 10px;
+	}
+	&::-ms-thumb {
+		border: none;
+		height: 16px;
+		width: 16px;
+		border-radius: 50%;
+
+		cursor: pointer;
+	}
+	
 
 	// &::-webkit-slider-thumb {
 	// 	box-shadow: none;
@@ -205,6 +235,9 @@ input[type='range'] {
 	// 	-webkit-appearance: none;
 	// 	margin-top: -20px;
 	// }
+
+
+	// Comment because of firefox bug
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
@@ -217,23 +250,40 @@ input[type='range'] {
 		border-radius: 50%;
 		cursor: pointer;
 	}
-	  
-	  &::-moz-range-thumb {
+	&::-moz-range-thumb {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		     appearance: none;
+		box-shadow: -600px 0 0 600px $green;
 		width: 22px;
 		height: 22px;
 		border: 0;
-		right: 16px;
+		box-shadow: none;
 		background-color: $green;
 		border-radius: 50%;
 		cursor: pointer;
-		box-shadow: -600px 0 0 600px $green;
 	}
+	  
+	//   &::-moz-range-thumb {
+	// 	width: 22px;
+	// 	height: 22px;
+	// 	border: 0;
+	// 	right: 16px;
+	// 	background-color: $green;
+	// 	border-radius: 50%;
+	// 	cursor: pointer;
+	// 	box-shadow: -600px 0 0 600px $green;
+	// }
 
 
 	&::-moz-focus-outer {
 		border: 0;
 	}
 }
+
+
+		
+		
 
 .rs-label {	
 	font-size: 20px;
