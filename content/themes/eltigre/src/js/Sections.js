@@ -16,6 +16,7 @@ import StepsTabs from './flexibles/StepsTabs';
 import TextImage from './flexibles/TextImage';
 import TwoBlocks from './flexibles/TwoBlocks';
 import Wallets from './flexibles/Wallets';
+import Faqs from './flexibles/Faq';
 
 export default class Sections {
 	SECTIONS = {
@@ -33,6 +34,7 @@ export default class Sections {
 		'steps-tabs': StepsTabs,
 		'two-blocks': TwoBlocks,
 		prefooter: PreFooter,
+		faq: Faqs,
 		'text-image': TextImage,
 		'multi-block': MultiBlocks,
 		press: Press,

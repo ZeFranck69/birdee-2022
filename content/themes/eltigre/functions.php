@@ -321,3 +321,9 @@ function wps_head_hreflang_xdefault($url, $lang_code) {
       
     return $url;
 }
+//Remove shortlink in head
+add_filter('after_setup_theme', 'remove_shortlink_head');
+function remove_shortlink_head() {
+remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+remove_action( 'template_redirect', 'wp_shortlink_header', 11);
+}
