@@ -5,6 +5,9 @@
 .term-single__container{
     display: flex;
     gap: 60px;
+    @include tablet{
+        flex-direction: column;
+    }
 }
 
 .term-left-part{
@@ -19,6 +22,9 @@
     }
     .sharer-title{
         margin-top: 24px;
+        @include tablet{
+            display: none;
+        }
     }
     .header--socials-media{
         display: flex;
@@ -30,6 +36,9 @@
                 transition: color .35s ease-in-out;
                 color: $green;
             }
+        }
+        @include tablet{
+            display: none;
         }
     }
 }
@@ -50,6 +59,28 @@
             padding-left: 20px;
             li{
 
+            }
+        }
+    }
+    .social-medias__mobile{
+        display: none;
+        @include tablet{
+            display: block;
+            margin-top: 40px;
+        }
+        .header--socials-media{
+            
+            .fab{
+                font-size: 1.5rem;
+                &:hover{
+                    transition: color .35s ease-in-out;
+                    color: $green;
+                }
+            }
+            @include tablet{
+                display: flex;
+                gap: 15px;
+                margin-top: 20px;
             }
         }
     }

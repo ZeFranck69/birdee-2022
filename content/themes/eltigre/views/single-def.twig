@@ -5,7 +5,7 @@
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			
 			<section class="article-content article-content--glossary">
-				<div class="main-content main-wrapper">
+				<div class="main-content main-wrapper padding-medium">
 					<div class="term-single__container">
 						<div class="term-left-part">
 							<a href="javascript:history.back()" class="go-back">
@@ -14,14 +14,18 @@
 							<div class="sharer-title uppercase">
 								{{ __('Partager cette definition', 'eltigre') }}
 							</div>
-							
-								{% include 'partial/sharer.twig' %}
-							
+							{% include 'partial/sharer.twig' %}
 						</div>
 						<div class="term-right-part">
 							<h1 class="term-glossary-h1 title uppercase">{{ post.title }}</h1>
 							<div class="term-body description">
 								{{post.content}}
+							</div>
+							<div class="social-medias__mobile">
+								<div class="sharer-title uppercase">
+									{{ __('Partager cette definition', 'eltigre') }}
+								</div>
+								{% include 'partial/sharer.twig' %}
 							</div>
 						</div>
 
@@ -30,5 +34,5 @@
 			</section>
 
 		</article>
-	</div><!-- /content-wrapper -->
+	</div>
 {% endblock %}
