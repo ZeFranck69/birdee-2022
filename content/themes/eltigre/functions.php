@@ -344,18 +344,9 @@ function wps_head_hreflang_xdefault($url, $lang_code) {
       
     return $url;
 }
-<<<<<<< HEAD
-add_filter('after_setup_theme', 'gomaya_remove_shortlink');
-function gomaya_remove_shortlink() {
-	remove_action('wp_head', 'wp_shortlink_wp_head', 10);
-	remove_action( 'template_redirect', 'wp_shortlink_header', 11);
-}
-
-=======
 //Remove shortlink in head
 add_filter('after_setup_theme', 'remove_shortlink_head');
 function remove_shortlink_head() {
 remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 remove_action( 'template_redirect', 'wp_shortlink_header', 11);
 }
->>>>>>> f9d7ebfe93e2ac8634351c391099cb759bdb63f1
