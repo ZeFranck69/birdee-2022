@@ -276,6 +276,7 @@ body::-webkit-scrollbar-thumb {
 @import 'modules/_intercom';
 @import 'modules/_404';
 @import 'modules/_language-banner';
+@import 'modules/_single-term';
 
 // FLEXIBLES
 @import 'flexibles/_banner';
@@ -299,5 +300,7 @@ body::-webkit-scrollbar-thumb {
 @import 'flexibles/_performances';
 @import 'flexibles/_quote';
 @import 'flexibles/_offers';
+@import 'flexibles/_glossary';
 @import 'flexibles/_contact-form';
 @import 'flexibles/_prefooter';
+@import 'flexibles/_faq';

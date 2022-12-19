@@ -5,6 +5,7 @@ import Menu from './class/Menu';
 import Intercom from './class/Intercom';
 
 import gsap from 'gsap';
+
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import { getQueryParam } from './utils/functions';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
@@ -27,7 +28,7 @@ export default class App {
 			campaign: getQueryParam('utm_campaign'),
 		};
 
-		console.log(utmParams);
+		// console.log(utmParams);
 
 		const UTM = Object.entries(utmParams)
 			.map(([name, value]) => (value ? `utm_${name}=${value}` : null))

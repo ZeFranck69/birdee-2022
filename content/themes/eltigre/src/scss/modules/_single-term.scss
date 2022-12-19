@@ -1,0 +1,90 @@
+.content-glossary__wrapper{
+    margin: 158px auto 100px;
+    
+}
+.term-single__container{
+    display: flex;
+    gap: 60px;
+    @include tablet{
+        flex-direction: column;
+    }
+}
+
+.term-left-part{
+    .go-back{
+        img{
+            margin-right: 5px;
+        }
+        &:hover{
+            transition: color .35s ease-in-out;
+            color: $green;
+        }
+    }
+    .sharer-title{
+        margin-top: 24px;
+        @include tablet{
+            display: none;
+        }
+    }
+    .header--socials-media{
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        .fab{
+            font-size: 1.5rem;
+            &:hover{
+                transition: color .35s ease-in-out;
+                color: $green;
+            }
+        }
+        @include tablet{
+            display: none;
+        }
+    }
+}
+.term-right-part{
+    max-width: 850px;
+    width: 100%;
+    .term-body{
+        p{
+            margin-bottom: 24px;
+
+        }   
+        a{
+            color: $green;
+            transition: color .35s ease-in-out;
+            
+        }
+        ul{
+            padding-left: 20px;
+            li{
+
+            }
+        }
+    }
+    .social-medias__mobile{
+        display: none;
+        @include tablet{
+            display: block;
+            margin-top: 40px;
+        }
+        .header--socials-media{
+            
+            .fab{
+                font-size: 1.5rem;
+                &:hover{
+                    transition: color .35s ease-in-out;
+                    color: $green;
+                }
+            }
+            @include tablet{
+                display: flex;
+                gap: 15px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+.term-glossary-h1{
+    margin-bottom: 24px;
+}

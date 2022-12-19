@@ -1,0 +1,30 @@
+<section id="{{ section.title|sanitize }}" class="glossary" style="background-color: {{ section.background_color }}">
+
+	<div class="main-wrapper" style=" padding-top:{{ section.margin_top }}px; padding-bottom: {{ section.margin_bottom }}px">
+		<div class="glossary-main-container padding-medium">
+			<div class="glossary__left-part">
+				{% if section.title is not empty %}
+				<div class="glossary__section-title">
+					<h2 class="title bold uppercase">{{ section.title }}</h2>
+				</div>
+				{% endif %}
+				{% if section.description is not empty %}
+				<div class="glossary__section-description">
+					<p class="description">{{ section.description }}</p>
+				</div>
+				{% endif %}
+			</div>
+			<div class="glossary-wrapper">
+				{% if section.glossary_code %}
+					<div class="glossary-part" >
+						{{ section.glossary_code }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+<style>
+
+
+</style>
