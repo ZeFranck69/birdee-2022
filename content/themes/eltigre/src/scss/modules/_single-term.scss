@@ -46,10 +46,52 @@
     max-width: 850px;
     width: 100%;
     .term-body{
+        h1{
+            font-family: "Favorit Bold Lining",sans-serif;
+            font-size: 36px;
+            letter-spacing: 5px;
+            line-height: 56px;
+            text-transform: uppercase;
+            margin-bottom: 24px; 
+            padding-top: 10px;
+        }
+        h2{
+            font-family: "Favorit Bold Lining",sans-serif;
+            font-size: 31px;
+            letter-spacing: 5px;
+            line-height: 1.25;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            padding-top: 10px;
+        }
+        h3{
+            font-family: "Favorit Bold Lining",sans-serif;
+            font-size: 28px;
+            letter-spacing: 5px;
+            line-height: 1.25;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            padding-top: 10px;
+        }
+        h4{
+            font-family: "Favorit Bold Lining",sans-serif;
+            font-size: 25px;
+            letter-spacing: 5px;
+            line-height: 1.25;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            padding-top: 10px;
+        }
         p{
             margin-bottom: 24px;
 
         }   
+        b, strong{
+            font-weight: bold;
+        }
+        i, em{
+            font-style:italic;
+        }
         a{
             color: $green;
             transition: color .35s ease-in-out;
@@ -57,8 +99,39 @@
         }
         ul{
             padding-left: 20px;
+            margin-bottom: 24px;
             li{
+                margin-bottom: 10px;
+                position: relative;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    background-color: $black;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 20px;
+                    left: -12px;
+                    top: 9px;
+                }
+            }
+        }
+        ol{
+            padding-left: 29px;
+            margin-bottom: 24px;
+            list-style-type: decimal;
+            li{
+                margin-bottom: 10px;
+                position: relative;
+                
+            }
+        }
+        table{
 
+            tr{
+                td{
+                    padding: 15px;
+                    border: 1px solid $blue;
+                }
             }
         }
     }
