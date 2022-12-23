@@ -12,12 +12,27 @@
 .glossary-main-container{
     display: flex;
     justify-content: space-between;
+    gap: 50px;
+    @media screen and (max-width:1024px) {
+        flex-direction: column;
+        
+    }
 }
 .glossary__left-part{
     max-width: 400px;
     width: 100%;
+    @media screen and (max-width:1024px) {
+        max-width: 100%;
+    }
     .glossary__section-title{
         margin-bottom: 24px;
+        .title{
+            font-size: 30px;
+            @media screen and (max-width:550px) {
+                font-size: 20px;
+                line-height: 1.25;
+            }
+        }
     }
 }
 .glossary-wrapper{
