@@ -3,7 +3,7 @@
 		<div class="menu--left">
 			<div class='main-logo'>
 				<a class='logo--link' href='{{ site.url }}'>
-						{{ logo }}
+					{{ logo }}
 				</a>
 			</div>
 			<div class="main-logo__partner">
@@ -18,7 +18,7 @@
 		<div class="menu--left">
 			<div class='main-logo'>
 				<a class='logo--link' href='{{ site.url }}'>
-						{{ logo }}
+					{{ logo }}
 				</a>
 			</div>
 			<nav class='nav__links'>
@@ -26,6 +26,31 @@
 			</nav>
 		</div>
 		<div class="menu--right">
+			<div class="phone-number__container desktop">
+				<div class="phone__picto">
+				</div>
+				{% if site.language == "fr_FR" %}
+					<div class="phone fr">
+						<a href="tel:{{ options.phone_fr }}">
+							{{ options.phone_fr }}
+						</a>
+					</div>
+				{% elseif site.language == "en_EU" or site.language == "en_LU" or site.language == "fr_LU" %}
+					<div class="phone int">
+						<a href="tel:{{ options.phone_int }}">
+							{{ options.phone_int }}
+						</a>
+					</div>
+
+				{% elseif site.language == "nl_BE" or site.language == "fr_BE" %}
+					<div class="phone int">
+						<a href="tel:{{ options.phone_be }}">
+							{{ options.phone_be }}
+						</a>
+					</div>
+				{% endif %}
+				
+			</div>
 			<nav class='nav__links'>
 				{% include 'partial/menu.twig' with {'items': menu.header.right.get_items} %}
 			</nav>
@@ -40,6 +65,32 @@
 	</div>
 	<nav id="slide-nav">
 		{% include "partial/menu.twig" with {'items': menuHeader.get_items} %}
+		<div class="phone-number__container mobile">
+			<div class="phone__picto">
+			</div>
+			{% if site.language == "fr_FR" %}
+				<div class="phone fr">
+					<a href="tel:{{ options.phone_fr }}">
+						{{ options.phone_fr }}
+					</a>
+				</div>
+			{% elseif site.language == "en_EU" or site.language == "en_LU" or site.language == "fr_LU" %}
+				<div class="phone int">
+					<a href="tel:{{ options.phone_int }}">
+						{{ options.phone_int }}
+					</a>
+				</div>
+
+			{% elseif site.language == "nl_BE" or site.language == "fr_BE" %}
+				<div class="phone int">
+					<a href="tel:{{ options.phone_be }}">
+						{{ options.phone_be }}
+					</a>
+				</div>
+			{% endif %}
+			
+		</div>
+
 		{% do action('wp_languages_switcher') %}
 		<div class="mobile-header__socials">
 			{% for social in options.socials_media %}

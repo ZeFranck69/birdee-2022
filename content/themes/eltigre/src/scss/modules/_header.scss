@@ -116,12 +116,12 @@ $transition_speed: .2s;
 		.main-logo--mobile{
 
 			a:first-child{
-				@include landscape{
+				@include laptop-small{
 					display: none;
 				}
 			}
 			a:last-child{
-				@include landscape{
+				@include laptop-small{
 					display: block;
 				}
 			}
@@ -166,7 +166,7 @@ $transition_speed: .2s;
 		}
 		.nav__links{
 			margin-left:25px;
-			@include landscape{
+			@include laptop-small{
 				visibility: hidden;
 				display: none;			
 			}
@@ -179,6 +179,57 @@ $transition_speed: .2s;
 				// display: none;
 				margin-right: 0;
 				font-size: 13px;
+			}
+		}
+		.phone-number__container{
+			margin-right: 20px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			&.desktop{
+				@include desktop{
+					margin-right: 5px;
+				}
+				@include mobile-xl{
+					display: none;
+				} 
+				.phone__picto{
+					background-image: url('../images/simple_phone.svg');
+					width: 25px;
+					height: 25px;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+			}
+			
+			&.mobile{
+				display: none;
+				height: auto;
+				max-width: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.phone__picto{
+					background-image: url('../images/simple_phone.svg');
+					width: 25px;
+					height: 25px;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+				.phone{
+					color: #1B1F1E;
+					text-transform: uppercase;
+					font-size: 20px;
+					font-family: "Favorit";
+					font-weight: bold;
+					line-height: 1.25;
+					display: block;
+					padding: 10px 0;
+				}
 			}
 		}
 	}
@@ -269,7 +320,7 @@ $transition_speed: .2s;
 			
 		}
 		.header__nav {
-			@include landscape {
+			@include laptop-small {
 				left: 0;
 				transform: translateX(0%) translateY(67px);
 				margin-left: 0;
@@ -358,17 +409,17 @@ $transition_speed: .2s;
 			max-width: 155px;
 			width: 100%;
 			img{
-				@include landscape{
+				@include laptop-small{
 					height: auto;
 				}
 			}
 			a:first-child{
-				@include landscape{
+				@include laptop-small{
 					display: none;
 				}
 			}
 			.logo--sticky-mobile{
-				@include landscape{
+				@include laptop-small{
 					display: block;
 					padding-top: 6px;
 				}
@@ -466,6 +517,44 @@ $transition_speed: .2s;
 		&:after{
 			content: none;
 		}
+		}
+	}
+	.phone-number__container{
+
+		&.mobile{
+			display: none;
+			height: auto;
+			max-width: 100%;
+			width: 100%;
+			flex-direction: row;
+			gap: 15px;
+			justify-content: center;
+			align-items: center;
+			max-width: 310px;
+			margin: 10px auto 0;
+			border-top: 1px solid #1B1F1E;
+			padding: 8px 0;
+			@include mobile-xl{
+				display: flex;
+			} 
+			.phone__picto{
+				background-image: url('../images/simple_phone.svg');
+				width: 25px;
+				height: 25px;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.phone{
+				color: #1B1F1E;
+				text-transform: uppercase;
+				font-size: 17px;
+				font-family: "Favorit";
+				font-weight: bold;
+				line-height: 1.25;
+				display: block;
+				padding: 10px 0;
+			}
 		}
 	}
 }

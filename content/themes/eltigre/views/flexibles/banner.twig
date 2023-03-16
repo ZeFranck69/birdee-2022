@@ -34,8 +34,18 @@
 						</span>	
 					</a>
 				</div>
+				{% if section.second_cta.title %}
+					<div class="banner-content__bullet">
+						<a href="{{ section.second_cta.url }}" class="cta cta--black-blue uppercase" target="{{ section.second_cta.target }}">
+							<span class="cta__label">
+								{{ section.second_cta.title }}
+							</span>	
+						</a>
+					</div>
+				{% endif %}
 			</div>
 			{% endif %}
+			
 			{% if section.trustpilot %}	
 			<div class="trustpilot__wrapper">
 				{{ section.trustpilot }}
