@@ -68,6 +68,7 @@
   "dependencies": {
     "gsap": "^3.7.1",
     "infinite-scroll": "^4.0.1",
-    "swup": "^2.0.14"
+    "swup": "^2.0.14",
+    "website-carbon-calculator": "^1.2.7"
   }
 }

@@ -3,6 +3,7 @@ import Sections from './Sections';
 import Menu from './class/Menu';
 // import Swup from 'swup';
 import Intercom from './class/Intercom';
+import { WebsiteCarbonCalculator, WebsiteCarbonCalculatorError } from 'website-carbon-calculator';
 
 import gsap from 'gsap';
 
@@ -19,6 +20,25 @@ export default class App {
 		new Intercom();
 		new Animations();
 		this.menu = new Menu();
+
+		try {
+			const websiteCarbonCalculator = new WebsiteCarbonCalculator({
+				pagespeedApiKey: 'AIzaSyCcFfoQmSB_pWdgMfcN9-kzYuVMmTo3OpY',
+			});
+			const result = websiteCarbonCalculator.calculateByURL('https://eltigredev.fr/birdee-2022/');
+
+			//   {
+			//     url: 'yourwebsite.com',
+			//     bytesTransferred: 123456,
+			//     isGreenHost: true,
+			//     co2PerPageview: 0.1234567,
+			//   }
+		} catch (error) {
+			if (error instanceof WebsiteCarbonCalculatorError) {
+				console.warn(error.message);
+			}
+			// Do something else...
+		}
 	}
 
 	keepUtmParams() {
