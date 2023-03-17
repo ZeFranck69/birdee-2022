@@ -42,7 +42,9 @@
 							<div class="tabs__years">
 							{% for year in subject.years %}
 								<div class="tab__year title--secondary bold {{ loop.index == 1 ? 'active' : ''}}" data-year="{{ year.year }}">
-									{{ year.year }}
+									<span class="year">
+										{{ year.year }}
+									</span>
 									<div class="tab__year-bullet"></div>
 								</div>
 							{% endfor %}

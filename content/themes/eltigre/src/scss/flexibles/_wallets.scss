@@ -90,6 +90,14 @@
                     transition: all .35s ease-in-out;
                 }
             }
+            .year{
+                display: flex;
+                max-width: 90px;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 80px;
+            }
             .tab__year-bullet{
                 width: 16px;
                 height: 16px;

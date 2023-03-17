@@ -5069,6 +5069,20 @@ html[lang=nl-be] .page-child .banner .banner__content {
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
+.wallet-block__right-part .tabs__years .tab__year .year {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 90px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 80px;
+}
 .wallet-block__right-part .tabs__years .tab__year .tab__year-bullet {
   width: 16px;
   height: 16px;

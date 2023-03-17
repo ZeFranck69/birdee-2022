@@ -27,15 +27,18 @@
 		</div>
 		<div class="menu--right">
 			<div class="phone-number__container desktop">
-				<div class="phone__picto">
-				</div>
+			
 				{% if site.language == "fr_FR" %}
+					<div class="phone__picto">
+					</div>
 					<div class="phone fr">
 						<a href="tel:{{ options.phone_fr }}">
 							{{ options.phone_fr }}
 						</a>
 					</div>
 				{% elseif site.language == "en_EU" or site.language == "en_LU" or site.language == "fr_LU" %}
+					<div class="phone__picto">
+					</div>
 					<div class="phone int">
 						<a href="tel:{{ options.phone_int }}">
 							{{ options.phone_int }}
@@ -43,6 +46,8 @@
 					</div>
 
 				{% elseif site.language == "nl_BE" or site.language == "fr_BE" %}
+					<div class="phone__picto">
+					</div>
 					<div class="phone int">
 						<a href="tel:{{ options.phone_be }}">
 							{{ options.phone_be }}
