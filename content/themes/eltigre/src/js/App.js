@@ -25,7 +25,7 @@ export default class App {
 			const websiteCarbonCalculator = new WebsiteCarbonCalculator({
 				pagespeedApiKey: 'AIzaSyCcFfoQmSB_pWdgMfcN9-kzYuVMmTo3OpY',
 			});
-			const result = websiteCarbonCalculator.calculateByURL('https://staging.birdee.co/');
+			const result = websiteCarbonCalculator.calculateByURL('https://birdee.co/');
 
 			//   {
 			//     url: 'yourwebsite.com',
