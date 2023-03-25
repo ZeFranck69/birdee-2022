@@ -1,5 +1,15 @@
 $transition_speed: .2s;
 
+html[lang="nl-be"]{
+	.header__content .menu--left .nav__links ul li, .header__content .menu--right .nav__links ul li{
+		font-size: 16px;
+		@include laptop-small{
+			font-size: 20px;
+		}
+	}
+}
+
+
 .no-scroll {
 	overflow: hidden;
 }
