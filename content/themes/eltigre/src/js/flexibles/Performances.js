@@ -45,10 +45,11 @@ class Section {
 					saving.innerHTML = operation.toLocaleString();
 
 					// Mettre l'operation de comparaison ici
-					const initialDepotEpargne = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
+					const initialDepotEpargne = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.002466, 180) * 100) / 100;
 					const reccurentDepotEpargne =
-						Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
+						Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.002466, 180) - 1) / 0.002466) * 100) / 100;
 					const operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
+					console.log(operationEpargne.toLocaleString());
 					comparison.innerHTML = operationEpargne.toLocaleString();
 
 					var value = ((rangesSlider.value - rangesSlider.min) / (rangesSlider.max - rangesSlider.min)) * 100;
@@ -66,9 +67,9 @@ class Section {
 			saving.innerHTML = operation.toLocaleString();
 
 			// Mettre l'operation de comparaison ici
-			const initialDepotEpargne = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.00083, 180) * 100) / 100;
+			const initialDepotEpargne = Math.round(parseInt(this.result[0]) * Math.pow(1 + 0.002466, 180) * 100) / 100;
 			const reccurentDepotEpargne =
-				Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.00083, 180) - 1) / 0.00083) * 100) / 100;
+				Math.round(parseInt(this.result[1]) * ((Math.pow(1 + 0.002466, 180) - 1) / 0.002466) * 100) / 100;
 			const operationEpargne = initialDepotEpargne + reccurentDepotEpargne;
 
 			comparison.innerHTML = operationEpargne.toLocaleString();
