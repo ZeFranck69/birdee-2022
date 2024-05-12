@@ -46,11 +46,11 @@ class Multilang extends Service {
 
         if ( is_404() || is_admin() || wp_doing_ajax() ) return;
         
-        $params_to_keep = array(
-            'utm_source',
-            'utm_campaign',
-            'utm_medium'
-        );
+        // $params_to_keep = array(
+        //     'utm_source',
+        //     'utm_campaign',
+        //     'utm_medium'
+        // );
 
         if ( ! in_array( $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] . '-' . $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ], array_keys( icl_get_languages() ) ) ) {
             setcookie( BIRDEE_COOKIES[ 'LANGUAGE' ], null, -1, '/' ); 
@@ -63,13 +63,13 @@ class Multilang extends Service {
         $redirect_url = untrailingslashit( apply_filters( 'wpml_permalink', $current_url , $_COOKIE[ BIRDEE_COOKIES[ 'LANGUAGE' ] ] . '-' . $_COOKIE[ BIRDEE_COOKIES[ 'COUNTRY' ] ], $strict_url ) );
         $redirect_with_params = $redirect_url;
 
-        foreach ( $params_to_keep as $name ) {
-            if ( isset( $_GET[ $name ] ) && ! empty( $_GET[ $name ] ) ) {
-                $redirect_with_params = add_query_arg( array(
-                    $name => $_GET[ $name ]
-                ), $redirect_with_params );
-            }
-        }
+        // foreach ( $params_to_keep as $name ) {
+        //     if ( isset( $_GET[ $name ] ) && ! empty( $_GET[ $name ] ) ) {
+        //         $redirect_with_params = add_query_arg( array(
+        //             $name => $_GET[ $name ]
+        //         ), $redirect_with_params );
+        //     }
+        // }
 
         if ( untrailingslashit( $current_url ) !==  untrailingslashit( $redirect_url ) ) {
             wp_redirect( $redirect_with_params );

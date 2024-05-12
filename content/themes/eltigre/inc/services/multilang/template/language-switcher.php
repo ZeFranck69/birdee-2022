@@ -33,7 +33,10 @@
 
                                         if( isset( $languagesAll[ $codeLanguage ] ) ) : ?>
                                             <li>
-                                                <a href="<?php echo $languagesAll[$codeLanguage]['url']; ?>" class="<?php echo $current; ?>" data-country="<?php echo $keyc; ?>" data-lang="<?php echo $codeLanguage; ?>"><?php echo $translation_languages[$keyl]; ?></a>
+                                                <?php
+                                                $langLink = $languagesAll[$codeLanguage]['url']; 
+                                                ?>
+                                                <a href="<?php echo htmlspecialchars($langLink); ?>" class="<?php echo $current; ?>" data-country="<?php echo $keyc; ?>" data-lang="<?php echo $codeLanguage; ?>"><?php echo $translation_languages[$keyl]; ?></a>
                                             </li>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
