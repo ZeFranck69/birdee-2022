@@ -16,7 +16,7 @@
                        
                         <div class="pagination">
                             {% if press_posts.pagination.next %}
-                                <a href="{{press_posts.pagination.next.link}}" class="next"></a>
+                                <a href="{{ press_posts.pagination.next.link|escape }}" class="next"></a>
                             {% endif %} 
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="download-kit-part__files">
                             {% for file in section.download_part.files %}
                             <div class="files__file">
-                                <a href="{{ file.file.url }}" target="_blank" download>
+                                <a href="{{ file.file.url|escape }}" target="_blank" download>
                                     {{ file.doc_name }}</a>
                             </div>
                             {% endfor %}

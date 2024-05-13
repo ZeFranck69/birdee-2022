@@ -23,7 +23,7 @@
                                 {{ collabID.post_title }}
                             </div>
                             <div class="collaborator-link--wrapper">
-                                <a href="{{ collabID.link }}" class="collaborator-link">
+                                <a href="{{ collabID.link|escape }}" class="collaborator-link">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
@@ -35,7 +35,7 @@
                 {% if section.cta %}
                 <div
                     class="collaborators__cta-wrapper {{ section.classic.cta_align }}">
-                    <a href="{{ section.classic.cta.url }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
+                    <a href="{{ section.classic.cta.url|escape }}" class="cta cta--black-green" target="{{ section.classic.cta.target }}">
                         <span class="cta__label">
                             {{ section.cta.title }}
                         </span>

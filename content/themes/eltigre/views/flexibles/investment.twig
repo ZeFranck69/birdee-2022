@@ -28,7 +28,7 @@
                                 {{ collabID.post_title|split(' ')[0] }}
                             </div>
                             <div class="collaborator-link--wrapper">
-                                <a href="{{ collabID.link }}" class="collaborator-link">
+                                <a href="{{ collabID.link|escape }}" class="collaborator-link">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
@@ -45,7 +45,7 @@
                 {% if section.cta %}
                 <div
                     class="investment__cta-wrapper">
-                    <a href="{{ section.cta.url }}" class="cta cta-black uppercase" target="{{ section.cta.target }}">
+                    <a href="{{ section.cta.url|escape }}" class="cta cta-black uppercase" target="{{ section.cta.target }}">
                         <span class="cta__label">
                             {{ section.cta.title }}
                         </span>

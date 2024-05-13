@@ -39,7 +39,7 @@
 									{% endif %}
 									{% if block.block_button.title %}
 									<div class="multi-block__block-cta-wrapper">
-										<a href="{{ block.block_button.url }}" class="cta {{ block.block_cta_color }} uppercase" target="{{ block.block_button.target }}">
+										<a href="{{ block.block_button.url|escape }}" class="cta {{ block.block_cta_color }} uppercase" target="{{ block.block_button.target }}">
 											<span class="cta__label">
 												{{ block.block_button.title }}
 											</span>
@@ -54,7 +54,7 @@
 				{% if section.cta %}
 				<div
 					class="multi-block__cta-wrapper {{ section.classic.cta_align }}">
-					<a href="{{ section.classic.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.classic.cta.target }}">
+					<a href="{{ section.classic.cta.url|escape }}" class="cta cta--black-green uppercase" target="{{ section.classic.cta.target }}">
 						<span class="cta__label">
 								{{ section.cta.title }}
 						</span>

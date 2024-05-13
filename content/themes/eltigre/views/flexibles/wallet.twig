@@ -110,7 +110,7 @@
 										</div>
 										{% if wallet.cta %}
 										<div class="wallet__cta-wrapper center">
-											<a href="{{ wallet.cta.url }}" class="cta {{ wallet.cta_color }} uppercase" target="{{ wallet.cta.target }}">
+											<a href="{{ wallet.cta.url|escape }}" class="cta {{ wallet.cta_color }} uppercase" target="{{ wallet.cta.target }}">
 												<span class="cta__label">
 													{{ wallet.cta.title }}
 												</span>
@@ -129,7 +129,7 @@
 			</div>
 			{% if section.cta %}
 			<div class="wallet__cta-wrapper {{ section.cta_align }}">
-				<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase" target="{{ section.cta.target }}">
+				<a href="{{ section.cta.url|escape }}" class="cta cta--black-green uppercase" target="{{ section.cta.target }}">
 					<span class="cta__label">
 						{{ section.cta.title }}
 					</span>

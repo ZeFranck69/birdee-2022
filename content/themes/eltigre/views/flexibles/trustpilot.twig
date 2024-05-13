@@ -26,7 +26,7 @@
 			<!-- CTA -->
 			{% if section.cta %}
 				<div class="trustpilot-content__cta-wrapper">
-					<a href="{{ section.cta.url }}" class="trustpilot-link cta cta--black-blue uppercase" target="{{ section.cta.target }}">
+					<a href="{{ section.cta.url|escape }}" class="trustpilot-link cta cta--black-blue uppercase" target="{{ section.cta.target }}">
 						<span class="cta__label">
 							{{ section.cta.title }}
 						</span>

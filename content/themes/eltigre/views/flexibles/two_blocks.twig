@@ -26,7 +26,7 @@
 						<div class="buttons-wrapper__list" style="max-width: {{ section.width }}px;">
 							{% for cta in section.buttons %}
 								<div class="cta-wrapper {{ section.cta_align }}">
-									<a href="{{ cta.link.url }}" class="cta {{ cta.cta_color }} uppercase" target="{{ section.link.target }}">
+									<a href="{{ cta.link.url|escape }}" class="cta {{ cta.cta_color }} uppercase" target="{{ section.link.target }}">
 										<span class="cta__label">
 											{{ cta.link.title }}
 										</span>

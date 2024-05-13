@@ -43,7 +43,7 @@
 							{% if step.cta %}
 							<div
 								class="steps__cta-wrapper {{ section.cta_align }}">
-								<a href="{{ step.cta.url }}" class="cta cta--black-green" target="{{ step.cta.target }}">
+								<a href="{{ step.cta.url|escape }}" class="cta cta--black-green" target="{{ step.cta.target }}">
 									<span class="cta__label">
 										{{ step.cta.title }}
 									</span>
@@ -58,7 +58,7 @@
 			{% if section.button.title is not empty %}
 				<div
 					class="section-steps__cta-wrapper {{ section.cta_align }}">
-					<a href="{{ section.button.url }}" class="cta cta--black-green uppercase" target="{{ section.button.target }}">
+					<a href="{{ section.button.url|escape }}" class="cta cta--black-green uppercase" target="{{ section.button.target }}">
 						<span class="cta__label">
 							{{ section.button.title }}
 						</span>

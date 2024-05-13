@@ -48,7 +48,7 @@
 				{{post.content}}
 			</div>
 			<div class="single-press__see-more--wrapper center">
-				<a href="{{ post.cta }}" class="cta cta-green uppercase" target=_blank">
+				<a href="{{ post.cta|escape }}" class="cta cta-green uppercase" target=_blank">
 					<span class="cta__label">
 						{{ __('Voir l\'article', 'eltigre' ) }}
 					</span>	

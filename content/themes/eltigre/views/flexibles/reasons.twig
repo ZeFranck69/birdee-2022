@@ -49,7 +49,7 @@
                 {% if section.cta %}
 					<div
 						class="reasons__cta-wrapper {{ section.cta_align }}">
-						<a href="{{ section.cta.url }}" class="cta cta--black-green uppercase bold" target="{{ section.cta.target }}">
+						<a href="{{ section.cta.url|escape }}" class="cta cta--black-green uppercase bold" target="{{ section.cta.target }}">
 							<span class="cta__label">
 								{{ section.cta.title }}
 							</span>

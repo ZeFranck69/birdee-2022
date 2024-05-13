@@ -28,7 +28,7 @@
 			{% if section.cta.title %}
 			<div class="banner-content__cta-wrapper">
 				<div class="banner-content__bullet">
-					<a href="{{ section.cta.url }}" class="cta cta--black-blue uppercase" target="{{ section.cta.target }}">
+					<a href="{{ section.cta.url|escape }}" class="cta cta--black-blue uppercase" target="{{ section.cta.target }}">
 						<span class="cta__label">
 							{{ section.cta.title }}
 						</span>	
@@ -36,7 +36,7 @@
 				</div>
 				{% if section.second_cta.title %}
 					<div class="banner-content__bullet">
-						<a href="{{ section.second_cta.url }}" class="cta cta--black-blue uppercase" target="{{ section.second_cta.target }}">
+						<a href="{{ section.second_cta.url|escape }}" class="cta cta--black-blue uppercase" target="{{ section.second_cta.target }}">
 							<span class="cta__label">
 								{{ section.second_cta.title }}
 							</span>	

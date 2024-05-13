@@ -2,7 +2,7 @@
 	<div class='header__content main-wrapper header-landing'>
 		<div class="menu--left">
 			<div class='main-logo'>
-				<a class='logo--link' href='{{ site.url }}'>
+				<a class='logo--link' href='{{ site.url|escape }}'>
 					{{ logo }}
 				</a>
 			</div>
@@ -17,7 +17,7 @@
 	<div class='header__content main-wrapper'>
 		<div class="menu--left">
 			<div class='main-logo'>
-				<a class='logo--link' href='{{ site.url }}'>
+				<a class='logo--link' href='{{ site.url|escape }}'>
 					{{ logo }}
 				</a>
 			</div>
@@ -100,7 +100,7 @@
 		<div class="mobile-header__socials">
 			{% for social in options.socials_media %}
 				<div class="footer-socials__social">
-						<a href="{{ social.link }}" target="_blank" rel="noopener noreferrer">
+						<a href="{{ social.link|escape }}" target="_blank" rel="noopener noreferrer">
 								{{ social.logo }}
 						</a>
 				</div>
