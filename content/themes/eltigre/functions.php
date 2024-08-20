@@ -350,3 +350,35 @@ function remove_shortlink_head() {
 remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 remove_action( 'template_redirect', 'wp_shortlink_header', 11);
 }
+
+function utm_remover_script() {
+	$output="
+<script type=\"text/javascript\">
+var utmRemoverRun = false;
+function utmRemover() {
+	if (!utmRemoverRun) { // only run once
+	utmRemoverRun = true;
+	var cleanSearch = window.location.search
+		.replace(/utm_[^&]+&?/g, '') // removes utm_xxx parameters
+		.replace(/&$/, '')  // removes & if last character
+		.replace(/^\?$/, '')  // removes ? if only remaining character
+		;
+	// some pass utm_xxxx in the hash
+	var cleanHash = window.location.hash
+		.replace(/utm_[^&]+&?/g, '') // removes utm_xxx parameters
+		.replace(/&$/, '')  // removes & if last character
+		.replace(/^\#$/, '')  // removes # if only remaining character
+		;
+		
+	window.history.replaceState({}, '', window.location.pathname + cleanSearch + cleanHash);
+	}
+};
+setTimeout(utmRemover, 2000); // remove after 2 second
+// These need to run after the pageview command 
+if (typeof ga !== 'undefined') ga(utmRemover);  // remove after normal Analytics has run
+if (typeof __gaTracker !== 'undefined') __gaTracker(utmRemover); // remove after Yoast Analytics has run
+</script>
+	";
+	echo $output;
+}
+add_action( 'wp_head', 'utm_remover_script' );
